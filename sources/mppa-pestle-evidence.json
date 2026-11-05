@@ -1,0 +1,246 @@
+{
+  "researchDate": "2026-11-04",
+  "evidenceWindow": "2020–2021; historical comparisons labeled separately",
+  "method": "David et al., Chapter 3, printed pp. 95–99: AQCD external assessment. PESTLE is a presentation adaptation, not the textbook’s exact category list.",
+  "sources": [
+    {
+      "id": "P1",
+      "title": "DKI Jakarta — PSBB announcement",
+      "date": "7 April 2020",
+      "url": "https://www.beritajakarta.id/siaran-pers/provinsi/read/1195-SP-HMS-04-2020",
+      "locator": "Announcement of 10 April implementation and essential-sector exceptions"
+    },
+    {
+      "id": "E1",
+      "title": "Bank Indonesia — Monetary Policy Review, Q2 2021",
+      "date": "2021",
+      "url": "https://www.bi.go.id/en/publikasi/laporan/Documents/MPR-Q2.2021.pdf",
+      "locator": "Printed p. 8, Economic Growth by Expenditure, BPS data"
+    },
+    {
+      "id": "S1",
+      "title": "USDA FAS — Indonesia Retail Foods, ID2021-0030",
+      "date": "6 July 2021",
+      "url": "https://apps.fas.usda.gov/newgainapi/api/Report/DownloadReportByFileName?fileName=Retail%20Foods_Jakarta_Indonesia_06-30-2021.pdf",
+      "local": "sources/usda-retail-foods-indonesia-2021.pdf",
+      "locator": "Printed pp. 3–5; grocery sales chart on p. 5 (Euromonitor data)"
+    },
+    {
+      "id": "T1",
+      "title": "Bank Indonesia — QRIS exceeds 12 million merchants",
+      "date": "2 November 2021",
+      "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2328621.aspx",
+      "locator": "5.8 million at end-2020 versus over 12 million on 1 November 2021"
+    },
+    {
+      "id": "L1",
+      "title": "DKI Jakarta — shopping-bag rule enters enforcement",
+      "date": "1 July 2020",
+      "url": "https://www.jakarta.go.id/siaran-pers/1408-SP-HMS-07-2020",
+      "locator": "Implementation of Governor Regulation 142/2019 in Jakarta"
+    },
+    {
+      "id": "EN1",
+      "title": "Bappenas — launch of Indonesia food loss and waste study",
+      "date": "June 2021",
+      "url": "https://greeneconomy.bappenas.go.id/home/bappenas-jabarkan-pentingnya-kelola-food-loss-and-waste-untuk-pembangunan-rendah-karbon-dan-ekonomi-sirkular/",
+      "locator": "2021 study covering 2000–2019; annual range of 23–48 million tonnes"
+    }
+  ],
+  "factors": [
+    {
+      "id": "political",
+      "letter": "P",
+      "category": "Political",
+      "title": "Restrictions change access to stores",
+      "short": "PSBB began 10 April 2020 in Jakarta; essential retail was exempted.",
+      "evidence": "Jakarta announced PSBB from 10 April 2020 for an initial 14 days, extendable. Food, daily-needs retail, and logistics were among the sectors permitted to operate.",
+      "scope": "Jakarta stores, especially locations dependent on mall visits; grocery and distribution operations.",
+      "status": "Threat, with an essential-retail exception",
+      "implication": "Movement restrictions can reduce accessible footfall even when grocery operations may continue. Exposure depends on each store’s location and access.",
+      "response": "Compare affected stores’ footfall and cash contribution; test pickup or delivery where fulfillment costs are justified.",
+      "limit": "A dated regional policy, not a nationwide blanket store closure or a permanent rule through 2025. Its effect on each MPPA site is not quantified here.",
+      "aqcd": "Actionable and geographically specific; dates and initial duration are known. No before/after MPPA footfall series is available.",
+      "sourceIds": [
+        "P1"
+      ],
+      "kind": "timeline",
+      "steps": [
+        {
+          "label": "7 Apr 2020",
+          "text": "Policy announced"
+        },
+        {
+          "label": "10 Apr 2020",
+          "text": "Implementation began"
+        },
+        {
+          "label": "Initial 14 days",
+          "text": "Extendable; essential sectors exempt"
+        }
+      ],
+      "chartTitle": "Jakarta policy timing"
+    },
+    {
+      "id": "economic",
+      "letter": "E",
+      "category": "Economic",
+      "title": "Household spending moved into contraction",
+      "short": "Real household-consumption growth: +5.04% in 2019 versus −2.63% in 2020.",
+      "evidence": "Indonesia’s real household-consumption growth changed from +5.04% in 2019 to −2.63% in 2020, a decline of 7.67 percentage points.",
+      "scope": "Indonesian household demand across MPPA formats; premium and discretionary baskets may face different pressure.",
+      "status": "Threat",
+      "implication": "Weaker demand makes assumptions about basket size, price sensitivity, and sales recovery more consequential. Format-level sensitivity still needs testing.",
+      "response": "Stress-test sales and margins under slower recovery; compare affordable essentials with premium and discretionary assortments.",
+      "limit": "Growth rates describe national real consumption, not MPPA sales, nominal grocery revenue, or the spending level falling by 7.67%.",
+      "aqcd": "Quantitative and comparable across years. National evidence is mapped to formats; it does not measure each format’s demand.",
+      "sourceIds": [
+        "E1"
+      ],
+      "kind": "signed",
+      "chartTitle": "Real household-consumption growth",
+      "unit": "Annual growth, % · common zero baseline",
+      "bars": [
+        {
+          "label": "2019",
+          "value": 5.04,
+          "display": "+5.04%"
+        },
+        {
+          "label": "2020",
+          "value": -2.63,
+          "display": "−2.63%"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "letter": "S",
+      "category": "Social",
+      "title": "Neighborhood channels showed greater resilience",
+      "short": "2019–2020 sales: convenience US$11.7bn to US$12.5bn; hypermarkets US$2.3bn to US$2.0bn.",
+      "evidence": "USDA reports convenience-store sales of US$11.7bn in 2019 and US$12.5bn in 2020, versus hypermarket sales of US$2.3bn and US$2.0bn.",
+      "scope": "Hypermart versus neighborhood formats such as Hyfresh and FMX; local catchment conditions remain important.",
+      "status": "Opportunity and threat",
+      "implication": "Channel evidence supports testing proximity and convenience as shopping needs. It does not establish that every large store is inferior.",
+      "response": "Compare nearby catchments, shopping frequency, baskets, and store economics before selecting conversions or smaller-store pilots.",
+      "limit": "A channel-performance proxy, not a customer survey or proof of causation. USD sales can reflect exchange rates and outlet changes; rounded chart values imply approximate growth.",
+      "aqcd": "Time and channel comparisons are available. Consumer preference and MPPA-specific returns remain unmeasured.",
+      "sourceIds": [
+        "S1"
+      ],
+      "kind": "bars",
+      "chartTitle": "Grocery sales by channel",
+      "unit": "US$ billion · same scale for every bar",
+      "bars": [
+        {
+          "label": "Convenience · 2019",
+          "value": 11.7,
+          "display": "11.7"
+        },
+        {
+          "label": "Convenience · 2020",
+          "value": 12.5,
+          "display": "12.5"
+        },
+        {
+          "label": "Hypermarkets · 2019",
+          "value": 2.3,
+          "display": "2.3"
+        },
+        {
+          "label": "Hypermarkets · 2020",
+          "value": 2.0,
+          "display": "2.0"
+        }
+      ]
+    },
+    {
+      "id": "technological",
+      "letter": "T",
+      "category": "Technological",
+      "title": "Digital payment acceptance expanded",
+      "short": "QRIS merchants: 5.8 million at end-2020 versus over 12 million by 1 November 2021.",
+      "evidence": "Bank Indonesia reported 5.8 million QRIS merchants at end-2020 and more than 12 million by 1 November 2021: acceptance more than doubled.",
+      "scope": "Physical checkout across MPPA formats and the surrounding merchant ecosystem in Indonesia.",
+      "status": "Opportunity and threat",
+      "implication": "Wider acceptance can make digital checkout more familiar while helping smaller rivals offer similar convenience.",
+      "response": "Audit payment acceptance, transaction failures, fees, and reconciliation; test whether checkout improvements create measurable customer value.",
+      "limit": "Merchant registrations do not measure grocery demand, unique consumers, transaction profitability, or MPPA’s current payment capability.",
+      "aqcd": "Dated, quantitative adoption comparison. National infrastructure is relevant to formats, but MPPA’s incremental benefit is not quantified.",
+      "sourceIds": [
+        "T1"
+      ],
+      "kind": "bars",
+      "chartTitle": "QRIS merchant adoption",
+      "unit": "Million merchants · later value is a lower bound",
+      "bars": [
+        {
+          "label": "End-2020",
+          "value": 5.8,
+          "display": "5.8"
+        },
+        {
+          "label": "1 Nov 2021",
+          "value": 12,
+          "display": ">12"
+        }
+      ]
+    },
+    {
+      "id": "legal",
+      "letter": "L",
+      "category": "Legal",
+      "title": "Jakarta introduced a shopping-bag obligation",
+      "short": "Governor Regulation 142/2019 was enforced from 1 July 2020 in Jakarta retail locations.",
+      "evidence": "From 1 July 2020, Jakarta enforced Governor Regulation 142/2019 on environmentally friendly shopping bags in malls, supermarkets, and traditional markets.",
+      "scope": "MPPA stores within DKI Jakarta and their checkout operations; other locations require separate rule checks.",
+      "status": "Compliance threat",
+      "implication": "Bag procurement, checkout processes, and customer communication need to fit the local obligation.",
+      "response": "Check Jakarta store compliance and suppliers; assess bag availability and customer communication without treating the rule as a nationwide requirement.",
+      "limit": "The requirement is Jakarta-specific. Available evidence does not establish MPPA’s compliance costs or the rule’s effect on sales.",
+      "aqcd": "A dated change in obligations with a clear location. Compliance cost and sales impact are not quantified.",
+      "sourceIds": [
+        "L1"
+      ],
+      "kind": "timeline",
+      "chartTitle": "A dated regional requirement",
+      "steps": [
+        {
+          "label": "2019",
+          "text": "Regulation 142 issued"
+        },
+        {
+          "label": "1 Jul 2020",
+          "text": "Enforcement began"
+        },
+        {
+          "label": "DKI Jakarta",
+          "text": "Defined regional retail scope"
+        }
+      ]
+    },
+    {
+      "id": "environmental",
+      "letter": "E",
+      "category": "Environmental",
+      "title": "Food loss and waste expose a resource risk",
+      "short": "Bappenas estimated 23–48 million tonnes of food loss and waste annually across 2000–2019.",
+      "evidence": "A Bappenas study released in 2021 estimated national food loss and waste at 23–48 million tonnes per year during 2000–2019.",
+      "scope": "Fresh-food sourcing, storage, and replenishment in Hypermart, Foodmart, Primo, and Hyfresh.",
+      "status": "Threat; possible efficiency opportunity",
+      "implication": "Perishable assortments are exposed to resource loss. MPPA’s actual shrinkage, disposal costs, and savings potential require company data.",
+      "response": "Measure waste by category and store; test forecasting, cold-chain controls, and markdowns against their implementation costs.",
+      "limit": "The range covers the national food chain over two decades. It is neither MPPA’s waste nor a 2020 point estimate, and does not establish a new annual trend.",
+      "aqcd": "Quantitative context and a specific operational exposure. No comparable MPPA waste series is available, so AQCD coverage is incomplete.",
+      "sourceIds": [
+        "EN1"
+      ],
+      "kind": "range",
+      "chartTitle": "National food loss and waste",
+      "range": "23–48",
+      "unit": "million tonnes per year",
+      "rangeNote": "Historical annual range, 2000–2019 · Study released 2021"
+    }
+  ]
+}
