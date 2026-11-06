@@ -859,7 +859,8 @@ window.MPPA_TRANSLATIONS_ID = {
   /* SPACE Matrix (Slide 25) Translations */
   /* SPACE Matrix Dynamic Company Selector Keys */
   /* SPACE Matrix Individual Factor Rationales & Defenses */
-  "Academic Defense & Rationale:": "Pembelaan Akademis & Rasional:",
+  "Rationale:": "Rasional:",
+  "Academic Defense & Rationale:": "Rasional:",
   "Current Ratio: Score 2.0 (Low Liquidity)": "Rasio Lancar: Skor 2,0 (Likuiditas Rendah)",
   "AR2020 p. 55; Financial Note 38": "AR2020 hlm. 55; Catatan Keuangan 38",
   "Current ratio was 0.72x (Rp2,062B current assets vs Rp2,859B current liabilities). Deficit of Rp797B creates severe working capital pressure, warranting a conservative rating of 2.0.": "Rasio lancar tercatat 0,72x (aset lancar Rp2.062M vs liabilitas lancar Rp2.859M). Defisit modal kerja Rp797M menimbulkan tekanan likuiditas ketat, membenarkan skor konservatif 2,0.",
@@ -1073,7 +1074,7 @@ window.MPPA_TRANSLATIONS_ID = {
   "MPPA \u00b7 COMPETITIVE POSTURE": "MPPA \u00b7 POSTUR KOMPETITIF",
   "Directional Vector: X = +0.60, Y = -2.80 \u00b7 Competitive Quadrant (Borderline Defensive)": "Vektor Arah: X = +0,60, Y = -2,80 \u00b7 Kuadran Kompetitif (Perbatasan Defensif)",
   "AR2020 pp. 54\u201356; Case Exhibit 8; Matahari.xlsx": "AR2020 hlm. 54\u201356; Kasus Lampiran 8; Matahari.xlsx",
-  "Strategic Action Rationale:": "Rasional Aksi Strategis:",
+  "Strategic Action Rationale:": "Rasional:",
   "Strong food market demand ($30.7B) and rapid online grocery growth (+54%) offset hypermarket store drag. However, negative operating cash flow (-Rp80.4B) and heavy PSAK 73 lease financing charges (Rp166.2B) prohibit expensive debt-financed capex. MPPA must pursue asset-light delivery partnerships (GrabMart), convert space into dark stores, expand compact Hyfresh stores, and selectively retrench losing mall stores.": "Tingginya permintaan pasar pangan ($30,7 miliar) dan lonjakan belanja daring (+54%) mengimbangi beban gerai hipermarket. Namun, arus kas operasional negatif (-Rp80,4 miliar) dan beban sewa PSAK 73 yang besar (Rp166,2 miliar) melarang ekspansi belanja modal berutang mahal. MPPA harus memprioritaskan kemitraan kurir tanpa aset (GrabMart), mengubah ruang gerai menjadi dark store, memperluas gerai kompak Hyfresh, dan menutup selektif gerai mal yang merugi.",
   "Directional Vector Graph (4 Quadrants)": "Grafik Vektor Arah (4 Kuadran)",
   "Origin (0,0) to Company Coordinates": "Titik Pusat (0,0) ke Koordinat Perusahaan",
@@ -1110,7 +1111,8 @@ window.MPPA_TRANSLATIONS_ID = {
   "Spending drop (-4.0) \u00b7 Tech shift (-5.0) \u00b7 Price elasticity (-4.0) \u00b7 Minimarket rivalry (-6.0) \u00b7 PSAK 73 (-4.0)": "Penurunan belanja (-4,0) \u00b7 Pergeseran teknologi (-5,0) \u00b7 Elastisitas harga (-4,0) \u00b7 Persaingan minimarket (-6,0) \u00b7 PSAK 73 (-4,0)",
   "Household spending (-2.63% contraction = -4), Tech shift (on-demand apps = -5), Price elasticity (zero switching cost = -4), Competitive pressure (33,500 minimarkets = -6), PSAK 73 lease regulations (-4). Hostile external environment.": "Belanja rumah tangga (kontraksi -2,63% = -4), Disrupsi teknologi (aplikasi kurir = -5), Elastisitas harga (biaya peralihan nol = -4), Tekanan persaingan (33.500 minimarket = -6), Regulasi sewa PSAK 73 (-4). Lingkungan eksternal sangat menantang.",
   "Vector Calculation": "Perhitungan Vektor",
-  "Strategic Posture & Academic Diagnosis": "Postur Strategis & Diagnosis Akademis",
+  "Strategic Posture & Diagnosis": "Postur Strategis & Diagnosis",
+  "Strategic Posture & Academic Diagnosis": "Postur Strategis & Diagnosis",
   "Competitive Quadrant (Borderline Defensive):": "Kuadran Kompetitif (Perbatasan Defensif):",
   "MPPA has viable product advantages in an expanding essential grocery market, but lacks the balance sheet strength to fund heavy capital investments. Recovery must prioritize low-capital digital partnerships (GrabMart), dark-store repurposing, and closing unprofitable mall stores.": "MPPA memiliki keunggulan produk yang layak di pasar sembako yang bertumbuh, namun kekurangan kekuatan neraca untuk mendanai investasi modal besar. Pemulihan harus memprioritaskan kemitraan digital rendah modal (GrabMart), pemanfaatan gerai sebagai dark store, dan penutupan toko mal yang merugi.",
   "Sources: Fred David Strategic Management Ch. 6; Case 23; Audited AR2020; Matahari.xlsx Sheet 'SPACE'": "Sumber: Fred David Strategic Management Bab 6; Kasus 23; AR2020 Teraudit; Matahari.xlsx Sheet 'SPACE'",
