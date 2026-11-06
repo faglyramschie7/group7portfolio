@@ -919,6 +919,28 @@ window.MPPA_TRANSLATIONS_ID = {
   "DIMENSION:": "DIMENSI:",
   "Score:": "Skor:",
   "Directional Vector:": "Vektor Arah:",
+
+  /* SPACE Matrix 2-Column Factors */
+  "Current Ratio": "Rasio Lancar",
+  "Debt to Equity": "Utang terhadap Ekuitas",
+  "Net Income": "Laba Bersih",
+  "Revenue Growth": "Pertumbuhan Pendapatan",
+  "Inventory Turnover": "Perputaran Persediaan",
+  "Market Share": "Pangsa Pasar",
+  "Product Quality": "Mutu Produk Segar",
+  "Customer Loyalty": "Loyalitas Pelanggan",
+  "Variety of Products": "Variasi Pilihan Produk",
+  "Control over Suppliers": "Kendali atas Pemasok",
+  "Growth Potential": "Potensi Pertumbuhan",
+  "Financial Stability": "Stabilitas Finansial",
+  "Ease of Entry": "Hambatan Masuk Pasar",
+  "Resource Utilization": "Pemanfaatan Ruang Gerai",
+  "Profit Potential": "Potensi Margin Laba",
+  "Rate of Inflation": "Tingkat Inflasi / Daya Beli",
+  "Technological Changes": "Perubahan Teknologi",
+  "Price Elasticity": "Elastisitas Harga Konsumen",
+  "Competitive Pressure": "Tekanan Persaingan Minimarket",
+  "Barriers to Entry": "Beban Regulasi & PSAK 73",
 };
 
 Object.assign(window.MPPA_TRANSLATIONS_ID, {
