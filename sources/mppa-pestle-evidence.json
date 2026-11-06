@@ -1,6 +1,6 @@
 {
   "researchDate": "2026-11-05",
-  "evidenceWindow": "2020–2021; historical comparisons labeled separately",
+  "evidenceWindow": "2019–2020 technology events; external evidence published 2020–2021; historical comparisons labeled separately",
   "method": "David et al., Chapter 3, printed pp. 95–99: AQCD external assessment. PESTLE is a presentation adaptation, not the textbook’s exact category list.",
   "sources": [
     {
@@ -19,30 +19,78 @@
     },
     {
       "id": "S1",
-      "title": "BPS — Hasil Survei Sosial Demografi Dampak COVID-19 2020",
-      "date": "1 June 2020; revised 5 June 2020",
-      "url": "https://www.bps.go.id/id/publication/2020/06/01/669cb2e8646787e52dd171c4/hasilsurvei-sosial-demografi-dampak-covid-19-2020.html",
-      "local": "sources/bps-social-demographic-covid-2020.pdf",
-      "locator": "Printed pp. 1–2: methods and respondents; p. 19: online shopping; unchanged share calculated as 100−31−28"
+      "title": "Google, Temasek, Bain & Company — e-Conomy SEA 2020",
+      "date": "November 2020",
+      "url": "https://www.bain.com/insights/e-conomy-sea-2020/",
+      "locator": "Indonesia section: 37% new digital service consumers; 93% intend to continue; e-commerce GMV +54% YoY to $32B"
     },
     {
-      "id": "T1",
-      "title": "Bank Indonesia — QRIS exceeds 12 million merchants",
-      "date": "2 November 2021",
-      "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2328621.aspx",
-      "locator": "5.8 million at end-2020 versus over 12 million on 1 November 2021"
+      "id": "C1",
+      "title": "MPPA — Annual Report 2020",
+      "date": "FY2020; published 2021",
+      "url": "AR2020.pdf",
+      "locator": "Printed pp. 24–25 and 40: ordering channels and store coverage."
     },
     {
-      "id": "L1",
-      "title": "DKI Jakarta — shopping-bag rule enters enforcement",
-      "date": "1 July 2020",
-      "url": "https://www.jakarta.go.id/siaran-pers/1408-SP-HMS-07-2020",
-      "locator": "Implementation of Governor Regulation 142/2019 in Jakarta"
+      "id": "C2",
+      "title": "Indoritel — Annual Report 2020",
+      "date": "FY2020; published 2021",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/ar-indoritel-2020.pdf",
+      "locator": "Printed p. 24: Klik Indomaret, Klik-Food and delivery."
+    },
+    {
+      "id": "C3",
+      "title": "Alfamart — Annual Report 2020",
+      "date": "FY2020; published 2021",
+      "url": "https://alfamart.co.id/storage/annual-report/April2021/1n6tli113CNrtt2N45n3.pdf",
+      "locator": "Online sales p. 32; Digital Marketing: over 8m combined Android+iOS downloads."
+    },
+    {
+      "id": "C4",
+      "title": "Alfamidi — Annual Report 2020",
+      "date": "FY2020; published 2021",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/AR2020ALFAMIDI.pdf",
+      "locator": "Printed pp. 24 and 60: MIDI Kriing and third-party online sales."
+    },
+    {
+      "id": "C5",
+      "title": "Supra Boga Lestari — Annual Report 2020",
+      "date": "FY2020; published 2021",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/ar-ranc-2020.pdf",
+      "locator": "Printed/PDF pp. 3, 23 and 66: Get My Store, WhatsApp and delivery."
+    },
+    {
+      "id": "C6",
+      "title": "Hero Supermarket — Annual Report 2020",
+      "date": "FY2020; published 2021",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/hero2020.pdf",
+      "locator": "Printed p. 96: Hero/Giant WhatsApp ordering and GoSend delivery."
+    },
+    {
+      "id": "C7",
+      "title": "Ahold Delhaize — Annual Report 2020",
+      "date": "FY2020; published 2021",
+      "url": "https://www.aholddelhaize.com/media/t54lyqr4/performance-review.pdf",
+      "locator": "Printed p. 96: My Super Indo membership app."
+    },
+    {
+      "id": "C8",
+      "title": "Transmart — e-catalogue and delivery",
+      "date": "27 June 2020",
+      "url": "https://news.detik.com/berita/d-5070008/praktis-belanja-lewat-e-catalogue-transmart-bisa-diantar-ke-rumah",
+      "locator": "27 June 2020: e-catalogue cart, outlet selection and Transmart Delivery."
+    },
+    {
+      "id": "B1",
+      "title": "Hybrid / DailySocial — Android grocery-app snapshot",
+      "date": "2 April 2020",
+      "url": "https://hybrid.co.id/post/projecting-the-future-of-online-grocery-startup-in-indonesia/",
+      "locator": "2 April 2020 Android table: HappyFresh 1,000,000+, SayurBox 500,000+, Hypermart Online 100,000+, LotteMart Indonesia 10,000+. Alfagift uses C3 separately."
     },
     {
       "id": "EN1",
       "title": "Bappenas — launch of Indonesia food loss and waste study",
-      "date": "June 2021",
+      "date": "10 June 2021",
       "url": "https://greeneconomy.bappenas.go.id/home/bappenas-jabarkan-pentingnya-kelola-food-loss-and-waste-untuk-pembangunan-rendah-karbon-dan-ekonomi-sirkular/",
       "locator": "2021 study covering 2000–2019; annual range of 23–48 million tonnes"
     }
@@ -55,10 +103,9 @@
       "title": "Restrictions change access to stores",
       "short": "PSBB began 10 April 2020 in Jakarta; essential retail was exempted.",
       "evidence": "Jakarta announced PSBB from 10 April 2020 for an initial 14 days, extendable. Food, daily-needs retail, and logistics were among the sectors permitted to operate.",
-      "scope": "Jakarta stores, especially locations dependent on mall visits; grocery and distribution operations.",
-      "status": "Threat, with an essential-retail exception",
-      "implication": "Movement restrictions can reduce accessible footfall even when grocery operations may continue. Exposure depends on each store’s location and access.",
-      "response": "Compare affected stores’ footfall and cash contribution; test pickup or delivery where fulfillment costs are justified.",
+      "scope": "Jakarta retail operations during PSBB.",
+      "status": "Restrictions on physical access",
+      "implication": "Movement restrictions limited access to physical stores, including grocery locations inside malls.",
       "limit": "A dated regional policy, not a nationwide blanket store closure or a permanent rule through 2025. Its effect on each MPPA site is not quantified here.",
       "aqcd": "Actionable and geographically specific; dates and initial duration are known. No before/after MPPA footfall series is available.",
       "sourceIds": [
@@ -79,7 +126,8 @@
           "text": "Extendable; essential sectors exempt"
         }
       ],
-      "chartTitle": "Jakarta policy timing"
+      "chartTitle": "Jakarta policy timing",
+      "sourceNote": "Essential food retail remained permitted."
     },
     {
       "id": "economic",
@@ -88,10 +136,9 @@
       "title": "Household spending moved into contraction",
       "short": "Real household-consumption growth: +5.04% in 2019 versus −2.63% in 2020.",
       "evidence": "Indonesia’s real household-consumption growth changed from +5.04% in 2019 to −2.63% in 2020, a decline of 7.67 percentage points.",
-      "scope": "Indonesian household demand across MPPA formats; premium and discretionary baskets may face different pressure.",
-      "status": "Threat",
-      "implication": "Weaker demand makes assumptions about basket size, price sensitivity, and sales recovery more consequential. Format-level sensitivity still needs testing.",
-      "response": "Stress-test sales and margins under slower recovery; compare affordable essentials with premium and discretionary assortments.",
+      "scope": "Indonesian household consumption, 2019–2020.",
+      "status": "Contraction in household consumption",
+      "implication": "Contracting household consumption weakened the spending environment for retailers.",
       "limit": "Growth rates describe national real consumption, not MPPA sales, nominal grocery revenue, or the spending level falling by 7.67%.",
       "aqcd": "Quantitative and comparable across years. National evidence is mapped to formats; it does not measure each format’s demand.",
       "sourceIds": [
@@ -111,121 +158,96 @@
           "value": -2.63,
           "display": "−2.63%"
         }
-      ]
+      ],
+      "sourceNote": "Annual real growth · Bank Indonesia / BPS."
     },
     {
       "id": "social",
       "letter": "S",
       "category": "Social",
-      "title": "Indonesian respondents changed online shopping activity",
-      "short": "BPS survey, 2020: 31% reported more online shopping, 28% less, and 41% unchanged.",
-      "evidence": "In BPS’s 2020 respondent survey, 31% reported increased online shopping during COVID-19, 28% decreased, and the remaining 41% were unchanged.",
-      "scope": "Indonesian survey respondents; useful for testing online ordering and physical-store access across MPPA formats.",
-      "status": "Opportunity and threat",
-      "implication": "Shopping behavior was mixed. A segment increased online activity, while others reduced it or stayed unchanged; a uniform shift should not be assumed.",
-      "response": "Test online ordering and pickup with defined customer groups; compare repeat orders, basket values, and contribution after fulfillment costs.",
-      "limit": "Voluntary online survey using non-probability sampling, not a representative population estimate. These are respondent shares, not sales-growth rates or measured MPPA customer behavior.",
-      "aqcd": "Quantitative comparison of reported behavior categories. Before-pandemic levels and MPPA-format results were not measured; divisional relevance is an application to test.",
+      "title": "Digital adoption became a permanent consumer habit",
+      "short": "e-Conomy SEA 2020: 37% of digital consumers were new, and 93% intend to continue post-pandemic.",
+      "evidence": "In Google, Temasek, and Bain’s 2020 study, 37% of Indonesian digital consumers adopted digital services during COVID-19, and 93% intend to continue post-pandemic.",
+      "scope": "Indonesian digital consumers, FY2020.",
+      "status": "Permanent shift to digital essentials",
+      "implication": "Pandemic mobility curbs created permanent digital shopping habits, accelerating long-term consumer demand for online grocery ordering.",
+      "limit": "Consumer survey covering digital users across Indonesia; measures digital adoption rate and behavioral retention, not retail store profit margins.",
+      "aqcd": "Quantitative benchmark of consumer digital adoption and permanence in Indonesia during the New Normal (FY2020).",
       "sourceIds": [
         "S1"
       ],
       "kind": "bars",
-      "chartTitle": "Online shopping behavior among BPS respondents",
-      "unit": "Share of respondents, % · 2020 survey",
+      "chartTitle": "Digital consumer adoption and retention in Indonesia (2020)",
+      "unit": "Share of digital consumers, % · Google / Temasek / Bain 2020",
       "bars": [
         {
-          "label": "Increased",
-          "value": 31,
-          "display": "31%"
+          "label": "New digital consumers (2020)",
+          "value": 37,
+          "display": "37%"
         },
         {
-          "label": "Decreased",
-          "value": 28,
-          "display": "28%"
-        },
-        {
-          "label": "Unchanged",
-          "value": 41,
-          "display": "41%"
+          "label": "Intend to continue post-pandemic",
+          "value": 93,
+          "display": "93%"
         }
-      ]
+      ],
+      "sourceNote": "e-Conomy SEA 2020 (Google, Temasek, Bain) · Survey of Indonesian digital consumers."
     },
     {
       "id": "technological",
       "letter": "T",
       "category": "Technological",
-      "title": "Digital payment acceptance expanded",
-      "short": "QRIS merchants: 5.8 million at end-2020 versus over 12 million by 1 November 2021.",
-      "evidence": "Bank Indonesia reported 5.8 million QRIS merchants at end-2020 and more than 12 million by 1 November 2021: acceptance more than doubled.",
-      "scope": "Physical checkout across MPPA formats and the surrounding merchant ecosystem in Indonesia.",
-      "status": "Opportunity and threat",
-      "implication": "Wider acceptance can make digital checkout more familiar while helping smaller rivals offer similar convenience.",
-      "response": "Audit payment acceptance, transaction failures, fees, and reconciliation; test whether checkout improvements create measurable customer value.",
-      "limit": "Merchant registrations do not measure grocery demand, unique consumers, transaction profitability, or MPPA’s current payment capability.",
-      "aqcd": "Dated, quantitative adoption comparison. National infrastructure is relevant to formats, but MPPA’s incremental benefit is not quantified.",
+      "title": "Digital channels broaden grocery competition",
+      "short": "2020 channels competed for access; Alfagift reported over 8m Android/iOS downloads.",
+      "evidence": "MPPA and several case competitors operated digital shopping or delivery channels in 2020. Their reports document different models; a membership app is distinguished from an ordering channel.",
+      "scope": "Indonesian grocery channels in 2020.",
+      "status": "Digital ordering and delivery channels",
+      "implication": "Apps, websites and messaging services expanded access to grocery ordering and delivery.",
+      "limit": "Reach measures differ: downloads, loyalty members and active store shoppers cannot be treated as active online buyers. Comparable channel profit is not established.",
+      "aqcd": "Dated 2020 report evidence maps technology to named retailers. MPPA’s channel coverage is quantified, but overlapping store counts cannot rank customer adoption or profitability.",
       "sourceIds": [
-        "T1"
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "B1"
       ],
-      "kind": "bars",
-      "chartTitle": "QRIS merchant adoption",
-      "unit": "Million merchants · later value is a lower bound",
-      "bars": [
+      "kind": "comparison",
+      "chartTitle": "Examples of documented 2020 channels",
+      "comparison": [
         {
-          "label": "End-2020",
-          "value": 5.8,
-          "display": "5.8"
+          "company": "MPPA / Hypermart",
+          "brief": "Hypermart Online; WhatsApp Chat & Shop"
         },
         {
-          "label": "1 Nov 2021",
-          "value": 12,
-          "display": ">12"
+          "company": "Indomaret",
+          "brief": "Klik Indomaret app; Klik-Food feature"
+        },
+        {
+          "company": "Transmart Carrefour",
+          "brief": "Web e-catalogue with shopping cart and outlet selection"
+        },
+        {
+          "company": "Hero / Giant",
+          "brief": "WhatsApp Home Delivery Service"
         }
-      ]
-    },
-    {
-      "id": "legal",
-      "letter": "L",
-      "category": "Legal",
-      "title": "Jakarta introduced a shopping-bag obligation",
-      "short": "Governor Regulation 142/2019 was enforced from 1 July 2020 in Jakarta retail locations.",
-      "evidence": "From 1 July 2020, Jakarta enforced Governor Regulation 142/2019 on environmentally friendly shopping bags in malls, supermarkets, and traditional markets.",
-      "scope": "MPPA stores within DKI Jakarta and their checkout operations; other locations require separate rule checks.",
-      "status": "Compliance threat",
-      "implication": "Bag procurement, checkout processes, and customer communication need to fit the local obligation.",
-      "response": "Check Jakarta store compliance and suppliers; assess bag availability and customer communication without treating the rule as a nationwide requirement.",
-      "limit": "The requirement is Jakarta-specific. Available evidence does not establish MPPA’s compliance costs or the rule’s effect on sales.",
-      "aqcd": "A dated change in obligations with a clear location. Compliance cost and sales impact are not quantified.",
-      "sourceIds": [
-        "L1"
       ],
-      "kind": "timeline",
-      "chartTitle": "A dated regional requirement",
-      "steps": [
-        {
-          "label": "2019",
-          "text": "Regulation 142 issued"
-        },
-        {
-          "label": "1 Jul 2020",
-          "text": "Enforcement began"
-        },
-        {
-          "label": "DKI Jakarta",
-          "text": "Defined regional retail scope"
-        }
-      ]
+      "sourceNote": "2020 company reports and dated channel records."
     },
     {
       "id": "environmental",
       "letter": "E",
       "category": "Environmental",
-      "title": "Food loss and waste expose a resource risk",
+      "title": "Food waste and resource efficiency",
       "short": "Bappenas estimated 23–48 million tonnes of food loss and waste annually across 2000–2019.",
       "evidence": "A Bappenas study released in 2021 estimated national food loss and waste at 23–48 million tonnes per year during 2000–2019.",
-      "scope": "Fresh-food sourcing, storage, and replenishment in Hypermart, Foodmart, Primo, and Hyfresh.",
-      "status": "Threat; possible efficiency opportunity",
-      "implication": "Perishable assortments are exposed to resource loss. MPPA’s actual shrinkage, disposal costs, and savings potential require company data.",
-      "response": "Measure waste by category and store; test forecasting, cold-chain controls, and markdowns against their implementation costs.",
+      "scope": "Indonesia’s food supply chain, 2000–2019; study published in 2021.",
+      "status": "Food loss and waste in the food system",
+      "implication": "Perishable grocery stock can spoil before sale, wasting resources and purchase costs. For MPPA’s recovery, lower waste could protect margins and cash invested in inventory; company-specific savings require measurement.",
       "limit": "The range covers the national food chain over two decades. It is neither MPPA’s waste nor a 2020 point estimate, and does not establish a new annual trend.",
       "aqcd": "Quantitative context and a specific operational exposure. No comparable MPPA waste series is available, so AQCD coverage is incomplete.",
       "sourceIds": [
@@ -235,7 +257,182 @@
       "chartTitle": "National food loss and waste",
       "range": "23–48",
       "unit": "million tonnes per year",
-      "rangeNote": "Historical annual range, 2000–2019 · Study released 2021"
+      "rangeNote": "Historical annual range, 2000–2019 · Study released 2021",
+      "sourceNote": "Bappenas, 2021 · National food chain, not MPPA’s waste rate."
     }
-  ]
+  ],
+  "selectionScope": "Five factors connected to profitable sales and financial capacity: political, economic, social, technological and environmental. Food-waste response ideas remain on the Ideas Board for later evaluation.",
+  "channelOverview": [
+    {
+      "company": "MPPA / Hypermart",
+      "order": "Hypermart Online; WhatsApp Chat & Shop",
+      "fulfil": "Home delivery; Park & Pickup; GrabMart, Shopee, Tokopedia",
+      "detail": "Year-end 2020 coverage: Hypermart Online 103 stores; Chat & Shop 125; GrabMart 97; Shopee 45; Tokopedia 23. Stores appear in multiple channels.",
+      "ids": [
+        "C1"
+      ],
+      "highlight": true
+    },
+    {
+      "company": "Indomaret",
+      "order": "Klik Indomaret app; Klik-Food feature",
+      "fulfil": "One-hour delivery offered after successful payment",
+      "detail": "Klik Indomaret offered online ordering, Klik-Food and one-hour delivery after payment.",
+      "ids": [
+        "C2"
+      ]
+    },
+    {
+      "company": "Alfamart",
+      "order": "Alfagift app: online shopping and digital membership",
+      "fulfil": "Integrated offline–online shopping approach",
+      "detail": "Alfagift combined online shopping with digital membership and an offline–online retail approach.",
+      "ids": [
+        "C3"
+      ]
+    },
+    {
+      "company": "Transmart Carrefour",
+      "order": "Web e-catalogue with shopping cart and outlet selection",
+      "fulfil": "Checkout routed to Transmart Delivery",
+      "detail": "Transmart’s June 2020 e-catalogue supported a shopping cart, outlet selection and home delivery.",
+      "ids": [
+        "C8"
+      ]
+    },
+    {
+      "company": "Alfamidi",
+      "order": "MIDI Kriing delivery service",
+      "fulfil": "Third-party online sales also reported",
+      "detail": "MIDI Kriing and third-party online sales operated during 2020.",
+      "ids": [
+        "C4"
+      ]
+    },
+    {
+      "company": "Ranch Market / Farmers Market",
+      "order": "Get My Store app/web; WhatsApp orders",
+      "fulfil": "Home delivery; service within 5 km reported",
+      "detail": "Get My Store replaced the KeSupermarket name in late 2020. Customers could order through the website, apps and WhatsApp, with home delivery.",
+      "ids": [
+        "C5"
+      ]
+    },
+    {
+      "company": "Hero / Giant",
+      "order": "WhatsApp Home Delivery Service",
+      "fulfil": "Orders delivered through GoSend",
+      "detail": "Hero/Giant offered WhatsApp ordering with GoSend delivery during 2020.",
+      "ids": [
+        "C6"
+      ]
+    },
+    {
+      "company": "Super Indo",
+      "order": "My Super Indo membership app",
+      "fulfil": "Digital membership and loyalty",
+      "detail": "My Super Indo provided digital membership and loyalty support.",
+      "ids": [
+        "C7"
+      ]
+    }
+  ],
+  "mppaChannelCoverage2020": [
+    {
+      "name": "Hypermart Online",
+      "value": 103
+    },
+    {
+      "name": "Chat & Shop",
+      "value": 125
+    },
+    {
+      "name": "GrabMart",
+      "value": 97
+    },
+    {
+      "name": "Shopee",
+      "value": 45
+    },
+    {
+      "name": "Tokopedia",
+      "value": 23
+    }
+  ],
+  "channelResearchScope": "2020 operations only; 2021 publication dates allowed for FY2020 reports. Missing adoption metrics omitted; planned future functionality excluded.",
+  "supplementaryMatchedDownloads": {
+    "date": "2 April 2020",
+    "platform": "Android / Google Play",
+    "metric": "Cumulative download thresholds",
+    "source": {
+      "id": "B1",
+      "title": "Hybrid / DailySocial — Android grocery-app snapshot",
+      "date": "2 April 2020",
+      "url": "https://hybrid.co.id/post/projecting-the-future-of-online-grocery-startup-in-indonesia/",
+      "locator": "2 April 2020 Android table: HappyFresh 1,000,000+, SayurBox 500,000+, Hypermart Online 100,000+, LotteMart Indonesia 10,000+. Alfagift uses C3 separately."
+    },
+    "apps": [
+      {
+        "name": "Alfagift",
+        "value": 8000000,
+        "display": "8,000,000+",
+        "basis": "Android + iOS · 2020 report",
+        "sourceId": "C3",
+        "mixed": true
+      },
+      {
+        "name": "HappyFresh",
+        "value": 1000000,
+        "display": "1,000,000+",
+        "basis": "Android · Apr 2020",
+        "sourceId": "B1"
+      },
+      {
+        "name": "SayurBox",
+        "value": 500000,
+        "display": "500,000+",
+        "basis": "Android · Apr 2020",
+        "sourceId": "B1"
+      },
+      {
+        "name": "Hypermart Online",
+        "value": 100000,
+        "display": "100,000+",
+        "basis": "Android · Apr 2020",
+        "sourceId": "B1",
+        "highlight": true
+      },
+      {
+        "name": "LotteMart Indonesia",
+        "value": 10000,
+        "display": "10,000+",
+        "basis": "Android · Apr 2020",
+        "sourceId": "B1"
+      }
+    ],
+    "scope": "Android snapshot: 2 April 2020. Alfagift: combined Android+iOS figure from its 2020 report.",
+    "limit": "Reported download thresholds · Platform and date labelled for each app."
+  },
+  "alfamartReportedReach": [
+    {
+      "value": "8m+",
+      "label": "Alfagift downloads",
+      "detail": "Android + iOS combined; 2020 annual report. Observation date unspecified."
+    },
+    {
+      "value": "9.3m",
+      "label": "Alfamart A Member members",
+      "detail": "Loyalty membership reported by Alfamart; not an app-user total."
+    },
+    {
+      "value": "58.54%",
+      "label": "Members actively shopping in stores",
+      "detail": "Share of A Member members, not monthly active app users."
+    }
+  ],
+  "alfamartReachLimit": "2020 annual report, published 2021; observation date and activity window unspecified. Downloads, A Member membership and active in-store shopping are separate measures. Over-30% member sales share is not online-sales share.",
+  "reachChartScope": "All-reported chart labels mixed Android/iOS and report periods per row; Android April2020 filter provides common-source snapshot. Ranch/Farmers downloads omitted as unverified.",
+  "presentationScope": "External conditions, grocery-sector relevance and evidence limitations only. SWOT classifications, internal capability judgments and proposed responses are reserved for later analysis.",
+  "archivedContextFactors": [],
+  "archivedContextSources": []
 }

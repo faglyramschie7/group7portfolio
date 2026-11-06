@@ -1,0 +1,438 @@
+{
+  "baseline": 2020,
+  "industryBoundary": "Indonesian consumer grocery retail, including physical and online sellers; focus on Hypermart, not a single industry rating across MPPA’s seven formats.",
+  "method": "Industry climate is established from competitor disclosures, original market research and Porter drivers. MPPA position is established from MPPA-specific disclosures. Competitor practices cannot be attributed to MPPA. Qualitative ratings describe pressures facing MPPA.",
+  "sources": [
+    {
+      "id": "CASE",
+      "title": "Case 23 · MPPA",
+      "url": "Matahari%20Case%20-%20Pages%20588-596.pdf",
+      "locator": "Printed pp. 587–594; Exhibits 2, 5, 8 and 9. Use 2020 observations only."
+    },
+    {
+      "id": "AR20",
+      "title": "MPPA Annual Report 2020",
+      "url": "AR2020.pdf",
+      "locator": "Printed p. 12 / PDF p. 14 (price rivalry); p. 38 / PDF p. 40 (pricing and 27.7% fresh share); pp. 44, 46–49 / PDF pp. 46, 48–51 (Foodmart, sales mix and logistics); pp. 115, 126 / PDF pp. 117, 128 (local suppliers and procurement); Notes 23–24 / PDF p. 246 (customer/supplier concentration)."
+    },
+    {
+      "id": "BOOK",
+      "title": "David · Chapter 3",
+      "url": "Fred%20David%20-%20Strategic%20Management_%20A%20Competitive%20Advantage%20Approach%2C%20Concepts%20and%20Cases%20%5BTeam-IRA%5D-Pearson%20%282023%29.pdf",
+      "locator": "Printed pp. 101–104; Figure 3-3 and Table 3-5."
+    },
+    {
+      "id": "HBS",
+      "title": "Harvard Business School · Five Forces",
+      "url": "https://www.isc.hbs.edu/strategy/business-strategy/Pages/the-five-forces.aspx",
+      "locator": "Conceptual cross-check; no current company outcomes used."
+    },
+    {
+      "id": "RANCH",
+      "title": "Supra Boga Lestari Annual Report 2020",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/ar-ranc-2020.pdf",
+      "locator": "2020 report: pp. 22–23 (11 new stores); p. 80 (Rp141.4bn capex); p. 134 (competition and multiple sourcing); PDF p. 228, Notes 24–25 (10% net-revenue thresholds)."
+    },
+    {
+      "id": "ALFAMIDI",
+      "title": "Alfamidi Annual Report 2020",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/AR2020ALFAMIDI.pdf",
+      "locator": "PDF p. 2 (266 openings); printed p. 71 / PDF p. 73 (54 franchise stores and support); printed p. 140 / PDF p. 142 (price checks and entry barriers)."
+    },
+    {
+      "id": "INDORITEL",
+      "title": "Indoritel Annual Report 2020",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/ar-indoritel-2020.pdf",
+      "locator": "Printed p. 24 / PDF p. 26 (Indomaret ordering); printed p. 67 / PDF p. 69 (Indomaret discounts; KFC 743 outlets); printed p. 68 / PDF p. 70 (KFC delivery/takeaway). Keep associate businesses separate."
+    },
+    {
+      "id": "HERO",
+      "title": "Hero Annual Report 2020",
+      "url": "COMPETITOR%20ANNUAL%20REPORTS/hero2020.pdf",
+      "locator": "Printed pp. 92–93 / PDF pp. 95–96: grocery formats, price positioning and residential access. Excludes Guardian and IKEA."
+    },
+    {
+      "id": "NIELSEN20",
+      "title": "Nielsen · Indonesian consumer study · Apr 2020",
+      "url": "https://www.nielsen.com/insights/2020/race-against-covid-19-deep-dive-on-how-indonesian-consumers-react-towards-the-virus/",
+      "locator": "Cooking/eating-out findings: 49% cooked more often, 46% reduced eating out. Methodology lists Consumer Study 7–10 March 2020; article April 2020. Early-period survey context, not full-year or MPPA-specific outcomes."
+    },
+    {
+      "id": "APP20",
+      "title": "Hybrid / DailySocial · Grocery apps, 2 April 2020",
+      "url": "https://hybrid.co.id/post/projecting-the-future-of-online-grocery-startup-in-indonesia/",
+      "locator": "Android cumulative download thresholds; these are not active users or revenue."
+    },
+    {
+      "id": "HF20",
+      "title": "HappyFresh · Company release, 13 May 2020",
+      "url": "https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2020/05/HappyFresh-CEO-Runs-for-Donation-Drive-to-Beat-COVID-19.pdf",
+      "locator": "pp. 1–2: regional traffic at 5–10 times usual levels; partner-retailer model. No Indonesia annual sales total."
+    },
+    {
+      "id": "SB20",
+      "title": "ANTARA · Sayurbox spokesperson, 10 April 2020",
+      "url": "https://www.antaranews.com/berita/1415707/pesanan-melonjak-sayurbox-tambah-pekerja-untuk-kelancaran-distribusi",
+      "locator": "Company-reported early-pandemic sales increase up to fivefold; annual total and exact base period unspecified."
+    },
+    {
+      "id": "ALFA20",
+      "title": "Alfamart Annual Report 2020",
+      "url": "https://alfamart.co.id/storage/annual-report/April2021/1n6tli113CNrtt2N45n3.pdf",
+      "locator": "Digital Marketing: over 8m combined Android+iOS Alfagift downloads; not app sales."
+    },
+    {
+      "id": "LOTTE-FS",
+      "title": "Lotte Shopping · Financial-statement subsidiary disclosures",
+      "url": "https://kind.krx.co.kr/external/2022/03/15/001930/20220315004664/11011.htm",
+      "locator": "2021 annual filing, consolidated financial statement Note 1(3), FY51 (2020) comparative: revenue in KRW thousands. PT Lotte Mart Indonesia 200,327,909; PT Lotte Shopping Indonesia 826,547,022. Separate-company figures before consolidation adjustments."
+    },
+    {
+      "id": "NAVER-FS",
+      "title": "NAVER · Audited financial statements 2021/2020",
+      "url": "https://www.navercorp.com/navercorp_/ir/auditReport/2022/NAVER_Consolidated%20Audit%20Report_FY21_Signed.pdf",
+      "locator": "Note 12, printed pp. 82–96: ICART GROUP investment and subsidiaries. Does not establish 2020 Indonesia revenue for HappyFresh."
+    },
+    {
+      "id": "SAYUR-STUDY",
+      "title": "Susanti & Zaman · Sayurbox revenue study, 2024",
+      "url": "https://ejurnal.stie-trianandra.ac.id/index.php/jubima/article/view/2696",
+      "locator": "Printed p. 146, Table 2: 2020 revenue Rp592,135,110. Surabaya expansion context on pp. 141, 149; not an audited nationwide financial statement."
+    },
+    {
+      "id": "FX-IDR20",
+      "title": "Republic of Indonesia · 2020 average exchange rate",
+      "url": "https://www.sec.gov/Archives/edgar/data/1719614/000119312522081007/d238149dex99e.htm",
+      "locator": "Selected Key Economic Indicators, p. E-1 and Exchange Rates: 2020 annual average Rp14,525 per USD, sourced to Bank Indonesia."
+    },
+    {
+      "id": "FX-KRW20",
+      "title": "Korea Expressway Corporation · Historical exchange rates",
+      "url": "https://links.sgx.com/FileOpen/KEC%20GMTN%20Update%202024%20-%20OM%20%28bannerless%29%204_22_24.ashx?App=Prospectus&FileID=62450",
+      "locator": "Offering memorandum, printed p. 72: 2020 daily market-average FX mean KRW1,180.1 per USD; source Seoul Money Brokerage Services. Rounded to one decimal."
+    }
+  ],
+  "forces": [
+    {
+      "id": "rivalry",
+      "name": "Rivalry among existing competitors",
+      "rating": "High",
+      "short": "Aggressive pricing by supermarkets and minimarkets pressures MPPA’s sales.",
+      "theory": "Assess the number of rivals, differentiation, switching costs and pressure to compete on price or service.",
+      "evidence": [
+        "MPPA’s 2020 report identifies aggressive price competition from expanding supermarkets and minimarkets as a factor affecting its performance."
+      ],
+      "reading": "Hypermart was much smaller by sales than Indomaret and Alfamart in the case’s 2020 comparison. App-based ordering added competition on convenience.",
+      "salesLink": "MPPA needs to win profitable grocery purchases through competitive prices, accessible stores and convenient ordering.",
+      "limit": "Exhibit 8 compares selected retail chains, not the entire market or online-only sales. Hypermart is a brand, not total MPPA. HappyFresh platform orders can overlap partner-retailer sales; downloads, traffic, funding and GMV cannot be treated as comparable revenue. No causal share of MPPA’s sales decline is established. LotteMart’s separate-company financial-statement revenue is added to the case estimates on a common rupiah scale using 2020 average exchange rates; currency conversion does not reconcile differences in reporting scope.",
+      "sourceIds": [
+        "CASE",
+        "AR20",
+        "APP20",
+        "HF20",
+        "SB20",
+        "BOOK",
+        "ALFA20",
+        "LOTTE-FS",
+        "FX-IDR20",
+        "FX-KRW20"
+      ],
+      "industryContext": "Large grocery chains and app-based services compete for household grocery spending.",
+      "visual": {
+        "kind": "bars",
+        "title": "Selected grocery retailers: 2020 sales",
+        "unit": "Rp trillion · 2020 average FX · LotteMart¹: financial report; others: case estimates",
+        "max": 85.6975,
+        "bars": [
+          {
+            "label": "Indomaret",
+            "value": 85.6975,
+            "sourceValueUSDmillion": 5900
+          },
+          {
+            "label": "Alfamart",
+            "value": 76.3434,
+            "sourceValueUSDmillion": 5256
+          },
+          {
+            "label": "Transmart",
+            "value": 13.85685,
+            "sourceValueUSDmillion": 954
+          },
+          {
+            "label": "Alfamidi",
+            "value": 12.535075,
+            "sourceValueUSDmillion": 863
+          },
+          {
+            "label": "Hypermart",
+            "value": 6.01335,
+            "highlight": true,
+            "sourceValueUSDmillion": 414
+          },
+          {
+            "label": "LotteMart¹",
+            "value": 2.465691787327345,
+            "financialReport": true,
+            "sourceValueKRW": 200327909000
+          }
+        ],
+        "unavailable": [
+          {
+            "label": "HappyFresh",
+            "status": "Sales not verified"
+          },
+          {
+            "label": "Sayurbox",
+            "status": "Sales not verified"
+          }
+        ],
+        "comparisonNote": "¹ PT Lotte Mart Indonesia only; excludes the separate PT Lotte Shopping Indonesia entity.",
+        "conversion": {
+          "year": 2020,
+          "method": "Annual-average cross-rate approximation: KRW revenue ÷ KRW per USD × IDR per USD. USD case estimates × IDR per USD. All chart values in IDR trillion.",
+          "IDRperUSD": 14525,
+          "KRWperUSD": 1180.1,
+          "IDRperKRW": 12.30827895941022,
+          "LotteMartRevenueIDR": 2465691787327.345,
+          "precision": "Approximate translation, not originally reported IDR revenue or a restatement of audited accounts.",
+          "sourceIds": [
+            "FX-IDR20",
+            "FX-KRW20"
+          ]
+        }
+      },
+      "digitalRivals": [
+        {
+          "name": "HappyFresh",
+          "annualSales": "2020 Indonesia revenue not located in publicly accessible financial statements. NAVER’s audited 2021/2020 report identifies ICART GROUP and its subsidiaries but does not provide a matching 2020 Indonesia revenue figure.",
+          "activity": "1,000,000+ Android downloads in the April 2020 snapshot; its May 2020 release reported regional traffic at 5–10 times usual levels. Traffic is not sales.",
+          "model": "Partner-retailer ordering and delivery platform; transactions can overlap retailer sales.",
+          "sourceIds": [
+            "APP20",
+            "HF20",
+            "NAVER-FS"
+          ]
+        },
+        {
+          "name": "Sayurbox",
+          "annualSales": "No audited nationwide 2020 sales figure located. A 2024 study reports Rp592,135,110 for 2020; its Surabaya expansion context leaves nationwide reporting scope unverified. Excluded from the sales chart.",
+          "activity": "500,000+ Android downloads in the April 2020 snapshot. ANTARA reported a company spokesperson’s claim of sales rising up to fivefold during the early pandemic; no annual sales total or precise comparison period was given.",
+          "model": "Online fresh-food seller competing for household grocery purchases.",
+          "sourceIds": [
+            "APP20",
+            "SB20",
+            "SAYUR-STUDY"
+          ]
+        },
+        {
+          "name": "LotteMart Indonesia",
+          "annualSales": "PT Lotte Mart Indonesia: 2020 revenue KRW200.327909bn ≈ Rp2.47tn using 2020 annual-average FX. Excludes the separate PT Lotte Shopping Indonesia entity.",
+          "activity": "Financial-statement Note 1(3), FY2020 comparative in Lotte Shopping’s 2021 filing. Separate-company revenue before consolidation adjustments, not app-only sales. Translation: KRW200,327,909,000 ÷ 1,180.1 × 14,525 = approximately Rp2,465,691,787,327. Other chart bars are case estimates translated from USD; source and scope differ.",
+          "model": "Retailer with an ordering app; app activity is part of the retailer, not a separate competitor.",
+          "sourceIds": [
+            "LOTTE-FS",
+            "FX-IDR20",
+            "FX-KRW20",
+            "APP20"
+          ]
+        },
+        {
+          "name": "Alfagift / Hypermart Online",
+          "annualSales": "Alfamart and Hypermart already appear in Exhibit 8; their app sales are not separate bars.",
+          "activity": "Alfagift: over 8m combined Android+iOS downloads reported in 2020. Hypermart Online: 100,000+ Android downloads in April 2020. Different platform coverage.",
+          "model": "Ordering channels belonging to the retailers already represented.",
+          "sourceIds": [
+            "APP20",
+            "ALFA20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "buyers",
+      "name": "Bargaining power of buyers",
+      "rating": "Moderate",
+      "short": "Shoppers’ ability to switch stores constrains MPPA’s pricing.",
+      "theory": "Buyer power depends on purchase concentration, switching costs, product differentiation and price sensitivity.",
+      "evidence": [
+        "No individual customer accounted for more than 10% of MPPA’s 2020 net sales.",
+        "MPPA regularly compared market prices across fresh food, groceries and household essentials to retain customers."
+      ],
+      "reading": "Individual shoppers have little negotiating leverage, but can easily redirect their next purchase. MPPA competes on price and convenience to retain them.",
+      "salesLink": "MPPA’s sales depend on retaining frequent purchases across many customers.",
+      "limit": "MPPA’s pricing actions demonstrate pressure to retain customers. The report does not quantify a customer-switching rate or the sales recovered through price matching.",
+      "sourceIds": [
+        "AR20",
+        "INDORITEL",
+        "HERO",
+        "BOOK"
+      ],
+      "industryContext": "Discounts, nearby stores and delivery give grocery shoppers several purchasing options."
+    },
+    {
+      "id": "entrants",
+      "name": "Threat of new entrants",
+      "rating": "Moderate",
+      "short": "MPPA’s logistics network raises the cost of entry at national scale.",
+      "theory": "Assess entry barriers such as scale, capital, brand recognition and access to supply and distribution.",
+      "evidence": [
+        "MPPA’s 2020 report identifies its logistics network as a barrier to new retail entrants."
+      ],
+      "reading": "MPPA’s established logistics raises the cost of replicating its national network. Smaller operators can still enter individual neighbourhoods.",
+      "salesLink": "MPPA has protection at network scale, while local stores compete within each shopping area.",
+      "limit": "The logistics advantage is MPPA management’s stated assessment, supported by its disclosed infrastructure. It is not a guarantee against entry or proof that every new outlet took MPPA sales.",
+      "sourceIds": [
+        "AR20",
+        "BOOK"
+      ],
+      "industryContext": "Reliable sourcing, suitable locations and distribution capacity create barriers to establishing a grocery chain.",
+      "visual": {
+        "kind": "bars",
+        "title": "MPPA distribution capacity",
+        "unit": "Pallet positions · year-end 2020",
+        "max": 43000,
+        "bars": [
+          {
+            "label": "Balaraja",
+            "value": 43000,
+            "display": "43,000"
+          },
+          {
+            "label": "Porong",
+            "value": 29718,
+            "display": "29,718"
+          },
+          {
+            "label": "Cibitung",
+            "value": 4234,
+            "display": "4,234"
+          }
+        ]
+      }
+    },
+    {
+      "id": "substitutes",
+      "name": "Threat of substitutes",
+      "rating": "Low",
+      "short": "Early-2020 meal habits continued to support grocery purchases.",
+      "theory": "A substitute meets the same underlying need in a different way; assess its relative price, performance and switching costs.",
+      "evidence": [],
+      "reading": "Home cooking remained important in early 2020. The survey indicates continued demand for cooking ingredients.",
+      "salesLink": "MPPA competed for household grocery spending across physical and online channels.",
+      "limit": "Nielsen’s consumer-study fieldwork was 7–10 March 2020. The findings describe that period, not a full-year change in MPPA sales.",
+      "sourceIds": [
+        "NIELSEN20",
+        "BOOK",
+        "AR20"
+      ],
+      "industryContext": "Restaurant meals are an alternative to buying ingredients for home cooking.",
+      "visual": {
+        "kind": "donuts",
+        "title": "How meal habits changed",
+        "unit": "Nielsen consumer study · 7–10 March 2020",
+        "stats": [
+          {
+            "value": 49,
+            "label": "Cooked at home more often"
+          },
+          {
+            "value": 46,
+            "label": "Reduced eating out"
+          }
+        ]
+      }
+    },
+    {
+      "id": "suppliers",
+      "name": "Bargaining power of suppliers",
+      "rating": "Moderate",
+      "short": "A dispersed supplier base and formal procurement support MPPA’s negotiating position.",
+      "theory": "Assess supplier concentration, unique inputs, switching costs and the importance of the retailer to suppliers.",
+      "evidence": [
+        "No single supplier’s inventory purchases exceeded 10% of MPPA’s net sales in 2020.",
+        "MPPA used formal vendor selection and agreed trading terms, alongside local purchasing and SME supplier development."
+      ],
+      "reading": "MPPA’s supplier base and formal procurement processes support its negotiating position. Local purchasing broadens its sourcing relationships.",
+      "salesLink": "Supplier terms affect merchandise margins; product availability affects completed customer purchases.",
+      "limit": "The 10% denominator is net sales, not purchases. MPPA’s processes do not by themselves prove better terms, easy replacement of every brand, or an absence of supply disruption.",
+      "sourceIds": [
+        "AR20",
+        "NIELSEN20",
+        "BOOK"
+      ],
+      "industryContext": "Retailers faced distribution and stock-allocation risks in early 2020."
+    }
+  ],
+  "researchDate": "2026-11-05",
+  "ratingBasis": {
+    "rivalry": "High: active price/service competition and incumbent expansion.",
+    "buyers": "Moderate: easy retailer choice versus fragmented buying and limited individual negotiation.",
+    "entrants": "Moderate overall pressure: MPPA’s three-DC logistics network and its stated role as an entry barrier; independent chains must build or access distribution while small local operators require less geographic coverage.",
+    "substitutes": "Limited restaurant-meal substitution pressure in the early-2020 period covered by Nielsen’s survey. Home preparation remains relevant to grocery demand; analysis then examines where and how households shop. No KFC outlet counts or MPPA fresh-food share used to infer this force.",
+    "suppliers": "Low–moderate for MPPA merchandise sourcing: its own supplier-concentration disclosure, procurement/trading processes and local SME supplier development. Competitor sourcing policies are not evidence of MPPA capability."
+  },
+  "visualNotes": {
+    "substitutes": "Separate 49% and 46% donut charts with 100% bases for separate behaviours; not mutually exclusive categories, not slices of one combined pie.",
+    "rivalry": "Net sales trend shows MPPA performance, not attribution of the decline to rivalry. Values Rp trillion, rounded for labels.",
+    "entrants": "Pallet positions from MPPA AR2020 printed p.47. Separate 54% refers to sales of merchandise passing through DCs, not share of supplier purchases.",
+    "presentation": "Material source qualifiers retained in Notes and chart captions; no separate Evidence boundary block on slides."
+  },
+  "presentationScope": "MPPA sales decline and competitive position. Source qualifications retained separately; no audience instructions.",
+  "digitalRivalResearch": {
+    "baseline": 2020,
+    "status": "LotteMart Indonesia FY2020 legal-entity revenue verified in Lotte Shopping financial-statement disclosures. HappyFresh and Sayurbox comparable 2020 nationwide revenue remains unverified.",
+    "checked": "2026-11-05",
+    "excludedEvidence": [
+      {
+        "url": "https://ejurnal.stie-trianandra.ac.id/index.php/jubima/article/view/2696",
+        "reason": "2024 retrospective study found, but reporting scope and comparability with nationwide 2020 retailer sales were not established; not plotted."
+      }
+    ],
+    "chartScope": "Six bars in IDR trillion: five case Exhibit 8 USD estimates translated at 2020 average FX, plus PT Lotte Mart Indonesia financial-statement revenue translated via USD. LotteMart distinct source and legal-entity scope explicitly labelled. HappyFresh/Sayurbox not assigned invented values.",
+    "financialStatementChecks": [
+      {
+        "company": "PT Lotte Mart Indonesia",
+        "year": 2020,
+        "revenue": 200327909000,
+        "currency": "KRW",
+        "sourceReportedRevenue": 200327909,
+        "sourceUnit": "KRW thousand",
+        "source": "https://kind.krx.co.kr/external/2022/03/15/001930/20220315004664/11011.htm",
+        "basis": "Separate-company information, before consolidation adjustments; not app-only revenue."
+      },
+      {
+        "company": "PT Lotte Shopping Indonesia",
+        "year": 2020,
+        "revenue": 826547022000,
+        "currency": "KRW",
+        "source": "https://kind.krx.co.kr/external/2022/03/15/001930/20220315004664/11011.htm",
+        "basis": "Different legal entity; not added to PT Lotte Mart Indonesia sales."
+      },
+      {
+        "company": "HappyFresh / ICART GROUP",
+        "source": "https://www.navercorp.com/navercorp_/ir/auditReport/2022/NAVER_Consolidated%20Audit%20Report_FY21_Signed.pdf",
+        "finding": "Investor financial report checked; no matching 2020 Indonesia revenue established."
+      },
+      {
+        "company": "Sayurbox",
+        "source": "https://ejurnal.stie-trianandra.ac.id/index.php/jubima/article/view/2696",
+        "candidate2020RevenueIDR": 592135110,
+        "finding": "Retrospective study, not audited nationwide financial statements; local Surabaya context, national scope unverified; excluded."
+      }
+    ],
+    "currencyConversion": {
+      "year": 2020,
+      "method": "Annual-average cross-rate approximation: KRW revenue ÷ KRW per USD × IDR per USD. USD case estimates × IDR per USD. All chart values in IDR trillion.",
+      "IDRperUSD": 14525,
+      "KRWperUSD": 1180.1,
+      "IDRperKRW": 12.30827895941022,
+      "LotteMartRevenueIDR": 2465691787327.345,
+      "precision": "Approximate translation, not originally reported IDR revenue or a restatement of audited accounts.",
+      "sourceIds": [
+        "FX-IDR20",
+        "FX-KRW20"
+      ]
+    }
+  }
+}
