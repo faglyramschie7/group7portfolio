@@ -1468,7 +1468,7 @@
 <div class="deck-toolbar"><div><h2>{{ t(currentSlide < 3 ? "Company background" : currentSlide === 3 ? "Organizational structure" : currentSlide === 4 ? "Vision & mission" : currentSlide === 5 ? "Background of the study" : currentSlide === 6 ? "Statement of the problem" : currentSlide <= 8 ? "Company background" : (currentSlide >= 9 && currentSlide <= 12) ? "Market footprint in 2020" : (currentSlide >= 13 && currentSlide <= 14) ? "PESTLE analysis" : (currentSlide >= 15 && currentSlide <= 16) ? "Porter’s Five Forces" : currentSlide === 17 ? "Five main competitors" : currentSlide === 18 ? "CPM competitive evidence" : currentSlide === 19 ? "Competitive Profile Matrix (CPM)" : currentSlide === 20 ? "SWOT Analysis (Diagnostic Overview)" : currentSlide === 21 ? "External Factor Evaluation (EFE Matrix)" : currentSlide === 22 ? "Internal Factor Evaluation (IFE Matrix)" : "Porter’s Five Forces") }}</h2><p>{{ t("HTML presentation · Use ← and → to change slides") }}</p></div><div class="deck-toolbar-actions"><div class="deck-lang-switch" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="present" type="button" @click="present">{{ t("Present") }}</button></div></div>
 <div class="deck-frame" :aria-label="t(&quot;Presentation slides&quot;)">
 
-<article v-if="currentSlide < 2 || currentSlide === 8 || currentSlide === 5 || (currentSlide >= 9 && currentSlide <= 12) || currentSlide >= 17" class="deck-slide" :class="{'exhibit6-slide': currentSlide === 8, 'market-footprint-slide': currentSlide >= 9 && currentSlide <= 12, 'cpm-evidence-slide': currentSlide === 18, 'cpm-slide': currentSlide === 19, 'swot-slide': currentSlide === 20, 'efe-slide': currentSlide === 21, 'ife-slide': currentSlide === 22, 'tows-slide': currentSlide === 23}" :key="currentSlide" :aria-label="activeSlide.label" v-html="translateHtml(activeSlide.html)"></article>
+<article v-if="currentSlide < 2 || currentSlide === 8 || currentSlide === 5 || (currentSlide >= 9 && currentSlide <= 12) || currentSlide >= 17" class="deck-slide" :class="{'exhibit6-slide': currentSlide === 8, 'market-footprint-slide': currentSlide >= 9 && currentSlide <= 12, 'cpm-evidence-slide': currentSlide === 18, 'cpm-slide': currentSlide === 19, 'swot-slide': currentSlide === 20, 'efe-slide': currentSlide === 21, 'ife-slide': currentSlide === 22, 'tows-slide': currentSlide === 23}" :key="currentSlide + '-' + language" :aria-label="activeSlide.label" v-html="translateHtml(activeSlide.html)"></article>
 <article v-else-if="currentSlide === 2" class="deck-slide portfolio-slide" key="brand-gallery" :aria-label="t(&quot;Slide 3: Explore MPPA retail formats&quot;)">
 <div class="deck-kicker">{{ t("Company background · Retail portfolio") }}</div><h2>{{ t("Meet MPPA’s retail formats") }}</h2>
 <div class="portfolio-explorer"><div class="brand-photo-stage"><transition name="brand-photo" mode="out-in"><img v-if="activeBrand.photo" :key="activeBrand.id" class="brand-photo" :class="{'promotional-image': activeBrand.id === 'hypermart'}" :src="'assets/' + activeBrand.photo" :alt="activeBrand.name === 'Hypermart' ? 'Official Hypermart promotional image, 2025' : activeBrand.name + ' store, official MPPA image'"><div v-else key="smartclub-logo" class="brand-photo logo-stage"><img :src="'assets/' + activeBrand.logo" alt="SmartClub logo"></div></transition></div>
@@ -1571,10 +1571,17 @@ const { createApp, ref, computed, onMounted, onUnmounted } = Vue;
 createApp({
  setup() {
 
+  // Force Indonesian as default; only use English if user actively selected 'en' on the new selector
   let savedLanguage='id';
   try {
-    const stored=localStorage.getItem('mppa-language');
-    if(stored==='en'||stored==='id')savedLanguage=stored;
+    const stored=localStorage.getItem('mppa-lang-choice');
+    if(stored==='en'||stored==='id'){
+      savedLanguage=stored;
+    } else {
+      savedLanguage='id';
+      localStorage.setItem('mppa-lang-choice','id');
+      localStorage.setItem('mppa-language','id');
+    }
   } catch(error) {}
   const language=ref(savedLanguage);
   const dictionary=window.MPPA_TRANSLATIONS_ID || {};
@@ -1596,22 +1603,26 @@ createApp({
   window.t = t;
   function translateHtml(markup) {
    if(language.value==='en')return markup;
-   const doc=new DOMParser().parseFromString(markup,'text/html');
-   const walker=doc.createTreeWalker(doc.body,NodeFilter.SHOW_TEXT);let node;
-   while(node=walker.nextNode())if(node.textContent.trim())node.textContent=node.textContent.replace(node.textContent.trim(),t(node.textContent.trim()));
-   doc.querySelectorAll('[data-name]').forEach(el => el.setAttribute('data-name', t(el.getAttribute('data-name'))));
-   doc.querySelectorAll('[data-desc]').forEach(el => el.setAttribute('data-desc', t(el.getAttribute('data-desc'))));
-   doc.querySelectorAll('[data-expl]').forEach(el => el.setAttribute('data-expl', t(el.getAttribute('data-expl'))));
-   doc.querySelectorAll('[data-rationale]').forEach(el => el.setAttribute('data-rationale', t(el.getAttribute('data-rationale'))));
-   doc.querySelectorAll('[data-evidence]').forEach(el => el.setAttribute('data-evidence', t(el.getAttribute('data-evidence'))));
-   doc.querySelectorAll('[data-rating-label]').forEach(el => el.setAttribute('data-rating-label', t(el.getAttribute('data-rating-label'))));
-   doc.querySelectorAll('[data-metric]').forEach(el => el.setAttribute('data-metric', t(el.getAttribute('data-metric'))));
-   doc.querySelectorAll('[data-factor]').forEach(el => el.setAttribute('data-factor', t(el.getAttribute('data-factor'))));
-   return doc.body.innerHTML;
+   // Rock-solid regex string translation that works in all browsers and won't skip nodes
+   let result = markup.replace(/>([^<]+)</g, (match, text) => {
+     const trimmed = text.trim();
+     if (!trimmed) return match;
+     const translated = t(trimmed);
+     return '>' + text.replace(trimmed, translated) + '<';
+   });
+   const attrList = ['data-name', 'data-desc', 'data-expl', 'data-rationale', 'data-evidence', 'data-rating-label', 'data-metric', 'data-factor'];
+   attrList.forEach(attr => {
+     const attrRegex = new RegExp('(' + attr + '=\")([^\"]+)(\")', 'g');
+     result = result.replace(attrRegex, (m, p1, val, p3) => p1 + t(val) + p3);
+   });
+   return result;
   }
   function setLanguage(next) {
    language.value=next==='id'?'id':'en';document.documentElement.lang=language.value;
-   try { localStorage.setItem('mppa-language',language.value); } catch(error) {}
+   try {
+     localStorage.setItem('mppa-lang-choice',language.value);
+     localStorage.setItem('mppa-language',language.value);
+   } catch(error) {}
   }
   window.setLanguage = setLanguage;
   document.documentElement.lang=language.value;
