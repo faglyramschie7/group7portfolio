@@ -852,6 +852,9 @@ window.MPPA_TRANSLATIONS_ID = {
   "Change Fixed Mall Rent into Variable Percentage of Sales": "Ubah Sewa Tetap Mall Menjadi Persentase Variabel dari Penjualan",
   "Grow Low-Cost Private Label Brands for Rice & Essentials": "Kembangkan Merek Privat Murah Hypermart untuk Beras & Sembako",
   "Stop Unprofitable Discount Wars vs Giant Minimarkets": "Hentikan Perang Diskon Tak Menguntungkan Lawan Raksasa Minimarket",
+
+  "Salim Group (Anthoni Salim) (>89% DNET/private); Indofood (ICBP) master supply integration; continuous cash reinvestment (~1,000 stores/yr).Indoritel AR2020 p. 24": "Grup Salim (Anthoni Salim) (>89% DNET/swasta); integrasi pasokan utama Indofood (ICBP); reinvestasi kas berkelanjutan (~1.000 gerai/tahun). Indoritel AR2020 hlm. 24",
+  "Home delivery and Park & Pickup; partnered with GrabMart (97 stores), Shopee, and Tokopedia.AR2020 p. 40": "Pengantaran ke rumah dan Park & Pickup; bermitra dengan GrabMart (97 gerai), Shopee, dan Tokopedia. AR2020 hlm. 40",
 };
 
 Object.assign(window.MPPA_TRANSLATIONS_ID, {

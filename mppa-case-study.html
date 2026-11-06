@@ -1564,24 +1564,26 @@
 
 <noscript><p style="padding:24px">Enable JavaScript to open the study notes and presentation.</p></noscript>
 <script src="vendor/vue-3.5.13.global.prod.js"></script>
-<script src="assets/translations-id.js"></script>
+<script src="assets/translations-id.js?v=20261106_v5"></script>
 <script>
 
 const { createApp, ref, computed, onMounted, onUnmounted } = Vue;
 createApp({
  setup() {
 
-  // Force Indonesian as default; only use English if user actively selected 'en' on the new selector
+  // Default strictly to Indonesian ('id') on load
   let savedLanguage='id';
   try {
-    const stored=localStorage.getItem('mppa-lang-choice');
-    if(stored==='en'||stored==='id'){
-      savedLanguage=stored;
+    const sessionPref=sessionStorage.getItem('mppa-user-lang');
+    if(sessionPref==='en'||sessionPref==='id'){
+      savedLanguage=sessionPref;
     } else {
       savedLanguage='id';
-      localStorage.setItem('mppa-lang-choice','id');
-      localStorage.setItem('mppa-language','id');
+      sessionStorage.setItem('mppa-user-lang','id');
     }
+    // Clear sticky localStorage keys that could trap returning visitors in English
+    localStorage.removeItem('mppa-lang-choice');
+    localStorage.removeItem('mppa-language');
   } catch(error) {}
   const language=ref(savedLanguage);
   const dictionary=window.MPPA_TRANSLATIONS_ID || {};
@@ -1618,10 +1620,9 @@ createApp({
    return result;
   }
   function setLanguage(next) {
-   language.value=next==='id'?'id':'en';document.documentElement.lang=language.value;
+   language.value=next==='en'?'en':'id';document.documentElement.lang=language.value;
    try {
-     localStorage.setItem('mppa-lang-choice',language.value);
-     localStorage.setItem('mppa-language',language.value);
+     sessionStorage.setItem('mppa-user-lang',language.value);
    } catch(error) {}
   }
   window.setLanguage = setLanguage;
