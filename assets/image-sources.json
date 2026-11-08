@@ -50,5 +50,25 @@
   {
     "file": "smartclub-logo.png",
     "source": "https://www.mppa.co.id/images/logo/Smartclub.png"
+  },
+  {
+    "file": "dark-store.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dark-store_Perekrestok.ru_Moscow.jpg",
+    "desc": "Modern grocery dark fulfillment hub"
+  },
+  {
+    "file": "cold-storage.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Warehouse_distribution-center-1136510.jpg",
+    "desc": "Automated central logistics cold storage"
+  },
+  {
+    "file": "mall-anchor.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ciputra_Shopping_Mall,_Jakarta,_Indonesia.jpg",
+    "desc": "Shopping mall anchor retail footprint (Jakarta)"
+  },
+  {
+    "file": "supermarket-checkout.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Extra_Coop_supermarket,_Bergen_Storsenter,_Norway_2017-11-01_cashier_checkout_a.jpg",
+    "desc": "Supermarket grocery POS checkout & cash flow"
   }
 ]
