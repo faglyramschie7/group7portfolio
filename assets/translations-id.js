@@ -4573,4 +4573,10 @@ Object.assign(window.MPPA_TRANSLATIONS_ID, {
   "Hyfresh (2.0%)": "Hyfresh (2,0%)",
   "Boston HBC (0.7%)": "Boston HBC (0,7%)",
   "FMX": "FMX",
+  "Hy-Express Pilot (12–18 mo gate)": "Pilot Hy-Express (Evaluasi 12–18 bln)",
+  "Exit loss-making kiosk leases, pilot Hy-Express in 5–6 transit hubs (12–18 mo gate), and liquidate wholesale to self-fund Hyfresh.": "Tutup sewa kios yang merugi, uji coba Hy-Express di 5–6 titik transit (evaluasi 12–18 bln), dan likuidasi grosir demi mendanai Hyfresh.",
+  "Terminate loss-making mall kiosk leases while testing an asset-light 12–18 month 'Hy-Express' pilot in 5–6 transit nodes; liquidate SmartClub wholesale.": "Mengakhiri sewa kios mal yang merugi sembari menguji coba pilot 'Hy-Express' hemat modal selama 12–18 bulan di 5–6 titik transit; likuidasi grosir SmartClub.",
+  "FMX convenience kiosks generate negligible revenue (0.7% of sales) with zero scale against 33,000 minimarkets. MPPA executes a Mini–Mini Retrenchment plan: terminate unprofitable mall leases immediately to eliminate PSAK 73 liabilities, while converting 5–6 viable transit concourses into an asset-light 'Hy-Express' pilot testing fresh RTE and digital click-and-collect. A strict 12–18 month stage-gate review determines whether to retain a transit niche or exit convenience 100%. Liquidate SmartClub wholesale to fund Hyfresh expansion.": "Kios minimarket FMX hanya menyumbang penjualan kecil (0,7%) tanpa skala memadai melawan 33.000 minimarket. MPPA menjalankan rencana Retrenchment Mini–Mini: menghentikan sewa mal yang merugi untuk menghapus liabilitas PSAK 73, sembari merombak 5–6 titik transit potensial menjadi pilot 'Hy-Express' hemat modal guna menguji produk siap santap segar dan loker ambil mandiri. Evaluasi bertahap 12–18 bulan menentukan apakah akan mempertahankan ceruk transit atau keluar 100%. Likuidasi grosir SmartClub demi mendanai ekspansi Hyfresh.",
+  "Exit Unviable Kiosks, Pilot Hy-Express & Divest Wholesale": "Tutup Kios Merugi, Pilot Hy-Express & Divestasi Grosir",
+  "Exit Unviable Kiosks, Pilot Hy-Express &amp; Divest Wholesale": "Tutup Kios Merugi, Pilot Hy-Express &amp; Divestasi Grosir",
 });
