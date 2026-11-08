@@ -2899,6 +2899,10 @@ function inspectIeDivisionRow(divisionKey) {
     bodyEl.innerHTML = isId ? data.defense_id : data.defense;
   }
 
+  document.querySelectorAll('.ie-fmt-btn').forEach(btn => {
+    btn.classList.toggle('is-active-fmt', btn.dataset.division === divisionKey);
+  });
+
   document.querySelectorAll('.ie-table tbody tr').forEach(row => {
     const match = row.dataset.division === divisionKey;
     row.classList.toggle('is-active-row', match);
