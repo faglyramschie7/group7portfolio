@@ -4579,4 +4579,13 @@ Object.assign(window.MPPA_TRANSLATIONS_ID, {
   "FMX convenience kiosks generate negligible revenue (0.7% of sales) with zero scale against 33,000 minimarkets. MPPA executes a Mini–Mini Retrenchment plan: terminate unprofitable mall leases immediately to eliminate PSAK 73 liabilities, while converting 5–6 viable transit concourses into an asset-light 'Hy-Express' pilot testing fresh RTE and digital click-and-collect. A strict 12–18 month stage-gate review determines whether to retain a transit niche or exit convenience 100%. Liquidate SmartClub wholesale to fund Hyfresh expansion.": "Kios minimarket FMX hanya menyumbang penjualan kecil (0,7%) tanpa skala memadai melawan 33.000 minimarket. MPPA menjalankan rencana Retrenchment Mini–Mini: menghentikan sewa mal yang merugi untuk menghapus liabilitas PSAK 73, sembari merombak 5–6 titik transit potensial menjadi pilot 'Hy-Express' hemat modal guna menguji produk siap santap segar dan loker ambil mandiri. Evaluasi bertahap 12–18 bulan menentukan apakah akan mempertahankan ceruk transit atau keluar 100%. Likuidasi grosir SmartClub demi mendanai ekspansi Hyfresh.",
   "Exit Unviable Kiosks, Pilot Hy-Express & Divest Wholesale": "Tutup Kios Merugi, Pilot Hy-Express & Divestasi Grosir",
   "Exit Unviable Kiosks, Pilot Hy-Express &amp; Divest Wholesale": "Tutup Kios Merugi, Pilot Hy-Express &amp; Divestasi Grosir",
+  "97.4% of MPPA Revenues Concentrated in Dogs & Declining Formats": "97,4% Pendapatan MPPA Terkonsentrasi di Kuadran Dogs & Format Menurun",
+  "1.80 (Weak)": "1,80 (Lemah)",
+  "1.85 (Low)": "1,85 (Rendah)",
+  "Cell IX Harvest/Divest": "Sel IX Panen/Divestasi",
+  "Pruning & Transit Pilot": "Perampingan & Pilot Transit",
+  "Pruning &amp; Transit Pilot": "Perampingan &amp; Pilot Transit",
+  "Indomaret (Salim Group)": "Indomaret (Salim Group)",
+  "* All 6 MPPA retail divisions (100% reconciled to audited Rp6,747B across 211 stores) are plotted according to Fred David IE criteria.": "* Seluruh 6 divisi ritel MPPA (100% terekonsiliasi ke angka audit Rp6.747M di 211 gerai) telah di-plot sesuai kriteria IE Fred David.",
+  "6 Retail Formats + Corporate Consolidated (All Plotted) · Fred David 9-Cell Mapping": "6 Format Ritel + Konsolidasi Korporat (Semua Di-plot) · Pemetaan 9-Sel Fred David",
 });
