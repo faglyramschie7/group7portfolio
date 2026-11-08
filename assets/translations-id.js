@@ -1183,6 +1183,27 @@ window.MPPA_TRANSLATIONS_ID = {
   "Unify fragmented small formats under the MPPA master brand ('Hy-') while maintaining active customer storefronts with hybrid O2O delivery bays.": "Satukan format kecil yang terfragmentasi di bawah merek master MPPA ('Hy-') dengan tetap mempertahankan etalase ritel aktif dan integrasi pengantaran O2O.",
   "Exit Non-Yielding Kiosks (FMX) & Divest Wholesale (SmartClub)": "Tutup Kios Non-Produktif (FMX) & Divestasi Grosir (SmartClub)",
   "Exit chronically losing convenience kiosks (FMX) and liquidate subscale wholesale (SmartClub) to eliminate lease debt and free working capital.": "Akhiri sewa kios convenience non-produktif (FMX) dan likuidasi grosir skala kerdil (SmartClub) demi menghapus utang sewa dan membebaskan modal kerja.",
+
+  "Total Attractiveness Score (TAS):": "Total Skor Daya Tarik (TAS):",
+  "Matahari.xlsx Sheet 'QSPM' Row 66": "Matahari.xlsx Lembar 'QSPM' Baris 66",
+  "Strengths Subtotal (10 Factors)": "Subtotal Kekuatan (10 Faktor)",
+  "Weaknesses Subtotal (10 Factors)": "Subtotal Kelemahan (10 Faktor)",
+  "Opportunities Subtotal (10 Factors)": "Subtotal Peluang (10 Faktor)",
+  "Threats Subtotal (10 Factors)": "Subtotal Ancaman (10 Faktor)",
+  "Sources: Fred David Strategic Management Ch. 6; Audited AR2020; Matahari.xlsx Sheet 'QSPM'": "Sumber: Fred David Strategic Management Bab 6; Laporan Tahunan Teraudit 2020; Lembar 'QSPM' Matahari.xlsx",
+  "Slide 29: Quantitative Strategic Planning Matrix (QSPM)": "Slide 29: Quantitative Strategic Planning Matrix (QSPM)",
+  "QSPM Matrix": "Matriks QSPM",
+  "Weight: 0.45": "Bobot: 0,45",
+  "Weight: 0.55": "Bobot: 0,55",
+  "Weight: 0.50": "Bobot: 0,50",
+  "Strat 1 TAS:": "TAS Strat 1:",
+  "Strat 2 TAS:": "TAS Strat 2:",
+  "S1 AS": "AS S1",
+  "S1 TAS": "TAS S1",
+  "S2 AS": "AS S2",
+  "S2 TAS": "TAS S2",
+  "• Strategy 1 (TAS 6.620) is the superior strategic choice, leading Strategy 2 by +1.160 TAS points. It decisively outperforms in addressing Weaknesses (+0.450) and neutralizing Threats (+0.470). By deploying compact 500–1,000 m² neighborhood fresh stores, MPPA circumvents enclosed shopping mall restrictions, escapes PSAK 73 heavy lease liabilities, avoids direct dry-grocery price wars with Indomaret/Alfamart, and matches Indonesia's surge in home cooking.": "• Strategi 1 (TAS 6,620) adalah pilihan strategis yang unggul, memimpin atas Strategi 2 sebesar +1,160 poin TAS. Strategi ini secara meyakinkan mengungguli dalam mengatasi Kelemahan (+0,450) dan menetralkan Ancaman (+0,470). Melalui penggelaran gerai segar pemukiman ringkas 500–1.000 m², MPPA menghindari pembatasan jam operasional mal tertutup, lepas dari beban liabilitas sewa berat PSAK 73, terhindar dari perang harga sembako kering langsung melawan Indomaret/Alfamart, serta selaras dengan lonjakan memasak di rumah masyarakat Indonesia.",
+  "• Strategy 2 (TAS 5.460) is retained as an operational necessity: Rather than viewing them as mutually exclusive, MPPA uses Strategy 2 as a self-funding defensive restructuring operation (rightsizing hypermarket lease spaces to liberate working capital) to aggressively feed Strategy 1's neighborhood rollout.": "• Strategi 2 (TAS 5,460) dipertahankan sebagai kebutuhan operasional: Alih-alih dipandang sebagai pilihan yang saling meniadakan, MPPA memanfaatkan Strategi 2 sebagai restrukturisasi defensif yang mendanai diri sendiri (merampingkan luas ruang sewa hipermarket guna membebaskan modal kerja) untuk secara agresif mempercepat ekspansi gerai pemukiman Strategi 1.",
 };
 
 Object.assign(window.MPPA_TRANSLATIONS_ID, {
