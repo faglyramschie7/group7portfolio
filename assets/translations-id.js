@@ -4981,4 +4981,17 @@ Object.assign(window.MPPA_TRANSLATIONS_ID, {
   "Strategy 3": "Strategi 3",
   "Logistics": "Logistik",
   "EBITDA": "EBITDA",
+
+  // --- Slide 30 Executive Redesign Translations ---
+  "Interactive 5-Year Capital Blueprint: Click any line item to inspect its operational model, store economics, and covenant safeguards": "Cetak Biru Modal 5 Tahun Interaktif: Klik baris mana saja untuk melihat model operasional, ekonomi gerai, dan perlindungan kovenan",
+  "~Rp 90.0B / Year phased across growth & dark store conversion": "~Rp 90,0M / Tahun disalurkan bertahap untuk pertumbuhan & konversi toko gelap",
+  "100% funded internally via lease savings, divestments & cash flow": "100% didanai internal via efisiensi sewa, hasil divestasi & arus kas",
+  "0% external bank borrowing; strictly preserves BNI credit covenants": "0% pinjaman bank eksternal; menjaga kovenan kredit BNI secara ketat",
+  "Total: Rp 450.0B (100.0%)": "Total: Rp 450,0M (100,0%)",
+  "Sourced: +Rp 450.0B (100.0%)": "Terkumpul: +Rp 450,0M (100,0%)",
+  "Total Self-Funded Capital Inflow": "Total Arus Kas Masuk Modal Mandiri",
+  "Net External Financing Gap (Debt Required)": "Kebutuhan Pembiayaan Eksternal Bersih (Utang Diperlukan)",
+  "Infrastructure": "Infrastruktur",
+  "Select any row on the left to inspect detailed financial metrics & strategic mechanisms": "Pilih baris mana saja di sebelah kiri untuk melihat metrik keuangan & mekanisme strategis",
+  "Financial Prudence & Debt Covenant Moat": "Benteng Kehati-hatian Keuangan & Kovenan Utang",
 });
