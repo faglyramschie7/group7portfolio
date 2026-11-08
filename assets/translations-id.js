@@ -1179,6 +1179,10 @@ window.MPPA_TRANSLATIONS_ID = {
   "Price Elasticity": "Elastisitas Harga Konsumen",
   "Competitive Pressure": "Tekanan Persaingan Minimarket",
   "Barriers to Entry": "Beban Regulasi & PSAK 73",
+  "Rebrand & Unify Storefronts Under MPPA 'Hy-' Master Brand": "Rebranding & Penyatuan Gerai di Bawah Merek Master MPPA 'Hy-'",
+  "Unify fragmented small formats under the MPPA master brand ('Hy-') while maintaining active customer storefronts with hybrid O2O delivery bays.": "Satukan format kecil yang terfragmentasi di bawah merek master MPPA ('Hy-') dengan tetap mempertahankan etalase ritel aktif dan integrasi pengantaran O2O.",
+  "Exit Non-Yielding Kiosks (FMX) & Divest Wholesale (SmartClub)": "Tutup Kios Non-Produktif (FMX) & Divestasi Grosir (SmartClub)",
+  "Exit chronically losing convenience kiosks (FMX) and liquidate subscale wholesale (SmartClub) to eliminate lease debt and free working capital.": "Akhiri sewa kios convenience non-produktif (FMX) dan likuidasi grosir skala kerdil (SmartClub) demi menghapus utang sewa dan membebaskan modal kerja.",
 };
 
 Object.assign(window.MPPA_TRANSLATIONS_ID, {
