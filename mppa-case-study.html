@@ -1151,6 +1151,60 @@
 .as-2{background:#fef3c7;color:#b45309}
 .as-1{background:#fee2e2;color:#dc2626}
 
+
+#bcg-ins-box,#ie-ins-box,#space-ins-box,#cpm-ins-box,#swot-ins-box,#efe-ins-box,#ife-ins-box,#tows-ins-box{display:none!important}
+.matrix-preview{position:fixed;z-index:100000;pointer-events:none;width:max-content;max-width:min(380px,calc(100vw - 16px));box-sizing:border-box;padding:10px 13px;background:#241c21;color:#fff;border-radius:8px;box-shadow:0 5px 20px #241c2140;font:13px/1.4 Arial,sans-serif}
+.matrix-preview strong,.matrix-preview span,.matrix-preview small{display:block}.matrix-preview span{margin-top:5px;color:#f2e6ec}.matrix-preview small{margin-top:7px;color:#e8bac9}
+.matrix-detail{position:fixed;inset:0 0 0 auto;margin:0;width:min(540px,94vw);max-width:none;height:100%;max-height:none;padding:0;box-sizing:border-box;border:0;overflow:hidden;background:#fff;color:#29272b;font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;box-shadow:-16px 0 48px rgba(33,24,32,0.22);border-top-left-radius:16px;border-bottom-left-radius:16px}
+.matrix-detail[open]{display:flex;flex-direction:column;transform:translateX(0)}
+.matrix-detail::backdrop{background:rgba(25,18,24,0.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+@media(prefers-reduced-motion:no-preference){
+  .matrix-detail[open]{animation:matrixDrawerSlide .22s cubic-bezier(.16,1,.3,1) forwards}
+  .matrix-detail::backdrop{animation:matrixBackdropFade .2s ease-out forwards}
+}
+@keyframes matrixDrawerSlide{0%{transform:translateX(100%)}100%{transform:translateX(0)}}
+@keyframes matrixBackdropFade{0%{opacity:0}100%{opacity:1}}
+.matrix-detail-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 24px 18px;border-bottom:1px solid #ebdbe2;border-top:4px solid #df0036;background:#fff;flex-shrink:0;transition:border-top-color .2s ease}
+.matrix-detail-head-main{min-width:0;flex:1}
+.matrix-meta-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}
+.matrix-kind-badge{display:inline-flex;align-items:center;gap:4px;padding:2.5px 8px;border-radius:4px;background:#fcebf0;color:#b6002d;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.matrix-status-pill{display:inline-flex;align-items:center;padding:2.5px 9px;border-radius:999px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+.matrix-detail h3{margin:0;font-size:22px;font-weight:800;color:#1e181c;line-height:1.25;letter-spacing:-.015em;overflow-wrap:anywhere}
+.matrix-detail-sub{margin:4px 0 0;font-size:12.5px;color:#73616c;font-weight:500;line-height:1.4}
+.matrix-detail-close{background:#f5eff2;color:#51454d;border:1px solid #ebdbe2;border-radius:50%;width:36px;height:36px;padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:all .15s ease-in-out}
+.matrix-detail-close:hover{background:#eadde4;color:#211820;transform:scale(1.05)}
+.matrix-detail-close:focus-visible{outline:2px solid #df0036;outline-offset:2px}
+.matrix-detail-scroll{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:20px 24px 28px;display:flex;flex-direction:column;gap:18px;scrollbar-width:thin;scrollbar-color:#d8c8d0 transparent}
+.matrix-detail-scroll::-webkit-scrollbar{width:6px}
+.matrix-detail-scroll::-webkit-scrollbar-thumb{background:#d8c8d0;border-radius:3px}
+.matrix-detail-section{display:flex;flex-direction:column;gap:8px}
+.matrix-section-header{display:flex;align-items:center;gap:7px}
+.matrix-sec-icon{font-size:14px;display:inline-flex;align-items:center;justify-content:center;color:#b6002d;flex-shrink:0}
+.matrix-section-header h4{margin:0;font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#5a4c55}
+.matrix-kpi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.matrix-kpi-card{background:#faf7f9;border:1px solid #ebdbe2;border-radius:8px;padding:11px 13px;display:flex;flex-direction:column;justify-content:space-between;gap:4px;box-shadow:0 1px 3px rgba(48,37,43,0.03);transition:transform .15s ease,box-shadow .15s ease}
+.matrix-kpi-card:hover{box-shadow:0 3px 10px rgba(48,37,43,0.06);border-color:#df003640}
+.matrix-kpi-card.kpi-full{grid-column:1 / -1}
+.matrix-kpi-label{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#73616c}
+.matrix-kpi-val-row{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.matrix-kpi-val{font-size:17px;font-weight:800;color:#1e181c;font-variant-numeric:tabular-nums;line-height:1.2}
+.matrix-kpi-badge{display:inline-block;padding:2px 7px;border-radius:4px;background:#f3e9ee;color:#8b1d3d;font-size:10.5px;font-weight:700;letter-spacing:.02em}
+.matrix-kpi-sub{font-size:11px;color:#63545e;line-height:1.35}
+.matrix-card{border-radius:8px;padding:13px 15px;border:1px solid #ebdbe2}
+.matrix-analysis-card{background:#fff;box-shadow:0 2px 8px rgba(48,37,43,0.03)}
+.matrix-analysis-card p{margin:0;font-size:13.5px;line-height:1.62;color:#2e262c;overflow-wrap:anywhere}
+.matrix-analysis-card p+p{margin-top:10px}
+.matrix-rec-card{background:linear-gradient(180deg,#fffafc 0%,#faf3f6 100%);border-left:4px solid #df0036;box-shadow:0 2px 8px rgba(223,0,54,0.04)}
+.matrix-rec-title{margin:0 0 6px;font-size:13.5px;font-weight:800;color:#8b1d3d;line-height:1.35}
+.matrix-rec-body{margin:0;font-size:13px;line-height:1.6;color:#2e262c;overflow-wrap:anywhere}
+.matrix-calc-card{background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:12px 14px}
+.matrix-calc-row{margin:0 0 6px;font-size:12.5px;line-height:1.45;color:#334155;font-variant-numeric:tabular-nums}
+.matrix-calc-row:last-child{margin-bottom:0}
+.matrix-sources-container{padding-top:14px;border-top:1px solid #ebdbe2}
+.matrix-sources-list{display:flex;flex-wrap:wrap;gap:6px}
+.matrix-source-pill{display:inline-flex;align-items:center;gap:5px;background:#faf7f9;border:1px solid #ebdbe2;border-radius:6px;padding:4px 9px;font-size:11px;color:#5a4c55;line-height:1.3}
+.matrix-source-pill svg{flex-shrink:0;color:#8a7c85}
+@media(max-width:480px){.matrix-kpi-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -2224,6 +2278,12 @@ function updateBcgCalculation(key) {
   `;
 }
 
+window.bcgDivisionsData = bcgDivisionsData;
+window.bcgCalculationsData = bcgCalculationsData;
+window.selectBcgDivision = selectBcgDivision;
+window.inspectBcgDivisionRow = inspectBcgDivisionRow;
+window.resetBcgInspector = resetBcgInspector;
+
 function selectBcgDivision(divisionKey) {
   updateBcgCalculation(divisionKey);
   activeBcgDivision = divisionKey;
@@ -2317,28 +2377,7 @@ document.addEventListener('click', function(e) {
   }
 });
 
-document.addEventListener('mouseover', function(e) {
-  const tableRow = e.target.closest('.bcg-row');
-  const bubbleGrp = e.target.closest('.bcg-bubble-group');
 
-  if (tableRow && tableRow.dataset.division) {
-    inspectBcgDivisionRow(tableRow.dataset.division);
-  } else if (bubbleGrp && bubbleGrp.dataset.division) {
-    inspectBcgDivisionRow(bubbleGrp.dataset.division);
-  }
-});
-
-document.addEventListener('mouseout', function(e) {
-  const tableRow = e.target.closest('.bcg-row');
-  const bubbleGrp = e.target.closest('.bcg-bubble-group');
-
-  if (tableRow || bubbleGrp) {
-    const related = e.relatedTarget;
-    if (!related || (!related.closest('.bcg-row') && !related.closest('.bcg-bubble-group'))) {
-      resetBcgInspector();
-    }
-  }
-});
 
 // Check URL parameter ?div= for direct BCG division selection
 window.addEventListener('load', function() {
@@ -2591,7 +2630,7 @@ document.addEventListener('click', function(e) {
 
 
 
-const spaceFactorsData = {"mppa": {"fp_0": {"title": "Current Ratio: Score 2.0 (Low Liquidity)", "title_id": "Rasio Lancar: Skor 2,0 (Likuiditas Rendah)", "source": "AR2020 p. 55; Financial Note 38", "source_id": "AR2020 hlm. 55; Catatan Keuangan 38", "defense": "Current ratio was 0.72x (Rp2,062B current assets vs Rp2,859B current liabilities). Deficit of Rp797B creates severe working capital pressure, warranting a conservative rating of 2.0.", "defense_id": "Rasio lancar tercatat 0,72x (aset lancar Rp2.062M vs liabilitas lancar Rp2.859M). Defisit modal kerja Rp797M menimbulkan tekanan likuiditas ketat, membenarkan skor konservatif 2,0."}, "fp_1": {"title": "Debt to Equity: Score 1.0 (Critical Leverage)", "title_id": "Utang terhadap Ekuitas: Skor 1,0 (Leverage Kritis)", "source": "AR2020 Balance Sheet; Case Exhibit 7", "source_id": "Neraca AR2020; Kasus Lampiran 7", "defense": "Total liabilities reached Rp4,449B against negative/eroded tangible equity (DER 10.5x). Extreme balance sheet vulnerability strictly limits additional debt capacity, justifying the minimum score of 1.0.", "defense_id": "Total liabilitas mencapai Rp4.449M dengan erosi ekuitas nyata (DER 10,5x). Kerentanan neraca ekstrem membatasi kapasitas pinjaman baru, sehingga mutlak berhak atas skor minimum 1,0."}, "fp_2": {"title": "Net Income: Score 1.0 (Chronic Net Losses)", "title_id": "Laba Bersih: Skor 1,0 (Kerugian Bersih Kronis)", "source": "AR2020 p. 54; Case Exhibit 7", "source_id": "AR2020 hlm. 54; Kasus Lampiran 7", "defense": "Net loss of -Rp887.5B in 2020 marked the 4th consecutive year of heavy losses (-Rp553B in 2019, -Rp898B in 2018). Severe destruction of shareholder value dictates score 1.0.", "defense_id": "Rugi bersih -Rp887,5M pada 2020 menandai tahun ke-4 kerugian beruntun (-Rp553M di 2019, -Rp898M di 2018). Tergerusnya modal pemegang saham mendikte peringkat minimum 1,0."}, "fp_3": {"title": "Revenue Growth: Score 2.0 (Sales Contraction)", "title_id": "Pertumbuhan Pendapatan: Skor 2,0 (Kontraksi Penjualan)", "source": "AR2020 p. 54; Case Exhibit 5", "source_id": "AR2020 hlm. 54; Kasus Lampiran 5", "defense": "Net sales fell -21.9% from Rp8,665B (2019) to Rp6,747B (2020) due to mall visitor curbs. While essential grocery buffered top-line compared to apparel retailers, severe contraction warrants score 2.0.", "defense_id": "Penjualan bersih merosot -21,9% dari Rp8.665M (2019) menjadi Rp6.747M (2020) akibat pembatasan mal. Meski sembako menahan kejatuhan dibanding ritel fesyen, kontraksi tajam tetap layak diberi skor 2,0."}, "fp_4": {"title": "Inventory Turnover: Score 3.0 (Mixed Stock Velocity)", "title_id": "Perputaran Persediaan: Skor 3,0 (Perputaran Campuran)", "source": "AR2020 Note 8; Case Exhibit 7", "source_id": "AR2020 Catatan 8; Kasus Lampiran 7", "defense": "Inventory turnover was 47.9 days (Rp887B ending inventory). Fast turnover in fresh meat and produce (3\u20135 days) was bogged down by slow-moving non-food general merchandise, justifying a score of 3.0.", "defense_id": "Perputaran persediaan rata-rata 47,9 hari (persediaan akhir Rp887M). Perputaran cepat di produk segar (3-5 hari) terbebani lambatnya produk non-makanan, sehingga skor 3,0 sangat berimbang."}, "cp_0": {"title": "Market Share: Score -5.0 (Minor Share)", "title_id": "Pangsa Pasar: Skor -5,0 (Pangsa Pasar Minor)", "source": "Case Exhibit 5; Industry Estimates", "source_id": "Kasus Lampiran 5; Estimasi Industri", "defense": "MPPA holds ~2.7% of modern grocery sales (Rp6.77T vs Rp250T+ market), heavily dwarfed by Alfamart (Rp76.3T) and Indomaret (Rp85.7T). Low scale warrants score -5.0.", "defense_id": "MPPA hanya menguasai ~2,7% pangsa ritel modern (Rp6,77T dibanding pasar >Rp250T), kalah telak dari Alfamart (Rp76,3T) dan Indomaret (Rp85,7T), membenarkan skor -5,0."}, "cp_1": {"title": "Product Quality: Score -2.0 (Fresh Cold-Chain Leader)", "title_id": "Mutu Produk: Skor -2,0 (Pemimpin Rantai Dingin Segar)", "source": "Case p. 587; Halal Cold Chain Audit", "source_id": "Kasus hlm. 587; Audit Rantai Dingin Halal", "defense": "Halal-certified distribution hubs (Balaraja & Surabaya) give Hypermart top quality in fresh meats, dairy, and produce, significantly outmatching minimarkets. Sits at minor disadvantage of -2.0.", "defense_id": "Gudang rantai dingin bersertifikat Halal (Balaraja & Surabaya) memberi Hypermart keunggulan mutu daging dan produk segar dibanding minimarket, memberikannya keunggulan kompetitif bernilai -2,0."}, "cp_2": {"title": "Customer Loyalty: Score -4.0 (Weak Frequency)", "title_id": "Loyalitas Pelanggan: Skor -4,0 (Frekuensi Rendah)", "source": "Case p. 592; Hicard Active Base", "source_id": "Kasus hlm. 592; Basis Aktif Hicard", "defense": "While Hicard counts 3.5M registered members, average shopping frequency collapsed 43% during mobility curbs as consumers shifted to proximity stores, justifying score -4.0.", "defense_id": "Meskipun Hicard memiliki 3,5 juta anggota terdaftar, frekuensi belanja fisik anjlok 43% selama pembatasan mobilitas karena pelanggan beralih ke minimarket dekat rumah. Skor -4,0."}, "cp_3": {"title": "Variety of Products: Score -2.0 (Wide 30,000 SKUs Assortment)", "title_id": "Variasi Produk: Skor -2,0 (Variasi Luas 30.000 SKU)", "source": "Case Exhibit 4; Merchandising Audit", "source_id": "Kasus Lampiran 4; Audit Merchandising", "defense": "Offers over 30,000 SKUs covering fresh, grocery, and household general merchandise, delivering comprehensive one-stop destination shopping. Scores strong -2.0.", "defense_id": "Menyediakan lebih dari 30.000 SKU mencakup produk segar, sembako, dan kebutuhan rumah tangga untuk belanja serba-ada keluarga, sehingga meraih skor kuat -2,0."}, "cp_4": {"title": "Control over Suppliers: Score -3.0 (Payables Friction)", "title_id": "Kendali Pemasok: Skor -3,0 (Tekanan Pembayaran Utang)", "source": "AR2020 Trade Payables Note 17", "source_id": "AR2020 Catatan Utang Usaha 17", "defense": "750 direct food suppliers provide steady access, but extended trade payable cycles (~95 days) created supplier tensions and occasional delivery delays, warranting score -3.0.", "defense_id": "Didukung 750 pemasok pangan langsung, namun perpanjangan hari utang usaha (~95 hari) memicu ketegangan vendor dan penundaan pasokan, membenarkan skor -3,0."}, "ip_0": {"title": "Growth Potential: Score 5.0 (Resilient $30.7B Grocery Runway)", "title_id": "Potensi Pertumbuhan: Skor 5,0 (Pasar Sembako $30,7M Kuat)", "source": "Euromonitor; Case p. 594", "source_id": "Euromonitor; Kasus hlm. 594", "defense": "Indonesian modern food retail is a massive $30.7B market with online e-grocery expanding +54% CAGR, providing high structural tailwinds for omnichannel players. Score 5.0.", "defense_id": "Pasar ritel pangan Indonesia bernilai $30,7 miliar dengan lonjakan e-grocery +54% CAGR, membuka peluang pertumbuhan omnichannel yang sangat menjanjikan. Skor 5,0."}, "ip_1": {"title": "Financial Stability: Score 4.0 (Inelastic Demand Baseline)", "title_id": "Stabilitas Finansial: Skor 4,0 (Basis Permintaan Pokok)", "source": "Case p. 590; BPS Consumer Basket", "source_id": "Kasus hlm. 590; Keranjang Belanja BPS", "defense": "Staple food items (rice, cooking oil, meats) represent non-discretionary necessities that households must purchase even during recessions, anchoring industry stability at 4.0.", "defense_id": "Kebutuhan pokok pangan (beras, minyak, daging) adalah belanja primer yang wajib dibeli rumah tangga bahkan saat resesi, menjamin stabilitas industri pada skor 4,0."}, "ip_2": {"title": "Ease of Entry: Score 4.0 (High Capital & Logistics Moat)", "title_id": "Hambatan Masuk: Skor 4,0 (Barier Modal & Logistik Tinggi)", "source": "Case Exhibit 4; Supply Chain Infrastructure", "source_id": "Kasus Lampiran 4; Infrastruktur Rantai Pasok", "defense": "Establishing cold chains, temperature-controlled distribution centers, and nationwide vendor relationships requires hundreds of billions in capex, creating high entry barriers (score 4.0).", "defense_id": "Membangun pusat distribusi pendingin dan jaringan pemasok nasional membutuhkan belanja modal ratusan miliar rupiah, menciptakan hambatan masuk yang tinggi (skor 4,0)."}, "ip_3": {"title": "Resource Utilization: Score 3.0 (Low Hypermarket Sales Density)", "title_id": "Pemanfaatan Ruang: Skor 3,0 (Densitas Penjualan Rendah)", "source": "Case p. 592; Store Footprint Matrix", "source_id": "Kasus hlm. 592; Matriks Gerai", "defense": "Massive 5,000\u20137,000 m\u00b2 hypermarket floorplates generated low sales density (~Rp10.2M/m\u00b2), leaving significant under-utilized space in closed mall wings. Modest score 3.0.", "defense_id": "Lantai hipermarket seluas 5.000\u20137.000 m\u00b2 mencatat densitas penjualan rendah (~Rp10,2 juta/m\u00b2), menyisakan ruang berlebih saat trafik mal dibatasi. Skor moderat 3,0."}, "ip_4": {"title": "Profit Potential: Score 3.0 (High Overhead Margin Compression)", "title_id": "Potensi Margin Laba: Skor 3,0 (Tekanan Beban Operasional)", "source": "AR2020 p. 54; Case Exhibit 7", "source_id": "AR2020 hlm. 54; Kasus Lampiran 7", "defense": "Gross margins of 16.9% are heavily burdened by high mall service charges, air conditioning, and logistics, compressing grocery operating margins to slim percentages (score 3.0).", "defense_id": "Margin kotor 16,9% tergerus oleh biaya listrik, pendingin udara, dan sewa mal yang tinggi, menekan margin usaha ritel pangan hingga sangat tipis (skor 3,0)."}, "sp_0": {"title": "Rate of Inflation: Score -4.0 (Purchasing Power Contraction)", "title_id": "Tingkat Inflasi: Skor -4,0 (Penurunan Daya Beli Konsumen)", "source": "Bank Indonesia 2020 Economic Report", "source_id": "Laporan Perekonomian Bank Indonesia 2020", "defense": "Household consumption contracted -2.63% in 2020, forcing middle-class families to downsize grocery baskets and trade down to cheaper generic staples. Hostile rating of -4.0.", "defense_id": "Konsumsi rumah tangga terkontraksi -2,63% pada 2020, memaksa keluarga berhemat dan beralih ke produk pangan pokok yang lebih murah. Skor lingkungan menantang -4,0."}, "sp_1": {"title": "Technological Changes: Score -5.0 (Rapid On-Demand Migration)", "title_id": "Pergeseran Teknologi: Skor -5,0 (Disrupsi Pengantaran Cepat)", "source": "e-Conomy SEA 2020; GrabMart/Shopee", "source_id": "e-Conomy SEA 2020; GrabMart/Shopee", "defense": "Quick-commerce delivery apps surged 54%, shifting impulse and pantry purchases directly to smartphones and bypassing physical shopping malls. Severe threat of -5.0.", "defense_id": "Aplikasi kurir instan melonjak 54%, mengalihkan belanja harian ke ponsel dan memotong kunjungan fisik ke mal belanja, menjadi disrupsi eksternal berat (-5,0)."}, "sp_2": {"title": "Price Elasticity: Score -4.0 (Zero Switching Costs)", "title_id": "Elastisitas Harga: Skor -4,0 (Biaya Peralihan Konsumen Nol)", "source": "CPM Analysis; Consumer Price Sensitivity", "source_id": "Analisis CPM; Sensitivitas Harga", "defense": "Consumers face zero switching costs between supermarket and minimarket chains, actively hunting promotional discounts on cooking oil, sugar, and rice. Severe sensitivity of -4.0.", "defense_id": "Konsumen tidak memiliki biaya peralihan antar-gerai ritel dan sangat sensitif terhadap selisih harga minyak goreng dan beras, menciptakan tekanan elastisitas tinggi (-4,0)."}, "sp_3": {"title": "Competitive Pressure: Score -6.0 (33,500 Minimarket Saturation)", "title_id": "Tekanan Persaingan: Skor -6,0 (Kejenuhan 33.500 Minimarket)", "source": "Case Exhibit 4; Indomaret & Alfamart Filings", "source_id": "Kasus Lampiran 4; Data Alfamart & Indomaret", "defense": "Intense rivalry from 33,500+ Indomaret and Alfamart stores situated within walking distance of housing complexes severely eroded hypermarket trip necessity. Extreme threat of -6.0.", "defense_id": "Dominasi 33.500+ gerai Indomaret dan Alfamart di depan kompleks perumahan melenyapkan kebutuhan berbelanja ke hipermarket besar. Ancaman persaingan ekstrem (-6,0)."}, "sp_4": {"title": "Barriers to Entry / PSAK 73: Score -4.0 (Crushing Fixed Leases)", "title_id": "Beban Regulasi / PSAK 73: Skor -4,0 (Beban Bunga Sewa Mal)", "source": "AR2020 Financial Note 16 (PSAK 73)", "source_id": "Catatan Keuangan AR2020 16 (PSAK 73)", "defense": "Adoption of PSAK 73 capitalized long-term lease liabilities, adding Rp166.2B in non-cash lease financing costs and restricting operational flexibility in closing mall stores (score -4.0).", "defense_id": "Penerapan PSAK 73 mengkapitalisasi liabilitas sewa, menambah beban bunga pembiayaan sewa Rp166,2M dan membebani fleksibilitas penutupan toko mal merugi (skor -4,0)."}}, "alfamart": {"fp_0": {"title": "Current Ratio: Score 5.0 (Healthy Cash Liquidity)", "title_id": "Rasio Lancar: Skor 5,0 (Likuiditas Kas Sangat Sehat)", "source": "Alfamart AR2020 Balance Sheet", "source_id": "Neraca AR2020 Alfamart", "defense": "Maintains a balanced current ratio of 1.05x backed by massive operating cash flow of Rp4.1 trillion, eliminating short-term liquidity risks. Score 5.0.", "defense_id": "Mempertahankan rasio lancar seimbang 1,05x ditopang arus kas operasi kuat Rp4,1 triliun, menghapus risiko likuiditas jangka pendek. Skor 5,0."}, "fp_1": {"title": "Debt to Equity: Score 6.0 (Conservative Low Leverage)", "title_id": "Utang terhadap Ekuitas: Skor 6,0 (Leverage Konservatif)", "source": "Alfamart AR2020 Financial Ratios", "source_id": "Rasio Keuangan AR2020 Alfamart", "defense": "Conservative debt-to-equity ratio of 0.88x (net debt comfortably covered by EBITDA), providing strong balance sheet capacity for expansion. Score 6.0.", "defense_id": "Rasio utang terhadap ekuitas konservatif 0,88x (utang bersih ter-cover penuh oleh EBITDA), memberi ruang neraca leluasa untuk ekspansi gerai baru. Skor 6,0."}, "fp_2": {"title": "Net Income: Score 6.0 (Rp1.06T Profit Record)", "title_id": "Laba Bersih: Skor 6,0 (Rekor Laba Bersih Rp1,06 T)", "source": "Alfamart AR2020 Income Statement", "source_id": "Laba Rugi AR2020 Alfamart", "defense": "Delivered net profit of Rp1.06 trillion (+4.2% YoY growth during the pandemic), demonstrating exceptional business model durability and profitability (score 6.0).", "defense_id": "Membukukan rekor laba bersih Rp1,06 triliun (+4,2% YoY di tengah pandemi), membuktikan daya tahan model bisnis minimarket lingkungan yang sangat menguntungkan (skor 6,0)."}, "fp_3": {"title": "Revenue Growth: Score 6.0 (Rp75.8T Revenue Surge)", "title_id": "Pertumbuhan Pendapatan: Skor 6,0 (Lonjakan Pendapatan Rp75,8 T)", "source": "Alfamart AR2020 Financial Performance", "source_id": "Kinerja Keuangan AR2020 Alfamart", "defense": "Net revenue climbed +3.95% to Rp75.8 trillion as residential neighbourhood stores captured traffic diverted away from closed destination shopping malls. Score 6.0.", "defense_id": "Pendapatan tumbuh +3,95% mencapai Rp75,8 triliun karena gerai lingkungan menyerap limpahan belanja dari mal besar yang ditutup. Skor 6,0."}, "fp_4": {"title": "Inventory Turnover: Score 5.0 (23-Day Rapid Cycle)", "title_id": "Perputaran Persediaan: Skor 5,0 (Siklus Cepat 23 Hari)", "source": "Alfamart AR2020 Supply Chain Review", "source_id": "Tinjauan Logistik AR2020 Alfamart", "defense": "Highly streamlined 23.4-day inventory turnover powered by 32 regional distribution centers and real-time replenishment algorithms. Score 5.0.", "defense_id": "Perputaran persediaan sangat efisien hanya 23,4 hari didukung 32 pusat distribusi regional dan sistem restock otomatis terpadu. Skor 5,0."}, "cp_0": {"title": "Market Share: Score -1.0 (Dominant #1 Market Leader)", "title_id": "Pangsa Pasar: Skor -1,0 (Pemimpin Pasar #1 Dominan)", "source": "Case Exhibit 5; Industry Data", "source_id": "Kasus Lampiran 5; Data Industri", "defense": "Commands the leading retail footprint in Indonesia with 15,434 stores nationwide, generating unmatched distribution scale and top market share (-1.0 best score).", "defense_id": "Memimpin pasar ritel modern Indonesia dengan 15.434 gerai nasional, menguasai keunggulan skala terbesar (skor terbaik -1,0)."}, "cp_1": {"title": "Product Quality: Score -2.0 (High FMCG Consistency)", "title_id": "Mutu Produk: Skor -2,0 (Konsistensi Mutu FMCG Tinggi)", "source": "Alfamart Private Label Standards", "source_id": "Standar Private Label Alfamart", "defense": "Exemplary quality control on packaged FMCG and high-turnover private label goods, though fresh meat/produce assortment remains limited. Strong score -2.0.", "defense_id": "Kontrol kualitas sangat prima pada barang kemasan FMCG dan produk private label, meskipun lini produk daging segar terbatas. Skor kuat -2,0."}, "cp_2": {"title": "Customer Loyalty: Score -1.0 (Alfagift Digital Ecosystem)", "title_id": "Loyalitas Pelanggan: Skor -1,0 (Ekosistem Alfagift Unggul)", "source": "Alfamart AR2020 Digital Metrics", "source_id": "Metrik Digital AR2020 Alfamart", "defense": "Over 11 million active loyalty members on the Alfagift app offering personalized discounts, point redemptions, and instant local delivery (-1.0).", "defense_id": "Lebih dari 11 juta anggota aktif pada aplikasi Alfagift dengan diskon personal, poin belanja, dan pengantaran instan 30 menit (-1,0)."}, "cp_3": {"title": "Variety of Products: Score -2.0 (Curated 3,500 Essential SKUs)", "title_id": "Variasi Produk: Skor -2,0 (3.500 SKU Sembako Terpilih)", "source": "Alfamart Merchandising Planogram", "source_id": "Planogram Merchandising Alfamart", "defense": "Expertly curated 3,500 SKUs designed for rapid high-velocity convenience shopping, maximizing sales per shelf meter. Score -2.0.", "defense_id": "Menyajikan 3.500 SKU kebutuhan pokok harian yang terkurasi optimal untuk belanja cepat, memaksimalkan perputaran per meter rak (-2,0)."}, "cp_4": {"title": "Control over Suppliers: Score -1.0 (Immense Buying Power)", "title_id": "Kendali Pemasok: Skor -1,0 (Daya Tawar Pembelian Raksasa)", "source": "CPM Matrix; Vendor Terms Analysis", "source_id": "Matriks CPM; Analisis Ketentuan Vendor", "defense": "Vast nationwide purchase volume gives Alfamart top bargaining power over Unilever, Indofood, and P&G for listing fees and volume rebates (-1.0).", "defense_id": "Volume pembelian masif memberi Alfamart daya tawar terkuat atas produsen FMCG raksasa (Unilever, Indofood) untuk diskon volume dan listing fee (-1,0)."}, "ip_0": {"title": "Growth Potential: Score 6.0 (Proximity Format Expansion)", "title_id": "Potensi Pertumbuhan: Skor 6,0 (Ekspansi Format Dekat Rumah)", "source": "Retail Industry Outlook 2020", "source_id": "Prospek Industri Ritel 2020", "defense": "Residential proximity minimarkets represent over 80% of modern grocery expansion in Southeast Asia, providing stellar growth runway (score 6.0).", "defense_id": "Minimarket lingkungan menyumbang lebih dari 80% pembukaan toko modern di Asia Tenggara, membuka potensi pertumbuhan luar biasa (skor 6,0)."}, "ip_1": {"title": "Financial Stability: Score 5.0 (Essential Cash Inflows)", "title_id": "Stabilitas Finansial: Skor 5,0 (Arus Kas Harian Terjamin)", "source": "Alfamart Operating Cash Flows", "source_id": "Arus Kas Operasional Alfamart", "defense": "Daily retail cash purchases of consumer staples generate steady, non-cyclical cash inflows even through macroeconomic shocks (score 5.0).", "defense_id": "Penjualan tunai harian sembako menghasilkan arus kas masuk yang stabil dan tidak terpengaruh siklus krisis ekonomi (skor 5,0)."}, "ip_2": {"title": "Ease of Entry: Score 4.0 (Duopoly Distribution Moat)", "title_id": "Hambatan Masuk: Skor 4,0 (Benteng Distribusi Duopoli)", "source": "Case Exhibit 4; Retail Saturation", "source_id": "Kasus Lampiran 4; Kejenuhan Ritel", "defense": "The established duopoly of Alfamart and Indomaret locks up prime commercial street corners, making new retail entry extremely difficult (score 4.0).", "defense_id": "Duopoli mapan Alfamart dan Indomaret mengunci lokasi strategis di setiap sudut jalan, membuat pemain baru sangat sulit masuk (skor 4,0)."}, "ip_3": {"title": "Resource Utilization: Score 6.0 (Top Sales Density ~Rp35M/m\u00b2)", "title_id": "Pemanfaatan Ruang: Skor 6,0 (Densitas Penjualan ~Rp35M/m\u00b2)", "source": "Alfamart Store Productivity Filings", "source_id": "Keterbukaan Produktivitas Gerai Alfamart", "defense": "Compact 100\u2013120 m\u00b2 format delivers industry-leading sales density of ~Rp35 million per square meter, maximizing capital efficiency (score 6.0).", "defense_id": "Format kompak 100\u2013120 m\u00b2 menghasilkan produktivitas penjualan tertinggi di industri (~Rp35 juta/m\u00b2), memaksimalkan efisiensi ruang (skor 6,0)."}, "ip_4": {"title": "Profit Potential: Score 5.0 (High 15.8% ROE Generation)", "title_id": "Potensi Laba: Skor 5,0 (Tingkat ROE 15,8% Menguntungkan)", "source": "Alfamart Financial Ratios 2020", "source_id": "Rasio Keuangan Alfamart 2020", "defense": "Healthy operating margin (~2.8%) combined with rapid capital turns generates an attractive 15.8% Return on Equity (score 5.0).", "defense_id": "Margin operasi yang sehat (~2,8%) dikombinasikan dengan perputaran modal cepat menghasilkan ROE atraktif sebesar 15,8% (skor 5,0)."}, "sp_0": {"title": "Rate of Inflation: Score -2.0 (Resilient Staple Baskets)", "title_id": "Tingkat Inflasi: Skor -2,0 (Ketahanan Keranjang Pokok)", "source": "BPS Food Expenditure Survey", "source_id": "Survei Pengeluaran Pangan BPS", "defense": "Small-ticket daily grocery purchases are relatively immune to inflationary spikes as households continue purchasing rice, eggs, and milk. Mild impact of -2.0.", "defense_id": "Belanja harian bernilai kecil relatif kebal inflasi karena masyarakat tetap membeli telur, beras, dan susu. Dampak ringan (-2,0)."}, "sp_1": {"title": "Technological Changes: Score -2.0 (Integrated Alfagift Omnichannel)", "title_id": "Pergeseran Teknologi: Skor -2,0 (Integrasi Digital Alfagift)", "source": "Alfamart Omnichannel Capabilities", "source_id": "Kapabilitas Omnichannel Alfamart", "defense": "Alfamart successfully digitized store operations with Alfagift, transforming 15,000 stores into micro-fulfillment hubs for 30-minute deliveries (-2.0).", "defense_id": "Alfamart berhasil mendigitalisasi gerai fisik lewat Alfagift, menyulap 15.000 toko menjadi hub pengantaran 30 menit (-2,0)."}, "sp_2": {"title": "Price Elasticity: Score -3.0 (Convenience Premium Tolerance)", "title_id": "Elastisitas Harga: Skor -3,0 (Toleransi Premi Kenyamanan)", "source": "Consumer Pricing Elasticity Study", "source_id": "Studi Elastisitas Harga Konsumen", "defense": "Consumers willingly accept a 3\u20135% convenience premium at nearby minimarkets to save time and transport costs compared to hypermarket trips (-3.0).", "defense_id": "Konsumen rela membayar selisih harga 3-5% di minimarket dekat rumah demi menghemat waktu dan ongkos perjalanan ke mal (-3,0)."}, "sp_3": {"title": "Competitive Pressure: Score -3.0 (Stable Duopoly Equilibrium)", "title_id": "Tekanan Persaingan: Skor -3,0 (Keseimbangan Duopoli Stabil)", "source": "Case Exhibit 4; Minimarket Rivalry", "source_id": "Kasus Lampiran 4; Persaingan Minimarket", "defense": "While competition with Indomaret is constant, both players respect price discipline and avoid margin-destroying price wars, yielding score -3.0.", "defense_id": "Meski bersaing ketat dengan Indomaret, kedua pihak menjaga disiplin harga dan menghindari perang tarif yang merusak margin (-3,0)."}, "sp_4": {"title": "Barriers to Entry / Leases: Score -3.0 (Flexible Shophouse Leases)", "title_id": "Fleksibilitas Sewa: Skor -3,0 (Sewa Ruko Fleksibel)", "source": "Alfamart Lease Commitments", "source_id": "Komitmen Sewa Alfamart", "defense": "Store leases on small shophouses average 3\u20135 years, providing high flexibility to close or relocate underperforming locations with low PSAK 73 burden (-3.0).", "defense_id": "Sewa ruko hanya berdurasi 3-5 tahun, memberi fleksibilitas tinggi untuk menutup atau merelokasi gerai dengan beban PSAK 73 minimal (-3,0)."}}, "transmart": {"fp_0": {"title": "Current Ratio: Score 2.0 (Tight Working Capital)", "title_id": "Rasio Lancar: Skor 2,0 (Modal Kerja Tertekan)", "source": "CT Corp Retail Filings; Industry Audits", "source_id": "Laporan Ritel CT Corp; Audit Industri", "defense": "Constrained current ratio (~0.8x) due to high cash burn in large mall hypermarket complexes and idle amusement facilities. Low score 2.0.", "defense_id": "Rasio lancar tertekan (~0,8x) akibat besarnya beban kas operasional hipermarket mal besar dan wahana permainan yang sepi. Skor rendah 2,0."}, "fp_1": {"title": "Debt to Equity: Score 1.0 (Heavy Expansion Debt)", "title_id": "Utang terhadap Ekuitas: Skor 1,0 (Beban Utang Ekspansi Berat)", "source": "CT Corp Capital Structure Reports", "source_id": "Struktur Modal CT Corp", "defense": "Substantial debt burden accumulated during aggressive nationwide rollout of Trans Studio Mall entertainment hypermarket complexes. Minimum score 1.0.", "defense_id": "Beban utang sangat tinggi akibat ekspansi agresif pembangunan mal Trans Studio terintegrasi di berbagai kota. Skor minimum 1,0."}, "fp_2": {"title": "Net Income: Score 1.0 (Severe Operating Losses)", "title_id": "Laba Bersih: Skor 1,0 (Kerugian Operasional Parah)", "source": "Case Exhibit 5; Industry Disclosures", "source_id": "Kasus Lampiran 5; Laporan Industri", "defense": "Severe multi-year net losses exacerbated by complete shutdown of amusement park rides and cinema entertainment during lockdowns. Score 1.0.", "defense_id": "Kerugian bersih parah berturut-turut diperburuk penutupan wahana bermain dan bioskop selama pembatasan aktivitas. Skor 1,0."}, "fp_3": {"title": "Revenue Growth: Score 2.0 (Sales Contraction Post-Rebrand)", "title_id": "Pertumbuhan Pendapatan: Skor 2,0 (Penjualan Turun Pasca-Rebranding)", "source": "Case Exhibit 5; Carrefour Transition", "source_id": "Kasus Lampiran 5; Transisi Carrefour", "defense": "Steep revenue decline following rebranding from Carrefour to Transmart, with mall hypermarket footfall dropping sharply across major cities. Score 2.0.", "defense_id": "Penurunan pendapatan tajam pasca-rebranding dari Carrefour ke Transmart, diperparah anjloknya pengunjung hipermarket mal besar. Skor 2,0."}, "fp_4": {"title": "Inventory Turnover: Score 2.0 (Sluggish Non-Food Inventory)", "title_id": "Perputaran Persediaan: Skor 2,0 (Persediaan Non-Pangan Lambat)", "source": "Industry Merchandising Audits", "source_id": "Audit Merchandising Ritel", "defense": "High days-in-inventory (>60 days) caused by slow-moving department store apparel, electronics, and home furnishings tying up vital working capital (score 2.0).", "defense_id": "Hari persediaan tinggi (>60 hari) akibat menumpuknya stok pakaian, elektronik, dan perabotan yang lambat terjual, menyedot kas modal kerja (skor 2,0)."}, "cp_0": {"title": "Market Share: Score -5.0 (Eroding Modern Retail Share)", "title_id": "Pangsa Pasar: Skor -5,0 (Pangsa Ritel Terus Menyusut)", "source": "Case Exhibit 5; Retail Share Estimates", "source_id": "Kasus Lampiran 5; Estimasi Pangsa Ritel", "defense": "Sales of ~Rp13.8T across only 134 stores represent less than 5% market share, with customers rapidly defecting to minimarkets and supermarkets (score -5.0).", "defense_id": "Penjualan ~Rp13,8T dari 134 gerai hanya mencakup <5% pangsa ritel, dengan arus pelanggan terus berpindah ke minimarket dan supermarket (-5,0)."}, "cp_1": {"title": "Product Quality: Score -4.0 (Inconsistent Fresh Produce)", "title_id": "Mutu Produk: Skor -4,0 (Inkonsistensi Produk Segar)", "source": "Consumer Satisfaction Benchmarks", "source_id": "Tolok Ukur Kepuasan Konsumen", "defense": "Variable fresh food standards and inconsistent cold storage maintenance resulted in customer dissatisfaction and high spoilage rates. Score -4.0.", "defense_id": "Kualitas produk segar yang tidak konsisten dan perawatan pendingin gerai yang kurang merata memicu keluhan pembeli dan retur barang tinggi (-4,0)."}, "cp_2": {"title": "Customer Loyalty: Score -5.0 (Perceived Expensive & Footfall Loss)", "title_id": "Loyalitas Pelanggan: Skor -5,0 (Persepsi Mahal & Hilangnya Kunjungan)", "source": "Case p. 590; Brand Perception Surveys", "source_id": "Kasus hlm. 590; Survei Persepsi Merek", "defense": "Lost customer goodwill post-Carrefour due to perceived premium pricing without superior service, causing foot-traffic retention to plummet (score -5.0).", "defense_id": "Kehilangan loyalitas pelanggan pasca-Carrefour karena dipersepsikan lebih mahal tanpa peningkatan layanan, menyebabkan retensi belanja anjlok (-5,0)."}, "cp_3": {"title": "Variety of Products: Score -5.0 (Assortment Gaps & Stockouts)", "title_id": "Variasi Produk: Skor -5,0 (Kekosongan Rak & Pasokan Tersendat)", "source": "Store Shelf Audits 2020", "source_id": "Audit Ketersediaan Rak 2020", "defense": "While floor space is massive, severe working capital constraints led to empty shelves and out-of-stock basic consumer goods (-5.0).", "defense_id": "Meskipun toko sangat luas, kendala likuiditas menyebabkan rak sembako banyak yang kosong dan kehabisan stok barang primer (-5,0)."}, "cp_4": {"title": "Control over Suppliers: Score -5.0 (Strained Supplier Terms)", "title_id": "Kendali Pemasok: Skor -5,0 (Hubungan Pemasok Sangat Tegang)", "source": "FMCG Supplier Association Reports", "source_id": "Laporan Asosiasi Pemasok FMCG", "defense": "Extended payment delays caused several major food manufacturers and distributors to withhold inventory shipments, weakening supplier control to -5.0.", "defense_id": "Penundaan pembayaran utang dagang yang lama membuat distributor FMCG utama menahan pengiriman barang, merusak posisi tawar ke -5,0."}, "ip_0": {"title": "Growth Potential: Score 3.0 (Secular Big-Box Contraction)", "title_id": "Potensi Pertumbuhan: Skor 3,0 (Kontraksi Format Mal Hipermarket)", "source": "Retail Format Growth Analysis", "source_id": "Analisis Pertumbuhan Format Ritel", "defense": "Large destination hypermarkets and mall-entertainment retail models face structural secular decline as shoppers favor convenient neighbourhood stores (score 3.0).", "defense_id": "Hipermarket mal dan konsep mall-entertainment menghadapi penurunan struktural karena konsumen lebih memilih gerai dekat rumah (skor 3,0)."}, "ip_1": {"title": "Financial Stability: Score 3.0 (High Lockdown Exposure)", "title_id": "Stabilitas Finansial: Skor 3,0 (Rentan Pembatasan Mobilitas Mal)", "source": "Case p. 592; Mall Anchor Vulnerability", "source_id": "Kasus hlm. 592; Kerentanan Gerai Mal", "defense": "Heavily exposed to shopping mall closures, capacity caps, and family leisure restrictions during economic downturns, lowering stability to 3.0.", "defense_id": "Sangat rentan terhadap pembatasan jam operasional mal dan larangan kunjungan rekreasi keluarga saat krisis ekonomi (skor 3,0)."}, "ip_2": {"title": "Ease of Entry: Score 4.0 (Intense Capital Moat for Mega Stores)", "title_id": "Hambatan Masuk: Skor 4,0 (Kebutuhan Modal Toko Raksasa Tinggi)", "source": "Case Exhibit 4; Mall Capex Barrier", "source_id": "Kasus Lampiran 4; Barier Investasi Mal", "defense": "Developing 8,000\u201312,000 m\u00b2 hypermarket store concepts with indoor theme parks requires enormous capital, preventing new entrants from competing directly (score 4.0).", "defense_id": "Membangun gerai 8.000\u201312.000 m\u00b2 terintegrasi wahana bermain butuh modal sangat masif, menghalangi pesaing baru meniru konsep ini (skor 4,0)."}, "ip_3": {"title": "Resource Utilization: Score 3.0 (Deserted Floorplates)", "title_id": "Pemanfaatan Ruang: Skor 3,0 (Lantai Belanja Banyak Kosong)", "source": "Case p. 592; Footfall Disclosures", "source_id": "Kasus hlm. 592; Keterbukaan Trafik Kunjungan", "defense": "Vast floorspace suffered dismal sales per square meter with empty amusement ride zones, generating high fixed overhead per square foot (score 3.0).", "defense_id": "Luas lantai belanja raksasa mengalami penurunan tajam penjualan per m\u00b2 dengan wahana bermain yang sepi, memicu beban operasional tinggi (skor 3,0)."}, "ip_4": {"title": "Profit Potential: Score 3.0 (Crushing Facility Overheads)", "title_id": "Potensi Laba: Skor 3,0 (Tingginya Beban Fasilitas Mal)", "source": "Industry Margin Benchmarks", "source_id": "Tolok Ukur Margin Industri", "defense": "Massive air conditioning, electricity, and facility maintenance charges severely compressed operating profitability into chronic losses (score 3.0).", "defense_id": "Biaya listrik pendingin udara raksasa dan pemeliharaan gedung mal menelan margin operasional hingga jatuh ke kerugian kronis (skor 3,0)."}, "sp_0": {"title": "Rate of Inflation: Score -5.0 (Discretionary Family Spend Drop)", "title_id": "Tingkat Inflasi: Skor -5,0 (Penurunan Belanja Rekreasi Keluarga)", "source": "Macroeconomic Spending Data 2020", "source_id": "Data Pengeluaran Makroekonomi 2020", "defense": "Discretionary family entertainment, non-essential merchandise, and dining outings were the first budgets cut by Indonesian households during downturns (-5.0).", "defense_id": "Pengeluaran rekreasi keluarga, pakaian, dan hiburan di mal dipangkas paling awal oleh keluarga Indonesia saat resesi (-5,0)."}, "sp_1": {"title": "Technological Changes: Score -6.0 (Absence of Quick-Commerce App)", "title_id": "Pergeseran Teknologi: Skor -6,0 (Ketertinggalan Belanja Digital)", "source": "Digital Commerce Market Audits", "source_id": "Audit Pasar Belanja Daring", "defense": "Failed to launch an effective proprietary on-demand grocery app, remaining completely dependent on declining in-person foot traffic. Extreme threat -6.0.", "defense_id": "Gagal meluncurkan aplikasi belanja kilat mandiri yang berdaya saing, tetap bergantung penuh pada kunjungan fisik mal yang surut (-6,0)."}, "sp_2": {"title": "Price Elasticity: Score -5.0 (Severe E-Commerce Price Defection)", "title_id": "Elastisitas Harga: Skor -5,0 (Peralihan Harga ke Marketplace)", "source": "Consumer Pricing Audits", "source_id": "Audit Harga Konsumen", "defense": "High price sensitivity on general merchandise and apparel; shoppers readily price-checked and purchased cheaper equivalents on Shopee and Tokopedia (-5.0).", "defense_id": "Elastisitas tinggi pada produk non-makanan; konsumen dengan mudah mengecek harga dan membeli barang lebih murah di marketplace (-5,0)."}, "sp_3": {"title": "Competitive Pressure: Score -5.0 (Double Squeeze from Minimarkets & Apps)", "title_id": "Tekanan Persaingan: Skor -5,0 (Himpitan Minimarket & E-Commerce)", "source": "Case Exhibit 4; Retail Competitive Dynamics", "source_id": "Kasus Lampiran 4; Dinamika Persaingan Ritel", "defense": "Squeezed between convenient neighborhood minimarkets for groceries and cheap e-commerce platforms for non-food merchandise, eroding core revenue (-5.0).", "defense_id": "Terhimpit di antara minimarket dekat rumah untuk sembako dan platform e-commerce murah untuk barang non-makanan, menggerus pasar (-5,0)."}, "sp_4": {"title": "Barriers to Entry / Leases: Score -5.0 (Crushing Anchor Mall Leases)", "title_id": "Beban Sewa Mal: Skor -5,0 (Beban Liabilitas Sewa Jangkar)", "source": "PSAK 73 Commercial Lease Filings", "source_id": "Keterbukaan Sewa Komersial PSAK 73", "defense": "Long-term anchor tenant leases on massive mall spaces locked Transmart into crushing fixed lease obligations under PSAK 73, forcing severe store closure costs (-5.0).", "defense_id": "Kontrak sewa jangka panjang sebagai penyewa jangkar mal raksasa mengunci Transmart pada kewajiban sewa tetap PSAK 73 yang sangat berat (-5,0)."}}};
+const spaceFactorsData = {"mppa": {"fp_0": {"title": "Current Ratio: Score 2.0 (Low Liquidity)", "title_id": "Rasio Lancar: Skor 2,0 (Likuiditas Rendah)", "source": "AR2020 p. 55; Financial Note 38", "source_id": "AR2020 hlm. 55; Catatan Keuangan 38", "defense": "Current ratio was 0.72x (Rp2,062B current assets vs Rp2,859B current liabilities). Deficit of Rp797B creates severe working capital pressure, warranting a conservative rating of 2.0.", "defense_id": "Rasio lancar tercatat 0,72x (aset lancar Rp2.062M vs liabilitas lancar Rp2.859M). Defisit modal kerja Rp797M menimbulkan tekanan likuiditas ketat, membenarkan skor konservatif 2,0."}, "fp_1": {"title": "Debt to Equity: Score 1.0 (Critical Leverage)", "title_id": "Utang terhadap Ekuitas: Skor 1,0 (Leverage Kritis)", "source": "AR2020 Balance Sheet; Case Exhibit 7", "source_id": "Neraca AR2020; Kasus Lampiran 7", "defense": "Total liabilities reached Rp4,449B against negative/eroded tangible equity (DER 10.5x). Extreme balance sheet vulnerability strictly limits additional debt capacity, justifying the minimum score of 1.0.", "defense_id": "Total liabilitas mencapai Rp4.449M dengan erosi ekuitas nyata (DER 10,5x). Kerentanan neraca ekstrem membatasi kapasitas pinjaman baru, sehingga mutlak berhak atas skor minimum 1,0."}, "fp_2": {"title": "Net Income: Score 1.0 (Chronic Net Losses)", "title_id": "Laba Bersih: Skor 1,0 (Kerugian Bersih Kronis)", "source": "AR2020 p. 54; Case Exhibit 7", "source_id": "AR2020 hlm. 54; Kasus Lampiran 7", "defense": "MPPA recorded a net loss of Rp405.3 billion in 2020, compared with Rp552.7 billion in 2019. The continued loss is the rationale for the 1.0 rating.", "defense_id": "MPPA mencatat rugi bersih Rp405,3 miliar pada 2020, dibandingkan Rp552,7 miliar pada 2019. Kerugian yang berlanjut menjadi dasar penilaian 1,0."}, "fp_3": {"title": "Revenue Growth: Score 2.0 (Sales Contraction)", "title_id": "Pertumbuhan Pendapatan: Skor 2,0 (Kontraksi Penjualan)", "source": "AR2020 p. 54; Case Exhibit 5", "source_id": "AR2020 hlm. 54; Kasus Lampiran 5", "defense": "Net sales fell -21.9% from Rp8,665B (2019) to Rp6,747B (2020) due to mall visitor curbs. While essential grocery buffered top-line compared to apparel retailers, severe contraction warrants score 2.0.", "defense_id": "Penjualan bersih merosot -21,9% dari Rp8.665M (2019) menjadi Rp6.747M (2020) akibat pembatasan mal. Meski sembako menahan kejatuhan dibanding ritel fesyen, kontraksi tajam tetap layak diberi skor 2,0."}, "fp_4": {"title": "Inventory Turnover: Score 3.0 (Mixed Stock Velocity)", "title_id": "Perputaran Persediaan: Skor 3,0 (Perputaran Campuran)", "source": "AR2020 Note 8; Case Exhibit 7", "source_id": "AR2020 Catatan 8; Kasus Lampiran 7", "defense": "Inventory turnover was 47.9 days (Rp887B ending inventory). Fast turnover in fresh meat and produce (3\u20135 days) was bogged down by slow-moving non-food general merchandise, justifying a score of 3.0.", "defense_id": "Perputaran persediaan rata-rata 47,9 hari (persediaan akhir Rp887M). Perputaran cepat di produk segar (3-5 hari) terbebani lambatnya produk non-makanan, sehingga skor 3,0 sangat berimbang."}, "cp_0": {"title": "Market Share: Score -5.0 (Minor Share)", "title_id": "Pangsa Pasar: Skor -5,0 (Pangsa Pasar Minor)", "source": "Case Exhibit 5; Industry Estimates", "source_id": "Kasus Lampiran 5; Estimasi Industri", "defense": "MPPA holds ~2.7% of modern grocery sales (Rp6.77T vs Rp250T+ market), heavily dwarfed by Alfamart (Rp76.3T) and Indomaret (Rp85.7T). Low scale warrants score -5.0.", "defense_id": "MPPA hanya menguasai ~2,7% pangsa ritel modern (Rp6,77T dibanding pasar >Rp250T), kalah telak dari Alfamart (Rp76,3T) dan Indomaret (Rp85,7T), membenarkan skor -5,0."}, "cp_1": {"title": "Product Quality: Score -2.0 (Fresh Cold-Chain Leader)", "title_id": "Mutu Produk: Skor -2,0 (Pemimpin Rantai Dingin Segar)", "source": "Case p. 587; Halal Cold Chain Audit", "source_id": "Kasus hlm. 587; Audit Rantai Dingin Halal", "defense": "Halal-certified distribution hubs (Balaraja & Surabaya) give Hypermart top quality in fresh meats, dairy, and produce, significantly outmatching minimarkets. Sits at minor disadvantage of -2.0.", "defense_id": "Gudang rantai dingin bersertifikat Halal (Balaraja & Surabaya) memberi Hypermart keunggulan mutu daging dan produk segar dibanding minimarket, memberikannya keunggulan kompetitif bernilai -2,0."}, "cp_2": {"title": "Customer Loyalty: Score -4.0 (Weak Frequency)", "title_id": "Loyalitas Pelanggan: Skor -4,0 (Frekuensi Rendah)", "source": "Case p. 592; Hicard Active Base", "source_id": "Kasus hlm. 592; Basis Aktif Hicard", "defense": "While Hicard counts 3.5M registered members, average shopping frequency collapsed 43% during mobility curbs as consumers shifted to proximity stores, justifying score -4.0.", "defense_id": "Meskipun Hicard memiliki 3,5 juta anggota terdaftar, frekuensi belanja fisik anjlok 43% selama pembatasan mobilitas karena pelanggan beralih ke minimarket dekat rumah. Skor -4,0."}, "cp_3": {"title": "Variety of Products: Score -2.0 (Wide 30,000 SKUs Assortment)", "title_id": "Variasi Produk: Skor -2,0 (Variasi Luas 30.000 SKU)", "source": "Case Exhibit 4; Merchandising Audit", "source_id": "Kasus Lampiran 4; Audit Merchandising", "defense": "Offers over 30,000 SKUs covering fresh, grocery, and household general merchandise, delivering comprehensive one-stop destination shopping. Scores strong -2.0.", "defense_id": "Menyediakan lebih dari 30.000 SKU mencakup produk segar, sembako, dan kebutuhan rumah tangga untuk belanja serba-ada keluarga, sehingga meraih skor kuat -2,0."}, "cp_4": {"title": "Control over Suppliers: Score -3.0 (Payables Friction)", "title_id": "Kendali Pemasok: Skor -3,0 (Tekanan Pembayaran Utang)", "source": "AR2020 Trade Payables Note 17", "source_id": "AR2020 Catatan Utang Usaha 17", "defense": "750 direct food suppliers provide steady access, but extended trade payable cycles (~95 days) created supplier tensions and occasional delivery delays, warranting score -3.0.", "defense_id": "Didukung 750 pemasok pangan langsung, namun perpanjangan hari utang usaha (~95 hari) memicu ketegangan vendor dan penundaan pasokan, membenarkan skor -3,0."}, "ip_0": {"title": "Growth Potential: Score 5.0 (Resilient $30.7B Grocery Runway)", "title_id": "Potensi Pertumbuhan: Skor 5,0 (Pasar Sembako $30,7M Kuat)", "source": "Euromonitor; Case p. 594", "source_id": "Euromonitor; Kasus hlm. 594", "defense": "Indonesian modern food retail is a massive $30.7B market with online e-grocery expanding +54% CAGR, providing high structural tailwinds for omnichannel players. Score 5.0.", "defense_id": "Pasar ritel pangan Indonesia bernilai $30,7 miliar dengan lonjakan e-grocery +54% CAGR, membuka peluang pertumbuhan omnichannel yang sangat menjanjikan. Skor 5,0."}, "ip_1": {"title": "Financial Stability: Score 4.0 (Inelastic Demand Baseline)", "title_id": "Stabilitas Finansial: Skor 4,0 (Basis Permintaan Pokok)", "source": "Case p. 590; BPS Consumer Basket", "source_id": "Kasus hlm. 590; Keranjang Belanja BPS", "defense": "Staple food items (rice, cooking oil, meats) represent non-discretionary necessities that households must purchase even during recessions, anchoring industry stability at 4.0.", "defense_id": "Kebutuhan pokok pangan (beras, minyak, daging) adalah belanja primer yang wajib dibeli rumah tangga bahkan saat resesi, menjamin stabilitas industri pada skor 4,0."}, "ip_2": {"title": "Ease of Entry: Score 4.0 (High Capital & Logistics Moat)", "title_id": "Hambatan Masuk: Skor 4,0 (Barier Modal & Logistik Tinggi)", "source": "Case Exhibit 4; Supply Chain Infrastructure", "source_id": "Kasus Lampiran 4; Infrastruktur Rantai Pasok", "defense": "Establishing cold chains, temperature-controlled distribution centers, and nationwide vendor relationships requires hundreds of billions in capex, creating high entry barriers (score 4.0).", "defense_id": "Membangun pusat distribusi pendingin dan jaringan pemasok nasional membutuhkan belanja modal ratusan miliar rupiah, menciptakan hambatan masuk yang tinggi (skor 4,0)."}, "ip_3": {"title": "Resource Utilization: Score 3.0 (Low Hypermarket Sales Density)", "title_id": "Pemanfaatan Ruang: Skor 3,0 (Densitas Penjualan Rendah)", "source": "Case p. 592; Store Footprint Matrix", "source_id": "Kasus hlm. 592; Matriks Gerai", "defense": "Massive 5,000\u20137,000 m\u00b2 hypermarket floorplates generated low sales density (~Rp10.2M/m\u00b2), leaving significant under-utilized space in closed mall wings. Modest score 3.0.", "defense_id": "Lantai hipermarket seluas 5.000\u20137.000 m\u00b2 mencatat densitas penjualan rendah (~Rp10,2 juta/m\u00b2), menyisakan ruang berlebih saat trafik mal dibatasi. Skor moderat 3,0."}, "ip_4": {"title": "Profit Potential: Score 3.0 (High Overhead Margin Compression)", "title_id": "Potensi Margin Laba: Skor 3,0 (Tekanan Beban Operasional)", "source": "AR2020 p. 54; Case Exhibit 7", "source_id": "AR2020 hlm. 54; Kasus Lampiran 7", "defense": "Gross margins of 16.9% are heavily burdened by high mall service charges, air conditioning, and logistics, compressing grocery operating margins to slim percentages (score 3.0).", "defense_id": "Margin kotor 16,9% tergerus oleh biaya listrik, pendingin udara, dan sewa mal yang tinggi, menekan margin usaha ritel pangan hingga sangat tipis (skor 3,0)."}, "sp_0": {"title": "Rate of Inflation: Score -4.0 (Purchasing Power Contraction)", "title_id": "Tingkat Inflasi: Skor -4,0 (Penurunan Daya Beli Konsumen)", "source": "Bank Indonesia 2020 Economic Report", "source_id": "Laporan Perekonomian Bank Indonesia 2020", "defense": "Household consumption contracted -2.63% in 2020, forcing middle-class families to downsize grocery baskets and trade down to cheaper generic staples. Hostile rating of -4.0.", "defense_id": "Konsumsi rumah tangga terkontraksi -2,63% pada 2020, memaksa keluarga berhemat dan beralih ke produk pangan pokok yang lebih murah. Skor lingkungan menantang -4,0."}, "sp_1": {"title": "Technological Changes: Score -5.0 (Rapid On-Demand Migration)", "title_id": "Pergeseran Teknologi: Skor -5,0 (Disrupsi Pengantaran Cepat)", "source": "e-Conomy SEA 2020; GrabMart/Shopee", "source_id": "e-Conomy SEA 2020; GrabMart/Shopee", "defense": "Quick-commerce delivery apps surged 54%, shifting impulse and pantry purchases directly to smartphones and bypassing physical shopping malls. Severe threat of -5.0.", "defense_id": "Aplikasi kurir instan melonjak 54%, mengalihkan belanja harian ke ponsel dan memotong kunjungan fisik ke mal belanja, menjadi disrupsi eksternal berat (-5,0)."}, "sp_2": {"title": "Price Elasticity: Score -4.0 (Zero Switching Costs)", "title_id": "Elastisitas Harga: Skor -4,0 (Biaya Peralihan Konsumen Nol)", "source": "CPM Analysis; Consumer Price Sensitivity", "source_id": "Analisis CPM; Sensitivitas Harga", "defense": "Consumers face zero switching costs between supermarket and minimarket chains, actively hunting promotional discounts on cooking oil, sugar, and rice. Severe sensitivity of -4.0.", "defense_id": "Konsumen tidak memiliki biaya peralihan antar-gerai ritel dan sangat sensitif terhadap selisih harga minyak goreng dan beras, menciptakan tekanan elastisitas tinggi (-4,0)."}, "sp_3": {"title": "Competitive Pressure: Score -6.0 (33,500 Minimarket Saturation)", "title_id": "Tekanan Persaingan: Skor -6,0 (Kejenuhan 33.500 Minimarket)", "source": "Case Exhibit 4; Indomaret & Alfamart Filings", "source_id": "Kasus Lampiran 4; Data Alfamart & Indomaret", "defense": "Intense rivalry from 33,500+ Indomaret and Alfamart stores situated within walking distance of housing complexes severely eroded hypermarket trip necessity. Extreme threat of -6.0.", "defense_id": "Dominasi 33.500+ gerai Indomaret dan Alfamart di depan kompleks perumahan melenyapkan kebutuhan berbelanja ke hipermarket besar. Ancaman persaingan ekstrem (-6,0)."}, "sp_4": {"title": "Barriers to Entry / PSAK 73: Score -4.0 (Crushing Fixed Leases)", "title_id": "Beban Regulasi / PSAK 73: Skor -4,0 (Beban Bunga Sewa Mal)", "source": "AR2020 Financial Note 16 (PSAK 73)", "source_id": "Catatan Keuangan AR2020 16 (PSAK 73)", "defense": "Adoption of PSAK 73 capitalized long-term lease liabilities, adding Rp166.2B in non-cash lease financing costs and restricting operational flexibility in closing mall stores (score -4.0).", "defense_id": "Penerapan PSAK 73 mengkapitalisasi liabilitas sewa, menambah beban bunga pembiayaan sewa Rp166,2M dan membebani fleksibilitas penutupan toko mal merugi (skor -4,0)."}}, "alfamart": {"fp_0": {"title": "Current Ratio: Score 5.0 (Healthy Cash Liquidity)", "title_id": "Rasio Lancar: Skor 5,0 (Likuiditas Kas Sangat Sehat)", "source": "Alfamart AR2020 Balance Sheet", "source_id": "Neraca AR2020 Alfamart", "defense": "Maintains a balanced current ratio of 1.05x backed by massive operating cash flow of Rp4.1 trillion, eliminating short-term liquidity risks. Score 5.0.", "defense_id": "Mempertahankan rasio lancar seimbang 1,05x ditopang arus kas operasi kuat Rp4,1 triliun, menghapus risiko likuiditas jangka pendek. Skor 5,0."}, "fp_1": {"title": "Debt to Equity: Score 6.0 (Conservative Low Leverage)", "title_id": "Utang terhadap Ekuitas: Skor 6,0 (Leverage Konservatif)", "source": "Alfamart AR2020 Financial Ratios", "source_id": "Rasio Keuangan AR2020 Alfamart", "defense": "Conservative debt-to-equity ratio of 0.88x (net debt comfortably covered by EBITDA), providing strong balance sheet capacity for expansion. Score 6.0.", "defense_id": "Rasio utang terhadap ekuitas konservatif 0,88x (utang bersih ter-cover penuh oleh EBITDA), memberi ruang neraca leluasa untuk ekspansi gerai baru. Skor 6,0."}, "fp_2": {"title": "Net Income: Score 6.0 (Rp1.06T Profit Record)", "title_id": "Laba Bersih: Skor 6,0 (Rekor Laba Bersih Rp1,06 T)", "source": "Alfamart AR2020 Income Statement", "source_id": "Laba Rugi AR2020 Alfamart", "defense": "Delivered net profit of Rp1.06 trillion (+4.2% YoY growth during the pandemic), demonstrating exceptional business model durability and profitability (score 6.0).", "defense_id": "Membukukan rekor laba bersih Rp1,06 triliun (+4,2% YoY di tengah pandemi), membuktikan daya tahan model bisnis minimarket lingkungan yang sangat menguntungkan (skor 6,0)."}, "fp_3": {"title": "Revenue Growth: Score 6.0 (Rp75.8T Revenue Surge)", "title_id": "Pertumbuhan Pendapatan: Skor 6,0 (Lonjakan Pendapatan Rp75,8 T)", "source": "Alfamart AR2020 Financial Performance", "source_id": "Kinerja Keuangan AR2020 Alfamart", "defense": "Net revenue climbed +3.95% to Rp75.8 trillion as residential neighbourhood stores captured traffic diverted away from closed destination shopping malls. Score 6.0.", "defense_id": "Pendapatan tumbuh +3,95% mencapai Rp75,8 triliun karena gerai lingkungan menyerap limpahan belanja dari mal besar yang ditutup. Skor 6,0."}, "fp_4": {"title": "Inventory Turnover: Score 5.0 (23-Day Rapid Cycle)", "title_id": "Perputaran Persediaan: Skor 5,0 (Siklus Cepat 23 Hari)", "source": "Alfamart AR2020 Supply Chain Review", "source_id": "Tinjauan Logistik AR2020 Alfamart", "defense": "Highly streamlined 23.4-day inventory turnover powered by 32 regional distribution centers and real-time replenishment algorithms. Score 5.0.", "defense_id": "Perputaran persediaan sangat efisien hanya 23,4 hari didukung 32 pusat distribusi regional dan sistem restock otomatis terpadu. Skor 5,0."}, "cp_0": {"title": "Market Share: Score -1.0 (Dominant #1 Market Leader)", "title_id": "Pangsa Pasar: Skor -1,0 (Pemimpin Pasar #1 Dominan)", "source": "Case Exhibit 5; Industry Data", "source_id": "Kasus Lampiran 5; Data Industri", "defense": "Commands the leading retail footprint in Indonesia with 15,434 stores nationwide, generating unmatched distribution scale and top market share (-1.0 best score).", "defense_id": "Memimpin pasar ritel modern Indonesia dengan 15.434 gerai nasional, menguasai keunggulan skala terbesar (skor terbaik -1,0)."}, "cp_1": {"title": "Product Quality: Score -2.0 (High FMCG Consistency)", "title_id": "Mutu Produk: Skor -2,0 (Konsistensi Mutu FMCG Tinggi)", "source": "Alfamart Private Label Standards", "source_id": "Standar Private Label Alfamart", "defense": "Exemplary quality control on packaged FMCG and high-turnover private label goods, though fresh meat/produce assortment remains limited. Strong score -2.0.", "defense_id": "Kontrol kualitas sangat prima pada barang kemasan FMCG dan produk private label, meskipun lini produk daging segar terbatas. Skor kuat -2,0."}, "cp_2": {"title": "Customer Loyalty: Score -1.0 (Alfagift Digital Ecosystem)", "title_id": "Loyalitas Pelanggan: Skor -1,0 (Ekosistem Alfagift Unggul)", "source": "Alfamart AR2020 Digital Metrics", "source_id": "Metrik Digital AR2020 Alfamart", "defense": "Over 11 million active loyalty members on the Alfagift app offering personalized discounts, point redemptions, and instant local delivery (-1.0).", "defense_id": "Lebih dari 11 juta anggota aktif pada aplikasi Alfagift dengan diskon personal, poin belanja, dan pengantaran instan 30 menit (-1,0)."}, "cp_3": {"title": "Variety of Products: Score -2.0 (Curated 3,500 Essential SKUs)", "title_id": "Variasi Produk: Skor -2,0 (3.500 SKU Sembako Terpilih)", "source": "Alfamart Merchandising Planogram", "source_id": "Planogram Merchandising Alfamart", "defense": "Expertly curated 3,500 SKUs designed for rapid high-velocity convenience shopping, maximizing sales per shelf meter. Score -2.0.", "defense_id": "Menyajikan 3.500 SKU kebutuhan pokok harian yang terkurasi optimal untuk belanja cepat, memaksimalkan perputaran per meter rak (-2,0)."}, "cp_4": {"title": "Control over Suppliers: Score -1.0 (Immense Buying Power)", "title_id": "Kendali Pemasok: Skor -1,0 (Daya Tawar Pembelian Raksasa)", "source": "CPM Matrix; Vendor Terms Analysis", "source_id": "Matriks CPM; Analisis Ketentuan Vendor", "defense": "Vast nationwide purchase volume gives Alfamart top bargaining power over Unilever, Indofood, and P&G for listing fees and volume rebates (-1.0).", "defense_id": "Volume pembelian masif memberi Alfamart daya tawar terkuat atas produsen FMCG raksasa (Unilever, Indofood) untuk diskon volume dan listing fee (-1,0)."}, "ip_0": {"title": "Growth Potential: Score 6.0 (Proximity Format Expansion)", "title_id": "Potensi Pertumbuhan: Skor 6,0 (Ekspansi Format Dekat Rumah)", "source": "Retail Industry Outlook 2020", "source_id": "Prospek Industri Ritel 2020", "defense": "Residential proximity minimarkets represent over 80% of modern grocery expansion in Southeast Asia, providing stellar growth runway (score 6.0).", "defense_id": "Minimarket lingkungan menyumbang lebih dari 80% pembukaan toko modern di Asia Tenggara, membuka potensi pertumbuhan luar biasa (skor 6,0)."}, "ip_1": {"title": "Financial Stability: Score 5.0 (Essential Cash Inflows)", "title_id": "Stabilitas Finansial: Skor 5,0 (Arus Kas Harian Terjamin)", "source": "Alfamart Operating Cash Flows", "source_id": "Arus Kas Operasional Alfamart", "defense": "Daily retail cash purchases of consumer staples generate steady, non-cyclical cash inflows even through macroeconomic shocks (score 5.0).", "defense_id": "Penjualan tunai harian sembako menghasilkan arus kas masuk yang stabil dan tidak terpengaruh siklus krisis ekonomi (skor 5,0)."}, "ip_2": {"title": "Ease of Entry: Score 4.0 (Duopoly Distribution Moat)", "title_id": "Hambatan Masuk: Skor 4,0 (Benteng Distribusi Duopoli)", "source": "Case Exhibit 4; Retail Saturation", "source_id": "Kasus Lampiran 4; Kejenuhan Ritel", "defense": "The established duopoly of Alfamart and Indomaret locks up prime commercial street corners, making new retail entry extremely difficult (score 4.0).", "defense_id": "Duopoli mapan Alfamart dan Indomaret mengunci lokasi strategis di setiap sudut jalan, membuat pemain baru sangat sulit masuk (skor 4,0)."}, "ip_3": {"title": "Resource Utilization: Score 6.0 (Top Sales Density ~Rp35M/m\u00b2)", "title_id": "Pemanfaatan Ruang: Skor 6,0 (Densitas Penjualan ~Rp35M/m\u00b2)", "source": "Alfamart Store Productivity Filings", "source_id": "Keterbukaan Produktivitas Gerai Alfamart", "defense": "Compact 100\u2013120 m\u00b2 format delivers industry-leading sales density of ~Rp35 million per square meter, maximizing capital efficiency (score 6.0).", "defense_id": "Format kompak 100\u2013120 m\u00b2 menghasilkan produktivitas penjualan tertinggi di industri (~Rp35 juta/m\u00b2), memaksimalkan efisiensi ruang (skor 6,0)."}, "ip_4": {"title": "Profit Potential: Score 5.0 (High 15.8% ROE Generation)", "title_id": "Potensi Laba: Skor 5,0 (Tingkat ROE 15,8% Menguntungkan)", "source": "Alfamart Financial Ratios 2020", "source_id": "Rasio Keuangan Alfamart 2020", "defense": "Healthy operating margin (~2.8%) combined with rapid capital turns generates an attractive 15.8% Return on Equity (score 5.0).", "defense_id": "Margin operasi yang sehat (~2,8%) dikombinasikan dengan perputaran modal cepat menghasilkan ROE atraktif sebesar 15,8% (skor 5,0)."}, "sp_0": {"title": "Rate of Inflation: Score -2.0 (Resilient Staple Baskets)", "title_id": "Tingkat Inflasi: Skor -2,0 (Ketahanan Keranjang Pokok)", "source": "BPS Food Expenditure Survey", "source_id": "Survei Pengeluaran Pangan BPS", "defense": "Small-ticket daily grocery purchases are relatively immune to inflationary spikes as households continue purchasing rice, eggs, and milk. Mild impact of -2.0.", "defense_id": "Belanja harian bernilai kecil relatif kebal inflasi karena masyarakat tetap membeli telur, beras, dan susu. Dampak ringan (-2,0)."}, "sp_1": {"title": "Technological Changes: Score -2.0 (Integrated Alfagift Omnichannel)", "title_id": "Pergeseran Teknologi: Skor -2,0 (Integrasi Digital Alfagift)", "source": "Alfamart Omnichannel Capabilities", "source_id": "Kapabilitas Omnichannel Alfamart", "defense": "Alfamart successfully digitized store operations with Alfagift, transforming 15,000 stores into micro-fulfillment hubs for 30-minute deliveries (-2.0).", "defense_id": "Alfamart berhasil mendigitalisasi gerai fisik lewat Alfagift, menyulap 15.000 toko menjadi hub pengantaran 30 menit (-2,0)."}, "sp_2": {"title": "Price Elasticity: Score -3.0 (Convenience Premium Tolerance)", "title_id": "Elastisitas Harga: Skor -3,0 (Toleransi Premi Kenyamanan)", "source": "Consumer Pricing Elasticity Study", "source_id": "Studi Elastisitas Harga Konsumen", "defense": "Consumers willingly accept a 3\u20135% convenience premium at nearby minimarkets to save time and transport costs compared to hypermarket trips (-3.0).", "defense_id": "Konsumen rela membayar selisih harga 3-5% di minimarket dekat rumah demi menghemat waktu dan ongkos perjalanan ke mal (-3,0)."}, "sp_3": {"title": "Competitive Pressure: Score -3.0 (Stable Duopoly Equilibrium)", "title_id": "Tekanan Persaingan: Skor -3,0 (Keseimbangan Duopoli Stabil)", "source": "Case Exhibit 4; Minimarket Rivalry", "source_id": "Kasus Lampiran 4; Persaingan Minimarket", "defense": "While competition with Indomaret is constant, both players respect price discipline and avoid margin-destroying price wars, yielding score -3.0.", "defense_id": "Meski bersaing ketat dengan Indomaret, kedua pihak menjaga disiplin harga dan menghindari perang tarif yang merusak margin (-3,0)."}, "sp_4": {"title": "Barriers to Entry / Leases: Score -3.0 (Flexible Shophouse Leases)", "title_id": "Fleksibilitas Sewa: Skor -3,0 (Sewa Ruko Fleksibel)", "source": "Alfamart Lease Commitments", "source_id": "Komitmen Sewa Alfamart", "defense": "Store leases on small shophouses average 3\u20135 years, providing high flexibility to close or relocate underperforming locations with low PSAK 73 burden (-3.0).", "defense_id": "Sewa ruko hanya berdurasi 3-5 tahun, memberi fleksibilitas tinggi untuk menutup atau merelokasi gerai dengan beban PSAK 73 minimal (-3,0)."}}, "transmart": {"fp_0": {"title": "Current Ratio: Score 2.0 (Tight Working Capital)", "title_id": "Rasio Lancar: Skor 2,0 (Modal Kerja Tertekan)", "source": "CT Corp Retail Filings; Industry Audits", "source_id": "Laporan Ritel CT Corp; Audit Industri", "defense": "Constrained current ratio (~0.8x) due to high cash burn in large mall hypermarket complexes and idle amusement facilities. Low score 2.0.", "defense_id": "Rasio lancar tertekan (~0,8x) akibat besarnya beban kas operasional hipermarket mal besar dan wahana permainan yang sepi. Skor rendah 2,0."}, "fp_1": {"title": "Debt to Equity: Score 1.0 (Heavy Expansion Debt)", "title_id": "Utang terhadap Ekuitas: Skor 1,0 (Beban Utang Ekspansi Berat)", "source": "CT Corp Capital Structure Reports", "source_id": "Struktur Modal CT Corp", "defense": "Substantial debt burden accumulated during aggressive nationwide rollout of Trans Studio Mall entertainment hypermarket complexes. Minimum score 1.0.", "defense_id": "Beban utang sangat tinggi akibat ekspansi agresif pembangunan mal Trans Studio terintegrasi di berbagai kota. Skor minimum 1,0."}, "fp_2": {"title": "Net Income: Score 1.0 (Severe Operating Losses)", "title_id": "Laba Bersih: Skor 1,0 (Kerugian Operasional Parah)", "source": "Case Exhibit 5; Industry Disclosures", "source_id": "Kasus Lampiran 5; Laporan Industri", "defense": "Severe multi-year net losses exacerbated by complete shutdown of amusement park rides and cinema entertainment during lockdowns. Score 1.0.", "defense_id": "Kerugian bersih parah berturut-turut diperburuk penutupan wahana bermain dan bioskop selama pembatasan aktivitas. Skor 1,0."}, "fp_3": {"title": "Revenue Growth: Score 2.0 (Sales Contraction Post-Rebrand)", "title_id": "Pertumbuhan Pendapatan: Skor 2,0 (Penjualan Turun Pasca-Rebranding)", "source": "Case Exhibit 5; Carrefour Transition", "source_id": "Kasus Lampiran 5; Transisi Carrefour", "defense": "Steep revenue decline following rebranding from Carrefour to Transmart, with mall hypermarket footfall dropping sharply across major cities. Score 2.0.", "defense_id": "Penurunan pendapatan tajam pasca-rebranding dari Carrefour ke Transmart, diperparah anjloknya pengunjung hipermarket mal besar. Skor 2,0."}, "fp_4": {"title": "Inventory Turnover: Score 2.0 (Sluggish Non-Food Inventory)", "title_id": "Perputaran Persediaan: Skor 2,0 (Persediaan Non-Pangan Lambat)", "source": "Industry Merchandising Audits", "source_id": "Audit Merchandising Ritel", "defense": "High days-in-inventory (>60 days) caused by slow-moving department store apparel, electronics, and home furnishings tying up vital working capital (score 2.0).", "defense_id": "Hari persediaan tinggi (>60 hari) akibat menumpuknya stok pakaian, elektronik, dan perabotan yang lambat terjual, menyedot kas modal kerja (skor 2,0)."}, "cp_0": {"title": "Market Share: Score -5.0 (Eroding Modern Retail Share)", "title_id": "Pangsa Pasar: Skor -5,0 (Pangsa Ritel Terus Menyusut)", "source": "Case Exhibit 5; Retail Share Estimates", "source_id": "Kasus Lampiran 5; Estimasi Pangsa Ritel", "defense": "Sales of ~Rp13.8T across only 134 stores represent less than 5% market share, with customers rapidly defecting to minimarkets and supermarkets (score -5.0).", "defense_id": "Penjualan ~Rp13,8T dari 134 gerai hanya mencakup <5% pangsa ritel, dengan arus pelanggan terus berpindah ke minimarket dan supermarket (-5,0)."}, "cp_1": {"title": "Product Quality: Score -4.0 (Inconsistent Fresh Produce)", "title_id": "Mutu Produk: Skor -4,0 (Inkonsistensi Produk Segar)", "source": "Consumer Satisfaction Benchmarks", "source_id": "Tolok Ukur Kepuasan Konsumen", "defense": "Variable fresh food standards and inconsistent cold storage maintenance resulted in customer dissatisfaction and high spoilage rates. Score -4.0.", "defense_id": "Kualitas produk segar yang tidak konsisten dan perawatan pendingin gerai yang kurang merata memicu keluhan pembeli dan retur barang tinggi (-4,0)."}, "cp_2": {"title": "Customer Loyalty: Score -5.0 (Perceived Expensive & Footfall Loss)", "title_id": "Loyalitas Pelanggan: Skor -5,0 (Persepsi Mahal & Hilangnya Kunjungan)", "source": "Case p. 590; Brand Perception Surveys", "source_id": "Kasus hlm. 590; Survei Persepsi Merek", "defense": "Lost customer goodwill post-Carrefour due to perceived premium pricing without superior service, causing foot-traffic retention to plummet (score -5.0).", "defense_id": "Kehilangan loyalitas pelanggan pasca-Carrefour karena dipersepsikan lebih mahal tanpa peningkatan layanan, menyebabkan retensi belanja anjlok (-5,0)."}, "cp_3": {"title": "Variety of Products: Score -5.0 (Assortment Gaps & Stockouts)", "title_id": "Variasi Produk: Skor -5,0 (Kekosongan Rak & Pasokan Tersendat)", "source": "Store Shelf Audits 2020", "source_id": "Audit Ketersediaan Rak 2020", "defense": "While floor space is massive, severe working capital constraints led to empty shelves and out-of-stock basic consumer goods (-5.0).", "defense_id": "Meskipun toko sangat luas, kendala likuiditas menyebabkan rak sembako banyak yang kosong dan kehabisan stok barang primer (-5,0)."}, "cp_4": {"title": "Control over Suppliers: Score -5.0 (Strained Supplier Terms)", "title_id": "Kendali Pemasok: Skor -5,0 (Hubungan Pemasok Sangat Tegang)", "source": "FMCG Supplier Association Reports", "source_id": "Laporan Asosiasi Pemasok FMCG", "defense": "Extended payment delays caused several major food manufacturers and distributors to withhold inventory shipments, weakening supplier control to -5.0.", "defense_id": "Penundaan pembayaran utang dagang yang lama membuat distributor FMCG utama menahan pengiriman barang, merusak posisi tawar ke -5,0."}, "ip_0": {"title": "Growth Potential: Score 3.0 (Secular Big-Box Contraction)", "title_id": "Potensi Pertumbuhan: Skor 3,0 (Kontraksi Format Mal Hipermarket)", "source": "Retail Format Growth Analysis", "source_id": "Analisis Pertumbuhan Format Ritel", "defense": "Large destination hypermarkets and mall-entertainment retail models face structural secular decline as shoppers favor convenient neighbourhood stores (score 3.0).", "defense_id": "Hipermarket mal dan konsep mall-entertainment menghadapi penurunan struktural karena konsumen lebih memilih gerai dekat rumah (skor 3,0)."}, "ip_1": {"title": "Financial Stability: Score 3.0 (High Lockdown Exposure)", "title_id": "Stabilitas Finansial: Skor 3,0 (Rentan Pembatasan Mobilitas Mal)", "source": "Case p. 592; Mall Anchor Vulnerability", "source_id": "Kasus hlm. 592; Kerentanan Gerai Mal", "defense": "Heavily exposed to shopping mall closures, capacity caps, and family leisure restrictions during economic downturns, lowering stability to 3.0.", "defense_id": "Sangat rentan terhadap pembatasan jam operasional mal dan larangan kunjungan rekreasi keluarga saat krisis ekonomi (skor 3,0)."}, "ip_2": {"title": "Ease of Entry: Score 4.0 (Intense Capital Moat for Mega Stores)", "title_id": "Hambatan Masuk: Skor 4,0 (Kebutuhan Modal Toko Raksasa Tinggi)", "source": "Case Exhibit 4; Mall Capex Barrier", "source_id": "Kasus Lampiran 4; Barier Investasi Mal", "defense": "Developing 8,000\u201312,000 m\u00b2 hypermarket store concepts with indoor theme parks requires enormous capital, preventing new entrants from competing directly (score 4.0).", "defense_id": "Membangun gerai 8.000\u201312.000 m\u00b2 terintegrasi wahana bermain butuh modal sangat masif, menghalangi pesaing baru meniru konsep ini (skor 4,0)."}, "ip_3": {"title": "Resource Utilization: Score 3.0 (Deserted Floorplates)", "title_id": "Pemanfaatan Ruang: Skor 3,0 (Lantai Belanja Banyak Kosong)", "source": "Case p. 592; Footfall Disclosures", "source_id": "Kasus hlm. 592; Keterbukaan Trafik Kunjungan", "defense": "Vast floorspace suffered dismal sales per square meter with empty amusement ride zones, generating high fixed overhead per square foot (score 3.0).", "defense_id": "Luas lantai belanja raksasa mengalami penurunan tajam penjualan per m\u00b2 dengan wahana bermain yang sepi, memicu beban operasional tinggi (skor 3,0)."}, "ip_4": {"title": "Profit Potential: Score 3.0 (Crushing Facility Overheads)", "title_id": "Potensi Laba: Skor 3,0 (Tingginya Beban Fasilitas Mal)", "source": "Industry Margin Benchmarks", "source_id": "Tolok Ukur Margin Industri", "defense": "Massive air conditioning, electricity, and facility maintenance charges severely compressed operating profitability into chronic losses (score 3.0).", "defense_id": "Biaya listrik pendingin udara raksasa dan pemeliharaan gedung mal menelan margin operasional hingga jatuh ke kerugian kronis (skor 3,0)."}, "sp_0": {"title": "Rate of Inflation: Score -5.0 (Discretionary Family Spend Drop)", "title_id": "Tingkat Inflasi: Skor -5,0 (Penurunan Belanja Rekreasi Keluarga)", "source": "Macroeconomic Spending Data 2020", "source_id": "Data Pengeluaran Makroekonomi 2020", "defense": "Discretionary family entertainment, non-essential merchandise, and dining outings were the first budgets cut by Indonesian households during downturns (-5.0).", "defense_id": "Pengeluaran rekreasi keluarga, pakaian, dan hiburan di mal dipangkas paling awal oleh keluarga Indonesia saat resesi (-5,0)."}, "sp_1": {"title": "Technological Changes: Score -6.0 (Absence of Quick-Commerce App)", "title_id": "Pergeseran Teknologi: Skor -6,0 (Ketertinggalan Belanja Digital)", "source": "Digital Commerce Market Audits", "source_id": "Audit Pasar Belanja Daring", "defense": "Failed to launch an effective proprietary on-demand grocery app, remaining completely dependent on declining in-person foot traffic. Extreme threat -6.0.", "defense_id": "Gagal meluncurkan aplikasi belanja kilat mandiri yang berdaya saing, tetap bergantung penuh pada kunjungan fisik mal yang surut (-6,0)."}, "sp_2": {"title": "Price Elasticity: Score -5.0 (Severe E-Commerce Price Defection)", "title_id": "Elastisitas Harga: Skor -5,0 (Peralihan Harga ke Marketplace)", "source": "Consumer Pricing Audits", "source_id": "Audit Harga Konsumen", "defense": "High price sensitivity on general merchandise and apparel; shoppers readily price-checked and purchased cheaper equivalents on Shopee and Tokopedia (-5.0).", "defense_id": "Elastisitas tinggi pada produk non-makanan; konsumen dengan mudah mengecek harga dan membeli barang lebih murah di marketplace (-5,0)."}, "sp_3": {"title": "Competitive Pressure: Score -5.0 (Double Squeeze from Minimarkets & Apps)", "title_id": "Tekanan Persaingan: Skor -5,0 (Himpitan Minimarket & E-Commerce)", "source": "Case Exhibit 4; Retail Competitive Dynamics", "source_id": "Kasus Lampiran 4; Dinamika Persaingan Ritel", "defense": "Squeezed between convenient neighborhood minimarkets for groceries and cheap e-commerce platforms for non-food merchandise, eroding core revenue (-5.0).", "defense_id": "Terhimpit di antara minimarket dekat rumah untuk sembako dan platform e-commerce murah untuk barang non-makanan, menggerus pasar (-5,0)."}, "sp_4": {"title": "Barriers to Entry / Leases: Score -5.0 (Crushing Anchor Mall Leases)", "title_id": "Beban Sewa Mal: Skor -5,0 (Beban Liabilitas Sewa Jangkar)", "source": "PSAK 73 Commercial Lease Filings", "source_id": "Keterbukaan Sewa Komersial PSAK 73", "defense": "Long-term anchor tenant leases on massive mall spaces locked Transmart into crushing fixed lease obligations under PSAK 73, forcing severe store closure costs (-5.0).", "defense_id": "Kontrak sewa jangka panjang sebagai penyewa jangkar mal raksasa mengunci Transmart pada kewajiban sewa tetap PSAK 73 yang sangat berat (-5,0)."}}};
 
 
 function inspectSpaceFactorRow(row) {
@@ -2637,20 +2676,7 @@ function inspectSpaceFactorRow(row) {
 }
 
 // Global Delegated Click & Hover Handlers for Individual Factor Rows
-document.addEventListener('mouseover', function(e) {
-  const row = e.target.closest('.dim-table-row');
-  if (row) {
-    inspectSpaceFactorRow(row);
-  }
-});
 
-document.addEventListener('mouseout', function(e) {
-  const row = e.target.closest('.dim-table-row');
-  if (row && !e.relatedTarget?.closest('.dim-table-row')) {
-    row.classList.remove('is-inspected');
-    renderSpaceInspectorBaseline();
-  }
-});
 
 document.addEventListener('click', function(e) {
   const row = e.target.closest('.dim-table-row');
@@ -2659,6 +2685,7 @@ document.addEventListener('click', function(e) {
   }
 });
 
+let matrixIePreview, matrixIeRender;
 const { createApp, ref, computed, onMounted, onUnmounted, watch, nextTick } = Vue;
 createApp({
  setup() {
@@ -2736,6 +2763,97 @@ createApp({
   const fmxBoardColumns=[{"title": "Strategic context", "subtitle": "Alfamart vs MPPA format models", "notes": [{"id": "FMX-01", "title": "The Umbrella Brand Lesson (Alfamart → Alfamidi)", "body": "Sumber Alfaria built Alfamidi (mid-sized supermarket) as an upward format extension of Alfamart (minimarket). By keeping the 'Alfa-' master brand prefix, consumer brand trust, loyalty, and advertising halo transfer automatically.", "placement": "Competitive Profile Matrix; Brand Portfolio Analysis", "source": "Case Exhibit 8 & AMRT Annual Report 2020"}, {"id": "FMX-02", "title": "MPPA Brand Fragmentation & FMX Obscurity", "body": "Hypermart generates 84.5% of MPPA sales and holds major national brand awareness. But MPPA fragmented its smaller stores across obscure names: Foodmart, Primo, Hyfresh, and FMX. FMX ('Foodmart Express') carries zero Hypermart brand recognition among everyday consumers.", "placement": "Internal Analysis (Brand Equity & Weaknesses)"}, {"id": "FMX-03", "title": "The Convenience Store Scale Trap", "body": "Operating only ~15 FMX convenience kiosks in hospitals or transit hubs is economically unviable. Without thousands of stores, convenience retail cannot achieve the buying scale or route density to compete against Indomaret (18,113 stores) and Alfamart (15,434 stores).", "placement": "Five Forces (Rivalry) & CPM Analysis"}]}, {"title": "Possible solutions", "subtitle": "Divestment vs brand consolidation", "notes": [{"id": "FMX-04", "title": "Option A: Divest Unviable Leases & SmartClub (WT Strategy)", "body": "Formally exit chronically loss-making standalone convenience kiosk leases and divest the subscale SmartClub B2B wholesale business. Divesting non-core operations eliminates logistical drag on distribution centers and stops bleeding working capital on unwinnable minimarket and wholesale turf.", "placement": "SWOT Matrix (WT Strategies); Retrenchment Planning"}, {"id": "FMX-05", "title": "Option B: Hybrid O2O Storefronts & Master Brand Integration (WO Strategy)", "body": "Adopt the Alfamidi playbook: rebrand viable compact storefronts and kiosks under the unified 'Hy-' master brand architecture (Hypermart & Hyfresh). Keep storefronts open to walk-in foot traffic while embedding dedicated GrabMart micro-fulfillment bays for 15-minute express deliveries.", "placement": "SWOT Matrix (WO Strategies); Brand Architecture"}, {"id": "FMX-06", "title": "Unified Loyalty & Digital App Ecosystem", "body": "Ensure all compact stores share the Hypermart Online app, WhatsApp Chat & Shop delivery, and OVO digital wallet points. Avoid creating separate sub-brand identities that confuse omnichannel shoppers.", "placement": "Omnichannel Strategy; Digital Integration"}]}, {"title": "Evidence & evaluation", "subtitle": "Portfolio fit and SWOT placement", "notes": [{"id": "FMX-07", "title": "Placement in SWOT Matrix", "body": "WT Strategy: Terminate non-core formats (SmartClub wholesale, unviable convenience leases) to plug the working capital deficit. WO Strategy: Scale Hyfresh as MPPA's distinctive, standardized residential fresh supermarket (mirroring Alfamidi's fresh network) with hybrid GrabMart O2O storefront integration.", "placement": "SWOT Matrix (WT-01 & WO-02 Strategies)"}, {"id": "FMX-08", "title": "Decision Criteria for QSPM", "body": "In the QSPM evaluation, evaluate whether capital should be spent trying to sustain multiple niche formats (FMX/Foodmart/Primo) versus aggressively rightsizing hypermarkets and scaling a single unified fresh format (Hyfresh).", "placement": "QSPM Decision Matrix (Strategy Prioritization)"}]}];
 
   const transmartBoardColumns = [{"title": "The Transmart Collapse", "subtitle": "Why higher revenue led to empty shelves", "notes": [{"id": "TM-01", "title": "The Working Capital Death Spiral & Supplier Boycott", "body": "Why Transmart's higher sales (Rp13.8T) were deceptive: Cash-flow strain from expensive mall entertainment builds forced Transmart to stretch trade payables beyond 90\u2013120 days. Unpaid FMCG and fresh food suppliers halted deliveries, leaving display chillers and grocery aisles completely bare across Jakarta and regional cities.", "placement": "SPACE Matrix (Defensive Position); CPM Rival Analysis", "source": "Case Exhibit 5; Industry Disclosures & FMCG Supplier Audits"}, {"id": "TM-02", "title": "The '4-in-1' Mall Entertainment Trap", "body": "Transmart committed immense capital to 8,000\u201312,000 m\u00b2 mega-stores integrating Trans Studio Mini indoor roller coasters and cinemas. When COVID-19 mobility curbs and mall restrictions hit, family leisure footfall plummeted. Unavoidable PSAK 73 non-cancellable mall leases and crushing air-conditioning/electricity overhead crippled operating cash flows.", "placement": "PESTLE Analysis (Economic & Social); Five Forces", "source": "Case Exhibit 4; CT Corp Retail Disclosures"}, {"id": "TM-03", "title": "Post-Carrefour Brand Equity Erosion", "body": "Following the buyout of Carrefour by CT Corp, the rebranding to Transmart alienated traditional value-conscious grocery shoppers. Transmart was widely perceived as overpriced without meaningful loyalty rewards. Once fresh produce shelves dried up, shoppers permanently defected to nearby minimarkets and supermarkets.", "placement": "Competitive Profile Matrix; Consumer Perception Benchmarks", "source": "Case p. 590; Retail Footfall Audits 2020"}]}, {"title": "MPPA's Cold-Chain Moat", "subtitle": "Why MPPA preserved a competitive posture", "notes": [{"id": "TM-04", "title": "Centralized 66,755 m\u00b2 Halal Cold-Chain Infrastructure", "body": "MPPA's core structural advantage is its 3 multi-temperature distribution centers (notably Balaraja and Surabaya). As the first Indonesian retailer with MUI Halal-certified cold-chain logistics, MPPA centrally manages farm-level chilling, temperature-monitored fleet transport, and automated cross-docking, maintaining fresh food quality standards that Transmart and minimarkets cannot replicate.", "placement": "IFE Matrix (Strength S2, score 4); SPACE CP (-3.20)", "source": "AR2020 Note 8; MUI Halal Logistics Certification"}, {"id": "TM-05", "title": "Protected Vendor Ecosystem & 'Champion of Fresh'", "body": "Unlike Transmart, MPPA protected its working relationships with 750 direct fresh food suppliers, ensuring uninterrupted daily shipments of produce and meats. Fresh food represented 24%+ of Hypermart sales and was non-discretionary, keeping shoppers returning for daily cooking essentials during lockdowns.", "placement": "IFE Matrix (Strength S1); SWOT SO-03 & ST-02 Strategies", "source": "Case p. 587; AR2020 Fresh Merchandising Review"}, {"id": "TM-06", "title": "Asset-Light Quick-Commerce Fulfillment (GrabMart)", "body": "Because MPPA had standardized chilled product staging and live SKU inventory, it swiftly converted 97 Hypermart stores into virtual dark stores on GrabMart, GoMart, and Shopee. Online sales jumped from 0.1% to 5% of revenue in 2020. Transmart had no equivalent digital infrastructure or chilled fulfillment capability.", "placement": "EFE Matrix (Opportunity O1); TOWS SO-04 Strategy", "source": "Case p. 594; e-Conomy SEA 2020 Report"}]}, {"title": "Strategic Takeaway & Defense", "subtitle": "Key arguments to defend during presentation", "notes": [{"id": "TM-07", "title": "Revenue Volume vs Operational Viability Defense", "body": "When asked why Transmart is Defensive despite having higher revenue (Rp13.8T vs Rp6.7T), explain that top-line scale is an illusion if supplier liquidity is broken. Transmart's negative X (-1.60) reflects a declining format with severed supplier trust, while MPPA's positive X (+0.60) reflects a viable fresh-food moat and agile omnichannel execution.", "placement": "SPACE Matrix Defense; Oral Defense Presentation", "source": "Fred David Strategic Management Ch. 6; Case Exhibit 5"}, {"id": "TM-08", "title": "Validation of MPPA's 2021\u20132025 Downsizing Strategy", "body": "Transmart's collapse validates MPPA's strategic decision NOT to pursue large-scale mall entertainment capex. Instead, MPPA must accelerate compact Hyfresh neighbourhood store conversions, monetize excess hypermarket square footage, and selectively close chronically cash-negative mall stores to avoid Transmart's fate.", "placement": "TOWS WT-01 & WT-02 Retrenchment; QSPM Matrix", "source": "Strategic Turnaround Plan 2021\u20132025"}]}];
+  const strategyRoadmapColumns = [
+    {
+      "title": "Stage 2 & 3: Formulation & Decision",
+      "subtitle": "Fred David Matching & Selection (Matahari.xlsx Part I)",
+      "notes": [
+        {
+          "id": "GSM-01",
+          "title": "Grand Strategy Matrix (Slide 28 & Sheet 'GRAND')",
+          "body": "Evaluates MPPA across Competitive Position (Weak, X=3.2 on 1–9 scale) and Market Growth (Rapid, Y=7.0 for grocery essentials & e-commerce). Places Corporate MPPA in Quadrant II, mathematically prescribing: Market Development, Market Penetration, Retrenchment, and Divestiture.",
+          "placement": "Slide 28; Matahari.xlsx Sheet 'GRAND' & 'PART I' Rows 294–310",
+          "source": "Fred David Ch. 6; Matahari.xlsx Sheet 'GRAND'"
+        },
+        {
+          "id": "QSPM-01",
+          "title": "Quantitative Strategic Planning Matrix (Slide 29 & Sheet 'QSPM')",
+          "body": "Stage 3 Decision Stage tool using IFE and EFE weights to objectively evaluate Strategy 1 (Omni-Channel Compact Fresh Expansion / 'Hy-' Playbook) against Strategy 2 (Traditional Defensive Cost Retrenchment). Proves Strategy 1 achieves a substantially higher Total Attractiveness Score (TAS) due to alignment with digital grocery growth and store rightsizing.",
+          "placement": "Slide 29; Matahari.xlsx Sheet 'QSPM' & 'PART I' Rows 317–350",
+          "source": "Fred David Ch. 6; Matahari.xlsx Sheet 'QSPM'"
+        },
+        {
+          "id": "RED-01",
+          "title": "The Analytical 'Red Thread' Synthesis",
+          "body": "Ensures every strategic recommendation traces backward directly to an analytical matrix: SPACE (Competitive/Defensive) + BCG (97.4% Dogs) + IE (Cell IX Pruning vs Cell II Grow) + GSM (Quadrant II) → QSPM selection → Final action plan.",
+          "placement": "Strategic Red Thread Defense for Professor Examination",
+          "source": "Integrated Strategy Formulation Framework"
+        }
+      ]
+    },
+    {
+      "title": "Stage 4: Recommendations & Execution",
+      "subtitle": "Sample PPT Slides 30–33 Architecture",
+      "notes": [
+        {
+          "id": "REC-01",
+          "title": "The 3 Core Strategic Pillars (Slide 30)",
+          "body": "Consolidates accepted generic strategies: (1) Unify small formats under the 'Hy-' Master Brand (Hyfresh neighborhood stores, transit Hy-Express pilot, Primo luxury halo); (2) Rightsize Hypermarts by 30–40% and deploy GrabMart hybrid O2O dark stores; (3) Retrenchment: terminate loss-making mall kiosks and liquidate SmartClub wholesale.",
+          "placement": "Slide 30 (Sample PPT Slide 30 'RECOMMENDATION')",
+          "source": "Sample PPT Slide 30; Case 23 Strategic Analysis"
+        },
+        {
+          "id": "5W1H-01",
+          "title": "Implementation Action Plan & Stage Gates (Slide 31)",
+          "body": "Answers What, Why, When, How, Where, Who across a 3-year horizon: Year 1 lease terminations, Hyfresh rebranding, GrabMart dark stores, and 12–18 month Hy-Express transit pilot launch; Year 2 transit pilot evaluation gate; Year 3 network-wide profitability and positive operating cash flow.",
+          "placement": "Slide 31 (Sample PPT Slide 31 'Example 5W1H')",
+          "source": "Sample PPT Slide 31; Implementation Roadmap"
+        },
+        {
+          "id": "ORG-01",
+          "title": "Proposed Organizational Structure & Governance (Slide 32)",
+          "body": "Realigns corporate governance as identified in the case study: resolves Multipolar/MPPA executive overlap, creates an Independent Oversight Committee for related-party mall leases (Lippo/LMIR Trust), and establishes a dedicated COO for Compact Fresh & Omni-Channel.",
+          "placement": "Slide 32 (Sample PPT Slide 32 'STRUKTUR ORGANISASI')",
+          "source": "Sample PPT Slide 32; Case Analysis Governance Review"
+        },
+        {
+          "id": "VIS-01",
+          "title": "Proposed Vision & Mission 9-Component Audit (Slide 33)",
+          "body": "Drafts a modern 2021–2025 Vision and Mission statement, audited and compliant with all 9 Fred David components: Customers, Products, Geography, Technology, Survival/Growth/Profitability, Philosophy, Self-Concept, Public Image, and Employees.",
+          "placement": "Slide 33 (Sample PPT Slide 33 'VISION & MISSION')",
+          "source": "Sample PPT Slide 33; Fred David Ch. 2"
+        }
+      ]
+    },
+    {
+      "title": "Stage 5: Financial Section & Projections",
+      "subtitle": "Matahari.xlsx Part II Financial Engine",
+      "notes": [
+        {
+          "id": "FIN-01",
+          "title": "EPS / EBIT Analysis & Financing Mix (Sheet 'EPS_EBIT')",
+          "body": "Evaluates financing options for the turnaround: Common Stock vs Debt vs 70/30 Hybrid. Because MPPA's debt-to-equity is already stressed and interest expense jumped to Rp267B in 2020, asset-light O2O partnerships with Grab and internal cash from inventory liquidation avoid high-interest borrowing.",
+          "placement": "Matahari.xlsx Sheet 'EPS_EBIT' & 'PART II' Rows 107–137",
+          "source": "Matahari.xlsx Sheet 'EPS_EBIT'; Fred David Ch. 8"
+        },
+        {
+          "id": "FIN-02",
+          "title": "3-Year Projected Financial Statements (Sheet 'Projected Statements')",
+          "body": "Constructs 2021–2023 pro forma Income Statements and Balance Sheets: models revenue recovery (+5% to +8% driven by compact Hyfresh and online O2O), gross margin expansion to 20.5%–21.5% via high-margin fresh assortments, rightsizing lease savings (reducing PSAK 73 liabilities), and return to positive operating profit by Year 2.",
+          "placement": "Matahari.xlsx Sheet 'Projected Statements' & 'PART II' Rows 139–220",
+          "source": "Matahari.xlsx Sheet 'Projected Statements'; AR2020"
+        },
+        {
+          "id": "FIN-03",
+          "title": "Corporate Valuation & Key Ratios (Sheets 'Valuation' & 'Ratios')",
+          "body": "Calculates pre-turnaround vs post-turnaround corporate valuation across 4 methods: Net Worth, 5x Net Income, P/E multiple, and Market Capitalization. Projects liquidity recovery: Current Ratio improves from 0.60x to 1.05x+, interest coverage returns positive, and cash reserves stabilize.",
+          "placement": "Matahari.xlsx Sheets 'Company Valuation', 'Ratios', 'Retained Earnings Table'",
+          "source": "Matahari.xlsx Sheets 'Company Valuation', 'Ratios'"
+        }
+      ]
+    }
+  ];
+
 const ideaBoards=[
   {
     id: 'environment-foodwaste',
@@ -2757,6 +2875,13 @@ const ideaBoards=[
     description: 'Detailed analysis of why Transmart collapsed into empty shelves despite higher top-line sales, and how MPPA’s 66,755 m² Halal cold chain protects Hypermart’s competitive position.',
     footer: 'Strategic takeaway: Top-line scale is meaningless without supplier liquidity, cold-chain security, and format agility.',
     columns: transmartBoardColumns
+  },
+  {
+    id: 'strategy-financial-roadmap',
+    title: 'Strategy & Financial Roadmap (Sample PPT + Matahari.xlsx)',
+    description: 'Master integrated roadmap from Stage 2 matching through Stage 3 decision, recommendations, 5W1H implementation, governance, vision/mission, and financial modeling.',
+    footer: 'Complete Red Thread: Bridges Fred David Stage 2 matching into Stage 3 decision, 5W1H execution, governance realignments, and 3-year pro forma financials.',
+    columns: strategyRoadmapColumns
   },
 ];
   const initialBoardFromUrl = () => {
@@ -3057,6 +3182,8 @@ function resetIeInspector() {
   selectIeDivision(activeIeDivision);
 }
 
+window.ieDivisionsData = ieDivisionsData;
+window.ieCalculationsData = ieCalculationsData;
 window.selectIeDivision = selectIeDivision;
 window.inspectIeDivisionRow = inspectIeDivisionRow;
 window.resetIeInspector = resetIeInspector;
@@ -3150,6 +3277,8 @@ const slides=[{"label": "Slide 1: Company overview", "html": "\n<div class=\"dec
   const speakerNotes=["MPPA operates Hypermart and six other retail formats in Indonesia. The company was established in 1986 and listed in 1992. Source: case p. 587.", "MPPA expanded from supermarkets into Hypermart, then smaller neighbourhood formats. Its 2018 shift toward consumer retailing preceded Hyfresh’s launch in 2019. Source: case p. 587.", "The portfolio covers broad household shopping, premium groceries, neighbourhood purchases, convenience, health and beauty, and wholesale. Source: case pp. 590–592.", "Hypermart contributed about 85% of 2020 revenue, compared with 10% from Foodmart and Primo and 5% from other formats. Source: case Exhibit 5, p. 590.", "Exhibit 6 from case page 592 outlines the performance and footprint of MPPA’s 7 retail formats between 2018 and 2020. The column '2020 Stores Opened/Closed' uses the notation 'X/Y', where X represents new store openings and Y represents permanent store closures during FY2020. Hypermart’s '0/2' means zero new openings and two permanent closures, ending at 100 stores while anchoring 84.5% of total sales (Rp5,698 billion). Hyfresh was the only format with expansion ('2/1', net +1 store), demonstrating MPPA’s strategic pivot to compact fresh supermarkets. Across the whole company, MPPA opened only 2 stores and closed 13 ('2/13'), contracting by 11 net stores to preserve liquidity during the pandemic.", "CEO Elliot Dickson sits above eight management roles. Large and small stores have separate directors. Source: case Exhibit 1, pp. 587–588.", "The case identifies no published vision or mission in its reviewed sources. The quoted vision is the authors’ suggested statement. Source: case p. 587.", "The background explains why the study is needed before the problem statement identifies the decision. MPPA’s operating loss was Rp196.1bn in 2019, before COVID-19. The 2020 annual report attributes sales pressure to weaker purchasing power and restrictions on operating hours (p. 54), and describes online ordering, Chat & Shop, marketplace partnerships, delivery and pickup in response to weaker store traffic (p. 40). Online sales reached approximately 4–5% of total sales versus less than 0.1% previously. The case explicitly requests a strategic plan for 2021–2025 on p. 594. These facts establish the setting; they do not preselect store downsizing or digital expansion as the final strategy.", "MPPA was already loss-making before COVID-19. Revenue fell 22% in 2020; EBIT improved but remained negative at −Rp140.3bn. The working-capital shortfall widened from Rp714.3bn to Rp1,227.8bn. The central challenge is to restore profitable sales through stores and digital channels within limited financial capacity. Net finance costs increased mainly because PSAK 73 added Rp166.2bn in lease finance charges; interest expense itself fell from Rp128.9bn to Rp107.3bn. This explains the weaker pretax result despite improved EBIT. Sources: case Exhibits 2–3; AR2020 p. 55, Notes 2.c and 28.", "Slide 9 presents the factual market footprint and food retail demand in Indonesia in 2020, drawn from Case 23 Exhibit 7 (Euromonitor, p. 593). Across the six primary staple food categories, consumer sales reached .7 billion USD. Rice (,587M) and Soft Drinks (,477M) account for over half of this volume. Furthermore, Google, Temasek, and Bain report that Indonesian e-commerce GMV expanded +54% YoY to $32B in 2020, with groceries and daily essentials being the fastest-surging category as households avoided physical crowds. This establishes that staple food demand is fundamentally non-discretionary and resilient, providing the foundational volume that accelerated into digital channels during the pandemic.", "Slide 10 analyzes consumer transaction frequency and store foot-traffic dynamics. Indonesian households purchase fresh produce, meat, dairy, and pantry staples 2 to 4 times a week (100 to 200 annual trips), whereas non-food general merchandise like appliances, homeware, or furniture are bought only once every few months or years. Perishables and packaged groceries generate over 70% to 80% of store foot-traffic. Modern hypermarkets historically used food as a traffic driver to fuel browsing in higher-margin non-food aisles. When shoppers stop visiting for groceries, sales for non-food items collapse automatically.", "Slide 11 examines category-level channel migration and the resilience of fresh perishables. Discretionary non-food merchandise faced heavy online disruption from e-commerce marketplaces like Shopee and Tokopedia, as well as specialized department stores, because ambient non-food products are easily compared and shipped. In contrast, fresh food remained physically anchored due to cold-chain infrastructure requirements. MPPA’s own numbers verify this structural shift: fresh food sales contribution climbed from 24.0% in 2019 to 27.7% in 2020. This dynamic drove MPPA's strategic rollout of Hyfresh, a compact format focused 100% on groceries and fresh food rather than general merchandise.", "Slide 12 illustrates the structural format substitution that occurred in 2020. During mobility curbs, consumers didn't stop eating; they redirected weekly grocery trips away from large mall-anchored hypermarkets to nearby neighborhood minimarkets and mid-sized fresh supermarkets. Indomaret (18,113 stores) and Alfamart (15,434 stores) represent over 94% of modern food retail outlets, positioned right in residential clusters. Shoppers substituted bi-weekly destination hypermarket visits with frequent, local minimarket trips, concentrating modern food spending in proximity formats and bypassing destination malls.", "Five external factors frame the recovery challenge: restrictions on store access, weaker household consumption, permanent digital adoption for essentials, digital grocery channels, and food waste and resource efficiency. Bappenas’s 2021 study provides national food-chain context for 2000–2019. Waste reduction could protect margin and inventory cash, but MPPA-specific losses and savings are not established. Sources: Jakarta government, BI/BPS, Google/Temasek/Bain, Bappenas and 2020 company reports.", "Jakarta’s initial PSBB began on 10 April 2020. National real household consumption contracted by 2.63%. In the New Normal, 37% of Indonesian digital consumers were new adopters, and 93% intend to continue post-pandemic. Retailers offered app, website and messaging channels. Sources and survey scope are listed in Notes.", "Price rivalry and shoppers’ choice of retailers pressure MPPA’s sales. Its logistics network creates an entry barrier, while procurement supports its supplier position. Sources: MPPA 2020 report pp. 12, 38, 47–49, 115 and 126; David Chapter 3.", "Exhibit 8 shows Hypermart sales of USD414m versus USD5,900m for Indomaret and USD5,256m for Alfamart in 2020. These are selected retail-brand sales, not market shares or app sales. LotteMart Indonesia’s separately reported 2020 retail-entity revenue is KRW200.3bn, approximately Rp2.47tn at 2020 average FX. All six chart bars use Rp trillion; the first five are case estimates and LotteMart is a financial-report figure. HappyFresh and Sayurbox remain unverified for comparable nationwide 2020 sales. HappyFresh is a partner-retailer platform, so its transactions can overlap retailer sales. App downloads and traffic establish activity, not annual revenue or the cause of MPPA’s sales decline. Digital-rival evidence and limits are in Notes.", "Slide 18 introduces the five selected head-to-head rivals in consumer grocery retail: Indomaret, Alfamart, Transmart, Alfamidi, and LotteMart. The slide features Case Exhibit 8 (p. 593), illustrating the 2020 sales of top food retailers: Indomaret led at $5,900M, followed by Alfamart at $5,256M, Transmart at $954M, Alfa Midi at $863M, and Hypermart at $414M. The minimarket duopoly captured 72.6% of top-retailer sales, while Hypermart held a 2.7% share, highlighting the intense scale advantage of neighborhood chains.", "Slide 19 presents the factual evidence table across nine critical success factors. We explicitly added Parent Conglomerate and Ecosystem Backing to give credit to MPPA's Lippo Group (Riady family) backing, while objectively noting that Lippo injected no fresh equity in 2020, contrasting with Salim Group's heavy reinvestment into Indomaret.", "Slide 20 is our scored Competitive Profile Matrix across nine critical factors, summing to exactly 1.00. Alfamart leads at 3.58 and Indomaret follows at 3.47. Alfamidi scores 2.88. MPPA earns 2.46, placing it in a viable turnaround position where fresh food and Lippo ecosystem backing are assets, but standalone liquidity and hypermarket format drag constrain its score. Transmart (1.98) and LotteMart (2.10) lag behind.", "Slide 21 establishes the foundational 4-quadrant SWOT Analysis for MPPA, synthesizing the 10 internal strengths, 10 internal weaknesses, 10 external opportunities, and 10 external threats derived directly from the case baseline and audited 2020 corporate disclosures. In strict accordance with strategic management methodology, all 40 factors are framed strictly as factual diagnostic conditions without action verbs or injected premature strategies. This comprehensive qualitative matrix serves as the single source of truth feeding directly into our EFE Matrix on Slide 22, our IFE Matrix on Slide 23, and subsequent TOWS strategic formulation.", "Slide 22 presents the External Factor Evaluation (EFE) Matrix for MPPA, synthesizing the 10 critical opportunities and 10 critical threats derived directly from our PESTLE, Market Footprint, and Five Forces analyses. Each factor is stated strictly as a quantified factual condition without action verbs. Total weights sum to 1.00. MPPA achieves an overall weighted score of 2.46 against the 2.50 industry midpoint, demonstrating superior agile execution in e-grocery channels and cold-chain fresh food (scores of 3 and 4), yet remaining structurally constrained by minimarket proximity ubiquity, shopping mall foot-traffic caps, and fixed PSAK 73 lease financing commitments (scores of 1 and 2). Hover over any factor row to inspect its analytical rationale and sourced corporate citation.", "Slide 23 presents the Internal Factor Evaluation (IFE) Matrix for MPPA, assessing 10 internal strengths and 10 internal weaknesses grounded in audited financial disclosures from Annual Report 2020 and Case 23. Stated strictly as diagnostic states without action verbs. Strengths receive ratings of 3 or 4, while weaknesses receive ratings of 1 or 2. Total weights equal exactly 1.00. MPPA achieves an overall weighted score of 2.21 against the 2.50 industry threshold, confirming an internally weak operational and balance sheet profile. While cold-chain fresh food and rapid omnichannel integration provide viable growth engines (Strengths score: 1.53), they are heavily weighed down by four years of chronic net losses, negative operating cash flows, mall-anchored hypermarket exposure, and PSAK 73 lease financing commitments (Weaknesses score: 0.68). Together with our EFE score of 2.46, this firmly locates MPPA in Cell VIII of the IE Matrix (Harvest or Divest/Retrenchment).", "Slide 24 represents Stage 2 (The Matching Stage) of the Fred David strategic management framework: the SWOT (TOWS) Matrix. Having established the 10 Strengths, 10 Weaknesses, 10 Opportunities, and 10 Threats on Slide 21 and evaluated them in EFE (2.46) and IFE (2.21), this matrix pairs internal capabilities with external market forces into 16 concrete actionable strategies across four distinct strategic postures: SO (Maxi-Maxi), WO (Mini-Maxi), ST (Maxi-Mini), and WT (Mini-Mini). Each strategy explicitly cites its foundational diagnostic factor codes in strict alignment with academic methodology. Key strategic pillars emerging from this synthesis include accelerating compact Hyfresh neighbourhood store conversions (SO3, ST2), monetizing under-utilized hypermarket space as digital dark-store micro-fulfillment hubs (SO4, WO1), and executing aggressive defensive retrenchment by closing chronically cash-negative mall stores to eliminate PSAK 73 lease financing liabilities (WT1, WT2). These formulated strategies populate sheet 'SWOT' in Matahari.xlsx and serve as the direct inputs evaluated in our upcoming QSPM decision matrix.", "Slide 25 synthesizes the internal and external strategic dimensions into the Strategic Position and Action Evaluation (SPACE) Matrix, plotting MPPA across Financial Position (FP: +1.80), Competitive Position (CP: -3.20), Industry Position (IP: +3.80), and Stability Position (SP: -4.60). The resulting directional vector of X = +0.60 and Y = -2.80 places MPPA in the Competitive Quadrant, directly on the frontier of the Defensive posture. This mathematical diagnosis confirms that while high structural food demand and omnichannel grocery expansion provide viable commercial runway, chronic net losses and PSAK 73 lease liabilities strictly preclude balance-sheet-heavy expansions, mandating asset-light partnerships with Grab and selective store retrenchment. Benchmarking against rivals illustrates Alfamart firmly in the Aggressive Quadrant (X: +3.80, Y: +3.00) powered by minimarket ubiquity, while Transmart languishes in the Defensive Quadrant (X: -1.60, Y: -3.60) from mall hypermarket anchor exposure.", "Slide 26 presents the Boston Consulting Group (BCG) Matrix, analyzing MPPA's multidivisional retail portfolio across Relative Market Share Position (horizontal axis, 1.0 to 0.0 with 0.50 midpoint) and Industry Sales Growth Rate (vertical axis, -20% to +20% with 0.0% midpoint). Circle areas correspond to revenue shares from Case 23 Exhibit 6. The quantitative diagnosis reveals severe corporate portfolio imbalance: 97.4% of MPPA's revenues reside in the Dog quadrant—anchored by Hypermart at 84.5% (RMSP 0.41 vs Transmart's Rp13.8T in a market shrinking by -12% annually), Foodmart & Primo at 10.2% (RMSP 0.07 vs Super Indo), SmartClub at 2.0% (RMSP 0.01), and FMX at 0.7% (RMSP 0.001 vs Indomaret Rp80T). With zero divisions in Stars or Cash Cows, MPPA's growth opportunities in Question Marks—Hyfresh (+10% growth) and Boston Health & Beauty (+14% growth)—generate only 2.7% of total sales (Rp180B). In strict accordance with Fred David Chapter 6 matching principles, MPPA cannot sustain across-the-board store openings; leadership must aggressively harvest Hypermart's cash flow by rightsizing giant 6,000 m² floorplates, converting surplus space into MPPA hybrid O2O storefronts, and liquidating unviable SmartClub wholesale operations to fund the rapid rollout of high-growth compact Hyfresh neighborhood supermarkets.", "Slide 27 presents the Internal-External (IE) Matrix, Fred David's nine-cell portfolio formulation model that bridges our Stage 1 evaluative inputs—the IFE Matrix (weighted score of 2.21) and the EFE Matrix (weighted score of 2.46)—into explicit divisional strategy formulation. The nine cells are divided into three distinct strategic regions: Region 1 (Cells I, II, IV: Grow and Build), Region 2 (Cells III, V, VII: Hold and Maintain), and Region 3 (Cells VI, VIII, IX: Harvest or Divest). At the consolidated corporate level, MPPA plots in Cell V (Hold and Maintain). However, multidivisional analysis exposes severe internal polarization across all 6 formats: 84.5% of company sales reside in Hypermart (IFE: 2.16 Average, EFE: 2.42 Medium), which borders Cell VIII (Harvest or Divest) due to giant 6,000 m² mall leases and negative operating cash flows. Conversely, agile compact formats—Hyfresh (IFE: 2.85 Average, EFE: 3.10 High) and Boston Health & Beauty (IFE: 2.75 Average, EFE: 3.15 High)—land firmly in Cell II (Grow and Build), driven by high proximity demand and surging health consciousness (+10% and +14% industry growth), but represent only 2.7% of revenues (Rp180B). Meanwhile, both SmartClub (IFE: 1.65 Weak, EFE: 1.60 Low) and FMX convenience kiosks (IFE: 1.80 Weak, EFE: 1.85 Low, Rp46B, 0.7% of sales) languish in Cell IX (Harvest or Divest / Retrenchment), achieving 100% reconciliation of total portfolio sales to audited Rp6,747B across all 211 stores. In strict alignment with Fred David Chapter 6 matching principles, MPPA executes the 'Alfamart / Alfamidi Playbook': (1) Unify fragmented small supermarket storefronts under the 'Hy-' master brand (Hyfresh & Hy-Express), while preserving Primo as MPPA's dedicated luxury gourmet halo banner under the powerful 'Hy-' master brand (Hypermart & Hyfresh), eliminating sub-brand obscurity; (2) Distinctively establish Hyfresh as a standardized 500–1,000 m² neighborhood fresh supermarket (60%+ fresh mix vs. minimarkets); (3) Keep physical retail storefronts active to capture foot-traffic margins while embedding MPPA hybrid O2O micro-fulfillment storefronts; and (4) Liquidate subscale non-core assets (SmartClub wholesale and unviable standalone convenience leases) to fund the rapid replication of compact Hyfresh stores in Cell II."];
   { const oldNotes = speakerNotes.slice(); [0,1,2,5,6,7,8,3,4].forEach((oldIndex, index) => { speakerNotes[index] = oldNotes[oldIndex]; }); }
   function ieTarget(event) { return event.target instanceof Element ? event.target.closest('.ie-row, .ie-bubble-group, .ie-fmt-btn') : null; }
+  matrixIePreview = key => ieDivisionsData[key];
+  matrixIeRender = key => selectIeDivision(key);
   function onIeHover(event) { const target=ieTarget(event); if(target && target.dataset.division) inspectIeDivisionRow(target.dataset.division); }
   function onIeOut(event) { const target=ieTarget(event); if(!target) return; const next=event.relatedTarget instanceof Element ? event.relatedTarget.closest('.ie-row, .ie-bubble-group, .ie-fmt-btn') : null; if(!next || next.dataset.division!==target.dataset.division) resetIeInspector(); }
   function onIeSelect(event) { const target=ieTarget(event); if(target && target.dataset.division) selectIeDivision(target.dataset.division); }
@@ -3223,7 +3352,7 @@ const slides=[{"label": "Slide 1: Company overview", "html": "\n<div class=\"dec
   function onHash(){view.value=viewFromHash();}
   onMounted(()=>{
     document.addEventListener('keydown',onKey);
-    document.addEventListener('mouseover',onIeHover); document.addEventListener('mouseout',onIeOut); document.addEventListener('click',onIeSelect); document.addEventListener('focusin',onIeFocus); document.addEventListener('focusout',onIeBlur); document.addEventListener('keydown',onIeKeyboard);
+    document.addEventListener('click',onIeSelect);
     window.addEventListener('hashchange',onHash);
     nextTick(()=>{
       if(currentSlide.value===24) {
@@ -3245,9 +3374,20 @@ const slides=[{"label": "Slide 1: Company overview", "html": "\n<div class=\"dec
       }
       if(currentSlide.value===26) {
         try {
-          const urlDiv = new URLSearchParams(window.location.search).get('div');
+          const urlParams = new URLSearchParams(window.location.search);
+          const urlDiv = urlParams.get('div');
           if (urlDiv && ieDivisionsData[urlDiv]) selectIeDivision(urlDiv);
           else selectIeDivision(activeIeDivision);
+          const urlDrawer = urlParams.get('drawer');
+          if (urlDrawer) {
+            nextTick(() => {
+              const row = document.querySelector(`.ie-row[data-division="${urlDrawer}"]`);
+              if (row) {
+                const match = findMatrixItem(row);
+                if (match) openMatrixDrawer(match);
+              }
+            });
+          }
         } catch(e) { selectIeDivision(activeIeDivision); }
       }
     });
@@ -3436,9 +3576,18 @@ watch(currentSlide, (val)=>{
     });
     if(val===26) nextTick(()=>{
       try {
-        const urlDiv = new URLSearchParams(window.location.search).get('div');
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlDiv = urlParams.get('div');
         if (urlDiv && ieDivisionsData[urlDiv]) { selectIeDivision(urlDiv); }
         else { selectIeDivision(activeIeDivision); }
+        const urlDrawer = urlParams.get('drawer');
+        if (urlDrawer) {
+          const row = document.querySelector(`.ie-row[data-division="${urlDrawer}"]`);
+          if (row) {
+            const match = findMatrixItem(row);
+            if (match) openMatrixDrawer(match);
+          }
+        }
       } catch(e) { selectIeDivision(activeIeDivision); }
     });
     
@@ -3449,7 +3598,7 @@ watch(currentSlide, (val)=>{
     if(currentSlide.value===26) nextTick(()=>selectIeDivision(activeIeDivision));
     
   });
-  onUnmounted(()=>{document.removeEventListener('keydown',onKey);window.removeEventListener('hashchange',onHash); document.removeEventListener('mouseover',onIeHover); document.removeEventListener('mouseout',onIeOut); document.removeEventListener('click',onIeSelect); document.removeEventListener('focusin',onIeFocus); document.removeEventListener('focusout',onIeBlur); document.removeEventListener('keydown',onIeKeyboard);});
+  onUnmounted(()=>{document.removeEventListener('keydown',onKey);window.removeEventListener('hashchange',onHash); document.removeEventListener('click',onIeSelect);});
   return {handoffTab,handoffCopyStatus,copyHandoff,documentScrollHandoff,fiveForces,fiveForceSources,selectedForce,activeForce,reachChartScope,reachChartApps,reachChartMaximum,formatReachTick,technologyTab,technologyTabs,reportedReach,matchedDownloads,channelOverview,channelCoverage,ideaBoards,selectedBoard,activeBoard,onBoardTabKey,boardColumns,language,t,translateHtml,setLanguage,pestleFactors,pestleSources,selectedPestle,activePestle,activePestleSources,financialMetrics,selectedMetric,activeMetric,management,selectedRole,brands,selectedBrand,activeBrand,revenueMix,selectedSegment,hoverSegment,activeSegment,selectSegment,view,currentSlide,slideDirection,deckView,slideText,copyStatus,presentationStatus,slides,speakerNotes,activeSlide,setView,showSlide,copySlide,present};
  }
 
@@ -3494,14 +3643,6 @@ watch(currentSlide, (val)=>{
     document.querySelectorAll('.efe-row').forEach(r => r.classList.remove('is-active'));
   }
 
-  document.addEventListener('mouseover', function(e) {
-    const row = e.target.closest('.efe-row');
-    if (row) {
-      updateEfeInspector(row);
-    } else if (!e.target.closest('#efe-ins-box') && !e.target.closest('.efe-matrix-wrap')) {
-      hideEfeInspector();
-    }
-  });
 
   document.addEventListener('click', function(e) {
     const row = e.target.closest('.efe-row');
@@ -3556,14 +3697,6 @@ watch(currentSlide, (val)=>{
     document.querySelectorAll('.ife-row').forEach(r => r.classList.remove('is-active'));
   }
 
-  document.addEventListener('mouseover', function(e) {
-    const row = e.target.closest('.ife-row');
-    if (row) {
-      updateIfeInspector(row);
-    } else if (!e.target.closest('#ife-ins-box') && !e.target.closest('.ife-matrix-wrap')) {
-      hideIfeInspector();
-    }
-  });
 
   document.addEventListener('click', function(e) {
     const row = e.target.closest('.ife-row');
@@ -3618,14 +3751,6 @@ watch(currentSlide, (val)=>{
     document.querySelectorAll('.swot-item').forEach(i => i.classList.remove('is-active'));
   }
 
-  document.addEventListener('mouseover', function(e) {
-    const item = e.target.closest('.swot-item');
-    if (item) {
-      updateSwotInspector(item);
-    } else if (!e.target.closest('#swot-ins-box') && !e.target.closest('.swot-grid')) {
-      hideSwotInspector();
-    }
-  });
 
   document.addEventListener('click', function(e) {
     const item = e.target.closest('.swot-item');
@@ -3706,14 +3831,6 @@ watch(currentSlide, (val)=>{
     document.querySelectorAll('.cpm-hoverable').forEach(c => c.classList.remove('is-active'));
   }
 
-  document.addEventListener('mouseover', function(e) {
-    const cell = e.target.closest('.cpm-hoverable');
-    if (cell) {
-      updateCpmInspector(cell);
-    } else if (!e.target.closest('#cpm-ins-box') && !e.target.closest('.cpm-table-wrap')) {
-      hideCpmInspector();
-    }
-  });
 
   document.addEventListener('click', function(e) {
     const cell = e.target.closest('.cpm-hoverable');
@@ -3795,14 +3912,6 @@ watch(currentSlide, (val)=>{
     document.querySelectorAll('.tows-item').forEach(i => i.classList.remove('is-active'));
   }
 
-  document.addEventListener('mouseover', function(e) {
-    const item = e.target.closest('.tows-item');
-    if (item) {
-      updateTowsInspector(item);
-    } else if (!e.target.closest('#tows-ins-box') && !e.target.closest('.tows-grid')) {
-      hideTowsInspector();
-    }
-  });
 
   document.addEventListener('click', function(e) {
     const item = e.target.closest('.tows-item');
@@ -3816,6 +3925,464 @@ watch(currentSlide, (val)=>{
   document.addEventListener('mouseleave', function(e) {
     hideTowsInspector();
   });
+
+
+const matrixInspectors = [
+  ['space', '.dim-table-row', inspectSpaceFactorRow],
+  ['space', '.space-dim-card', inspectSpaceDimensionCard],
+  ['space', '.space-comp-btn, .space-vector-group', el => selectSpaceCompany(el.dataset.company)],
+  ['bcg', '.bcg-row, .bcg-bubble-group, .bcg-fmt-btn', el => selectBcgDivision(el.dataset.division)],
+  ['ie', '.ie-row, .ie-bubble-group, .ie-fmt-btn', el => matrixIeRender?.(el.dataset.division)],
+  ['cpm', '.cpm-hoverable', updateCpmInspector],
+  ['swot', '.swot-item', updateSwotInspector],
+  ['efe', '.efe-row', updateEfeInspector],
+  ['ife', '.ife-row', updateIfeInspector],
+  ['tows', '.tows-item', updateTowsInspector],
+];
+const matrixPreview = document.createElement('div');
+matrixPreview.className = 'matrix-preview';
+matrixPreview.hidden = true;
+matrixPreview.setAttribute('aria-hidden', 'true');
+const matrixDrawer = document.createElement('dialog');
+matrixDrawer.className = 'matrix-detail';
+matrixDrawer.setAttribute('aria-labelledby', 'matrix-detail-title');
+matrixDrawer.innerHTML = '<div class="matrix-detail-head"><div class="matrix-detail-head-main"><div class="matrix-meta-bar"><span class="matrix-kind-badge"></span><span class="matrix-status-pill"></span></div><h3 id="matrix-detail-title"></h3><p class="matrix-detail-sub"></p></div><button class="matrix-detail-close" type="button" aria-label="Close details" autofocus><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div><div class="matrix-detail-scroll"></div>';
+
+function findMatrixItem(element) {
+  for (const [kind, selector, render] of matrixInspectors) {
+    const target = element.closest?.(selector);
+    if (target?.closest('.deck-slide')?.querySelector('#' + kind + '-ins-box')) return {kind, target, render};
+  }
+  return null;
+}
+function matrixPreviewContent({kind, target}) {
+  const data = target.dataset;
+  const id = document.documentElement.lang === 'id';
+  const tr = value => (value && window.t ? window.t(value) : value) || '';
+  const company = spaceCompaniesData[data.company || activeSpaceCompany] || spaceCompaniesData.mppa;
+  if (kind === 'space' && data.factor) {
+    const factor = (spaceFactorsData[activeSpaceCompany] || spaceFactorsData.mppa)[data.factor];
+    if (factor) return [id ? factor.title_id : factor.title, id ? factor.defense_id : factor.defense];
+  }
+  if (kind === 'space') return [tr(data.name || company.shortName), tr(company.dimExpls?.[data.dim] || company.inspectorTitle || company.postureSub)];
+  const division = kind === 'bcg' ? bcgDivisionsData[data.division] : kind === 'ie' ? matrixIePreview?.(data.division) : null;
+  if (division) return [id ? division.title_id : division.title, id ? division.defense_id : division.defense];
+  return [tr(data.name || data.factor) || target.getAttribute('aria-label') || target.textContent.trim(), tr(data.rationale || data.evidence || data.expl)];
+}
+function clearMatrixSelection() {
+  matrixPreview.hidden = true;
+  if (document.getElementById('bcg-ins-box')) selectBcgDivision('all');
+  if (document.getElementById('ie-ins-box')) matrixIeRender?.('all');
+  document.querySelectorAll('.cpm-hoverable.is-active,.swot-item.is-active,.efe-row.is-active,.ife-row.is-active,.tows-item.is-active,.dim-table-row.is-inspected,.space-dim-card.is-active,.space-comp-btn.is-active,.space-vector-group.is-active-vector,.space-vector-group.is-dimmed-vector')
+    .forEach(item => item.classList.remove('is-active', 'is-inspected', 'is-active-vector', 'is-dimmed-vector'));
+}
+let previewTarget;
+document.addEventListener('pointermove', event => {
+  const match = findMatrixItem(event.target);
+  if (!match || matrixDrawer.open || event.pointerType === 'touch') {
+    matrixPreview.hidden = true;
+    previewTarget = null;
+    return;
+  }
+  const host = document.fullscreenElement || document.body;
+  if (matrixPreview.parentNode !== host) host.append(matrixPreview);
+  if (previewTarget !== match.target || matrixPreview.hidden) {
+    const [title, explanation] = matrixPreviewContent(match);
+    const heading = document.createElement('strong');
+    heading.textContent = title;
+    const summary = document.createElement('span');
+    const detail = explanation?.replace(/^(Rationale|Rasional):\s*/, '').trim() || '';
+    summary.textContent = detail.length > 260 ? detail.slice(0, 260).replace(/\s+\S*$/, '') + '…' : detail;
+    const hint = document.createElement('small');
+    hint.textContent = document.documentElement.lang === 'id' ? 'Klik dua kali untuk rincian' : 'Double-click for full details';
+    matrixPreview.replaceChildren(heading, ...(detail ? [summary] : []), hint);
+    previewTarget = match.target;
+  }
+  matrixPreview.hidden = false;
+  const {width, height} = matrixPreview.getBoundingClientRect();
+  const below = event.clientY + 16;
+  const top = below + height + 8 <= window.innerHeight ? below : event.clientY - height - 16;
+  matrixPreview.style.left = Math.max(8, Math.min(event.clientX + 12, window.innerWidth - width - 8)) + 'px';
+  matrixPreview.style.top = Math.max(8, top) + 'px';
+});
+document.addEventListener('pointerout', event => {
+  if (previewTarget && !previewTarget.contains(event.relatedTarget)) matrixPreview.hidden = true;
+});
+function openMatrixDrawer(match) {
+  if (!match) return;
+  if (matrixDrawer.open) matrixDrawer.close();
+  matrixPreview.hidden = true;
+  if (match.render && match.target) match.render(match.target);
+  const id = document.documentElement.lang === 'id';
+  const kind = match.kind || 'ie';
+  const divKey = match.division || match.target?.dataset?.division;
+  const ieData = window.ieDivisionsData || (typeof ieDivisionsData !== 'undefined' ? ieDivisionsData : {});
+  const bcgData = window.bcgDivisionsData || (typeof bcgDivisionsData !== 'undefined' ? bcgDivisionsData : {});
+  const ieCalc = window.ieCalculationsData || (typeof ieCalculationsData !== 'undefined' ? ieCalculationsData : {});
+  const bcgCalc = window.bcgCalculationsData || (typeof bcgCalculationsData !== 'undefined' ? bcgCalculationsData : {});
+
+  const divisionData = kind === 'ie' ? (ieData[divKey] || ieData.all)
+                     : kind === 'bcg' ? (bcgData[divKey] || bcgData.all)
+                     : null;
+  const calcData = kind === 'ie' ? ieCalc[divKey]
+                 : kind === 'bcg' ? bcgCalc[divKey]
+                 : null;
+
+  const read = part => document.getElementById(kind + '-ins-' + part)?.textContent.trim() || '';
+  let fullTitle = read('title');
+  let explanation = '';
+  if (!fullTitle && divisionData) {
+    fullTitle = id ? divisionData.title_id : divisionData.title;
+    explanation = id ? divisionData.defense_id : divisionData.defense;
+  }
+  if (!fullTitle && match.target) {
+    const [t, exp] = matrixPreviewContent(match);
+    fullTitle = t;
+    explanation = exp;
+  }
+  if (!fullTitle) fullTitle = id ? (calcData?.nameId || calcData?.name || '') : (calcData?.name || '');
+
+  // 1. Header Accents
+  const headEl = matrixDrawer.querySelector('.matrix-detail-head');
+  if (divisionData?.border) {
+    headEl.style.borderTopColor = divisionData.border;
+  } else {
+    headEl.style.borderTopColor = '#df0036';
+  }
+
+  const kindNames = {
+    ie: id ? 'Matriks IE' : 'IE Matrix',
+    bcg: id ? 'Matriks BCG' : 'BCG Matrix',
+    space: id ? 'Matriks SPACE' : 'SPACE Matrix',
+    swot: 'SWOT Matrix',
+    cpm: id ? 'Matriks CPM' : 'CPM Matrix',
+    efe: id ? 'Matriks EFE' : 'EFE Matrix',
+    ife: id ? 'Matriks IFE' : 'IFE Matrix',
+    tows: 'TOWS Matrix'
+  };
+  matrixDrawer.querySelector('.matrix-kind-badge').textContent = kindNames[kind] || kind.toUpperCase();
+
+  const statusPill = matrixDrawer.querySelector('.matrix-status-pill');
+  const pillText = divisionData ? (id ? divisionData.pill_id : divisionData.pill) : '';
+  if (pillText) {
+    statusPill.textContent = pillText;
+    statusPill.className = 'matrix-status-pill ' + (divisionData.pillClass || '');
+    statusPill.style.display = 'inline-flex';
+  } else {
+    statusPill.style.display = 'none';
+  }
+
+  const titleParts = fullTitle.split(' · ');
+  const heading = titleParts.shift() || fullTitle;
+  const colon = (kind === 'ie' || kind === 'bcg') ? heading.indexOf(': ') : -1;
+  const mainTitle = colon >= 0 ? heading.slice(0, colon) : heading;
+  matrixDrawer.querySelector('h3').textContent = mainTitle;
+
+  const subEl = matrixDrawer.querySelector('.matrix-detail-sub');
+  let subText = '';
+  if (calcData?.name && calcData.name !== mainTitle) {
+    subText = id ? (calcData.nameId || calcData.name) : calcData.name;
+  } else if (colon >= 0) {
+    subText = heading.slice(colon + 2);
+    if (titleParts.length) subText += ' · ' + titleParts.join(' · ');
+  } else if (titleParts.length) {
+    subText = titleParts.join(' · ');
+  }
+  if (subText) {
+    subEl.textContent = subText;
+    subEl.style.display = 'block';
+  } else {
+    subEl.style.display = 'none';
+  }
+
+  matrixDrawer.querySelector('.matrix-detail-close').setAttribute('aria-label', id ? 'Tutup rincian' : 'Close details');
+
+  const content = matrixDrawer.querySelector('.matrix-detail-scroll');
+  content.replaceChildren();
+  content.scrollTop = 0;
+
+  // 2. Executive KPI Summary Grid
+  const kpiSection = document.createElement('section');
+  kpiSection.className = 'matrix-detail-section';
+  const kpiHeader = document.createElement('div');
+  kpiHeader.className = 'matrix-section-header';
+  kpiHeader.innerHTML = `
+    <span class="matrix-sec-icon">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+    </span>
+    <h4>${id ? 'Ringkasan Eksekutif' : 'At a Glance'}</h4>
+  `;
+  kpiSection.append(kpiHeader);
+
+  const kpiGrid = document.createElement('div');
+  kpiGrid.className = 'matrix-kpi-grid';
+
+  if (kind === 'ie' && calcData) {
+    const revMatch = fullTitle.match(/(Rp[\d,.]+\s*[BM])\s*\(([^)]+)\)/i);
+    const revVal = revMatch ? revMatch[1] : (fullTitle.match(/Rp[\d,.]+\s*[BM]/i)?.[0] || '—');
+    const revSub = revMatch ? revMatch[2] : '';
+    
+    const storeMatch = fullTitle.match(/(\d+)\s*(Stores|Gerai)/i);
+    const storeVal = storeMatch ? storeMatch[1] + (id ? ' Gerai' : ' Stores') : '';
+
+    const cellMatch = (calcData.region || fullTitle).match(/Cell\s+[IVXLC]+|Sel\s+[IVXLC]+/i);
+    const cellVal = cellMatch ? cellMatch[0] : (id ? 'Sel V' : 'Cell V');
+    const regLabel = id ? calcData.regionId : calcData.region;
+    const cleanReg = regLabel ? regLabel.replace(/^(?:Region|Wilayah)\s*\d+:\s*(?:Cell|Sel)\s*[IVXLC]+\s*\(([^)]+)\)/i, '$1').replace(/[()]/g, '') : '';
+
+    const ifeRaw = (id ? calcData.ifeScoreId : calcData.ifeScore) || '';
+    const efeRaw = (id ? calcData.efeScoreId : calcData.efeScore) || '';
+    const ifeNum = ifeRaw.match(/[\d,.]+/)?.[0] || '—';
+    const efeNum = efeRaw.match(/[\d,.]+/)?.[0] || '—';
+    const ifeDesc = ifeRaw ? ifeRaw.replace(/^[\d,.]+\s*\(([^)]+)\)/, '$1') : '';
+    const efeDesc = efeRaw ? efeRaw.replace(/^[\d,.]+\s*\(([^)]+)\)/, '$1') : '';
+
+    if (revVal !== '—') {
+      kpiGrid.innerHTML += `
+        <div class="matrix-kpi-card">
+          <span class="matrix-kpi-label">${id ? 'Pendapatan' : 'Revenue'}</span>
+          <div class="matrix-kpi-val-row">
+            <span class="matrix-kpi-val">${revVal}</span>
+            ${revSub ? `<span class="matrix-kpi-badge">${revSub}</span>` : ''}
+          </div>
+          <span class="matrix-kpi-sub">${id ? 'Kontribusi Portofolio' : 'Portfolio Contribution'}</span>
+        </div>
+      `;
+    }
+    if (storeVal) {
+      kpiGrid.innerHTML += `
+        <div class="matrix-kpi-card">
+          <span class="matrix-kpi-label">${id ? 'Jaringan Gerai' : 'Store Network'}</span>
+          <div class="matrix-kpi-val-row">
+            <span class="matrix-kpi-val">${storeVal}</span>
+          </div>
+          <span class="matrix-kpi-sub">${id ? 'Titik Penjualan Aktif' : 'Active Retail Footprint'}</span>
+        </div>
+      `;
+    }
+    kpiGrid.innerHTML += `
+      <div class="matrix-kpi-card">
+        <span class="matrix-kpi-label">${id ? 'Posisi Matriks IE' : 'IE Matrix Position'}</span>
+        <div class="matrix-kpi-val-row">
+          <span class="matrix-kpi-val">${cellVal}</span>
+          ${cleanReg ? `<span class="matrix-kpi-badge">${cleanReg}</span>` : ''}
+        </div>
+        <span class="matrix-kpi-sub">${id ? 'Wilayah Strategis' : 'Strategic Region'}</span>
+      </div>
+      <div class="matrix-kpi-card">
+        <span class="matrix-kpi-label">${id ? 'Skor Evaluatif' : 'Evaluative Scores'}</span>
+        <div class="matrix-kpi-val-row">
+          <span class="matrix-kpi-val">IFE ${ifeNum} · EFE ${efeNum}</span>
+        </div>
+        <span class="matrix-kpi-sub">${ifeDesc} · ${efeDesc}</span>
+      </div>
+    `;
+  } else if (kind === 'bcg' && calcData) {
+    const revMatch = fullTitle.match(/(Rp[\d,.]+\s*[BM])\s*\(([^)]+)\)/i);
+    const revVal = revMatch ? revMatch[1] : (fullTitle.match(/Rp[\d,.]+\s*[BM]/i)?.[0] || '—');
+    const revSub = revMatch ? revMatch[2] : '';
+    const rmspMatch = (calcData.rmspCalc || '').match(/=\s*([\d,.]+)/);
+    const rmspVal = rmspMatch ? rmspMatch[1] : '';
+
+    if (revVal !== '—') {
+      kpiGrid.innerHTML += `
+        <div class="matrix-kpi-card">
+          <span class="matrix-kpi-label">${id ? 'Pendapatan' : 'Revenue'}</span>
+          <div class="matrix-kpi-val-row">
+            <span class="matrix-kpi-val">${revVal}</span>
+            ${revSub ? `<span class="matrix-kpi-badge">${revSub}</span>` : ''}
+          </div>
+          <span class="matrix-kpi-sub">${id ? 'Kontribusi Portofolio' : 'Portfolio Share'}</span>
+        </div>
+      `;
+    }
+    if (rmspVal) {
+      kpiGrid.innerHTML += `
+        <div class="matrix-kpi-card">
+          <span class="matrix-kpi-label">${id ? 'Pangsa Pasar Relatif' : 'Relative Market Share'}</span>
+          <div class="matrix-kpi-val-row">
+            <span class="matrix-kpi-val">${rmspVal} RMSP</span>
+          </div>
+          <span class="matrix-kpi-sub">${id ? 'Terhadap Pemimpin Pasar' : 'vs Category Leader'}</span>
+        </div>
+      `;
+    }
+    kpiGrid.innerHTML += `
+      <div class="matrix-kpi-card">
+        <span class="matrix-kpi-label">${id ? 'Pertumbuhan Industri' : 'Industry Growth Rate'}</span>
+        <div class="matrix-kpi-val-row">
+          <span class="matrix-kpi-val">${calcData.igrVal}</span>
+          <span class="matrix-kpi-badge ${calcData.igrVal.startsWith('+') ? 'calc-pos' : 'calc-neg'}">IGR</span>
+        </div>
+        <span class="matrix-kpi-sub">${id ? 'Tren Sektor Ritel' : 'Category Sector Trend'}</span>
+      </div>
+    `;
+  } else {
+    const summaryItems = [];
+    if (colon >= 0) summaryItems.push(heading.slice(colon + 2));
+    summaryItems.push(...titleParts);
+    const uniqueItems = [...new Set(summaryItems.map(s => s?.trim()).filter(Boolean))];
+    for (const item of uniqueItems) {
+      kpiGrid.innerHTML += `
+        <div class="matrix-kpi-card kpi-full">
+          <span class="matrix-kpi-val" style="font-size:14px;font-weight:600;">${item}</span>
+        </div>
+      `;
+    }
+  }
+
+  kpiSection.append(kpiGrid);
+  content.append(kpiSection);
+
+  // 3. Strategic Analysis Section
+  const calculation = document.getElementById(kind + '-calculation');
+  const calcText = selector => calculation?.querySelector(selector)?.textContent.trim();
+  const body = (read('body') || explanation || divisionData?.defense || '').replace(/^(?:Division Analysis|Analisis Divisi|Rationale|Rasional):\s*/i, '');
+  const [analysis, action] = body.split(/\s*(?:Strategic Action|Aksi Strategis):\s*/i);
+
+  if (analysis?.trim()) {
+    const analysisSection = document.createElement('section');
+    analysisSection.className = 'matrix-detail-section';
+    analysisSection.innerHTML = `
+      <div class="matrix-section-header">
+        <span class="matrix-sec-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21H3V3"/><path d="M7 14l4-4 4 4 6-6"/></svg>
+        </span>
+        <h4>${id ? 'Analisis Strategis' : 'Strategic Analysis'}</h4>
+      </div>
+      <div class="matrix-card matrix-analysis-card">
+        <p>${analysis.trim()}</p>
+      </div>
+    `;
+    content.append(analysisSection);
+  }
+
+  // BCG Calculations detail if present
+  if (kind === 'bcg' && calcData) {
+    const calcSection = document.createElement('section');
+    calcSection.className = 'matrix-detail-section';
+    calcSection.innerHTML = `
+      <div class="matrix-section-header">
+        <span class="matrix-sec-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+        </span>
+        <h4>${id ? 'Kalkulasi Matematis' : 'Mathematical Derivations'}</h4>
+      </div>
+      <div class="matrix-calc-card">
+        <p class="matrix-calc-row"><strong>RMSP:</strong> ${id ? calcData.rmspCalcId : calcData.rmspCalc}</p>
+        <p class="matrix-calc-row"><strong>IGR:</strong> ${id ? calcData.igrFormulaId : calcData.igrFormula}</p>
+        <p class="matrix-calc-row" style="color:#64748b;font-size:11.5px;margin-top:4px;">${id ? calcData.igrDetailId : calcData.igrDetail}</p>
+      </div>
+    `;
+    content.append(calcSection);
+  }
+
+  // 4. Strategic Recommendation Section
+  const recRaw = action || calcText('.ie-calc-col:nth-child(2) .ie-calc-desc') || (calcData ? (id ? calcData.strategy : (calcData.strategyEn || calcData.strategy)) : '');
+  if (recRaw?.trim()) {
+    const cleanRec = recRaw.trim();
+    const colonIdx = cleanRec.indexOf(': ');
+    let recTitle = '';
+    let recBody = cleanRec;
+    if (colonIdx > 0 && colonIdx < 70) {
+      recTitle = cleanRec.slice(0, colonIdx).trim();
+      recBody = cleanRec.slice(colonIdx + 2).trim();
+    }
+    const recSection = document.createElement('section');
+    recSection.className = 'matrix-detail-section';
+    recSection.innerHTML = `
+      <div class="matrix-section-header">
+        <span class="matrix-sec-icon" style="color:#df0036;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </span>
+        <h4>${id ? 'Preskripsi & Rekomendasi' : 'Strategic Recommendation'}</h4>
+      </div>
+      <div class="matrix-card matrix-rec-card">
+        ${recTitle ? `<div class="matrix-rec-title">${recTitle}</div>` : ''}
+        <p class="matrix-rec-body">${recBody}</p>
+      </div>
+    `;
+    content.append(recSection);
+  }
+
+  // 5. Sources Section
+  const srcRaw = read('source') || calcText('.bcg-calc-ft small')?.replace(/^(?:Source & Evidence|Sumber & Bukti):\s*/i, '') || calcData?.source || (divisionData ? (id ? divisionData.source_id : divisionData.source) : '');
+  if (srcRaw?.trim()) {
+    const sourceItems = srcRaw.split(/\s*;\s*/).map(s => s.trim()).filter(Boolean);
+    const sourcesSection = document.createElement('section');
+    sourcesSection.className = 'matrix-detail-section matrix-sources-container';
+    sourcesSection.innerHTML = `
+      <div class="matrix-section-header">
+        <span class="matrix-sec-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </span>
+        <h4>${id ? 'Sumber & Bukti Referensi' : 'Sources & Data Evidence'}</h4>
+      </div>
+      <div class="matrix-sources-list">
+        ${sourceItems.map(src => `
+          <span class="matrix-source-pill">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            ${src}
+          </span>
+        `).join('')}
+      </div>
+    `;
+    content.append(sourcesSection);
+  }
+
+  (document.fullscreenElement || document.body).append(matrixDrawer);
+  matrixDrawer.showModal();
+}
+window.openMatrixDrawer = openMatrixDrawer;
+
+try {
+  const searchVal = new URLSearchParams(window.location.search).get('drawer');
+  const hashVal = window.location.hash.includes('drawer=') ? window.location.hash.split('drawer=')[1].split('&')[0].split('#')[0] : null;
+  const drawerDiv = searchVal || hashVal;
+  if (drawerDiv) {
+    openMatrixDrawer({ kind: 'ie', division: drawerDiv });
+  }
+} catch(e) {}
+document.addEventListener('dblclick', event => openMatrixDrawer(findMatrixItem(event.target)));
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Enter') return;
+  const match = findMatrixItem(event.target);
+  if (match) {
+    event.preventDefault();
+    openMatrixDrawer(match);
+  }
+});
+document.addEventListener('click', event => {
+  if (matrixDrawer.open) {
+    const bounds = matrixDrawer.getBoundingClientRect();
+    const outside = event.target === matrixDrawer && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom);
+    if (outside || event.target.closest?.('.matrix-detail-close')) matrixDrawer.close();
+  } else if (!findMatrixItem(event.target)) {
+    clearMatrixSelection();
+  }
+});
+matrixDrawer.addEventListener('close', clearMatrixSelection);
+document.addEventListener('fullscreenchange', () => { matrixPreview.hidden = true; });
+
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    try {
+      const searchVal = new URLSearchParams(window.location.search).get('drawer');
+      const hashVal = window.location.hash.includes('drawer=') ? window.location.hash.split('drawer=')[1].split('&')[0].split('#')[0] : null;
+      const drawerDiv = searchVal || hashVal;
+      if (drawerDiv) {
+        const target = document.querySelector(`[data-division="${drawerDiv}"]`);
+        if (target) {
+          const match = findMatrixItem(target);
+          if (match) openMatrixDrawer(match);
+          else openMatrixDrawer({ kind: 'ie', division: drawerDiv });
+        } else {
+          openMatrixDrawer({ kind: 'ie', division: drawerDiv });
+        }
+      }
+    } catch(e) {}
+  }, 120);
+});
 
 </script>
 </body>
