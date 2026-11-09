@@ -1,5 +1,7 @@
 /* Indonesian translations for the MPPA study. Original source titles and proper names are retained. */
 window.MPPA_TRANSLATIONS_ID = {
+  "Strategies 1 & 2": "Strategi 1 & 2",
+  "Strategies 1 &amp; 2": "Strategi 1 & 2",
   "Strategies 7 & 8": "Strategi 7 & 8",
   "Strategies 7 &amp; 8": "Strategi 7 & 8",
   "5-Year Annual Capital Deployment & Sources Schedule": "Jadwal Penyaluran & Sumber Belanja Modal 5 Tahun",
