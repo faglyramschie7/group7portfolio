@@ -8,3 +8,4 @@ AR2019.pdf
 COMPETITOR ANNUAL REPORTS/
 *.bak
 ~$*
+node_modules/

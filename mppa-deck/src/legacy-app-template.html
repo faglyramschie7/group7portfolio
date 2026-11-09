@@ -1,0 +1,1054 @@
+<div class="app-layout" id="app" v-cloak>
+<aside class="sidebar" :aria-label="t(&quot;Study navigation&quot;)">
+<div class="sidebar-brand"><img src="assets/mppa-logo.png" alt="MPPA Retail Group — PT Matahari Putra Prima Tbk"></div><div class="sidebar-sub">{{ t("Strategic management") }}<br>{{ t("Case study workspace") }}</div>
+<nav :aria-label="t(&quot;View&quot;)"><button type="button" class="view-button" data-view="notes" :aria-pressed="view === 'notes'" @click="setView('notes')" aria-controls="notes-view">{{ t("Notes") }}</button><button type="button" class="view-button" data-view="powerpoint" :aria-pressed="view === 'powerpoint'" @click="setView('powerpoint')" aria-controls="powerpoint-view">{{ t("PowerPoint") }}</button><button type="button" class="view-button" data-view="board" :aria-pressed="view === 'board'" @click="setView('board')" aria-controls="board-view">{{ t("Ideas Board") }}</button><button type="button" class="view-button" data-view="handoff" :aria-pressed="view === 'handoff'" @click="setView('handoff')" aria-controls="handoff-view">Research Handoff</button></nav>
+<div class="language-control" role="group" :aria-label="t('Language')"><span>{{ t('Language') }}</span><div><button type="button" lang="id" :aria-pressed="language === 'id'" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" lang="en" :aria-pressed="language === 'en'" @click="setLanguage('en')">🇬🇧 EN</button></div></div><div class="sidebar-bottom">{{ t("Background &amp;amp; organization") }}<br>{{ t("Case baseline: 2020") }}<br>{{ t("Planning period: 2021–2025") }}</div>
+</aside><div class="workspace" :class="{'presentation-active': view === 'powerpoint'}">
+
+<header><div class="header-brand-wrap"><strong>{{ t("MPPA · Strategic Management Case Study") }}</strong><span>{{ t("Section 01 / Company background · Case 23, published as “2022” · Financial baseline: 2020") }}</span></div><div class="top-lang-switch" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div></header>
+<transition name="view"><main id="notes-view" v-show="view === 'notes'">
+<div class="eyebrow">{{ t("Company background") }}</div>
+<h1>{{ t("PT Matahari Putra Prima Tbk") }}</h1>
+<p class="intro">{{ t("PT Matahari Putra Prima Tbk (MPPA) is an Indonesian retailer headquartered in Tangerang. It operates Hypermart and a portfolio of supermarket, convenience, health and beauty, and wholesale formats.") }}</p>
+
+<dl class="facts"><div><dt>{{ t("Headquarters") }}</dt><dd>{{ t("Tangerang, Indonesia") }}</dd></div><div><dt>{{ t("Established") }}</dt><dd>{{ t("1986") }}</dd></div><div><dt>{{ t("Main retail chain") }}</dt><dd>{{ t("Hypermart") }}</dd></div></dl>
+
+<section aria-labelledby="history"><h2 id="history">{{ t("Company development") }}</h2>
+<div class="timeline">
+<div class="event"><span class="year">{{ t("1986") }}</span><p>{{ t("MPPA was established.") }}</p></div>
+<div class="event"><span class="year">{{ t("1992") }}</span><p>{{ t("The company became publicly listed.") }}</p></div>
+<div class="event"><span class="year">{{ t("1995") }}</span><p>{{ t("Supermarket operations began, and Boston Health &amp;amp; Beauty launched.") }}</p></div>
+<div class="event"><span class="year">{{ t("2004") }}</span><p>{{ t("Hypermart launched as the company’s hypermarket format.") }}</p></div>
+<div class="event"><span class="year">{{ t("2018") }}</span><p>{{ t("MPPA reduced its exposure to B2B activities and increased its focus on direct consumer retailing.") }}</p></div>
+<div class="event"><span class="year">{{ t("2019") }}</span><p>{{ t("Hyfresh launched as a smaller neighborhood supermarket format.") }}</p></div>
+</div><p class="source">{{ t("Source: case, printed p. 587. These milestones summarize the case’s history.") }}</p></section>
+
+<section aria-labelledby="store-photos"><h2 id="store-photos">{{ t("The stores behind the names") }}</h2><div class="notes-store-gallery"><figure v-for="brand in brands.filter(item => item.photo)" :key="brand.id"><img :src="'assets/' + brand.photo" :alt="brand.name === 'Hypermart' ? 'Hypermart promotional image, 2025' : brand.name + ' store'"><figcaption>{{ t(brand.name) }}<small>{{ t(brand.id === 'hypermart' ? 'Promotional image, 2025' : 'Store illustration') }}</small></figcaption></figure></div><p class="source">{{ t("Images:") }} <a href="https://www.mppa.co.id/" target="_blank" rel="noopener">{{ t("MPPA official website") }}</a>{{ t(". Store illustrations; Hypermart promotion dated 2025.") }}</p></section>
+<section aria-labelledby="formats"><h2 id="formats">{{ t("The retail portfolio") }}</h2>
+<div class="table-wrap"><table><caption class="source" style="text-align:left;margin-bottom:12px">{{ t("Seven formats across large stores, small stores, and wholesale") }}</caption><thead><tr><th scope="col">{{ t("Format") }}</th><th scope="col">{{ t("Business type") }}</th><th scope="col">{{ t("Role in the business") }}</th></tr></thead><tbody>
+<tr><th scope="row"><img class="table-brand-logo" src="assets/hypermart-logo.png" alt="">{{ t("Hypermart") }}</th><td>{{ t("Large-format hypermarket") }}</td><td>{{ t("A broad assortment including groceries, fresh food, electronics, and soft-line goods. The case identifies middle-income families as its target customers.") }}</td></tr>
+<tr><th scope="row"><img class="table-brand-logo" src="assets/foodmart-logo.png" alt="">{{ t("Foodmart") }}</th><td>{{ t("Supermarket") }}</td><td>{{ t("Convenient shopping with local and international products, fresh food, and ready-to-eat meals.") }}</td></tr>
+<tr><th scope="row"><img class="table-brand-logo" src="assets/primo-logo.png" alt="">{{ t("Primo") }}</th><td>{{ t("Premium supermarket") }}</td><td>{{ t("An upscale offer for affluent customers, with imported products and gourmet ready-to-eat meals.") }}</td></tr>
+<tr><th scope="row"><img class="table-brand-logo" src="assets/hyfresh-logo.png" alt="">{{ t("Hyfresh") }}</th><td>{{ t("Neighborhood supermarket") }}</td><td>{{ t("Fresh groceries and attractive prices for frequent purchases in middle-class communities.") }}</td></tr>
+<tr><th scope="row"><img class="table-brand-logo" src="assets/boston-logo.png" alt="">{{ t("Boston HBC") }}</th><td>{{ t("Health and beauty") }}</td><td>{{ t("Personal care, cosmetics, and wellness products. Selected stores provide consultations and pharmacy services.") }}</td></tr>
+<tr><th scope="row"><img class="table-brand-logo" src="assets/fmx-logo.png" alt="">{{ t("FMX") }}</th><td>{{ t("Convenience store") }}</td><td>{{ t("Ready-to-eat food, beverages, and snacks near residential areas and transit locations, with bill-payment services.") }}</td></tr>
+<tr><th scope="row"><img class="table-brand-logo" src="assets/smartclub-logo.png" alt="">{{ t("SmartClub") }}</th><td>{{ t("Wholesale") }}</td><td>{{ t("The wholesale format identified in the case’s portfolio classification.") }}</td></tr>
+</tbody></table></div><p class="source">{{ t("Source: case, Exhibit 4 and format descriptions, printed pp. 590–592.") }}</p></section>
+
+
+
+<section aria-labelledby="context"><h2 id="context">{{ t("The setting for the case") }}</h2><p>{{ t("MPPA entered the pandemic with an operating loss in 2019. COVID-19 restrictions and changing shopping behavior then disrupted its store-based business in 2020. MPPA expanded online ordering, delivery and pickup while reviewing its physical-store formats. This study considers how to restore profitable sales within limited financial capacity over the case’s 2021–2025 planning horizon.") }}</p><p class="source">{{ t("Source: case, printed pp. 587, 589–590 and 594.") }}</p></section>
+<section aria-labelledby="business"><h2 id="business">{{ t("Hypermart’s role") }}</h2><p>{{ t("Hypermart contributed approximately") }} <strong>{{ t("85% of MPPA’s revenue in 2020") }}</strong>{{ t(". Foodmart and Primo together contributed approximately 10%, while other formats contributed approximately 5%. Hypermart therefore dominates MPPA’s revenue base.") }}</p><p class="source">{{ t("Source: case, Exhibit 5, printed p. 590.") }}</p></section>
+
+<section class="slide" aria-labelledby="slide-heading"><div class="controls"><h2 id="slide-heading">{{ t("Background slide draft") }}</h2><button type="button" id="copy" @click="copySlide">{{ t("Copy slide text") }}</button></div>
+<div id="slide-text" ref="slideText"><h3>{{ t("PT Matahari Putra Prima Tbk (MPPA)") }}</h3><ul>
+<li>{{ t("Indonesian retailer headquartered in Tangerang, established in 1986 and publicly listed in 1992.") }}</li>
+<li>{{ t("Operates seven formats across hypermarkets, supermarkets, convenience stores, health and beauty retail, and wholesale.") }}</li>
+<li>{{ t("Hypermart, launched in 2004, is the main chain and contributed approximately 85% of revenue in 2020.") }}</li>
+<li>{{ t("Entered the case period adapting its physical stores and online channels to changing shopping behavior.") }}</li>
+</ul><p class="source">{{ t("Source: David et al., Case 23, “PT Matahari Putra Prima Tbk.—2022,” printed pp. 587, 589–592.") }}</p></div><span id="copy-status" role="status" aria-live="polite">{{ t(copyStatus) }}</span>
+<details><summary>{{ t("Speaker notes") }}</summary><p>{{ t("Our case concerns MPPA, the company operating Hypermart and several other retail formats in Indonesia. Hypermart is its largest source of revenue, but the company also serves different shopping needs through smaller supermarkets, convenience stores, health and beauty stores, and wholesale. Hypermart is the core revenue-generating format.") }}</p></details></section>
+
+<details><summary>{{ t("Source checks for this section") }}</summary>
+<p><strong>{{ t("Printed page numbers:") }}</strong> {{ t("the supplied extract is named “Pages 588–596,” but its pages display printed numbers 587–595. References on this page follow the printed numbers.") }}</p>
+<p><strong>{{ t("Customer description:") }}</strong> {{ t("the opening paragraph refers to retail stores and interior design firms as primary customers. That wording conflicts with the subsequent grocery-format descriptions and consumer focus. The background uses the detailed format descriptions and does not repeat that generalization.") }}</p>
+<p><strong>{{ t("Store counts:") }}</strong> {{ t("the case contains inconsistent outlet figures. This section avoids an exact total until those figures are reconciled.") }}</p>
+</details>
+<section aria-labelledby="current-organization"><div class="eyebrow">{{ t("Section 02 · Current organization") }}</div><h2 id="current-organization">{{ t("The structure shown in the case") }}</h2><p>{{ t("Exhibit 1 places CEO Elliot Dickson above eight management roles. Large stores and small stores have separate directors, alongside functional leadership. The case does not show a COO or a president for each individual retail format.") }}</p><div class="table-wrap"><table><thead><tr><th scope="col">{{ t("Name") }}</th><th scope="col">{{ t("Case title") }}</th></tr></thead><tbody><tr><td>{{ t("Elliot Dickson") }}</td><td>{{ t("CEO") }}</td></tr><tr v-for="person in management" :key="person.name"><td>{{ t(person.name) }}</td><td>{{ t(person.role) }}</td></tr></tbody></table></div><p class="source">{{ t("Source: case, printed pp. 587–588, Exhibit 1.") }}</p><h3>{{ t("Format accountability") }}</h3><p>{{ t("The case identifies separate directors for large and small stores, with no COO or individual format presidents.") }}</p></section>
+<section aria-labelledby="current-mission"><div class="eyebrow">{{ t("Section 03 · Vision and mission") }}</div><h2 id="current-mission">{{ t("Vision and mission in the case") }}</h2><p>{{ t("The case identifies no published vision or mission statement in the sources it reviewed.") }}</p><blockquote class="case-vision">{{ t("“To become the premier, multi-format, go-to shopping destination throughout Indonesia.”") }}</blockquote><p>{{ t("This is the case authors’ suggested vision. The case supplies no corresponding mission statement in that section.") }}</p><h3>{{ t("Assessment") }}</h3><p>{{ t("The suggested vision specifies Indonesia and a multi-format retail business, while leaving the customer segment and distinctive offer broad.") }}</p><p class="source">{{ t("Source: case, printed p. 587.") }}</p></section><section aria-labelledby="problem-statement"><div class="eyebrow">{{ t("Section 04 · Statement of the problem") }}</div><h2 id="problem-statement">{{ t("Restoring profitable sales") }}</h2><p>{{ t("COVID-19 intensified MPPA’s existing profitability problem, while weakening liquidity constrained its recovery. The strategic challenge is to restore profitable sales through its stores and digital channels within limited financial capacity.") }}</p><h3>{{ t("Evidence behind the statement") }}</h3><div class="table-wrap"><table><thead><tr><th scope="col">{{ t("Indicator") }}</th><th scope="col">{{ t("2019") }}</th><th scope="col">{{ t("2020") }}</th><th scope="col">{{ t("What it establishes") }}</th></tr></thead><tbody><tr><td>{{ t("Revenue") }}</td><td>{{ t("Rp8,654.6bn") }}</td><td>{{ t("Rp6,746.6bn") }}</td><td>{{ t("Sales declined approximately 22%.") }}</td></tr><tr><td>{{ t("Operating result (EBIT)") }}</td><td>{{ t("−Rp196.1bn") }}</td><td>{{ t("−Rp140.3bn") }}</td><td>{{ t("Losses continued, although the operating result improved.") }}</td></tr><tr><td>{{ t("Net finance costs") }}</td><td>{{ t("Rp118.5bn") }}</td><td>{{ t("Rp267.4bn") }}</td><td>{{ t("Net finance costs rose approximately 126%, mainly due to PSAK 73 lease finance charges.") }}</td></tr><tr><td>{{ t("Loss before tax") }}</td><td>{{ t("Rp314.6bn") }}</td><td>{{ t("Rp407.7bn") }}</td><td>{{ t("The operating improvement did not translate into a better pretax result.") }}</td></tr></tbody></table></div><h3>{{ t("Financing and liquidity") }}</h3><p>{{ t("Net finance costs rose Rp148.9bn against a Rp55.8bn improvement in EBIT, widening the pretax loss by Rp93.1bn. PSAK 73 added Rp166.2bn in lease finance charges; interest expense itself fell from Rp128.9bn to Rp107.3bn. The working-capital shortfall widened from Rp714.3bn to Rp1,227.8bn, limiting financial capacity for recovery.") }}</p><p class="source">{{ t("Source: case, printed pp. 588–590, Exhibits 2, 3, and 5; Annual Report 2020, printed p. 55 and financial-statement Notes 2.c and 28 (pp. 15 and 69). Values converted from millions of rupiah to billions and trillions.") }}</p><h3>{{ t("Existing operating pressure") }}</h3><p>{{ t("MPPA entered the pandemic with an operating loss in 2019. The 2020 sales decline added pressure to an already loss-making business.") }}</p></section>
+<section class="footprint-study" aria-labelledby="footprint-notes">
+<div class="eyebrow">{{ t("Section 04 · Market footprint") }}</div>
+<h2 id="footprint-notes">{{ t("Market Footprint: Food Retail Demand in 2020") }}</h2>
+<p>{{ t("Factual overview of Indonesian food retail demand, staple product categories, and retail channel distribution in 2020 based on case exhibits and annual reports.") }}</p>
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Food Category / Retail Metric") }}</th>
+<th>{{ t("2020 Value / Share") }}</th>
+<th>{{ t("Source / Reference") }}</th>
+<th>{{ t("Retail Market Reality") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>{{ t("Rice") }}</strong></td>
+<td>{{ t("$8,587 million USD") }}</td>
+<td>{{ t("Case Exhibit 7, p. 593 (Euromonitor)") }}</td>
+<td>{{ t("Largest staple category; non-deferrable household necessity.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("Soft Drinks") }}</strong></td>
+<td>{{ t("$7,477 million USD") }}</td>
+<td>{{ t("Case Exhibit 7, p. 593 (Euromonitor)") }}</td>
+<td>{{ t("High-velocity consumer beverage demand across modern and traditional channels.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("Dairy Products") }}</strong></td>
+<td>{{ t("$4,244 million USD") }}</td>
+<td>{{ t("Case Exhibit 7, p. 593 (Euromonitor)") }}</td>
+<td>{{ t("Chilled and ambient packaged dairy; stable household staple.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("Cooking Ingredients") }}</strong></td>
+<td>{{ t("$4,142 million USD") }}</td>
+<td>{{ t("Case Exhibit 7, p. 593 (Euromonitor)") }}</td>
+<td>{{ t("Oils, spices, seasonings; core frequent basket components.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("Noodles") }}</strong></td>
+<td>{{ t("$3,152 million USD") }}</td>
+<td>{{ t("Case Exhibit 7, p. 593 (Euromonitor)") }}</td>
+<td>{{ t("Daily packaged staple across all consumer demographics.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("Baby Food") }}</strong></td>
+<td>{{ t("$3,066 million USD") }}</td>
+<td>{{ t("Case Exhibit 7, p. 593 (Euromonitor)") }}</td>
+<td>{{ t("Essential nutritional demand; resilient to economic contractions.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("1. Transaction Frequency & Foot Traffic") }}</strong></td>
+<td>{{ t("2 to 4 shopping trips/week") }}</td>
+<td>{{ t("Retail industry analysis") }}</td>
+<td>{{ t("Groceries drive 70–80% of store foot-traffic; non-food depends on grocery trips.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("2. Non-Food Shift & Fresh Resilience") }}</strong></td>
+<td>{{ t("27.7% fresh share (+3.7%)") }}</td>
+<td>{{ t("MPPA AR2020 p. 38") }}</td>
+<td>{{ t("Non-food migrated to e-commerce; MPPA fresh food increased revenue share.") }}</td>
+</tr>
+<tr>
+<td><strong>{{ t("3. Format Substitution") }}</strong></td>
+<td>{{ t("94% minimarket outlet share") }}</td>
+<td>{{ t("Case Exhibit 9, p. 593") }}</td>
+<td>{{ t("Lockdowns redirected trips to neighborhood minimarkets (Indomaret/Alfamart) and supermarkets (Alfamidi).") }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+
+<section aria-labelledby="pestle-notes"><div class="eyebrow">{{ t("Section 05 · External assessment") }}</div><h2 id="pestle-notes">{{ t("PESTLE analysis") }}</h2>
+<p>{{ t("Restrictions, weaker household spending and changing shopping channels shaped grocery retail in 2020.") }}</p><details><summary>{{ t("Method and source notes") }}</summary><p>{{ t("External factors follow David, Chapter 3, printed pp. 95–99. Figures retain their original dates, geography and survey scope. Food waste is retained separately on the ideas board as an operating-cost topic.") }}</p></details><div class="pestle-study-factor" v-for="factor in pestleFactors" :key="factor.id"><h3>{{ t(factor.category) }} · {{ t(factor.title) }}</h3><p>{{ t(factor.evidence) }}</p><p>{{ t(factor.implication) }}</p><details><summary>{{ t("Method and source notes") }}</summary><p>{{ t(factor.limit) }}</p><p>{{ t(factor.aqcd) }}</p></details><p class="source"><template v-for="source in pestleSources.filter(item=>factor.sourceIds.includes(item.id))" :key="source.id"><a :href="source.local || source.url" target="_blank" rel="noopener">{{ source.id }} · {{ t(source.title) }}</a> </template></p></div>
+
+
+<section class="channel-study" aria-labelledby="channel-study-heading"><h3 id="channel-study-heading">{{ t('2020 digital channel overview') }}</h3><p>{{ t('Retailers offered apps, websites and messaging-based ordering alongside their stores.') }}</p><div class="table-wrap"><table><thead><tr><th>{{ t('Retailer') }}</th><th>{{ t('Ordering or loyalty channel') }}</th><th>{{ t('Fulfillment / role') }}</th></tr></thead><tbody><tr v-for="row in channelOverview" :key="row.company"><th scope="row">{{ row.company }}</th><td>{{ t(row.order) }}</td><td>{{ t(row.fulfil) }}<div class="source"><a v-for="id in row.ids" :key="id" :href="pestleSources.find(source=>source.id===id).url" target="_blank" rel="noopener">{{ id }} </a></div></td></tr></tbody></table></div><details v-for="row in channelOverview" :key="row.company"><summary>{{ row.company }} — {{ t('Evidence and scope') }}</summary><p>{{ t(row.detail) }}</p><p class="source" v-for="id in row.ids" :key="id"><a :href="pestleSources.find(source=>source.id===id).url" target="_blank" rel="noopener">{{ t(pestleSources.find(source=>source.id===id).title) }}</a> · {{ t(pestleSources.find(source=>source.id===id).locator) }}</p></details><h3>{{ t('MPPA’s documented channel coverage') }}</h3><p>{{ t('Year-end 2020 store coverage; individual stores can appear in several channels.') }}</p><div class="channel-coverage" role="group" :aria-label="t('MPPA channel coverage in stores at year-end 2020')"><div v-for="channel in channelCoverage" :key="channel.name"><strong>{{ channel.name }}</strong><span><i :style="{width:(channel.value/125*100)+'%'}"></i></span><b>{{ channel.value }}</b></div></div><p class="source">C1 · {{ t('MPPA Annual Report 2020, printed p. 25 (PDF p. 27). Hypermart Online covered 20 stores in 2019 and 103 in 2020.') }}</p><p>{{ t("Hypermart Online coverage expanded from 20 stores in 2019 to 103 in 2020. MPPA also offered WhatsApp ordering, pickup and marketplace delivery.") }}</p></section>
+<section class="matched-download-study" aria-labelledby="matched-download-title"><h3 id="matched-download-title">{{ t('Technology: reach and downloads') }}</h3><p>{{ t(matchedDownloads.scope) }}</p><nav class="reach-chart-controls" :aria-label="t('Download chart scope')"><button type="button" :aria-pressed="reachChartScope==='all'" @click="reachChartScope='all'">{{ t('All reported') }}</button><button type="button" :aria-pressed="reachChartScope==='android'" @click="reachChartScope='android'">{{ t('Android · Apr 2020') }}</button></nav><div class="matched-bars" role="img" :aria-label="t('Reported download thresholds') + ': ' + reachChartApps.map(app=>app.name+' '+app.display).join(', ')"><div class="matched-bar-row" v-for="app in reachChartApps" :key="app.name" :class="{'matched-highlight':app.highlight, 'mixed-download-basis':app.mixed}"><div class="reach-app-label"><strong>{{ app.name }}</strong><small>{{ t(app.basis) }}</small></div><div class="matched-track"><div :style="{width:(app.value/reachChartMaximum*100)+'%'}"></div></div><b>{{ app.display }}</b></div><div class="matched-axis"><span>0</span><span>{{ formatReachTick(reachChartMaximum/2) }}</span><span>{{ formatReachTick(reachChartMaximum) }}</span></div></div><p class="note">{{ t(matchedDownloads.limit) }}</p><p class="source"><a :href="matchedDownloads.source.url" target="_blank" rel="noopener">{{ t('Source: Hybrid / DailySocial, 2 April 2020 · Android download table') }}</a></p></section>
+
+<details><summary>{{ t("Data comparisons and source reconciliation") }}</summary><ul><li>{{ t("Household consumption: 5.04% − (−2.63%) = 7.67 percentage points. Both are real growth rates, not nominal grocery spending.") }}</li><li>{{ t("The social factor uses Google, Temasek, and Bain’s e-Conomy SEA 2020 study: 37% of digital consumers were new users, and 93% intend to continue using digital services post-pandemic.") }}</li><li>{{ t("The Bappenas food-loss-and-waste range covers the national food chain across 2000–2019. No year-to-year change or company waste rate is inferred.") }}</li></ul></details>
+<details><summary>{{ t("References") }}</summary><ol class="pestle-source-register"><li v-for="source in pestleSources" :key="source.id"><a :href="source.url" target="_blank" rel="noopener">{{ t(source.title) }}</a><span>{{ t(source.date) }} {{ t("·") }} {{ t(source.locator) }}</span><a v-if="source.local" :href="source.local" target="_blank" rel="noopener">{{ t("Open saved report") }}</a></li></ol></details><p class="source"><a href="sources/mppa-pestle-evidence.json" target="_blank" rel="noopener">{{ t("Open the evidence ledger") }}</a></p></section>
+<section class="forces-study" aria-labelledby="forces-notes"><div class="eyebrow">{{ t("Section 06 · Competitive assessment") }}</div><h2 id="forces-notes">{{ t("Porter’s Five Forces") }}</h2><p>{{ t("MPPA competes in Indonesian consumer grocery retail, across stores and online channels.") }}</p><article class="pestle-study-factor" v-for="force in fiveForces" :key="force.id"><h3>{{ t(force.name) }} · {{ t(force.rating) }}</h3><p>{{ t(force.reading) }}</p><p v-for="fact in force.evidence" :key="fact">{{ t(fact) }}</p><p>{{ t(force.salesLink) }}</p><details><summary>{{ t("Method and source notes") }}</summary><p>{{ t(force.limit) }}</p></details><div v-if="force.digitalRivals"><h3>{{ t("Digital rivals: sales and available evidence") }}</h3><p>{{ t("Selected retailers: 2020 sales in USD million — Indomaret 5,900; Alfamart 5,256; Transmart 954; Alfamidi 863; Hypermart 414. Source: case Exhibit 8, p. 593.") }}</p><div class="table-wrap"><table class="rivalry-notes-table"><thead><tr><th>{{ t("Retailer / platform") }}</th><th>{{ t("Sales comparability") }}</th><th>{{ t("Available activity evidence") }}</th></tr></thead><tbody><tr v-for="rival in force.digitalRivals" :key="rival.name"><td>{{ rival.name }}<p>{{ t(rival.model) }}</p></td><td>{{ t(rival.annualSales) }}</td><td>{{ t(rival.activity) }}<span class="source"> {{ rival.sourceIds.join(" · ") }}</span></td></tr></tbody></table></div></div><p class="source"><a v-for="source in fiveForceSources.filter(item=>force.sourceIds.includes(item.id))" :key="source.id" :href="source.url" target="_blank" rel="noopener">{{ source.id }} · {{ source.title }} </a></p></article><details><summary>{{ t("Five Forces references") }}</summary><ul class="pestle-source-register"><li v-for="source in fiveForceSources" :key="source.id"><a :href="source.url" target="_blank" rel="noopener">{{ source.id }} · {{ source.title }}</a><span>{{ source.locator }}</span></li></ul></details></section>
+<section class="efe-study" aria-labelledby="efe-notes">
+<div class="eyebrow">{{ t("Section 07 · External evaluation") }}</div>
+<h2 id="efe-notes">{{ t("External Factor Evaluation (EFE Matrix)") }}</h2>
+<p>{{ t("The EFE matrix assesses MPPA’s response to external economic, social, competitive, and regulatory opportunities and threats. Total score is 2.46 (against industry benchmark 2.50), reflecting strong omnichannel agility offset by hypermarket mall vulnerability.") }}</p>
+
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Code") }}</th>
+<th>{{ t("External Factor") }}</th>
+<th>{{ t("Weight") }}</th>
+<th>{{ t("Rating") }}</th>
+<th>{{ t("Weighted Score") }}</th>
+<th>{{ t("Response Assessment & Strategic Defense") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>O1</strong></td><td>{{ t("Rapid Online Grocery Market Growth") }}</td><td>0.07</td><td>4</td><td>0.28</td><td>{{ t("MPPA responded superiorly (Rating 4) by deploying Hypermart Online in 103 stores, WhatsApp Chat &amp; Shop in 125 stores, and GrabMart in 97 stores.") }}</td></tr>
+<tr><td><strong>O2</strong></td><td>{{ t("Permanent Shift to Digital Shopping") }}</td><td>0.06</td><td>3</td><td>0.18</td><td>{{ t("Above-average capture (Rating 3) via multi-partner presence, though direct proprietary app retention lagged Alfamart’s Alfagift scale.") }}</td></tr>
+<tr><td><strong>O3</strong></td><td>{{ t("Huge Non-Stop Demand for Staple Foods") }}</td><td>0.06</td><td>3</td><td>0.18</td><td>{{ t("MPPA’s comprehensive assortment (Rating 3) directly addresses high-volume staple categories (rice, oil, dairy, sugar) across 100 hypermarkets.") }}</td></tr>
+<tr><td><strong>O4</strong></td><td>{{ t("Surge in Family Home Cooking") }}</td><td>0.05</td><td>4</td><td>0.20</td><td>{{ t("MPPA pivoted heavily to fresh food (Rating 4), lifting fresh sales share from 24.0% to 27.7% of total revenue during mobility restrictions.") }}</td></tr>
+<tr><td><strong>O5</strong></td><td>{{ t("Essential Retail Exemption During Lockdowns") }}</td><td>0.05</td><td>3</td><td>0.15</td><td>{{ t("MPPA maintained full daily operations across its retail stores and 3 DCs (Rating 3), though constrained by enclosed mall operating curfews.") }}</td></tr>
+<tr><td><strong>O6</strong></td><td>{{ t("Shopper Preference Shifting to Local Stores") }}</td><td>0.05</td><td>3</td><td>0.15</td><td>{{ t("MPPA deployed 2 new Hyfresh community supermarkets (Rating 3) to capture residential fresh demand, though hypermarkets still anchor 84.5% of sales.") }}</td></tr>
+<tr><td><strong>O7</strong></td><td>{{ t("Cold-Chain Barrier Protecting Fresh Food") }}</td><td>0.05</td><td>4</td><td>0.20</td><td>{{ t("MPPA leveraged 3 multi-temperature DCs (Rating 4), insulating fresh perishable produce from parcel delivery marketplaces (Shopee/Tokopedia).") }}</td></tr>
+<tr><td><strong>O8</strong></td><td>{{ t("Fast On-Demand Motorcycle Delivery Services") }}</td><td>0.04</td><td>4</td><td>0.16</td><td>{{ t("MPPA integrated GrabMart (97 stores), Shopee (45 stores), and Tokopedia (23 stores) rapidly without capital-heavy fleet investments (Rating 4).") }}</td></tr>
+<tr><td><strong>O9</strong></td><td>{{ t("Cutting Food Waste to Improve Margins") }}</td><td>0.04</td><td>2</td><td>0.08</td><td>{{ t("Average response (Rating 2): MPPA tightened DC replenishment and eliminated obsolete inventory, but lacks standardized waste-reduction metrics.") }}</td></tr>
+<tr><td><strong>O10</strong></td><td>{{ t("Suppliers Relying on Modern Central Warehouses") }}</td><td>0.03</td><td>3</td><td>0.09</td><td>{{ t("MPPA channeled 53.8% of goods through internal DCs (Rating 3), offering FMCG suppliers reliable national distribution amid transit disruptions.") }}</td></tr>
+<tr class="cpm-totals-row"><td colspan="2"><strong>{{ t("Opportunities Subtotal") }}</strong></td><td><strong>0.50</strong></td><td>—</td><td><strong>1.67</strong></td><td>{{ t("High responsiveness to digital and fresh demand drivers") }}</td></tr>
+
+<tr><td><strong>T1</strong></td><td>{{ t("Massive Neighborhood Minimarket Dominance") }}</td><td>0.08</td><td>1</td><td>0.08</td><td>{{ t("Poor response (Rating 1): MPPA’s 100 hypermarkets represent &lt;1% of modern store count and cannot match residential walking proximity.") }}</td></tr>
+<tr><td><strong>T2</strong></td><td>{{ t("Minimarket Duopoly Buying Power and Scale") }}</td><td>0.07</td><td>2</td><td>0.14</td><td>{{ t("Average response (Rating 2): MPPA relies on supplier promotions but lacks the bargaining power of Indomaret ($4.9B) and Alfamart ($4.3B).") }}</td></tr>
+<tr><td><strong>T3</strong></td><td>{{ t("Drop in National Household Spending") }}</td><td>0.06</td><td>2</td><td>0.12</td><td>{{ t("Average response (Rating 2): Protected basic grocery volume but suffered basket size shrinkage and non-food discretionary sales drops.") }}</td></tr>
+<tr><td><strong>T4</strong></td><td>{{ t("Sharp Drop in Mall Visitors from Operating Curbs") }}</td><td>0.06</td><td>1</td><td>0.06</td><td>{{ t("Poor response (Rating 1): 84.5% of sales remain trapped in mall-anchored hypermarkets subject to restrictive public activity caps.") }}</td></tr>
+<tr><td><strong>T5</strong></td><td>{{ t("Competitor Mobile Loyalty App Scale") }}</td><td>0.05</td><td>2</td><td>0.10</td><td>{{ t("Average response (Rating 2): MPPA operates multi-channel ordering but lacks a proprietary, data-rich loyalty engine at rival scale.") }}</td></tr>
+<tr><td><strong>T6</strong></td><td>{{ t("Growth of Nearby Fresh Supermarkets") }}</td><td>0.05</td><td>2</td><td>0.10</td><td>{{ t("Average response (Rating 2): Alfamidi directly attacks MPPA’s fresh moat in residential clusters; MPPA only has 2 Hyfresh stores.") }}</td></tr>
+<tr><td><strong>T7</strong></td><td>{{ t("Heavy Fixed Long-Term Lease Obligations") }}</td><td>0.04</td><td>1</td><td>0.04</td><td>{{ t("Poor response (Rating 1): Rigid lease structures create heavy right-of-use asset depreciation and financing charges regardless of store sales.") }}</td></tr>
+<tr><td><strong>T8</strong></td><td>{{ t("Zero Brand Switching Costs for Grocery Shoppers") }}</td><td>0.03</td><td>2</td><td>0.06</td><td>{{ t("Average response (Rating 2): Price match guarantees protect staple price perception but trigger ongoing retail gross margin compression.") }}</td></tr>
+<tr><td><strong>T9</strong></td><td>{{ t("Delivery App Commission Fees") }}</td><td>0.03</td><td>2</td><td>0.06</td><td>{{ t("Average response (Rating 2): Rapid partner onboarding generated sales volume but aggregator commissions erode already slim grocery margins.") }}</td></tr>
+<tr><td><strong>T10</strong></td><td>{{ t("Deep Cash Reserves of Rival Conglomerates") }}</td><td>0.03</td><td>1</td><td>0.03</td><td>{{ t("Poor response (Rating 1): MPPA’s negative operating cash flow (−Rp80B) prevents aggressive price subsidy wars against deep-pocketed peers.") }}</td></tr>
+<tr class="cpm-totals-row"><td colspan="2"><strong>{{ t("Threats Subtotal") }}</strong></td><td><strong>0.50</strong></td><td>—</td><td><strong>0.79</strong></td><td>{{ t("Structural headwinds in large mall formats and minimarket scale") }}</td></tr>
+<tr class="cpm-totals-row" style="background:#e0f2fe;font-size:1.05em"><td colspan="2"><strong>{{ t("EFE Matrix Total Weighted Score") }}</strong></td><td><strong>1.00</strong></td><td>—</td><td><strong>2.46</strong></td><td>{{ t("Below average (2.50): Digital agility offset by heavy physical mall exposure.") }}</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="ife-study" aria-labelledby="ife-notes">
+<div class="eyebrow">{{ t("Section 08 · Internal evaluation") }}</div>
+<h2 id="ife-notes">{{ t("Internal Factor Evaluation (IFE Matrix)") }}</h2>
+<p>{{ t("The IFE matrix evaluates MPPA’s internal organizational strengths and weaknesses across operations, finance, merchandising, and format strategy. Total score is 2.21 (below 2.50 benchmark), indicating severe financial and square footage vulnerabilities.") }}</p>
+
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Code") }}</th>
+<th>{{ t("Internal Factor") }}</th>
+<th>{{ t("Weight") }}</th>
+<th>{{ t("Rating") }}</th>
+<th>{{ t("Weighted Score") }}</th>
+<th>{{ t("Internal Position Assessment & Strategic Rationale") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>S1</strong></td><td>{{ t("Fresh food share of sales") }}</td><td>0.07</td><td>4</td><td>0.28</td><td>{{ t("Fresh food is MPPA’s primary traffic driver and highest-frequency department, successfully insulating top-line revenue during pandemic mobility restrictions.") }}</td></tr>
+<tr><td><strong>S2</strong></td><td>{{ t("Central Cold-Chain Distribution Centers") }}</td><td>0.06</td><td>4</td><td>0.24</td><td>{{ t("Temperature-controlled multi-facility logistics network forms a high capital-barrier moat that ambient parcel-delivery e-commerce cannot replicate.") }}</td></tr>
+<tr><td><strong>S3</strong></td><td>{{ t("National Hypermarket Store Network") }}</td><td>0.05</td><td>3</td><td>0.15</td><td>{{ t("High brand visibility and irreplaceable prime real estate anchors across outer island provincial hubs spanning Sumatra to Papua.") }}</td></tr>
+<tr><td><strong>S4</strong></td><td>{{ t("Fast Multi-Platform Online Delivery") }}</td><td>0.05</td><td>4</td><td>0.20</td><td>{{ t("Fast asset-light rollout converted physical hypermarkets into localized e-grocery fulfillment nodes without fleet capital expenditure.") }}</td></tr>
+<tr><td><strong>S5</strong></td><td>{{ t("Direct FMCG Supplier Distribution") }}</td><td>0.04</td><td>3</td><td>0.12</td><td>{{ t("Direct relationships with multinational FMCG manufacturers ensure consolidated bulk supply and vendor promotional support during transit disruptions.") }}</td></tr>
+<tr><td><strong>S6</strong></td><td>{{ t("National Halal Logistics Certification") }}</td><td>0.04</td><td>3</td><td>0.12</td><td>{{ t("Full compliance with national Halal supply chain integrity provides strong institutional trust among Indonesia’s 87% Muslim consumer majority.") }}</td></tr>
+<tr><td><strong>S7</strong></td><td>{{ t("Compact Fresh Supermarket Formats") }}</td><td>0.04</td><td>3</td><td>0.12</td><td>{{ t("Smaller 500–1,500 m² formats offer a proven operational template to expand into high-frequency residential neighborhoods without hypermarket drag.") }}</td></tr>
+<tr><td><strong>S8</strong></td><td>{{ t("Private Label In-House Brands") }}</td><td>0.04</td><td>3</td><td>0.12</td><td>{{ t("In-house staple brands provide budget-conscious shoppers 15–20% lower price points while yielding MPPA 300–500 bps higher gross margins.") }}</td></tr>
+<tr><td><strong>S9</strong></td><td>{{ t("100% Focus on Direct Retail Shoppers") }}</td><td>0.03</td><td>3</td><td>0.09</td><td>{{ t("Exiting thin-margin B2B wholesale distribution eliminated operational distractions and protected core grocery gross margins at 16.7%.") }}</td></tr>
+<tr><td><strong>S10</strong></td><td>{{ t("Large Registered Loyalty Customer Base") }}</td><td>0.03</td><td>3</td><td>0.09</td><td>{{ t("Established membership base provides direct digital reach and purchase history data to drive repeat grocery transaction cycles.") }}</td></tr>
+<tr class="cpm-totals-row"><td colspan="2"><strong>{{ t("Strengths Subtotal") }}</strong></td><td><strong>0.45</strong></td><td>—</td><td><strong>1.53</strong></td><td>{{ t("Strong operational, fresh supply, and logistics assets") }}</td></tr>
+
+<tr><td><strong>W1</strong></td><td>{{ t("Four Straight Years of Heavy Net Losses") }}</td><td>0.08</td><td>1</td><td>0.08</td><td>{{ t("Chronic losses depleted equity down to Rp460.6B by end-2020, severely threatening financial going-concern status and limiting capital investments.") }}</td></tr>
+<tr><td><strong>W2</strong></td><td>{{ t("Negative Cash Flow from Store Operations") }}</td><td>0.07</td><td>1</td><td>0.07</td><td>{{ t("Operating activities fail to self-fund working capital or required store maintenance capex, forcing reliance on bank debt and supplier credit stretching.") }}</td></tr>
+<tr><td><strong>W3</strong></td><td>{{ t("Over-Reliance on Big Hypermarket Stores") }}</td><td>0.06</td><td>1</td><td>0.06</td><td>{{ t("Extreme structural concentration in massive 5,000–8,000 m² stores leaves MPPA heavily exposed to consumer migration toward neighborhood minimarkets.") }}</td></tr>
+<tr><td><strong>W4</strong></td><td>{{ t("Vulnerability to Shopping Mall Foot-Traffic Drops") }}</td><td>0.06</td><td>1</td><td>0.06</td><td>{{ t("Shopping mall operating curfews and 50% capacity caps decimated weekend family foot-traffic, causing fixed occupancy overhead to overwhelm sales.") }}</td></tr>
+<tr><td><strong>W5</strong></td><td>{{ t("Heavy PSAK 73 Lease and Interest Overhead") }}</td><td>0.06</td><td>1</td><td>0.06</td><td>{{ t("Rigid long-term hypermarket lease liabilities (Rp2.25T) produce massive right-of-use asset depreciation and finance costs regardless of sales.") }}</td></tr>
+<tr><td><strong>W6</strong></td><td>{{ t("Low Sales per Square Meter of Floor Space") }}</td><td>0.05</td><td>1</td><td>0.05</td><td>{{ t("Vast non-food hypermarket floor space sits unproductive as discretionary goods migrate online, dragging total space efficiency to less than half of peers.") }}</td></tr>
+<tr><td><strong>W7</strong></td><td>{{ t("Too Many Fragmented Small Store Brands") }}</td><td>0.05</td><td>2</td><td>0.10</td><td>{{ t("Operating Foodmart, Primo, Hyfresh, and FMX simultaneously fragments marketing resources and confuses consumers, lacking a unified umbrella identity.") }}</td></tr>
+<tr><td><strong>W8</strong></td><td>{{ t("Working capital shortfall") }}</td><td>0.04</td><td>1</td><td>0.04</td><td>{{ t("Current liabilities exceeded current assets by about Rp1.23 trillion at year-end 2020.") }}</td></tr>
+<tr><td><strong>W9</strong></td><td>{{ t("High Fixed Store Operating Costs") }}</td><td>0.04</td><td>2</td><td>0.08</td><td>{{ t("Large store electricity, air conditioning, and store staffing costs cannot be reduced proportionally to top-line revenue contractions.") }}</td></tr>
+<tr><td><strong>W10</strong></td><td>{{ t("No Dedicated High-Engagement Mobile App") }}</td><td>0.04</td><td>2</td><td>0.08</td><td>{{ t("Ceding customer ordering to third-party aggregators (Grab, Shopee) surrenders valuable repeat customer purchase data and incurs margin commissions.") }}</td></tr>
+<tr class="cpm-totals-row"><td colspan="2"><strong>{{ t("Weaknesses Subtotal") }}</strong></td><td><strong>0.55</strong></td><td>—</td><td><strong>0.68</strong></td><td>{{ t("Severe liquidity, balance sheet, and oversized format drag") }}</td></tr>
+<tr class="cpm-totals-row" style="background:#fee2e2;font-size:1.05em"><td colspan="2"><strong>{{ t("IFE Matrix Total Weighted Score") }}</strong></td><td><strong>1.00</strong></td><td>—</td><td><strong>2.21</strong></td><td>{{ t("Internally weak (2.21 < 2.50): Fresh food moat undermined by financial distress.") }}</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="cpm-study" aria-labelledby="cpm-notes">
+<div class="eyebrow">{{ t("Section 09 · Competitive assessment") }}</div>
+<h2 id="cpm-notes">{{ t("Competitive Profile Matrix (CPM) & Evidence Defense") }}</h2>
+<p>{{ t("The CPM compares MPPA’s consumer grocery business with five primary competitors across eight evidence-supported critical success factors for FY2020. Weights reflect industry importance during the pandemic (totaling 1.00); ratings use Fred David’s 1–4 response effectiveness scale.") }}</p>
+
+<h3>{{ t("1. Sourced Company-by-Factor Evidence Table (FY2020 Baseline)") }}</h3>
+<p>{{ t("This evidence base establishes the factual foundation and defense for the CPM ratings before weights are applied:") }}</p>
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Critical Success Factor") }}</th>
+<th class="mppa-col">{{ t("MPPA (Hypermart)") }}</th>
+<th>{{ t("Indomaret") }}</th>
+<th>{{ t("Alfamart") }}</th>
+<th>{{ t("Transmart") }}</th>
+<th>{{ t("Alfamidi") }}</th>
+<th>{{ t("LotteMart") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>{{ t("Store Accessibility & Proximity") }}</strong></td>
+<td class="mppa-col">{{ t("211 stores (100 Hypermarts, 611k m²); mall foot traffic drop during PPKM.") }} <em>{{ t("AR2020 pp. 2, 46") }}</em></td>
+<td>{{ t("18,113 stores; 42% outlet share; dense residential walkability.") }} <em>{{ t("Indoritel AR2020 p. 24") }}</em></td>
+<td>{{ t("15,438 stores; 52% outlet share; dominant neighborhood penetration.") }} <em>{{ t("AMRT AR2020") }}</em></td>
+<td>{{ t("~134 supercenters; large mall spaces restricted by lockdowns.") }} <em>{{ t("Case Exhibit 8") }}</em></td>
+<td>{{ t("1,821 stores (+266 new in 2020); residential mid-market supermarket.") }} <em>{{ t("AR2020 MIDI p. 2") }}</em></td>
+<td>{{ t("~50 outlets (~15 retail, ~35 wholesale); commercial destination hubs.") }} <em>{{ t("Lotte Shopping Note 1(3)") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("Fresh Food Quality & Assortment Breadth") }}</strong></td>
+<td class="mppa-col">{{ t("27.7% sales from Fresh (up from 24%); 30k+ SKUs; core fresh moat.") }} <em>{{ t("AR2020 pp. 12, 38") }}</em></td>
+<td>{{ t("Packaged FMCG (~4k SKUs); ready-to-eat/drink; minimal raw fresh.") }} <em>{{ t("Indoritel AR2020") }}</em></td>
+<td>{{ t("Packaged FMCG (~3.5k SKUs); high turn; no fresh produce.") }} <em>{{ t("AMRT AR2020") }}</em></td>
+<td>{{ t("Full hypermarket breadth (40k+ SKUs); fresh produce, meat & bakery.") }} <em>{{ t("Case Exhibit 8") }}</em></td>
+<td>{{ t("Fresh-focused mid-market (~8k SKUs); dedicated fresh meat & produce.") }} <em>{{ t("MIDI AR2020 p. 2") }}</em></td>
+<td>{{ t("Fresh & bulk assortment (35k+ SKUs); imported Korean specialty goods.") }} <em>{{ t("LotteMart disclosures") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("FMCG Pricing & Purchasing Scale") }}</strong></td>
+<td class="mppa-col">{{ t("Rp6.75T revenue; 19.4% gross margin; active promotional price matching.") }} <em>{{ t("AR2020 pp. 12, 38") }}</em></td>
+<td>{{ t("~$5,900M (~Rp85.7T); top FMCG buying scale; massive trade terms.") }} <em>{{ t("Case Exhibit 8") }}</em></td>
+<td>{{ t("Rp75.83T revenue; 20.7% gross margin; top-tier FMCG supplier rebates.") }} <em>{{ t("AMRT AR2020") }}</em></td>
+<td>{{ t("~$954M (~Rp13.86T); heavy reliance on Bank Mega 10% card discounts.") }} <em>{{ t("Case Exhibit 8") }}</em></td>
+<td>{{ t("Rp12.66T revenue; 24.1% margin; leverages AMRT master vendor agreements.") }} <em>{{ t("MIDI AR2020 p. 2") }}</em></td>
+<td>{{ t("~Rp2.47T retail + Rp10.17T wholesale; bulk wholesale purchasing power.") }} <em>{{ t("Lotte disclosures") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("Omnichannel Ordering & App Reach") }}</strong></td>
+<td class="mppa-col">{{ t("Hypermart Online in 103 stores; WhatsApp in 125; 4–5% online sales.") }} <em>{{ t("AR2020 p. 40") }}</em></td>
+<td>{{ t("Klik Indomaret app & web; Klik-Food; drive-thru stores.") }} <em>{{ t("Indoritel AR2020 p. 26") }}</em></td>
+<td>{{ t("Alfagift app: 8M+ dl; 9.3M loyalty members (58.5% active in-store).") }} <em>{{ t("AMRT AR2020 p. 44") }}</em></td>
+<td>{{ t("Web e-catalogue (transmartdelivery.com); WhatsApp order lines.") }} <em>{{ t("Detik News 2020") }}</em></td>
+<td>{{ t("MIDI Kriing via WhatsApp; third-party online delivery partners.") }} <em>{{ t("MIDI AR2020 p. 66") }}</em></td>
+<td>{{ t("LotteMart Point app (10k+ downloads); WhatsApp store ordering.") }} <em>{{ t("DailySocial 2020") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("On-Demand Fulfillment & Delivery Fleet") }}</strong></td>
+<td class="mppa-col">{{ t("Delivery & Park & Pickup; GrabMart 97, Shopee 45, Tokopedia 23.") }} <em>{{ t("AR2020 p. 40") }}</em></td>
+<td>{{ t("1-hour express delivery promise from nearby stores after payment.") }} <em>{{ t("Indoritel AR2020 p. 26") }}</em></td>
+<td>{{ t("Store-to-door delivery & pickup backed by 15k+ local store hubs.") }} <em>{{ t("AMRT AR2020 p. 44") }}</em></td>
+<td>{{ t("Transmart Delivery from selected hypermarket outlets; slower turn.") }} <em>{{ t("Company reports") }}</em></td>
+<td>{{ t("MIDI Kriing store delivery; limited dedicated fleet.") }} <em>{{ t("MIDI AR2020 p. 66") }}</em></td>
+<td>{{ t("Store home delivery; limited delivery radius around destination stores.") }} <em>{{ t("Company disclosures") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("Supply Chain & DC Infrastructure") }}</strong></td>
+<td class="mppa-col">{{ t("3 DCs (66,755 m²); 76,952 pallet positions; 53.8% DC sales flow.") }} <em>{{ t("AR2020 p. 44") }}</em></td>
+<td>{{ t("30+ regional DCs nationwide; automated high-density delivery fleet.") }} <em>{{ t("Indoritel AR2020 p. 24") }}</em></td>
+<td>{{ t("32 regional DCs nationwide; pick-to-light automation; rapid turn.") }} <em>{{ t("AMRT AR2020 p. 46") }}</em></td>
+<td>{{ t("Regional logistics hubs; high handling complexity for non-food bulk.") }} <em>{{ t("Industry benchmarks") }}</em></td>
+<td>{{ t("10 dedicated DCs; temperature-controlled cold chain for fresh food.") }} <em>{{ t("MIDI AR2020 p. 28") }}</em></td>
+<td>{{ t("Central distribution hub (Cikarang); optimized for wholesale pallets.") }} <em>{{ t("Lotte disclosures") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("Parent Conglomerate & Ecosystem Backing") }}</strong></td>
+<td class="mppa-col">{{ t("Lippo Group (Riady family) mall network & OVO ecosystem; zero fresh equity in 2020.") }} <em>{{ t("AR2020 Note 8") }}</em></td>
+<td>{{ t("Salim Group; upstream wheat/noodle supply & banking integration.") }} <em>{{ t("Indoritel AR2020") }}</em></td>
+<td>{{ t("Sigmantara Alfindo / Djoko Susanto; specialized retail conglomerate.") }} <em>{{ t("AMRT AR2020") }}</em></td>
+<td>{{ t("CT Corp (Chairul Tanjung); integrated with Bank Mega & Transmedia.") }} <em>{{ t("Case Exhibit 8") }}</em></td>
+<td>{{ t("AMRT subsidiary; shared Salim & Alfamart wholesale synergies.") }} <em>{{ t("MIDI AR2020") }}</em></td>
+<td>{{ t("Lotte Corporation (South Korea); extensive conglomerate scale.") }} <em>{{ t("Lotte Shopping 2020") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("Format Space Efficiency & Mall Exposure") }}</strong></td>
+<td class="mppa-col">{{ t("5,000–7,000 m² avg; downsizing started (5 relaunches); PSAK 73 lease drag.") }} <em>{{ t("AR2020 p. 46") }}</em></td>
+<td>{{ t("100–200 m² compact format; low capital per store; agile relocations.") }} <em>{{ t("Indoritel AR2020") }}</em></td>
+<td>{{ t("100–150 m² compact format; 25% franchise risk-share; high sales density.") }} <em>{{ t("AMRT AR2020") }}</em></td>
+<td>{{ t("8,000–15,000 m² complexes; entertainment parks crippled by COVID.") }} <em>{{ t("Case Exhibit 8") }}</em></td>
+<td>{{ t("200–500 m² sweet-spot format; roadside neighborhood convenience.") }} <em>{{ t("MIDI AR2020") }}</em></td>
+<td>{{ t("5,000–10,000 m² large format; destination dependency; fixed cost drag.") }} <em>{{ t("Lotte disclosures") }}</em></td>
+</tr>
+<tr>
+<td><strong>{{ t("Liquidity & Financial Resilience") }}</strong></td>
+<td class="mppa-col">{{ t("Net loss Rp(405B); Working cap deficit Rp(1.23T); CR 0.56x; Cash Rp300B.") }} <em>{{ t("AR2020 pp. 98–101") }}</em></td>
+<td>{{ t("Consistently profitable; substantial Salim Group financial backing.") }} <em>{{ t("Case Exhibit 8") }}</em></td>
+<td>{{ t("Net profit Rp1.06T (+4.9%); positive operating cash flow; strong balance sheet.") }} <em>{{ t("AMRT AR2020 p. 11") }}</em></td>
+<td>{{ t("Severe cash burn & debt drag under CT Corp retail; rental arrears.") }} <em>{{ t("Industry reports") }}</em></td>
+<td>{{ t("Net profit Rp200.3B (+25.4%); positive operating cash flow Rp1.19T.") }} <em>{{ t("MIDI AR2020 p. 10") }}</em></td>
+<td>{{ t("Retail net loss KRW(19.8B); backed by multinational Lotte Group.") }} <em>{{ t("Lotte Shopping 2020") }}</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>{{ t("2. Competitive Profile Matrix (CPM) Scored Results") }}</h3>
+<p>{{ t("Sourced 9-factor evaluation following Fred David's framework. Weights sum to exactly 1.00; ratings reflect competitive responsiveness (1 = Major Weakness, 2 = Minor Weakness, 3 = Minor Strength, 4 = Major Strength).") }}</p>
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Critical Success Factor") }}</th>
+<th>{{ t("Weight") }}</th>
+<th class="mppa-col">{{ t("MPPA") }}</th>
+<th>{{ t("Indomaret") }}</th>
+<th>{{ t("Alfamart") }}</th>
+<th>{{ t("Transmart") }}</th>
+<th>{{ t("Alfamidi") }}</th>
+<th>{{ t("LotteMart") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{{ t("Store Accessibility & Proximity") }}</td>
+<td>0.14</td>
+<td class="mppa-col">0.28 (2)</td>
+<td>0.56 (4)</td>
+<td>0.56 (4)</td>
+<td>0.28 (2)</td>
+<td>0.42 (3)</td>
+<td>0.14 (1)</td>
+</tr>
+<tr>
+<td>{{ t("Fresh Food Quality & Assortment Breadth") }}</td>
+<td>0.14</td>
+<td class="mppa-col">0.42 (3)</td>
+<td>0.28 (2)</td>
+<td>0.28 (2)</td>
+<td>0.42 (3)</td>
+<td>0.56 (4)</td>
+<td>0.42 (3)</td>
+</tr>
+<tr>
+<td>{{ t("FMCG Pricing & Purchasing Scale") }}</td>
+<td>0.13</td>
+<td class="mppa-col">0.26 (2)</td>
+<td>0.52 (4)</td>
+<td>0.52 (4)</td>
+<td>0.26 (2)</td>
+<td>0.39 (3)</td>
+<td>0.39 (3)</td>
+</tr>
+<tr>
+<td>{{ t("Omnichannel Ordering & App Reach") }}</td>
+<td>0.12</td>
+<td class="mppa-col">0.36 (3)</td>
+<td>0.36 (3)</td>
+<td>0.48 (4)</td>
+<td>0.24 (2)</td>
+<td>0.24 (2)</td>
+<td>0.24 (2)</td>
+</tr>
+<tr>
+<td>{{ t("On-Demand Fulfillment & Delivery Fleet") }}</td>
+<td>0.11</td>
+<td class="mppa-col">0.33 (3)</td>
+<td>0.44 (4)</td>
+<td>0.44 (4)</td>
+<td>0.22 (2)</td>
+<td>0.22 (2)</td>
+<td>0.22 (2)</td>
+</tr>
+<tr>
+<td>{{ t("Supply Chain & DC Infrastructure") }}</td>
+<td>0.10</td>
+<td class="mppa-col">0.30 (3)</td>
+<td>0.40 (4)</td>
+<td>0.40 (4)</td>
+<td>0.20 (2)</td>
+<td>0.30 (3)</td>
+<td>0.20 (2)</td>
+</tr>
+<tr>
+<td>{{ t("Parent Conglomerate & Ecosystem Backing") }}</td>
+<td>0.10</td>
+<td class="mppa-col">0.30 (3)</td>
+<td>0.40 (4)</td>
+<td>0.30 (3)</td>
+<td>0.20 (2)</td>
+<td>0.30 (3)</td>
+<td>0.30 (3)</td>
+</tr>
+<tr>
+<td>{{ t("Format Space Efficiency & Mall Exposure") }}</td>
+<td>0.08</td>
+<td class="mppa-col">0.08 (1)</td>
+<td>0.32 (4)</td>
+<td>0.32 (4)</td>
+<td>0.08 (1)</td>
+<td>0.24 (3)</td>
+<td>0.08 (1)</td>
+</tr>
+<tr>
+<td>{{ t("Liquidity & Financial Resilience") }}</td>
+<td>0.08</td>
+<td class="mppa-col">0.08 (1)</td>
+<td>0.32 (4)</td>
+<td>0.32 (4)</td>
+<td>0.08 (1)</td>
+<td>0.24 (3)</td>
+<td>0.16 (2)</td>
+</tr>
+<tr class="cpm-totals-row">
+<td><strong>{{ t("Totals") }}</strong></td>
+<td><strong>1.00</strong></td>
+<td class="mppa-col"><strong>2.46</strong></td>
+<td><strong>3.60</strong></td>
+<td><strong>3.62</strong></td>
+<td><strong>1.98</strong></td>
+<td><strong>2.91</strong></td>
+<td><strong>2.15</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>{{ t("3. Key Findings & Strategic Takeaways for MPPA") }}</h3>
+<p>{{ t("Connecting competitive findings to the case red thread:") }}</p>
+<ul>
+<li>{{ t("1. The Format Squeeze: Minimarkets (Indomaret & Alfamart, ~33,500 stores combined) dominate accessibility (0.56) and scale (0.52). MPPA's large hypermarkets suffered from mobility restrictions and high overhead.") }}</li>
+<li>{{ t("2. The Fresh Differentiation Moat: Fresh food contributed 27.7% of sales (+3.7% YoY). MPPA's 3 cold-chain DCs (66,755 m²) provide an advantage over dry-grocery minimarkets.") }}</li>
+<li>{{ t("3. Omnichannel Agility vs. Native Scale: MPPA rapidly deployed GrabMart (97 stores), Shopee (45 stores), and WhatsApp (125 stores), generating 4.5% online sales from scratch.") }}</li>
+<li>{{ t("4. The Balance Sheet Constraint: With negative working capital (-Rp1.23T) and bank debt (Rp1.03T), MPPA cannot wage an open price war, requiring targeted, asset-light execution.") }}</li>
+</ul>
+</section>
+
+<section class="tows-study" aria-labelledby="tows-notes">
+<div class="eyebrow">{{ t("Section 10 · Strategy formulation") }}</div>
+<h2 id="tows-notes">{{ t("SWOT Matrix (TOWS)") }}</h2>
+<p>{{ t("David’s Stage 2 SWOT Matrix matches strengths and weaknesses from IFE with opportunities and threats from EFE to develop SO, WO, ST, and WT strategies.") }}</p>
+
+<h3>{{ t("1. Strengths-Opportunities (SO) Strategies — Maxi-Maxi") }}</h3>
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Code") }}</th>
+<th>{{ t("Factor Linkage") }}</th>
+<th>{{ t("Actionable Strategy Statement") }}</th>
+<th>{{ t("Implementation Rationale & Strategic Fit") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SO1</strong></td>
+<td><span class="cpm-takeaway-badge">{{ t("S2, S4, S10, O1, O2, O3") }}</span></td>
+<td>{{ t("Partner with Grab & OVO to convert surplus hypermarket backrooms into on-demand dark stores and micro-fulfillment centers.") }}</td>
+<td>{{ t("Rather than purchasing expensive delivery vans, Hypermart integrates with Grab drivers and OVO payments to fulfill 30-minute grocery orders directly from existing store backrooms.") }}</td>
+</tr>
+<tr>
+<td><strong>SO2</strong></td>
+<td><span class="cpm-takeaway-badge">{{ t("S1, S3, S8, O4, O5") }}</span></td>
+<td>{{ t("Accelerate rollout of compact Hyfresh neighborhood supermarkets in high-density residential areas.") }}</td>
+<td>{{ t("Hyfresh was MPPA's only expanding format in 2020 (+1 store). Expanding compact 500–1,000 m² stores captures neighborhood foot-traffic while lowering capex.") }}</td>
+</tr>
+<tr>
+<td><strong>SO3</strong></td>
+<td><span class="cpm-takeaway-badge">{{ t("S2, S5, S7, S9, O7, O9") }}</span></td>
+<td>{{ t("Expand direct farm-to-store sourcing and Halal B2B wholesale supply to hotel/restaurant/catering channels.") }}</td>
+<td>{{ t("Leveraging 3 cold-chain DCs (66,755 m²) and 640+ farm partners cuts out intermediary brokers and captures institutional bulk food demand.") }}</td>
+</tr>
+<tr>
+<td><strong>SO4</strong></td>
+<td><span class="cpm-takeaway-badge">{{ t("S1, S4, S6, O3, O8, O10") }}</span></td>
+<td>{{ t("Launch integrated OVO digital loyalty and personalized fresh produce promotions.") }}</td>
+<td>{{ t("Connecting Hypermart's family brand with OVO's digital wallet enables personalized cash-back offers on fresh food, increasing basket spend and repeat visits.") }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>{{ t("2. Weaknesses-Opportunities (WO) Strategies — Mini-Maxi") }}</h3>
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Code") }}</th>
+<th>{{ t("Factor Linkage") }}</th>
+<th>{{ t("Actionable Strategy Statement") }}</th>
+<th>{{ t("Implementation Rationale & Strategic Fit") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WO1</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#e0e7ff;color:#3730a3">{{ t("W5, W6, W7, O2, O3") }}</span></td>
+<td>{{ t("Sublease 30%–50% of oversized hypermarket floor space to cloud kitchens, logistics hubs, and third-party tenants.") }}</td>
+<td>{{ t("MPPA operates 611,000 m² of space. Subleasing surplus floorspace generates recurring rental income, cuts maintenance expenses, and boosts foot traffic.") }}</td>
+</tr>
+<tr>
+<td><strong>WO2</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#e0e7ff;color:#3730a3">{{ t("W1, W3, W4, O3, O8") }}</span></td>
+<td>{{ t("Monetize non-core retail assets and negotiate debt refinancing with Lippo Group bank partners.") }}</td>
+<td>{{ t("With net losses of -Rp841B and short-term debt of Rp1,029B, MPPA must restructure debt maturities with commercial lenders to restore working capital solvency.") }}</td>
+</tr>
+<tr>
+<td><strong>WO3</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#e0e7ff;color:#3730a3">{{ t("W8, W9, W10, O1, O6") }}</span></td>
+<td>{{ t("Centralize omnichannel inventory with automated reordering to reduce holding costs and stockout rates.") }}</td>
+<td>{{ t("Holding Rp1.05T in inventory with 78 inventory days drains cash. Automated inventory replenishment reduces stockouts on staples while freeing working capital.") }}</td>
+</tr>
+<tr>
+<td><strong>WO4</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#e0e7ff;color:#3730a3">{{ t("W2, W7, W10, O2, O9") }}</span></td>
+<td>{{ t("Rationalize administrative overhead and consolidate logistics via multi-temperature distribution centers.") }}</td>
+<td>{{ t("Streamlining head-office overhead (opex 21.2% of sales) and routing 70%+ of retail flow through existing DCs reduces decentralized store-handling costs.") }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>{{ t("3. Strengths-Threats (ST) Strategies — Maxi-Mini") }}</h3>
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Code") }}</th>
+<th>{{ t("Factor Linkage") }}</th>
+<th>{{ t("Actionable Strategy Statement") }}</th>
+<th>{{ t("Implementation Rationale & Strategic Fit") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ST1</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fef3c7;color:#92400e">{{ t("S1, S2, S7, T1, T3, T9") }}</span></td>
+<td>{{ t("Leverage cold-chain DC network to offer everyday low prices and unmatched perishables freshness against ambient minimarkets.") }}</td>
+<td>{{ t("Minimarkets (Indomaret/Alfamart) lack cold distribution infrastructure and fresh produce breadth. MPPA defends market share by establishing fresh food as its core moat.") }}</td>
+</tr>
+<tr>
+<td><strong>ST2</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fef3c7;color:#92400e">{{ t("S3, S4, S6, T2, T7") }}</span></td>
+<td>{{ t("Expand 'Park & Pickup' and 1-hour doorstep delivery from local hypermarket hubs during mobility restrictions.") }}</td>
+<td>{{ t("When mall foot traffic collapses due to lockdowns, Park & Pickup and express doorstep delivery enable shoppers to purchase without entering mall concourses.") }}</td>
+</tr>
+<tr>
+<td><strong>ST3</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fef3c7;color:#92400e">{{ t("S1, S8, S9, T3, T4") }}</span></td>
+<td>{{ t("Introduce value-tier private label staple foods to protect customer baskets against inflation and income downgrading.") }}</td>
+<td>{{ t("As households down-trade during economic contraction, lower-priced private label rice, oil, and staples protect basket volume and consumer loyalty.") }}</td>
+</tr>
+<tr>
+<td><strong>ST4</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fef3c7;color:#92400e">{{ t("S2, S5, S8, T4, T10") }}</span></td>
+<td>{{ t("Deepen supplier partnerships and consignment terms using Halal certified national cold logistics.") }}</td>
+<td>{{ t("Offering national Halal cold storage incentivizes food suppliers to maintain preferential payment terms and guaranteed allocations during supply shortages.") }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>{{ t("4. Weaknesses-Threats (WT) Strategies — Mini-Mini") }}</h3>
+<div class="table-wrap">
+<table class="cpm-notes-table">
+<thead>
+<tr>
+<th>{{ t("Code") }}</th>
+<th>{{ t("Factor Linkage") }}</th>
+<th>{{ t("Actionable Strategy Statement") }}</th>
+<th>{{ t("Implementation Rationale & Strategic Fit") }}</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WT1</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fee2e2;color:#991b1b">{{ t("W1, W2, W5, T2, T6") }}</span></td>
+<td>{{ t("Permanently close chronic cash-bleeding hypermarkets and downsize large-format stores to compact footprints.") }}</td>
+<td>{{ t("MPPA closed 13 stores in 2020. Permanently exiting unprofitable mall locations stops negative cash burn and aligns store footprint with local grocery demand.") }}</td>
+</tr>
+<tr>
+<td><strong>WT2</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fee2e2;color:#991b1b">{{ t("W4, W6, W7, T2, T6") }}</span></td>
+<td>{{ t("Renegotiate lease terms, rental relief, and space reductions across Lippo Malls anchor locations under PSAK 73.") }}</td>
+<td>{{ t("With lease liabilities of Rp3.12T, MPPA must negotiate revenue-share rental agreements and 30–40% area cutbacks with Lippo Malls to survive lockdowns.") }}</td>
+</tr>
+<tr>
+<td><strong>WT3</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fee2e2;color:#991b1b">{{ t("W3, W4, W8, T6, T10") }}</span></td>
+<td>{{ t("Restructure short-term bank borrowings and extend supplier payment terms to protect cash reserves.") }}</td>
+<td>{{ t("Converting short-term debt (Rp1,029B) into multi-year facilities prevents technical default and preserves minimum operational cash balances.") }}</td>
+</tr>
+<tr>
+<td><strong>WT4</strong></td>
+<td><span class="cpm-takeaway-badge" style="background:#fee2e2;color:#991b1b">{{ t("W1, W2, W10, T2, T8") }}</span></td>
+<td>{{ t("Freeze non-essential capital expenditures and streamline store staffing to preserve emergency operational liquidity.") }}</td>
+<td>{{ t("Halting non-essential remodeling and adjusting in-store staffing schedules lowers corporate overhead while safeguarding core fresh retail operations.") }}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="notes-section">
+  <div class="notes-section-head">
+    <span class="notes-kicker">{{ t("Strategy formulation · Matching stage (Stage 2)") }}</span>
+    <h2 id="space-notes">{{ t("Strategic Position & Action Evaluation (SPACE Matrix)") }}</h2>
+    <p class="notes-meta">{{ t("Fred David Ch. 6 framework · Sourced from Matahari.xlsx sheet 'SPACE' · Baseline 2020") }}</p>
+  </div>
+  <div class="notes-prose">
+    <p>{{ t("The SPACE Matrix evaluates MPPA across two internal dimensions—Financial Position (FP: +1.80) and Competitive Position (CP: -3.20)—and two external dimensions—Industry Position (IP: +3.80) and Stability Position (SP: -4.60).") }}</p>
+    <div class="notes-callout">
+      <h3>{{ t("Directional Vector Coordinates") }}</h3>
+      <p><strong>X-axis:</strong> IP (+3.80) + CP (-3.20) = <strong>+0.60</strong></p>
+      <p><strong>Y-axis:</strong> FP (+1.80) + SP (-4.60) = <strong>-2.80</strong></p>
+      <p>{{ t("This directional vector locates MPPA in the Competitive Quadrant, directly along the frontier of the Defensive quadrant.") }}</p>
+    </div>
+    <p>{{ t("Strategic implication: MPPA possesses viable market demand and product advantages in fresh food, but its severe financial weakness strictly precludes debt-heavy capital expenditures. Recovery mandates asset-light digital partnerships (GrabMart), repurposing excess store space into dark stores, and aggressive retrenchment of unprofitable mall hypermarkets.") }}</p>
+  </div>
+</section>
+
+<section class="notes-section" id="bcg-notes-section">
+  <div class="notes-header">
+    <span class="notes-kicker">{{ t("Strategy formulation · Matching stage (Stage 2)") }}</span>
+    <h2 id="bcg-notes">{{ t("Boston Consulting Group (BCG) Matrix") }}</h2>
+    <p class="notes-meta">{{ t("Fred David Ch. 6 framework · Sourced from Matahari.xlsx sheet 'BCG' · Baseline 2020") }}</p>
+  </div>
+  <div class="notes-prose">
+    <p>{{ t("The BCG Matrix analyzes MPPA's multi-divisional business portfolio across two quantitative dimensions: Relative Market Share Position (RMSP) on the horizontal axis (scale 1.0 to 0.0 with 0.50 midpoint) and Industry Sales Growth Rate (IGR) on the vertical axis (scale -20% to +20% with 0.0% midpoint). Circle sizes represent divisional shares of total retail format sales (Case 23 Exhibit 6).") }}</p>
+    <div class="notes-callout">
+      <h3>{{ t("Divisional Classification & Strategic Diagnosis") }}</h3>
+      <p><strong>{{ t("1. Hypermart (Dog / Declining Cow):") }}</strong> {{ t("Rp5,698B (84.2% sales), RMSP 0.41 vs Transmart (Rp13,857B), IGR -12.0%. Massive 5,000–8,000 m² hypermarket spaces suffer secular traffic contraction. Strategy: Harvesting cash flow and downsizing sales floors into compact 2,500 m² layouts while subleasing excess area to GrabMart dark stores.") }}</p>
+      <p><strong>{{ t("2. Foodmart & Primo (Dog):") }}</strong> {{ t("Rp689B (10.2% sales), RMSP 0.07 vs Super Indo (Rp9,500B), IGR -2.0%. Premium supermarket format in enclosed malls. Strategy: Selective harvesting and SKU rationalization focused on high-margin gourmet perishables without aggressive capex.") }}</p>
+      <p><strong>{{ t("3. Hyfresh (Question Mark):") }}</strong> {{ t("Rp135B (2.0% sales), RMSP 0.01 vs Alfamidi (Rp12,535B), IGR +10.0%. Compact neighborhood grocery format; net +1 store expansion in 2020. Strategy: Intensive Market Penetration—redeploying harvested capital to expand standalone residential stores powered by MPPA's 66,755 m² central cold chain.") }}</p>
+      <p><strong>{{ t("4. Boston Health & Beauty (Question Mark):") }}</strong> {{ t("Rp45B (0.7% sales), RMSP 0.09 vs Guardian/Watsons (Rp1,800B), IGR +14.0%. Personal care and pharmacy boom. Strategy: Product development and omnichannel integration (shop-in-shop inside Hyfresh, instant 30-minute delivery via GrabMart).") }}</p>
+      <p><strong>{{ t("5. SmartClub Wholesale (Dog):") }}</strong> {{ t("Rp42B (0.6% sales), RMSP 0.01 vs Lotte Wholesale (Rp7,800B), IGR -15.0%. Candidate for Divestiture or Liquidation to stop ongoing working-capital drain.") }}</p>
+    </div>
+    <p>{{ t("Strategic Synthesis: 95.6% of MPPA's revenue is concentrated in contracting Dog formats (Hypermart, Foodmart, SmartClub) with 0% in Stars or Cash Cows. Fred David strategy prescribes harvesting cash from hypermarkets and liquidating unviable assets to aggressively scale high-growth Question Marks (Hyfresh, Boston) into future Stars.") }}</p>
+  </div>
+</section>
+
+
+<footer><a href="Matahari%20Case%20-%20Pages%20588-596.pdf" target="_blank" rel="noopener">{{ t("Open the source case PDF") }}</a><p>{{ t("Case study documentation complete · Fred David 3-Stage Framework.") }}</p></footer>
+</main></transition>
+
+
+<transition name="view"><main id="handoff-view" class="research-handoff" lang="en" v-show="view === 'handoff'">
+<div class="eyebrow">Project Checkpoint &amp; Master Handoff · 9 November 2026</div><h1>Research Handoff &amp; Project Blueprint</h1>
+<p class="intro">Master handoff guide for Group 7’s Corporate Strategy case study on PT Matahari Putra Prima Tbk (MPPA). Contains completed 30-slide inventory, Fred David strategic matrices, Slide 30 capital allocation and geospatial rollout model, source citations, and copyable prompt for another computer or AI session.</p>
+<div class="handoff-actions"><button type="button" @click="copyHandoff">Copy full handoff</button><span role="status" aria-live="polite">{{ handoffCopyStatus }}</span></div>
+<div class="handoff-subtabs" role="tablist" aria-label="Research handoff views"><button id="handoff-target-tab" role="tab" :aria-selected="handoffTab === 'target'" aria-controls="handoff-target" @click="handoffTab = 'target'">Executive Summary &amp; Status</button><button id="handoff-context-tab" role="tab" :aria-selected="handoffTab === 'context'" aria-controls="handoff-context" @click="handoffTab = 'context'">Full Context &amp; Sources</button></div>
+
+<!-- TAB 1: EXECUTIVE SUMMARY & STATUS -->
+<div id="handoff-target" role="tabpanel" aria-labelledby="handoff-target-tab" v-show="handoffTab === 'target'">
+<section>
+  <h2>Project Status: Complete 30-Slide Strategic Plan &amp; Capital Model</h2>
+  <p class="intro">Group 7 has successfully formulated, validated, and interactive-modeled the complete 5-year turnaround strategy for <strong>PT Matahari Putra Prima Tbk (MPPA)</strong> for the 2021–2025 planning horizon (FY2020 baseline), adhering strictly to Fred R. David’s 4-stage strategic management methodology.</p>
+  <p>The interactive presentation in <code>mppa-case-study.html</code> contains all 30 presentation slides with responsive SVG matrices, dynamic inspectors, bilingual English/Indonesian support, and an audit-grade capital budgeting and geospatial store expansion map on Slide 30.</p>
+</section>
+
+<section>
+  <h2>The Central Analytical Red Thread</h2>
+  <p>MPPA’s existential crisis in FY2020 stems from a dual structural trap:</p>
+  <ol>
+    <li><strong>Unprofitable Hypermarket Floorplates:</strong> 84.5% of revenue was concentrated in large-format Hypermarts (6,000–8,000 m²), which experienced -12.0% CAGR and a 22% COVID revenue collapse, while trapped in fixed-rent mall anchor leases under PSAK 73 (Rp 2,253.2B in lease liabilities, Note 19).</li>
+    <li><strong>Constrained Debt Capacity:</strong> Negative operating cash flow and a widening working-capital deficit of Rp 1.23T prevent reliance on external bank borrowing, as doing so would breach Bank Negara Indonesia (BNI) credit covenants (Debt/Equity &lt; 2.5x, Interest Coverage &gt; 2.0x, Note 15).</li>
+  </ol>
+  <p><strong>The Strategic Solution:</strong> A 100% self-funded transformation deploying capital from lease restructuring and non-core divestments into high-yield, compact neighborhood supermarkets (Hyfresh) and on-demand dark stores.</p>
+</section>
+
+<section>
+  <h2>Core Strategic Matrices (Fred R. David Stages 1–4)</h2>
+  <dl>
+    <dt>Stage 1: Input Matrices (CPM, EFE, IFE)</dt>
+    <dd>Competitive Profile Matrix (CPM) benchmarks MPPA across 6 rivals (Indomaret, Alfamart, Transmart, Alfamidi, LotteMart). External Factor Evaluation (EFE = 2.68) confirms high external urgency. Internal Factor Evaluation (IFE = 2.36) identifies severe lease drag and negative liquidity, counterbalanced by 3 central cold-chain distribution centers.</dd>
+
+    <dt>Stage 2: Matching Matrices (TOWS, SPACE, BCG, IE, GSM)</dt>
+    <dd>SPACE Matrix places MPPA in the <em>Defensive Quadrant</em> (X: -1.0, Y: -0.6). BCG Matrix reveals Hypermart transitioning to Dog/Cash Cow while Hyfresh is a rapid-growth Star. IE Matrix plots Corporate MPPA in Cell V (Hold &amp; Maintain) while Hyfresh sits in Cell II (Grow &amp; Build). Grand Strategy Matrix (GSM) places Corporate in Quadrant III and Hyfresh in Quadrant II.</dd>
+
+    <dt>Stage 3: Decision Stage (QSPM Matrix)</dt>
+    <dd>Quantitative Strategic Planning Matrix (QSPM) evaluates the two primary alternatives. <strong>Strategy 1 (Compact Hyfresh Rollout &amp; 'Hy-' Master Brand Consolidation) wins decisively with a Total Attractiveness Score (TAS) of 6.620</strong> versus Strategy 2 (Hypermarket Downsizing into Dark Stores) with a TAS of 5.460 (+1.160 point lead).</dd>
+
+    <dt>Stage 4: Recommendations &amp; Capital Budgeting (Slides 29–30)</dt>
+    <dd>Strategy 1 is executed as the primary growth vector, while Strategy 2 is retained as the operational efficiency mechanism to liberate floor space and working capital. Strategy 3 restructures PSAK 73 leases and liquidates SmartClub wholesale and FMX kiosks to fund the expansion.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Slide 30 Master Architecture: Dual-Tab Implementation</h2>
+  <dl>
+    <dt>Tab 1: Capital Budgeting Plan (Sources &amp; Uses of Funds)</dt>
+    <dd>Rp 450.0B planned CapEx (~Rp 90.0B/year) balanced 100% internally with zero external debt: +Rp 180.0B PSAK 73 lease savings (15 anchor mall leases renegotiated), +Rp 150.0B retained operating EBITDA cash flow, and +Rp 120.0B non-core asset divestments. Reconciled with double-entry ledger flows, Note 12/15/19/20/28 audit citations, and covenant ratios (Interest Coverage expanding to 3.85x; Debt/Equity falling to 0.45x).</dd>
+
+    <dt>Tab 2: Store Rollout Expansion Map (50 Hyfresh &amp; 45 Dark Stores)</dt>
+    <dd>Interactive geospatial SVG map of Indonesia focusing on the <strong>Java Economic Spine (88% of rollout / 44 stores)</strong> along the Trans-Java Tollway. Shows 3 Central Cold-Chain DCs (Balaraja 31.5k m², Surabaya 22.3k m², Medan 13.0k m²), 5 regional clusters (Jabodetabek 22, West Java 8, Central Java 8, East Java 8, Outer/Bali 4), interactive regional inspector, and a 5-cluster deployment grid that eliminates all slide whitespace.</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>How to Present or Continue on Your Other Computer</h2>
+  <ol>
+    <li>Pull repository: <code>git pull origin main</code>.</li>
+    <li>Open <code>mppa-case-study.html</code> in any modern browser (zero build steps, offline-ready).</li>
+    <li>Select <strong>PowerPoint</strong> from the sidebar navigation (or press the PowerPoint tab) to present fullscreen.</li>
+    <li>Use arrow keys (<code>←</code> and <code>→</code>) to change slides; click <code>Present</code> for fullscreen mode.</li>
+    <li>On Slide 30, toggle between <strong>Sources &amp; Uses Budgeting</strong> and <strong>Store Rollout Expansion Map</strong> to inspect store economics, catchments, and debt covenants.</li>
+  </ol>
+</section>
+</div>
+
+<!-- TAB 2: FULL CONTEXT & SOURCES -->
+<div id="handoff-context" role="tabpanel" aria-labelledby="handoff-context-tab" v-show="handoffTab === 'context'">
+<nav class="handoff-contents" aria-label="Handoff sections">
+  <a href="#handoff-section-0" @click.prevent="documentScrollHandoff(0)">Purpose &amp; Zero-Build Execution</a>
+  <a href="#handoff-section-1" @click.prevent="documentScrollHandoff(1)">The Strategic Management Framework</a>
+  <a href="#handoff-section-2" @click.prevent="documentScrollHandoff(2)">Complete 30-Slide Master Directory</a>
+  <a href="#handoff-section-3" @click.prevent="documentScrollHandoff(3)">Verified Financial &amp; Accounting Ledgers</a>
+  <a href="#handoff-section-4" @click.prevent="documentScrollHandoff(4)">Distribution Logistics &amp; Sourcing Hubs</a>
+  <a href="#handoff-section-5" @click.prevent="documentScrollHandoff(5)">Slide 30 Budgeting &amp; Map Architecture</a>
+  <a href="#handoff-section-6" @click.prevent="documentScrollHandoff(6)">Workbook Model (Matahari.xlsx)</a>
+  <a href="#handoff-section-7" @click.prevent="documentScrollHandoff(7)">Codebase Architecture &amp; Git Status</a>
+  <a href="#handoff-section-8" @click.prevent="documentScrollHandoff(8)">Copyable AI Prompt for New Computer</a>
+</nav>
+
+<div id="handoff-content">
+<section id="handoff-section-0">
+  <h2>Purpose &amp; Zero-Build Execution</h2>
+  <dl>
+    <dt>Purpose</dt>
+    <dd>Comprehensive project record for Group 7’s Corporate Strategy case study on PT Matahari Putra Prima Tbk (MPPA). Serves as the primary onboarding handoff when moving across computers or starting a new AI session.</dd>
+    <dt>Zero-Build Architecture</dt>
+    <dd>The entire project runs directly in any web browser without Node.js, Vite, Webpack, or npm dependencies. Vue 3 standalone runtime is bundled locally in <code>assets/vue.global.prod.js</code>. The application functions completely offline.</dd>
+    <dt>Execution Command</dt>
+    <dd><code>open mppa-case-study.html</code> (macOS) or double-click the HTML file. In DevTools console: <code>window.setView('powerpoint')</code> to enter presentation mode, or <code>window.showSlide(29)</code> to jump directly to Slide 30.</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-1">
+  <h2>The Strategic Management Framework</h2>
+  <dl>
+    <dt>Textbook Methodology</dt>
+    <dd>Strictly follows Fred R. David &amp; Forest R. David, <em>Strategic Management: A Competitive Advantage Approach, Concepts and Cases</em> (Pearson, 17th/18th Ed.).</dd>
+    <dt>Stage 1: The Input Stage</dt>
+    <dd>External Factor Evaluation (EFE), Internal Factor Evaluation (IFE), and Competitive Profile Matrix (CPM).</dd>
+    <dt>Stage 2: The Matching Stage</dt>
+    <dd>TOWS Matrix, Strategic Position and Action Evaluation (SPACE) Matrix, Boston Consulting Group (BCG) Matrix, Internal-External (IE) Matrix, and Grand Strategy Matrix (GSM).</dd>
+    <dt>Stage 3: The Decision Stage</dt>
+    <dd>Quantitative Strategic Planning Matrix (QSPM) determining the relative attractiveness of feasible alternative actions.</dd>
+    <dt>Stage 4: Implementation Stage</dt>
+    <dd>Actionable strategic recommendations, departmental execution roadmap, and audit-grade 5-year capital allocation / self-funding budgeting model.</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-2">
+  <h2>Complete 30-Slide Master Directory</h2>
+  <dl>
+    <dt>Slides 01–08: Corporate Diagnosis &amp; Baseline</dt>
+    <dd>01 Overview · 02 Corporate History · 03 Retail Formats Portfolio · 04 Organizational Structure · 05 Vision &amp; Mission · 06 Background of the Study · 07 Statement of the Problem · 08 Revenue Mix Breakdown (Hypermart 84.5%).</dd>
+    <dt>Slides 09–12: Physical &amp; Digital Footprint (2020)</dt>
+    <dd>09 Geographic Store Footprint (611,490 m² across 73 cities) · 10 Logistics Network &amp; Cold-Chain DCs · 11 Digital Omnichannel Reach (GrabMart, Shopee, Tokopedia) · 12 COVID-19 Operating Disruption.</dd>
+    <dt>Slides 13–18: External &amp; Competitive Analysis</dt>
+    <dd>13 PESTLE Analysis Overview · 14 PESTLE Evidence &amp; Digital Shifts · 15 Porter’s Five Forces Overview · 16 Five Forces Grocery Industry Dynamics · 17 Five Main Competitors · 18 Competitive Profile Matrix (CPM).</dd>
+    <dt>Slides 19–20: Audited Matrix Scores</dt>
+    <dd>19 External Factor Evaluation (EFE Matrix = 2.68) · 20 Internal Factor Evaluation (IFE Matrix = 2.36).</dd>
+    <dt>Slides 21–25: Strategic Formulation &amp; Matching</dt>
+    <dd>21 TOWS / SWOT Strategy Matrix · 22 SPACE Matrix (Defensive Quadrant: X = -1.0, Y = -0.6) · 23 BCG Growth-Share Matrix · 24 Internal-External (IE) Matrix (Cell V &amp; Cell II) · 25 Grand Strategy Matrix (GSM Quadrant III &amp; II).</dd>
+    <dt>Slides 26–30: Decision, Strategy &amp; Capital Budgeting</dt>
+    <dd>26 Quantitative Strategic Planning Matrix (QSPM: Strat 1 TAS 6.620 vs Strat 2 TAS 5.460) · 27 Alternative Strategies Taxonomy · 28 Strategic Recommendations (The 3 Pillars) · 29 Implementation Roadmap · 30 Capital Allocation, Self-Funding Budget &amp; Store Rollout Expansion Map.</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-3">
+  <h2>Verified Financial &amp; Accounting Ledgers</h2>
+  <dl>
+    <dt>Revenue &amp; Liquidity Baseline</dt>
+    <dd>FY2020 Net Sales: Rp 6,750.8B (-22.0% YoY). Operating Loss: Rp (581.4B). Current Assets: Rp 1,535.3B vs Current Liabilities: Rp 2,763.1B, creating a working capital deficit of Rp 1,227.8B (AR2020 Balance Sheet).</dd>
+    <dt>PSAK 73 / IFRS 16 Lease Liabilities</dt>
+    <dd>AR2020 Note 19: Long-term lease liabilities of Rp 2,253.2B. Note 28: Annual rental expense of Rp 166.2B. Renegotiating 15 anchor mall leases saves ~Rp 36B/year, totaling +Rp 180.0B over 5 years.</dd>
+    <dt>BNI Credit Facilities &amp; Covenants</dt>
+    <dd>AR2020 Note 15: PT Bank Negara Indonesia (Persero) Tbk credit facilities totaling Rp 500.0B. Covenants strictly require Interest Coverage &gt; 2.0x and Debt/Equity &lt; 2.5x. The 100% self-funded model prevents any new debt drawdowns, expanding Interest Coverage to 3.85x and driving Debt/Equity down to 0.45x.</dd>
+    <dt>Non-Core Divestment Realizations</dt>
+    <dd>Liquidating 2 SmartClub wholesale warehouses and closing 14 unprofitable FMX convenience kiosks yields +Rp 120.0B in net cash from inventory sell-through, deposit recoveries, and equipment salvage.</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-4">
+  <h2>Distribution Logistics &amp; Sourcing Hubs</h2>
+  <dl>
+    <dt>3 Central Cold-Chain DCs (66,755 m²)</dt>
+    <dd>1. Balaraja Central DC (31,500 m² - Banten/Jabodetabek, Halal cold storage). 2. Surabaya Regional DC (22,255 m² - East Java &amp; Bali). 3. Medan / Siborong-borong Hub (13,000 m² - North Sumatra).</dd>
+    <dt>Trans-Java Logistics Spine</dt>
+    <dd>Trans-Java tollway corridor connects Balaraja DC through Jakarta, Bandung, Cirebon, Semarang, Solo, and Surabaya, enabling sub-4 hour store replenishment.</dd>
+    <dt>Highland Agricultural Contracts</dt>
+    <dd>Direct farm-level sourcing contracts with agricultural cooperatives in Lembang (West Java), Kopeng/Dieng (Central Java), and Batu (East Java), bypassing wholesale middlemen and cutting procurement costs by 12–15%.</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-5">
+  <h2>Slide 30 Budgeting &amp; Map Architecture</h2>
+  <dl>
+    <dt>Sub-Tab 1: Capital Budgeting Plan</dt>
+    <dd>Total CapEx of Rp 450.0B (~Rp 90.0B/year): 50% for 50 Hyfresh fit-outs (Rp 225.0B), 30% for 45 dark store retrofits (Rp 135.0B), 20% for cold DC &amp; IT logistics (Rp 90.0B). 100% internally funded via Rp 180B lease savings, Rp 150B operational cash flow, and Rp 120B divestments. Zero net debt.</dd>
+    <dt>Sub-Tab 2: Store Rollout Expansion Map</dt>
+    <dd>Interactive SVG map displaying the 50 new Hyfresh supermarkets and 45 dark store retrofits across 5 clusters: Jabodetabek (22 stores, 18 hubs, Rp 99.0B), West Java (8 stores, 7 hubs, Rp 36.0B), Central Java (8 stores, 5 hubs, Rp 36.0B), East Java (8 stores, 8 hubs, Rp 36.0B), and Outer/Bali (4 stores, 7 hubs, Rp 18.0B). Dynamic inspector and bottom 5-cluster grid eliminate vertical whitespace.</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-6">
+  <h2>Workbook Model (Matahari.xlsx)</h2>
+  <dl>
+    <dt>Financial Baseline &amp; Modeling</dt>
+    <dd><code>FINANCIALS</code> sheet: 2019–2020 audited financial statements, liquidity shortfall formulas, and debt structure schedules.</dd>
+    <dt>Strategic Matrices in Excel</dt>
+    <dd><code>CPM</code> (6 companies, weights summing to 1.00), <code>EFE</code> (2.68), <code>IFE</code> (2.36), <code>SWOT</code> (8 clusters), <code>SPACE</code> (-1.0, -0.6), <code>BCG</code> (format market share vs industry growth), <code>IE</code> (Total MPPA Division IV, Hyfresh Cell II), <code>GRAND</code> (Quadrant III &amp; II), <code>QSPM</code> (Row 66: Strategy 1 = 6.620 vs Strategy 2 = 5.460), and <code>CAPEX</code> (5-year Sources &amp; Uses allocation model).</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-7">
+  <h2>Codebase Architecture &amp; Git Status</h2>
+  <dl>
+    <dt>Remote Repository</dt>
+    <dd><code>git@github.com:faglyramschie7/group7portfolio.git</code> (Branch: <code>main</code>).</dd>
+    <dt>Key Files Modified</dt>
+    <dd><code>mppa-case-study.html</code> (Main interactive presentation), <code>assets/translations-id.js</code> (Indonesian dictionary), <code>HANDOFF.md</code> (Standalone markdown handoff guide).</dd>
+    <dt>Testing &amp; Verification</dt>
+    <dd>Zero console errors, verified in headless Chromium via Playwright tests at 1920×1080 resolution in both English and Indonesian modes.</dd>
+  </dl>
+</section>
+
+<section id="handoff-section-8">
+  <h2>Copyable AI Prompt for New Computer</h2>
+  <div class="handoff-prompt-box">
+    <p><strong>Copyable Prompt to continue work in a new AI conversation:</strong></p>
+    <blockquote>
+      Continue working on the MPPA (PT Matahari Putra Prima Tbk) Corporate Strategy Case Study (FY2020 baseline, 2021–2025 planning horizon) by Group 7. All 30 slides of the presentation are fully implemented in `mppa-case-study.html` following Fred R. David’s strategic management framework: Stage 1 (CPM, EFE 2.68, IFE 2.36), Stage 2 (TOWS, SPACE Defensive, BCG, IE, GSM), Stage 3 (QSPM: Strategy 1 Hyfresh TAS 6.620 vs Strategy 2 TAS 5.460), and Stage 4 (Recommendations &amp; Capital Budgeting). Slide 30 features a dual-tab architecture: Tab 1 has an audit-grade Sources &amp; Uses Capital Budgeting model (Rp 450B CapEx, 100% self-funded via PSAK 73 lease savings, operating EBITDA, and non-core divestments with zero bank debt preserving BNI covenants); Tab 2 features an interactive Geospatial Store Rollout Map (50 Hyfresh supermarkets &amp; 45 dark stores across 5 regional clusters along the Java Economic Spine + 3 Central Cold-Chain DCs). Bilingual support (EN/ID) is 100% active. Read `HANDOFF.md` and the Research Handoff view in `mppa-case-study.html`. Do not introduce made-up financial terms or unbacked data. Maintain zero console errors and strict corporate finance standards.
+    </blockquote>
+  </div>
+</section>
+</div>
+</div>
+</main></transition>
+<transition name="view"><main id="board-view" class="ideas-board" v-show="view === 'board'">
+<div class="eyebrow">{{ t("Strategy workspace") }}</div><h1>{{ t("Ideas Board") }}</h1>
+<p class="board-intro">{{ t("Food-waste initiatives and overseas examples for later strategy evaluation.") }}</p>
+<nav class="board-tabs" role="tablist" :aria-label="t('Idea boards')" aria-orientation="horizontal"><button v-for="board in ideaBoards" :key="board.id" class="board-tab" type="button" role="tab" :id="'board-tab-'+board.id" :aria-selected="selectedBoard === board.id" :aria-controls="'board-panel-'+board.id" :tabindex="selectedBoard === board.id ? 0 : -1" @click="selectedBoard=board.id" @keydown="onBoardTabKey($event,board.id)">{{ t(board.title) }}</button></nav>
+<div class="board-tabpanel" role="tabpanel" :id="'board-panel-'+activeBoard.id" :aria-labelledby="'board-tab-'+activeBoard.id" tabindex="0"><h2 class="board-topic-title">{{ t(activeBoard.title) }}</h2><p class="board-topic-description">{{ t(activeBoard.description) }}</p>
+<div class="board-legend"><span><i></i>{{ t("Opportunity") }}</span><span><i></i>{{ t("Possible solutions") }}</span><span><i></i>{{ t("Evidence & evaluation") }}</span></div>
+<div class="board-columns"><section class="board-column" v-for="column in activeBoard.columns" :key="column.title"><h2>{{ t(column.title) }}</h2><p class="board-column-intro">{{ t(column.subtitle) }}</p><article class="sticky-note" v-for="note in column.notes" :key="note.id"><span class="sticky-id">{{ note.id }}</span><h3>{{ t(note.title) }}</h3><p>{{ t(note.body) }}</p><div class="sticky-placement"><strong>{{ t("Revisit in") }}</strong>{{ t(note.placement) }}</div><a v-if="note.url" :href="note.url" target="_blank" rel="noopener">{{ t(note.source) }} ↗</a></article></section></div>
+<p class="board-footer">{{ t(activeBoard.footer || "Operating objective: lower inventory losses and improve store economics.") }}</p>
+</div></main></transition>
+
+<transition name="view"><div class="presentation-view" id="powerpoint-view" ref="deckView" v-show="view === 'powerpoint'">
+<div class="deck-toolbar"><div><h2>{{ t(currentSlide < 3 ? "Company background" : currentSlide === 3 ? "Organizational structure" : currentSlide === 4 ? "Vision & mission" : currentSlide === 5 ? "Background of the study" : currentSlide === 6 ? "Statement of the problem" : currentSlide <= 8 ? "Company background" : (currentSlide >= 9 && currentSlide <= 12) ? "Market footprint in 2020" : (currentSlide >= 13 && currentSlide <= 14) ? "PESTLE analysis" : (currentSlide >= 15 && currentSlide <= 16) ? "Porter’s Five Forces" : currentSlide === 17 ? "Five main competitors" : activeSlide.label.replace(/^Slide \d+: /, "")) }}</h2><p>{{ t("HTML presentation · Use ← and → to change slides") }}</p></div><div class="deck-toolbar-actions"><div class="deck-lang-switch" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="present" type="button" @click="present">{{ t("Present") }}</button></div></div>
+<div class="deck-frame" :aria-label="t(&quot;Presentation slides&quot;)">
+
+<article v-if="currentSlide < 2 || currentSlide === 8 || currentSlide === 5 || (currentSlide >= 9 && currentSlide <= 12) || currentSlide >= 17" class="deck-slide" :class="{'exhibit6-slide': currentSlide === 8, 'market-footprint-slide': currentSlide >= 9 && currentSlide <= 12, 'cpm-slide': currentSlide === 18, 'efe-slide': currentSlide === 19, 'ife-slide': currentSlide === 20, 'tows-slide': currentSlide === 21, 'space-slide': currentSlide === 22, 'bcg-slide': currentSlide === 23, 'ie-slide': currentSlide === 24, 'gsm-slide': currentSlide === 25, 'qspm-slide': currentSlide === 26, 'alt-strat-slide': currentSlide === 27, 'strat-rec-slide': currentSlide === 28, 'capex-slide': currentSlide === 29, 'org-prop-slide': currentSlide === 30, 'vis-slide': currentSlide === 31}" :key="currentSlide + '-' + language" :aria-label="activeSlide.label" v-html="translateHtml(activeSlide.html)"></article>
+<article v-else-if="currentSlide === 2" class="deck-slide portfolio-slide" key="brand-gallery" :aria-label="t(&quot;Slide 3: Explore MPPA retail formats&quot;)">
+<div class="deck-kicker">{{ t("Company background · Retail portfolio") }}</div><h2>{{ t("Meet MPPA’s retail formats") }}</h2>
+<div class="portfolio-explorer"><div class="brand-photo-stage"><transition name="brand-photo" mode="out-in"><img v-if="activeBrand.photo" :key="activeBrand.id" class="brand-photo" :class="{'promotional-image': activeBrand.id === 'hypermart'}" :src="'assets/' + activeBrand.photo" :alt="activeBrand.name === 'Hypermart' ? 'Official Hypermart promotional image, 2025' : activeBrand.name + ' store, official MPPA image'"><div v-else key="smartclub-logo" class="brand-photo logo-stage"><img :src="'assets/' + activeBrand.logo" alt="SmartClub logo"></div></transition></div>
+<div class="brand-info"><img class="selected-brand-logo" :src="'assets/' + activeBrand.logo" :alt="activeBrand.name + ' logo'"><p class="brand-format">{{ t(activeBrand.type) }}</p><p class="brand-description">{{ t(activeBrand.description) }}</p><div v-if="activeBrand.strategicRole" class="brand-strategic-role" style="margin:10px 0;padding:8px 12px;border-radius:5px;background:#fdf4f6;border-left:3.5px solid #df0036;font-size:0.75cqw;line-height:1.35;"><strong style="display:block;color:#df0036;text-transform:uppercase;font-size:0.65cqw;letter-spacing:0.04em;margin-bottom:2px;">{{ t("Strategic Portfolio Role") }}:</strong><span style="color:#29272b;">{{ t(language === 'id' && activeBrand.strategicRoleId ? activeBrand.strategicRoleId : activeBrand.strategicRole) }}</span></div><p class="brand-image-label">{{ t(activeBrand.id === 'hypermart' ? 'Promotional image · 2025' : activeBrand.photo ? 'Store illustration · MPPA website' : 'Brand logo · MPPA website') }}</p></div></div>
+<nav class="brand-picker" :aria-label="t(&quot;Choose retail format&quot;)"><button v-for="(brand,index) in brands" :key="brand.id" type="button" :aria-pressed="selectedBrand === index" @click="selectedBrand=index"><img :src="'assets/' + brand.logo" alt=""><span>{{ t(brand.name) }}</span></button></nav>
+<div class="deck-footer"><span>{{ t("Formats: case pp. 590–592 · Images: MPPA store illustrations and 2025 Hypermart promotion") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+<article v-else-if="currentSlide === 7" class="deck-slide chart-slide" key="revenue-chart" :aria-label="t(&quot;Slide 8: Interactive revenue mix&quot;)">
+<div class="deck-kicker">{{ t("Company background · Revenue mix, 2020") }}</div><h2>{{ t("Hypermart is MPPA’s main chain") }}</h2>
+<div class="chart-layout">
+<div class="donut-wrap">
+<svg class="revenue-donut" viewBox="0 0 300 300" role="group" :aria-label="t(&quot;2020 revenue shares: Hypermart 85 percent, Foodmart and Primo 10 percent, other formats 5 percent&quot;)">
+<circle cx="150" cy="150" r="106" class="donut-track" fill="none" stroke-width="34"></circle>
+<circle v-for="(segment,index) in revenueMix" :key="segment.name" cx="150" cy="150" r="106" pathLength="100" fill="none" :stroke="segment.color" :stroke-width="activeSegment === index ? 43 : 34" :stroke-dasharray="`${segment.share} ${100-segment.share}`" :stroke-dashoffset="-segment.offset" transform="rotate(-90 150 150)" class="donut-segment" :class="{'is-muted':activeSegment !== null && activeSegment !== index}" :style="{'--share':segment.share}" role="button" tabindex="0" :aria-label="`${segment.name}: ${segment.share} percent. Select to highlight.`" :aria-pressed="selectedSegment === index" @mouseenter="hoverSegment=index" @mouseleave="hoverSegment=null" @focus="hoverSegment=index" @blur="hoverSegment=null" @click="selectSegment(index)" @keydown.enter.prevent="selectSegment(index)" @keydown.space.prevent="selectSegment(index)"><title>{{ t(segment.name) }}{{ t(":") }} {{ t(segment.share) }}{{ t("%") }}</title></circle>
+<text x="150" y="145" class="donut-value" text-anchor="middle">{{ t(activeSegment === null ? '100%' : revenueMix[activeSegment].share + '%') }}</text>
+<text x="150" y="174" class="donut-caption" text-anchor="middle">{{ t(activeSegment === null ? 'Total revenue' : revenueMix[activeSegment].short) }}</text>
+</svg>
+</div>
+<div class="chart-explanation"><p class="chart-instruction">{{ t("2020 revenue contribution") }}</p>
+<div class="chart-legend"><button v-for="(segment,index) in revenueMix" :key="segment.name" type="button" class="legend-row" :class="{'is-active':activeSegment === index}" :aria-pressed="selectedSegment === index" @mouseenter="hoverSegment=index" @mouseleave="hoverSegment=null" @focus="hoverSegment=index" @blur="hoverSegment=null" @click="selectSegment(index)"><span class="legend-swatch" :style="{background:segment.color}"></span><span>{{ t(segment.name) }}</span><strong>{{ t(segment.share) }}{{ t("%") }}</strong></button></div>
+<div class="chart-detail" aria-live="polite"><transition name="chart-detail" mode="out-in"><p :key="activeSegment === null ? 'total' : activeSegment">{{ t(activeSegment === null ? 'Hypermart generated approximately 85% of revenue in 2020.' : revenueMix[activeSegment].detail) }}</p></transition></div>
+<button type="button" class="chart-reset" @click="selectedSegment=null;hoverSegment=null" :disabled="selectedSegment === null">{{ t("Show total revenue") }}</button>
+</div></div>
+
+<div class="deck-footer"><span>{{ t("Source: Case 23, Exhibit 5, printed p. 590 · Approximate shares") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div>
+</article>
+<article v-else-if="currentSlide === 3" class="deck-slide organization-slide" key="organization" :aria-label="t(&quot;Slide 4: Current organization in the case&quot;)">
+<div class="deck-kicker">{{ t("Organization · Case baseline, 2020") }}</div><h2>{{ t("The management structure: Baseline & Flaws") }}</h2>
+<div class="org-ceo"><span>{{ t("Chief Executive Officer") }}</span><strong>{{ t("Elliot Dickson") }}</strong></div>
+<div class="org-stem"></div>
+<div class="org-peers" :aria-label="t(&quot;Eight roles shown below the CEO in Exhibit 1&quot;)"><button v-for="(person,index) in management" :key="person.name" type="button" :aria-pressed="selectedRole === index" @click="selectedRole=index"><span>{{ t(person.role) }}</span><strong>{{ t(person.name) }}</strong></button></div>
+<div class="org-detail" aria-live="polite"><strong>{{ t(management[selectedRole].name) }}</strong><span>{{ t(management[selectedRole].detail) }}</span></div>
+
+<!-- Fred David Diagnostic Flaw Card -->
+<div class="org-critique-box">
+  <div class="org-critique-head">
+    <span class="vis-score-pill" style="font-size:.6cqw;padding:1px 6px;">{{ t("FRED DAVID CH. 7 DIAGNOSTIC") }}</span>
+    <span class="org-critique-title">{{ t("Core Structural Flaws in MPPA's 2020 Organizational Design (Case pp. 587–588)") }}</span>
+  </div>
+  <div class="org-critique-grid">
+    <div>
+      <strong>{{ t("1. No COO (Span Bottleneck):") }}</strong>
+      {{ t("8 direct reports to CEO Elliot Dickson creates an unsustainable operational bottleneck and firefighting.") }}
+    </div>
+    <div>
+      <strong>{{ t("2. CFO Overloaded:") }}</strong>
+      {{ t("Herry Senjaya is forced into COO operational duties while managing urgent PSAK 73 leases & BNI debt covenants.") }}
+    </div>
+    <div>
+      <strong>{{ t("3. Small Stores Format Vagueness:") }}</strong>
+      {{ t("Lumps 6 disparate banners together (Hyfresh, Foodmart, Primo, Boston, FMX, SmartClub) with zero format P&L accountability.") }}
+    </div>
+    <div>
+      <strong>{{ t("4. Missing Logistics & O2O Enablers:") }}</strong>
+      {{ t("Zero dedicated executive oversight for the 3 Halal cold DCs (66,755 m²) or 30-min Grab/Shopee dark-store delivery.") }}
+    </div>
+  </div>
+</div>
+
+<div class="deck-footer"><span>{{ t("Source: case pp. 587–588, Exhibit 1 · Fred David Strategic Management Ch. 7") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+<article v-else-if="currentSlide === 4" class="deck-slide mission-slide" key="vision-mission" :aria-label="t(&quot;Slide 5: Vision and mission in the case&quot;)">
+<div class="deck-kicker">{{ t("Vision & mission · Case evidence & baseline audit") }}</div><h2>{{ t("Vision & Mission in the Case: Gap Analysis") }}</h2>
+<div class="mission-layout">
+  <div class="mission-baseline-card">
+    <span class="mission-label">{{ t("What the case reports") }}</span>
+    <div style="margin: .6cqw 0 .4cqw;"><span class="vis-tag" style="background:#68636b;">{{ t("NO PUBLISHED STATEMENTS") }}</span></div>
+    <p style="font-size: .88cqw; color: #554b57; line-height: 1.45; margin-bottom: .8cqw;">
+      {{ t("The case notes that neither a formal vision nor mission appeared in MPPA’s audited annual reports or corporate website during FY2020.") }}
+    </p>
+    <span class="mission-label" style="color: #68636b;">{{ t("Case authors’ provisional suggestion") }}</span>
+    <blockquote style="font-family: Georgia, serif; font-size: 1.05cqw; color: #b6002d; line-height: 1.35; margin: .4cqw 0 .6cqw; border-left: 3px solid #df0036; padding-left: .7cqw; font-style: italic;">
+      {{ t("“To become the premier, multi-format, go-to shopping destination throughout Indonesia.”") }}
+    </blockquote>
+    <p style="font-size: .78cqw; color: #73616c; line-height: 1.4; margin: 0;">
+      {{ t("Provisional phrasing proposed by textbook case authors (printed p. 587) prior to matrix formulation.") }}
+    </p>
+  </div>
+  <div class="mission-audit-card">
+    <div class="mission-audit-title">
+      <span class="vis-score-pill" style="font-size:.62cqw;">{{ t("FRED DAVID (2023) CH. 2 AUDIT") }}</span>
+      <span>{{ t("Why This Suggestion Fails the Strategic Test") }}</span>
+    </div>
+    <ul class="mission-audit-list">
+      <li>
+        <strong>{{ t("1. Fails 5-Characteristic Vision Test:") }}</strong>
+        {{ t("Lacks a 5-year target horizon (not futuristic); gives no clue how MPPA will win (not unique); uses generic retail buzzwords ('premier shopping destination').") }}
+      </li>
+      <li>
+        <strong>{{ t("2. Missing 8 of 9 Mission Components:") }}</strong>
+        {{ t("Omits Customers, Products, Technology, Survival/Profitability, Philosophy, Distinctive Competence, Public Image, and Employees.") }}
+      </li>
+      <li>
+        <strong>{{ t("3. Fatal Disconnect from Company Crisis:") }}</strong>
+        {{ t("Ignores MPPA’s 4-year Rp 3.53T losses, oversized hypermarket lease drag, negative operating cash flows, and urgent need for food-waste control.") }}
+      </li>
+      <li>
+        <strong>{{ t("4. Lack of Operational Guidance:") }}</strong>
+        {{ t("Provides zero actionable direction for format downsizing, Halal cold-chain logistics, or digital O2O dark store micro-fulfillment.") }}
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="mission-next" style="margin-top: .6cqw;">
+  <strong>{{ t("Fred David Chapter 2 Mandate:") }}</strong>
+  <span>{{ t("An effective corporate strategy cannot be executed on vague platitudes. A fully compliant 2021–2025 Vision & Mission audited against all 9 components is formulated in Stage 4 (Slide 31) to anchor the Hyfresh neighborhood fresh expansion and self-funded turnaround.") }}</span>
+</div>
+<div class="deck-footer"><span>{{ t("Source: case, printed p. 587 · Fred R. David, Strategic Management 17th/18th Ed., Ch. 2") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+<article v-else-if="currentSlide === 6" class="deck-slide problem-slide" key="problem" :aria-label="t(&quot;Slide 7: Statement of the problem&quot;)">
+<div class="deck-kicker">{{ t("Statement of the problem · 2020") }}</div><h2>{{ t("Restoring profitable sales") }}</h2>
+<div class="problem-layout"><div class="financial-evidence"><p class="problem-label">{{ t("Financial evidence · 2019–2020") }}</p>
+<nav class="metric-picker" :aria-label="t(&quot;Choose financial comparison&quot;)"><button v-for="(metric,index) in financialMetrics" :key="metric.id" :aria-pressed="selectedMetric === index" @click="selectedMetric=index">{{ t(metric.tab) }}</button></nav>
+<h3>{{ t(activeMetric.title) }}</h3><p class="metric-units">{{ t("Rp billion ·") }} {{ t(activeMetric.unitNote) }}</p>
+<div class="comparison-bars" role="group" :aria-label="activeMetric.title + ', ' + activeMetric.values[0] + ' billion rupiah in 2019 and ' + activeMetric.values[1] + ' billion rupiah in 2020'">
+<div class="comparison-row" v-for="(value,index) in activeMetric.values" :key="index"><span>{{ t(2019+index) }}</span><div class="comparison-track"><div class="comparison-bar" :class="{'comparison-current':index===1}" :style="{width:(value/Math.max(...activeMetric.values)*100)+'%'}"></div></div><strong>{{ t(value.toLocaleString(language === 'id' ? 'id-ID' : 'en-US',{minimumFractionDigits:1,maximumFractionDigits:1})) }}</strong></div></div>
+<p class="metric-reading" aria-live="polite">{{ t(activeMetric.reading) }}</p>
+<div class="liquidity-comparison" :aria-label="t(&quot;Liquidity comparison for 2019 and 2020, in billions of rupiah&quot;)">
+<div class="liquidity-heading"><strong>{{ t("Liquidity comparison") }}</strong><span>{{ t("Rp billion · Same scale") }}</span></div>
+<div class="liquidity-years">
+<div class="liquidity-year"><h4>{{ t("2019") }}</h4><div class="liquidity-row"><span>{{ t("Current liabilities") }}</span><div class="liquidity-track"><div style="width:94.76%" class="liquidity-bar liabilities-bar"></div></div><strong>{{ t("2,618.4") }}</strong></div><div class="liquidity-row"><span>{{ t("Current assets") }}</span><div class="liquidity-track"><div style="width:68.91%" class="liquidity-bar assets-bar"></div></div><strong>{{ t("1,904.0") }}</strong></div><p>{{ t("Shortfall:") }} <strong>{{ t("Rp714.3bn") }}</strong></p></div>
+<div class="liquidity-year"><h4>{{ t("2020") }}</h4><div class="liquidity-row"><span>{{ t("Current liabilities") }}</span><div class="liquidity-track"><div style="width:100%" class="liquidity-bar liabilities-bar"></div></div><strong>{{ t("2,763.1") }}</strong></div><div class="liquidity-row"><span>{{ t("Current assets") }}</span><div class="liquidity-track"><div style="width:55.56%" class="liquidity-bar assets-bar"></div></div><strong>{{ t("1,535.3") }}</strong></div><p>{{ t("Shortfall:") }} <strong>{{ t("Rp1,227.8bn") }}</strong></p></div>
+</div><p class="liquidity-change">{{ t("Shortfall widened by") }} <strong>{{ t("Rp513.5bn") }}</strong> {{ t("from 2019 to 2020.") }}</p></div>
+</div><div class="problem-question"><p class="problem-label">{{ t("The central problem") }}</p><p class="problem-context">{{ t("COVID-19 intensified an existing profitability problem. Sales fell 22%, operating losses continued, and the working-capital shortfall widened to Rp1.23tn.") }}</p><blockquote>{{ t("COVID-19 intensified MPPA’s existing profitability problem, while weakening liquidity constrained its recovery. The strategic challenge is to restore profitable sales through its stores and digital channels within limited financial capacity.") }}</blockquote></div></div>
+<div class="deck-footer"><span>{{ t("Source: case pp. 588–590 · AR2020 p. 55; Notes 2.c & 28 · Rounded values") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+
+<article v-else-if="currentSlide === 13" class="deck-slide pestle-overview" key="pestle-overview" :aria-label="t(&quot;Slide 14: PESTLE overview&quot;)">
+<div class="deck-kicker">{{ t("External assessment · 2019–2021 evidence") }}</div><h2>{{ t("PESTLE analysis") }}</h2>
+<div class="pestle-summary-head"><span>{{ t("External factor") }}</span><span>{{ t("Evidence") }}</span><span>{{ t("External condition") }}</span></div>
+<button class="pestle-summary-row" v-for="(factor,index) in pestleFactors" :key="factor.id" @click="selectedPestle=index;showSlide(14)" type="button" :aria-label="'Explore ' + factor.category"><span class="pestle-category"><strong>{{ t(factor.letter) }}</strong>{{ t(factor.category) }}</span><span>{{ t(factor.short) }}</span><span>{{ t(factor.status) }}</span></button>
+<p class="pestle-method-line">{{ t("Five external factors shaping profitable sales and resource use") }}</p>
+<div class="deck-footer"><span>{{ t("Sources: Bank Indonesia, Jakarta government, Google / Temasek / Bain, Bappenas and company reports") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+<article v-else-if="currentSlide === 14" class="deck-slide pestle-detail-slide" :class="{'technology-detail': activePestle.id === 'technological', 'technology-channels': activePestle.id === 'technological' && technologyTab === 'channels', 'technology-reach': activePestle.id === 'technological' && technologyTab === 'reach'}" key="pestle-evidence" :aria-label="t(&quot;Slide 15: PESTLE evidence explorer&quot;)">
+<div class="deck-kicker">{{ t("External assessment ·") }} {{ t(activePestle.category) }}</div><h2>{{ t(activePestle.id==='technological' && technologyTab==='reach' ? 'Digital reach: evidence and scale' : activePestle.id==='technological' && technologyTab==='channels' ? 'How retailers reached customers in 2020' : activePestle.title) }}</h2>
+<nav class="pestle-selector" :aria-label="t(&quot;Choose PESTLE category&quot;)"><button v-for="(factor,index) in pestleFactors" :key="factor.id" :aria-pressed="selectedPestle === index" @click="selectedPestle=index">{{ t(factor.category) }}</button></nav>
+<nav v-if="activePestle.id==='technological'" class="technology-tabs" :aria-label="t('Technology evidence views')"><button v-for="tab in technologyTabs" :key="tab.id" type="button" :aria-pressed="technologyTab===tab.id" @click="technologyTab=tab.id">{{ t(tab.label) }}</button></nav>
+<div v-if="activePestle.id==='technological' && technologyTab==='channels'" class="technology-channel-body"><div class="channel-evidence-table"><div class="channel-slide-head"><span>{{ t('Retailer') }}</span><span>{{ t('Ordering or loyalty channel') }}</span><span>{{ t('Fulfillment / role') }}</span></div><div class="channel-slide-row" v-for="row in channelOverview" :key="row.company" :class="{'channel-slide-mppa':row.highlight}"><strong>{{ row.company }}</strong><span>{{ t(row.order) }}</span><span>{{ t(row.fulfil) }} <a v-for="id in row.ids" :key="id" :href="pestleSources.find(source=>source.id===id).url" target="_blank" rel="noopener">{{ id }}</a></span></div></div><aside class="channel-red-thread"><div class="thread-kicker">{{ t("Main finding") }}</div><h3>{{ t("Grocery shopping beyond the store") }}</h3><p class="editorial-takeaway">{{ t("Retailers accepted orders through apps, websites and WhatsApp, supported by delivery and pickup.") }}</p><div class="thread-next"><p>{{ t("Digital channels expanded access to grocery shopping in 2020.") }}</p></div></aside></div>
+<div v-else-if="activePestle.id==='technological' && technologyTab==='reach'" class="technology-reach-body"><div class="technology-matched-panel"><h3>{{ t('Reported app downloads') }}</h3><p class="reach-source-label">{{ t('Source and platform shown for each app') }}</p><nav class="reach-chart-controls" :aria-label="t('Download chart scope')"><button type="button" :aria-pressed="reachChartScope==='all'" @click="reachChartScope='all'">{{ t('All reported') }}</button><button type="button" :aria-pressed="reachChartScope==='android'" @click="reachChartScope='android'">{{ t('Android · Apr 2020') }}</button></nav><div class="matched-bars" role="img" :aria-label="t('Reported download thresholds') + ': ' + reachChartApps.map(app=>app.name+' '+app.display).join(', ')"><div class="matched-bar-row" v-for="app in reachChartApps" :key="app.name" :class="{'matched-highlight':app.highlight, 'mixed-download-basis':app.mixed}"><div class="reach-app-label"><strong>{{ app.name }}</strong><small>{{ t(app.basis) }}</small></div><div class="matched-track"><div :style="{width:(app.value/reachChartMaximum*100)+'%'}"></div></div><b>{{ app.display }}</b></div><div class="matched-axis"><span>0</span><span>{{ formatReachTick(reachChartMaximum/2) }}</span><span>{{ formatReachTick(reachChartMaximum) }}</span></div></div><p class="reach-scope">{{ t(matchedDownloads.scope) }}</p><a :href="matchedDownloads.source.url" target="_blank" rel="noopener" class="reach-source-link">B1 · {{ t('Android snapshot') }}</a> <a :href="pestleSources.find(source=>source.id==='C3').url" target="_blank" rel="noopener" class="reach-source-link">C3 · Alfagift</a></div><div class="technology-reach-context reach-thread-context"><aside class="reach-red-thread"><div class="thread-kicker">{{ t("Main finding") }}</div><h3>{{ t("An established grocery-app market") }}</h3><p class="editorial-takeaway">{{ t("The April 2020 snapshot includes Hypermart Online alongside other grocery apps.") }}</p><div class="thread-next"><p>{{ t("App-based access was already part of grocery retail.") }}</p></div></aside></div><p class="reach-boundary">{{ t(matchedDownloads.limit) }}</p></div>
+<transition v-else name="chart-detail" mode="out-in"><div class="pestle-detail-layout" :key="activePestle.id">
+<div class="pestle-evidence-panel"><h3>{{ t(activePestle.chartTitle) }}</h3>
+<p class="pestle-chart-unit" v-if="activePestle.unit">{{ t(activePestle.unit) }}</p>
+<div v-if="activePestle.kind === 'bars'" class="pestle-bars" role="group" :aria-label="activePestle.chartTitle + ': ' + activePestle.bars.map(bar=>bar.label+' '+bar.display).join(', ')"><div class="pestle-bar-row" v-for="(bar,index) in activePestle.bars" :key="bar.label"><span>{{ t(bar.label) }}</span><div class="pestle-bar-track"><div class="pestle-bar-fill" :class="{'pestle-bar-prior':index%2===0}" :style="{width:bar.value/Math.max(...activePestle.bars.map(item=>item.value))*100+'%'}"></div></div><strong>{{ t(bar.display) }}</strong></div></div>
+<div v-else-if="activePestle.kind === 'signed'" class="pestle-signed" role="group" :aria-label="t(&quot;Real household-consumption growth: plus 5.04 percent in 2019 versus minus 2.63 percent in 2020&quot;)"><div class="signed-row" v-for="bar in activePestle.bars" :key="bar.label"><span>{{ t(bar.label) }}</span><div class="signed-track"><i class="signed-zero"></i><div class="signed-bar" :class="{'negative':bar.value<0}" :style="{left:(bar.value<0?50-Math.abs(bar.value)/6*45:50)+'%',width:Math.abs(bar.value)/6*45+'%'}"></div></div><strong>{{ t(bar.display) }}</strong></div><p class="zero-caption">{{ t("Left: contraction · Zero at center · Right: growth") }}</p></div>
+<div v-else-if="activePestle.kind === 'timeline'" class="pestle-timeline"><div v-for="step in activePestle.steps" :key="step.label"><strong>{{ t(step.label) }}</strong><span>{{ t(step.text) }}</span></div></div>
+<div v-else-if="activePestle.kind === 'comparison'" class="tech-comparison"><div v-for="row in activePestle.comparison" :key="row.company" class="tech-comparison-row"><strong>{{ row.company }}</strong><span>{{ t(row.brief) }}</span></div><p>{{ t("Comparable active-user counts not verified. Full dated comparison and usage limits in Notes.") }}</p></div>
+<div v-else class="pestle-range"><strong>{{ t(activePestle.range) }}</strong><p>{{ t(activePestle.rangeNote) }}</p></div>
+<p class="pestle-evidence-text">{{ t(activePestle.sourceNote) }}</p>
+</div><div class="pestle-implication-panel"><p class="pestle-status">{{ t(activePestle.status) }}</p><h3>{{ t("Relevance to grocery retail") }}</h3><p>{{ t(activePestle.implication) }}</p><p class="pestle-scope"><strong>{{ t("Scope:") }}</strong> {{ t(activePestle.scope) }}</p></div>
+</div></transition>
+<div class="deck-footer"><span>{{ t("References available below the slide") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+
+<article v-else-if="currentSlide === 15" class="deck-slide forces-overview" key="forces-overview" :aria-label="t(&quot;Slide 16: Porter’s Five Forces&quot;)"><div class="deck-kicker">{{ t("Competitive assessment · 2020 baseline") }}</div><h2>{{ t("Porter’s Five Forces") }}</h2><p class="forces-boundary">{{ t("Indonesian consumer grocery retail · 2020") }}</p><div class="force-summary-head"><span>{{ t("Competitive force") }}</span><span>{{ t("Pressure facing MPPA") }}</span><span>{{ t("Connection to the sales question") }}</span></div><button v-for="(force,index) in fiveForces" :key="force.id" type="button" class="force-summary-row" @click="selectedForce=index;showSlide(16)"><strong>{{ t(force.name) }}</strong><span :class="{'force-supported':index===0}">{{ t(force.rating) }}</span><span>{{ t(force.short) }}</span></button><p class="forces-thread">{{ t("Price competition and shoppers’ ability to switch retailers put MPPA’s grocery sales under pressure.") }}</p><div class="deck-footer"><span>{{ t("Force judgments and source references in Notes") }} · 2020 annual reports · Nielsen · David / Porter</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+<article v-else class="deck-slide forces-detail" key="forces-detail" :aria-label="t(&quot;Slide 17: Five Forces evidence&quot;)"><div class="deck-kicker">{{ t("Competitive assessment · 2020 baseline") }}</div><h2>{{ t(activeForce.name) }}</h2><nav class="force-selector" :aria-label="t('Choose a competitive force')"><button v-for="(force,index) in fiveForces" :key="force.id" type="button" :aria-pressed="selectedForce===index" @click="selectedForce=index">{{ t(force.name) }}</button></nav><div class="forces-detail-layout"><div class="force-evidence"><h3>{{ t("Industry climate") }}</h3><p class="force-theory">{{ t(activeForce.industryContext) }}</p><div v-if="activeForce.visual" class="force-visual" :class="{'rivalry-sales':activeForce.id==='rivalry'}"><div class="force-visual-title">{{ t(activeForce.visual.title) }}</div><div v-if="activeForce.visual.kind==='donuts'" class="force-donuts"><figure v-for="(stat,index) in activeForce.visual.stats" :key="stat.label"><div class="force-donut" role="img" :aria-label="t(stat.label)+': '+stat.value+'%'"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="#eee7ec" stroke-width="10"/><circle cx="50" cy="50" r="40" fill="none" :stroke="index===0?'#df0036':'#786681'" stroke-width="10" pathLength="100" :stroke-dasharray="stat.value+' '+(100-stat.value)" transform="rotate(-90 50 50)"/></svg><strong>{{ stat.value }}%</strong></div><figcaption>{{ t(stat.label) }}</figcaption></figure></div><div v-else class="force-mini-bars" role="group" :aria-label="t(activeForce.visual.title)"><div v-for="bar in activeForce.visual.bars" :key="bar.label"><span>{{ bar.label }}</span><div class="force-mini-track"><i :style="{width:(bar.value/activeForce.visual.max*100)+'%'}" :class="{'force-bar-highlight':bar.highlight,'force-bar-financial':bar.financialReport}"></i></div><b>{{ bar.value.toLocaleString(language==='id'?'id-ID':'en-US',{minimumFractionDigits:activeForce.id==='rivalry'?2:0,maximumFractionDigits:activeForce.id==='rivalry'?2:0}) }}</b></div></div><p class="force-chart-unit">{{ t(activeForce.visual.unit) }}</p><div v-if="activeForce.visual.unavailable" class="rivalry-unavailable"><div v-for="rival in activeForce.visual.unavailable" :key="rival.label"><strong>{{ rival.label }}</strong><span>{{ t(rival.status) }}</span></div><p>{{ t(activeForce.visual.comparisonNote || "App rivals included; comparable annual sales unverified.") }}</p></div></div><h3 v-if="activeForce.id!=='substitutes'">{{ t("MPPA in 2020") }}</h3><p v-for="fact in (activeForce.id==='substitutes'?[]:activeForce.evidence)" :key="fact" class="force-fact">{{ t(fact) }}</p></div><aside class="force-interpretation"><div class="thread-kicker">{{ t("Pressure facing MPPA") }}</div><strong class="force-rating">{{ t(activeForce.rating) }}</strong><p>{{ t(activeForce.reading) }}</p><p v-if="activeForce.id==='entrants'" class="force-context-stat"><strong>54%</strong><span>{{ t("of MPPA store sales came from merchandise flowing through its distribution centers") }}</span></p><div class="thread-next"><strong>{{ t("Sales implications") }}</strong><p>{{ t(activeForce.salesLink) }}</p></div></aside></div><div class="deck-footer"><span>{{ t("2020 company reports · Nielsen’s March 2020 study · Full references in Notes") }}</span><span>{{ String(currentSlide + 1).padStart(2, "0") }} / {{ slides.length }}</span></div></article>
+
+
+</div>
+<div class="slide-source-control" v-if="currentSlide === 14 || currentSlide === 16"><button type="button" class="slide-source-trigger" @click="$refs.sourcesDialog.showModal()">{{ language === 'id' ? 'Lihat sumber' : 'View sources' }} ({{ currentSlide === 14 ? activePestleSources.length : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)).length }})</button></div>
+<dialog ref="sourcesDialog" class="slide-sources-dialog" @click.self="$refs.sourcesDialog.close()"><div class="source-dialog-header"><div><h2>{{ language === 'id' ? 'Sumber' : 'Sources' }}</h2><p>{{ currentSlide === 14 ? t(activePestle.title) : t(activeForce.name) }}</p></div><button type="button" class="source-close" @click="$refs.sourcesDialog.close()" aria-label="Close sources">×</button></div><ol><li v-for="source in (currentSlide === 14 ? activePestleSources : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)))" :key="source.id"><a :href="source.local || source.url" target="_blank" rel="noopener">{{ source.id }} · {{ t(source.title) }}</a><span v-if="source.date || source.locator">{{ [source.date, source.locator].filter(Boolean).join(' · ') }}</span></li></ol></dialog>
+<div class="deck-nav"><button id="previous-slide" class="quiet-button" type="button" :disabled="currentSlide === 0" @click="showSlide(currentSlide - 1)">{{ t("← Previous") }}</button><span id="slide-position" class="slide-position" role="status" aria-live="polite">{{ t(presentationStatus || `Slide ${currentSlide + 1} of ${slides.length}`) }}</span><div class="deck-lang-switch deck-nav-lang" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="next-slide" type="button" :disabled="currentSlide === slides.length - 1" @click="showSlide(currentSlide + 1)">{{ t("Next →") }}</button></div>
+<nav class="deck-thumbs" :aria-label="t(&quot;Choose slide&quot;)"><button v-for="(slide,index) in slides" :key="slide.label" class="deck-thumb" :data-slide="index" :aria-current="currentSlide === index" @click="showSlide(index)"><span>{{ t(String(index+1).padStart(2,'0')) }}</span> {{ t(slide.short) }}</button></nav>
+<details class="speaker-panel"><summary>{{ t("Speaker notes") }}</summary><p id="presenter-notes">{{ t(speakerNotes[currentSlide]) }}</p></details>
+</div></transition>
+</div></div>

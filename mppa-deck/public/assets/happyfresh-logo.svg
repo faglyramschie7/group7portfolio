@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <defs>
+    <linearGradient id="hfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#43b02a"/>
+      <stop offset="100%" stop-color="#2e7d32"/>
+    </linearGradient>
+  </defs>
+  <!-- Apple icon -->
+  <g transform="translate(10, 8)">
+    <circle cx="22" cy="24" r="18" fill="url(#hfGrad)"/>
+    <path d="M 22 6 C 24 10 28 12 28 12 C 28 12 24 14 22 14 Z" fill="#ff9800"/>
+    <ellipse cx="22" cy="24" rx="14" ry="14" fill="#ffffff" opacity="0.15"/>
+    <path d="M 16 22 Q 22 30 28 22" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Text -->
+  <text x="64" y="38" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="28" fill="#43b02a" letter-spacing="-0.5">Happy<tspan fill="#ff9800">Fresh</tspan></text>
+</svg>

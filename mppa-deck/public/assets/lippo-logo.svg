@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+  <g transform="translate(10, 10)">
+    <!-- Lippo 3-diamonds crest -->
+    <rect x="2" y="14" width="12" height="12" transform="rotate(45 8 20)" fill="#1a365d"/>
+    <rect x="18" y="2" width="12" height="12" transform="rotate(45 24 8)" fill="#0055b8"/>
+    <rect x="18" y="26" width="12" height="12" transform="rotate(45 24 32)" fill="#df0036"/>
+  </g>
+  <text x="56" y="38" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="24" fill="#1a365d" letter-spacing="1.5">LIPPO <tspan font-weight="400" fill="#718096">GROUP</tspan></text>
+</svg>
