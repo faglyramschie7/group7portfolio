@@ -1,23 +1,17 @@
 <template>
   <article class="roadmap-slide">
     <header class="roadmap-header">
-      <div class="deck-kicker fw-kicker-row">
-        <div class="fw-kicker-lead">
-          <span class="fw-badge fw-badge-when">{{ language === 'id' ? '5W1H · KAPAN' : '5W1H · WHEN' }}</span>
-          <span class="fw-kicker-text">{{ copy.kicker }}</span>
-        </div>
-        <div class="fw-stepper" role="navigation" aria-label="5W1H Framework">
-          <span class="fw-stepper-label">5W1H:</span>
-          <button type="button" class="fw-stepper-pill" data-fw="what"><span class="fw-pill-code">WHAT</span><span class="fw-pill-title">{{ language === 'id' ? 'Rencana' : 'Action Plan' }}</span></button>
-          <button type="button" class="fw-stepper-pill" data-fw="how"><span class="fw-pill-code">HOW</span><span class="fw-pill-title">{{ language === 'id' ? 'Anggaran' : 'Budget' }}</span></button>
-          <button type="button" class="fw-stepper-pill" data-fw="where"><span class="fw-pill-code">WHERE</span><span class="fw-pill-title">{{ language === 'id' ? 'Peta' : 'Store Map' }}</span></button>
-          <button type="button" class="fw-stepper-pill" data-fw="who"><span class="fw-pill-code">{{ language === 'id' ? 'SIAPA' : 'WHO' }}</span><span class="fw-pill-title">{{ language === 'id' ? 'Struktur' : 'Org' }}</span></button>
-          <button type="button" class="fw-stepper-pill" data-fw="why"><span class="fw-pill-code">WHY</span><span class="fw-pill-title">{{ language === 'id' ? 'Visi' : 'Vision' }}</span></button>
-          <button type="button" class="fw-stepper-pill is-active" data-fw="when"><span class="fw-pill-code">{{ language === 'id' ? 'KAPAN' : 'WHEN' }}</span><span class="fw-pill-title">{{ language === 'id' ? 'Peta Jalan' : 'Roadmap' }}</span></button>
-        </div>
-      </div>
+      <div class="deck-kicker">{{ copy.kicker }}</div>
       <h2>{{ copy.title }}</h2>
       <p>{{ copy.subtitle }}</p>
+      <nav class="roadmap-nav" :aria-label="language === 'id' ? 'Bagian implementasi' : 'Implementation sections'">
+        <button type="button" data-fw="what">{{ language === 'id' ? 'Rencana aksi' : 'Action plan' }}</button>
+        <button type="button" data-fw="why">{{ language === 'id' ? 'Visi & misi' : 'Vision & mission' }}</button>
+        <button type="button" data-fw="who">{{ language === 'id' ? 'Struktur' : 'Organization' }}</button>
+        <button type="button" data-fw="how">{{ language === 'id' ? 'Anggaran' : 'Budget' }}</button>
+        <button type="button" data-fw="where">{{ language === 'id' ? 'Peta gerai' : 'Store map' }}</button>
+        <button type="button" aria-current="page" disabled>{{ language === 'id' ? 'Peta jalan' : 'Roadmap' }}</button>
+      </nav>
     </header>
 
     <div class="roadmap-phases">
@@ -163,6 +157,37 @@ const copy = computed(() => props.language === 'id' ? indonesian : english);
   margin: 0;
   font-size: 1.25cqw;
   line-height: 1.4;
+}
+
+.roadmap-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35cqw;
+  margin-top: .55cqw;
+  border-bottom: 1px solid #e8dfe3;
+}
+
+.roadmap-nav button {
+  padding: .38cqw .6cqw;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: #5e4e56;
+  font: 600 max(9px, .85cqw)/1.2 Arial, sans-serif;
+  cursor: pointer;
+}
+
+.roadmap-nav button:hover {
+  background: #faf3f5;
+  color: #9f002c;
+}
+
+.roadmap-nav [aria-current] {
+  border-bottom-color: #df0036;
+  color: #9f002c;
+  cursor: default;
+  opacity: 1;
 }
 
 .roadmap-phases {

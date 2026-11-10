@@ -1374,6 +1374,8 @@
 .alt-card{--alt-accent:#00875a;flex-shrink:0;min-height:3.65cqw;justify-content:center}
 .alt-card[data-cluster="defensive"]{--alt-accent:#dc2626}
 .alt-card:has(.badge-integration){--alt-accent:#0284c7}
+.alt-card:has(.badge-downstream){--alt-accent:#0284c7}
+.alt-card:has(.badge-upstream){--alt-accent:#047857}
 .alt-card:has(.badge-diversification){--alt-accent:#b45309}
 .alt-card .alt-card-head{gap:.55cqw}
 .alt-card-title{flex:1}
@@ -4459,3 +4461,6 @@
   margin-right: .35cqw !important;
   vertical-align: middle !important;
 }
+
+.badge-downstream{background:#e0f2fe;color:#0284c7}
+.badge-upstream{background:#ecfdf5;color:#047857}
