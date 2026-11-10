@@ -1086,7 +1086,7 @@
 </div>
 <div class="slide-source-control" v-if="currentSlide === 14 || currentSlide === 16"><button type="button" class="slide-source-trigger" @click="$refs.sourcesDialog.showModal()">{{ language === 'id' ? 'Lihat sumber' : 'View sources' }} ({{ currentSlide === 14 ? activePestleSources.length : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)).length }})</button></div>
 <dialog ref="sourcesDialog" class="slide-sources-dialog" @click.self="$refs.sourcesDialog.close()"><div class="source-dialog-header"><div><h2>{{ language === 'id' ? 'Sumber' : 'Sources' }}</h2><p>{{ currentSlide === 14 ? t(activePestle.title) : t(activeForce.name) }}</p></div><button type="button" class="source-close" @click="$refs.sourcesDialog.close()" aria-label="Close sources">×</button></div><ol><li v-for="source in (currentSlide === 14 ? activePestleSources : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)))" :key="source.id"><a :href="source.local || source.url" target="_blank" rel="noopener">{{ source.id }} · {{ t(source.title) }}</a><span v-if="source.date || source.locator">{{ [source.date, source.locator].filter(Boolean).join(' · ') }}</span></li></ol></dialog>
-<div class="deck-nav"><button id="previous-slide" class="quiet-button" type="button" :disabled="currentSlide === 0" @click="showSlide(slideOrder[slidePosition - 1])">{{ t("← Previous") }}</button><span id="slide-position" class="slide-position" role="status" aria-live="polite">{{ t(presentationStatus || `Slide ${slidePosition + 1} of ${slides.length}`) }}</span><div class="deck-lang-switch deck-nav-lang" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="next-slide" type="button" :disabled="slidePosition === slides.length - 1" @click="showSlide(slideOrder[slidePosition + 1])">{{ t("Next →") }}</button></div>
+<div class="deck-nav"><button id="previous-slide" class="quiet-button" type="button" :disabled="currentSlide === 0" @click="advancePresentation(-1)">{{ t("← Previous") }}</button><span id="slide-position" class="slide-position" role="status" aria-live="polite">{{ t(presentationStatus || `Slide ${slidePosition + 1} of ${slides.length}`) }}</span><div class="deck-lang-switch deck-nav-lang" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="next-slide" type="button" :disabled="slidePosition === slides.length - 1" @click="advancePresentation(1)">{{ t("Next →") }}</button></div>
 <nav class="deck-thumbs" :aria-label="t(&quot;Choose slide&quot;)"><button v-for="(id,index) in slideOrder" :key="id" class="deck-thumb" :data-slide="id" :aria-current="currentSlide === id" @click="showSlide(id)"><span>{{ t(String(index+1).padStart(2,'0')) }}</span> {{ id === ownershipSlide && language === 'id' ? 'Kepemilikan' : t(slides[id].short) }}</button></nav>
 <details class="speaker-panel"><summary>{{ t("Speaker notes") }}</summary><p id="presenter-notes">{{ t(speakerNotes[currentSlide]) }}</p></details>
 </div></transition>
@@ -2530,6 +2530,20 @@ const slides=[
    currentSlide.value=next;presentationStatus.value='';
   }
   window.showSlide = showSlide;
+  function advancePresentation(direction){
+   const groups=deckView.value.querySelectorAll('.deck-frame .brand-picker, .deck-frame .metric-picker, .deck-frame .pestle-selector, .deck-frame .technology-tabs, .deck-frame .force-selector, .deck-frame [role="tablist"]');
+   for(const group of Array.from(groups).reverse()){
+    const tabs=Array.from(group.querySelectorAll('button:not(:disabled)'));
+    const active=tabs.findIndex(tab=>tab.getAttribute('aria-pressed')==='true'||tab.getAttribute('aria-selected')==='true');
+    if(active>=0 && tabs[active+direction]){
+     tabs[active+direction].click();
+     return;
+    }
+   }
+   const next=slideOrder[slidePosition.value + direction];
+   if(next>=0 && next<slides.length)showSlide(next);
+  }
+
   async function copySlide(){
    try{await navigator.clipboard.writeText(slideText.value.innerText);copyStatus.value='Slide text copied.';}
    catch(error){const selection=window.getSelection(),range=document.createRange();range.selectNodeContents(slideText.value);selection.removeAllRanges();selection.addRange(range);copyStatus.value='Slide text selected. Press Ctrl+C or Command+C to copy.';}
@@ -2540,7 +2554,9 @@ const slides=[
   }
   function onKey(event){
    if(view.value!=='powerpoint'||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)||event.target.isContentEditable||event.ctrlKey||event.metaKey||event.altKey)return;
-   const keys={ArrowRight:slidePosition.value+1,PageDown:slidePosition.value+1,ArrowLeft:slidePosition.value-1,PageUp:slidePosition.value-1,Home:0,End:slides.length-1};
+   if(event.key==="ArrowRight"||event.key==="PageDown"){event.preventDefault();advancePresentation(1);return;}
+   if(event.key==="ArrowLeft"||event.key==="PageUp"){event.preventDefault();advancePresentation(-1);return;}
+   const keys={Home:0,End:slides.length-1};
    if(Object.hasOwn(keys,event.key)){event.preventDefault();showSlide(slideOrder[Math.max(0, Math.min(slideOrder.length - 1, keys[event.key]))]);}
   }
   function onHash(){view.value=viewFromHash();}
@@ -3751,7 +3767,7 @@ watch(currentSlide, (val)=>{
     });
   });
   onUnmounted(()=>{document.removeEventListener('keydown',onKey);window.removeEventListener('hashchange',onHash); document.removeEventListener('click',onIeSelect);});
-  return {handoffTab,handoffCopyStatus,copyHandoff,documentScrollHandoff,fiveForces,fiveForceSources,selectedForce,activeForce,reachChartScope,reachChartApps,reachChartMaximum,formatReachTick,technologyTab,technologyTabs,reportedReach,matchedDownloads,channelOverview,channelCoverage,ideaBoards,selectedBoard,activeBoard,onBoardTabKey,boardColumns,language,t,translateHtml,setLanguage,pestleFactors,pestleSources,selectedPestle,activePestle,activePestleSources,financialMetrics,selectedMetric,activeMetric,management,selectedRole,brands,selectedBrand,activeBrand,revenueMix,selectedSegment,hoverSegment,activeSegment,selectSegment,view,currentSlide,ownershipSlide,mapSlide,slideOrder,slidePosition,slideDirection,deckView,slideText,copyStatus,presentationStatus,slides,speakerNotes,activeSlide,setView,showSlide,copySlide,present};
+  return {advancePresentation,handoffTab,handoffCopyStatus,copyHandoff,documentScrollHandoff,fiveForces,fiveForceSources,selectedForce,activeForce,reachChartScope,reachChartApps,reachChartMaximum,formatReachTick,technologyTab,technologyTabs,reportedReach,matchedDownloads,channelOverview,channelCoverage,ideaBoards,selectedBoard,activeBoard,onBoardTabKey,boardColumns,language,t,translateHtml,setLanguage,pestleFactors,pestleSources,selectedPestle,activePestle,activePestleSources,financialMetrics,selectedMetric,activeMetric,management,selectedRole,brands,selectedBrand,activeBrand,revenueMix,selectedSegment,hoverSegment,activeSegment,selectSegment,view,currentSlide,ownershipSlide,mapSlide,slideOrder,slidePosition,slideDirection,deckView,slideText,copyStatus,presentationStatus,slides,speakerNotes,activeSlide,setView,showSlide,copySlide,present};
   }
 };
 </script>

@@ -3181,3 +3181,32 @@
 .ownership-map-slide .map-label { font-size: 14px; paint-order: stroke; stroke: white; stroke-width: 7px; stroke-linejoin: round; }
 
 .ownership-map-slide .map-affiliation { stroke-dasharray: 2 3; }
+
+/* Reserve a consistent bottom band for presentation citations. */
+.deck-slide > .deck-footer {
+  bottom: 2.7%;
+  align-items: flex-start;
+  gap: 1.2cqw;
+  padding-top: .65cqw;
+  font-size: .84cqw;
+  line-height: 1.35;
+}
+.deck-slide > .deck-footer > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.deck-slide > .deck-footer > span:last-child { flex: 0 0 auto; white-space: nowrap; }
+.problem-slide .financial-evidence .metric-picker,
+.problem-slide .financial-evidence .metric-units { margin-bottom: .7cqw; }
+.problem-slide .metric-reading {
+  min-height: 0;
+  margin: .85cqw 0 .65cqw;
+  line-height: 1.35;
+}
+.problem-slide .liquidity-comparison { padding-top: .65cqw; }
+.problem-slide .liquidity-heading { margin-bottom: .45cqw; }
+.problem-slide .liquidity-row { margin: .25cqw 0; }
+.problem-slide .liquidity-change {
+  margin: .55cqw 0 0;
+  padding-top: .45cqw;
+}

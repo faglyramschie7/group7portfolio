@@ -3197,6 +3197,36 @@
 }
 .organization-slide .org-findings-grid strong { display: block; margin-bottom: .2cqw; }
 </style>
+<style>
+/* Reserve a consistent bottom band for presentation citations. */
+.deck-slide > .deck-footer {
+  bottom: 2.7%;
+  align-items: flex-start;
+  gap: 1.2cqw;
+  padding-top: .65cqw;
+  font-size: .84cqw;
+  line-height: 1.35;
+}
+.deck-slide > .deck-footer > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.deck-slide > .deck-footer > span:last-child { flex: 0 0 auto; white-space: nowrap; }
+.problem-slide .financial-evidence .metric-picker,
+.problem-slide .financial-evidence .metric-units { margin-bottom: .7cqw; }
+.problem-slide .metric-reading {
+  min-height: 0;
+  margin: .85cqw 0 .65cqw;
+  line-height: 1.35;
+}
+.problem-slide .liquidity-comparison { padding-top: .65cqw; }
+.problem-slide .liquidity-heading { margin-bottom: .45cqw; }
+.problem-slide .liquidity-row { margin: .25cqw 0; }
+.problem-slide .liquidity-change {
+  margin: .55cqw 0 0;
+  padding-top: .45cqw;
+}
+</style>
 </head>
 <body>
 <div class="app-layout" id="app" v-cloak>
@@ -4208,7 +4238,7 @@
 </div>
 <div class="slide-source-control" v-if="currentSlide === 14 || currentSlide === 16"><button type="button" class="slide-source-trigger" @click="$refs.sourcesDialog.showModal()">{{ language === 'id' ? 'Lihat sumber' : 'View sources' }} ({{ currentSlide === 14 ? activePestleSources.length : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)).length }})</button></div>
 <dialog ref="sourcesDialog" class="slide-sources-dialog" @click.self="$refs.sourcesDialog.close()"><div class="source-dialog-header"><div><h2>{{ language === 'id' ? 'Sumber' : 'Sources' }}</h2><p>{{ currentSlide === 14 ? t(activePestle.title) : t(activeForce.name) }}</p></div><button type="button" class="source-close" @click="$refs.sourcesDialog.close()" aria-label="Close sources">×</button></div><ol><li v-for="source in (currentSlide === 14 ? activePestleSources : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)))" :key="source.id"><a :href="source.local || source.url" target="_blank" rel="noopener">{{ source.id }} · {{ t(source.title) }}</a><span v-if="source.date || source.locator">{{ [source.date, source.locator].filter(Boolean).join(' · ') }}</span></li></ol></dialog>
-<div class="deck-nav"><button id="previous-slide" class="quiet-button" type="button" :disabled="currentSlide === 0" @click="showSlide(currentSlide - 1)">{{ t("← Previous") }}</button><span id="slide-position" class="slide-position" role="status" aria-live="polite">{{ t(presentationStatus || `Slide ${currentSlide + 1} of ${slides.length}`) }}</span><div class="deck-lang-switch deck-nav-lang" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="next-slide" type="button" :disabled="currentSlide === slides.length - 1" @click="showSlide(currentSlide + 1)">{{ t("Next →") }}</button></div>
+<div class="deck-nav"><button id="previous-slide" class="quiet-button" type="button" :disabled="currentSlide === 0" @click="advancePresentation(-1)">{{ t("← Previous") }}</button><span id="slide-position" class="slide-position" role="status" aria-live="polite">{{ t(presentationStatus || `Slide ${currentSlide + 1} of ${slides.length}`) }}</span><div class="deck-lang-switch deck-nav-lang" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="next-slide" type="button" :disabled="currentSlide === slides.length - 1" @click="advancePresentation(1)">{{ t("Next →") }}</button></div>
 <nav class="deck-thumbs" :aria-label="t(&quot;Choose slide&quot;)"><button v-for="(slide,index) in slides" :key="slide.label" class="deck-thumb" :data-slide="index" :aria-current="currentSlide === index" @click="showSlide(index)"><span>{{ t(String(index+1).padStart(2,'0')) }}</span> {{ t(slide.short) }}</button></nav>
 <details class="speaker-panel"><summary>{{ t("Speaker notes") }}</summary><p id="presenter-notes">{{ t(speakerNotes[currentSlide]) }}</p></details>
 </div></transition>
@@ -5624,6 +5654,20 @@ const slides=[
    currentSlide.value=next;presentationStatus.value='';
   }
   window.showSlide = showSlide;
+  function advancePresentation(direction){
+   const groups=deckView.value.querySelectorAll('.deck-frame .brand-picker, .deck-frame .metric-picker, .deck-frame .pestle-selector, .deck-frame .technology-tabs, .deck-frame .force-selector, .deck-frame [role="tablist"]');
+   for(const group of Array.from(groups).reverse()){
+    const tabs=Array.from(group.querySelectorAll('button:not(:disabled)'));
+    const active=tabs.findIndex(tab=>tab.getAttribute('aria-pressed')==='true'||tab.getAttribute('aria-selected')==='true');
+    if(active>=0 && tabs[active+direction]){
+     tabs[active+direction].click();
+     return;
+    }
+   }
+   const next=currentSlide.value + direction;
+   if(next>=0 && next<slides.length)showSlide(next);
+  }
+
   async function copySlide(){
    try{await navigator.clipboard.writeText(slideText.value.innerText);copyStatus.value='Slide text copied.';}
    catch(error){const selection=window.getSelection(),range=document.createRange();range.selectNodeContents(slideText.value);selection.removeAllRanges();selection.addRange(range);copyStatus.value='Slide text selected. Press Ctrl+C or Command+C to copy.';}
@@ -5634,7 +5678,9 @@ const slides=[
   }
   function onKey(event){
    if(view.value!=='powerpoint'||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)||event.target.isContentEditable||event.ctrlKey||event.metaKey||event.altKey)return;
-   const keys={ArrowRight:currentSlide.value+1,PageDown:currentSlide.value+1,ArrowLeft:currentSlide.value-1,PageUp:currentSlide.value-1,Home:0,End:slides.length-1};
+   if(event.key==="ArrowRight"||event.key==="PageDown"){event.preventDefault();advancePresentation(1);return;}
+   if(event.key==="ArrowLeft"||event.key==="PageUp"){event.preventDefault();advancePresentation(-1);return;}
+   const keys={Home:0,End:slides.length-1};
    if(Object.hasOwn(keys,event.key)){event.preventDefault();showSlide(keys[event.key]);}
   }
   function onHash(){view.value=viewFromHash();}
@@ -6823,7 +6869,7 @@ watch(currentSlide, (val)=>{
     });
   });
   onUnmounted(()=>{document.removeEventListener('keydown',onKey);window.removeEventListener('hashchange',onHash); document.removeEventListener('click',onIeSelect);});
-  return {handoffTab,handoffCopyStatus,copyHandoff,documentScrollHandoff,fiveForces,fiveForceSources,selectedForce,activeForce,reachChartScope,reachChartApps,reachChartMaximum,formatReachTick,technologyTab,technologyTabs,reportedReach,matchedDownloads,channelOverview,channelCoverage,ideaBoards,selectedBoard,activeBoard,onBoardTabKey,boardColumns,language,t,translateHtml,setLanguage,pestleFactors,pestleSources,selectedPestle,activePestle,activePestleSources,financialMetrics,selectedMetric,activeMetric,management,selectedRole,brands,selectedBrand,activeBrand,revenueMix,selectedSegment,hoverSegment,activeSegment,selectSegment,view,currentSlide,slideDirection,deckView,slideText,copyStatus,presentationStatus,slides,speakerNotes,activeSlide,setView,showSlide,copySlide,present};
+  return {advancePresentation,handoffTab,handoffCopyStatus,copyHandoff,documentScrollHandoff,fiveForces,fiveForceSources,selectedForce,activeForce,reachChartScope,reachChartApps,reachChartMaximum,formatReachTick,technologyTab,technologyTabs,reportedReach,matchedDownloads,channelOverview,channelCoverage,ideaBoards,selectedBoard,activeBoard,onBoardTabKey,boardColumns,language,t,translateHtml,setLanguage,pestleFactors,pestleSources,selectedPestle,activePestle,activePestleSources,financialMetrics,selectedMetric,activeMetric,management,selectedRole,brands,selectedBrand,activeBrand,revenueMix,selectedSegment,hoverSegment,activeSegment,selectSegment,view,currentSlide,slideDirection,deckView,slideText,copyStatus,presentationStatus,slides,speakerNotes,activeSlide,setView,showSlide,copySlide,present};
  }
 
 
