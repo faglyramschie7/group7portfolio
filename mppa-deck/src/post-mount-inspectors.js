@@ -353,6 +353,10 @@ matrixDrawer.setAttribute('aria-labelledby', 'matrix-detail-title');
 matrixDrawer.innerHTML = '<div class="matrix-detail-head"><div class="matrix-detail-head-main"><div class="matrix-meta-bar"><span class="matrix-kind-badge"></span><span class="matrix-status-pill"></span></div><h3 id="matrix-detail-title"></h3><p class="matrix-detail-sub"></p></div><button class="matrix-detail-close" type="button" aria-label="Close details" autofocus><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div><div class="matrix-detail-scroll"></div>';
 
 function findMatrixItem(element) {
+  if (element.closest?.('.cpm-td-weight')) {
+    element = element.closest('tr').querySelector('.cpm-hoverable');
+    if (!element) return null;
+  }
   for (const [kind, selector, render] of matrixInspectors) {
     const target = element.closest?.(selector);
     if (target?.closest('.deck-slide')?.querySelector('#' + kind + '-ins-box')) return {kind, target, render};
@@ -362,17 +366,35 @@ function findMatrixItem(element) {
 function matrixPreviewContent({kind, target}) {
   if (kind === 'qspm') {
     const [, weight, s1, tas1, s2, tas2] = Array.from(target.cells, cell => cell.textContent.trim());
-    const weightLabel = document.documentElement.lang === 'id' ? 'Bobot' : 'Weight';
-    return [target.querySelector('.qspm-factor-detail').textContent, `${weightLabel} ${weight} · Strat. 1 AS ${s1} → TAS ${tas1} · Strat. 2 AS ${s2} → TAS ${tas2}`];
+    const id = document.documentElement.lang === 'id';
+    const code = target.querySelector('.qspm-factor-detail').textContent.trim();
+    const source = /^[SW]/.test(code) ? 'IFE' : 'EFE';
+    const translate = value => window.t?.(value) || value;
+    const weightReason = `${id ? 'Bobot' : 'Weight'} ${weight} ${id ? 'dari' : 'from'} ${source} ${code}. ${translate(target.dataset.weightReason)}`;
+    const math = [
+      id ? 'AS menilai kecocokan strategi terhadap faktor (1–4). TAS = bobot × AS.' : 'AS rates how well a strategy addresses the factor (1–4). TAS = weight × AS.',
+      `Hyfresh · AS ${s1} · TAS = ${weight} × ${s1} = ${tas1}`,
+      `Hypermart · AS ${s2} · TAS = ${weight} × ${s2} = ${tas2}`,
+    ].join(' | ');
+    return [code, '', translate(target.dataset.hoverReason), weightReason, math];
   }
   const data = target.dataset;
   const id = document.documentElement.lang === 'id';
   const tr = value => (value && window.t ? window.t(value) : value) || '';
   const activeSpaceCompany = getActiveSpaceCompany();
-  if (kind === 'cpm') {
-    const title = [tr(data.factor), tr(data.company)].filter(Boolean).join(' · ');
-    const score = data.rating === '—' ? '' : tr('Rating') + ' ' + data.rating + ' · ' + tr('Score') + ' ' + data.score + '. ';
-    return [title, score + tr(data.evidence)];
+  if (kind === 'tows' && data.hoverMatch) {
+    return [`${data.code} · ${tr(data.name)}`, data.tags, tr(data.hoverMatch), tr(data.hoverReason)];
+  }
+  if (kind === 'cpm' || kind === 'efe' || kind === 'ife') {
+    const weightLabel = id ? 'Bobot' : 'Weight';
+    const weight = `${weightLabel} ${data.weight}`;
+    const weightReason = tr(data.weightReason || target.closest('tr')?.querySelector('[data-weight-reason]')?.dataset.weightReason);
+    const title = kind === 'cpm'
+      ? [tr(data.factor), data.rating !== '—' && tr(data.company)].filter(Boolean).join(' · ')
+      : `${data.code} · ${tr(data.name)}`;
+    if (data.rating === '—') return [title, weight, '', weightReason];
+    const score = `${tr('Rating')} ${data.rating} (${tr(data.ratingLabel)}) · ${tr('Score')} ${data.score || data.ws} · ${weight}`;
+    return [title, score, tr(data.hoverReason || data.rationale || data.evidence), weightReason];
   }
   const company = spaceCompaniesData[data.company || activeSpaceCompany] || spaceCompaniesData.mppa;
   if (kind === 'space' && data.factor) {
@@ -403,7 +425,7 @@ listen(document, 'pointermove', event => {
   const host = document.fullscreenElement || document.body;
   if (matrixPreview.parentNode !== host) host.append(matrixPreview);
   if (previewTarget !== match.target || matrixPreview.hidden) {
-    const [title, explanation] = matrixPreviewContent(match);
+    const [title, explanation, rationale, weightReason, math] = matrixPreviewContent(match);
     const heading = document.createElement('strong');
     heading.textContent = title;
     const summary = document.createElement('span');
@@ -411,7 +433,29 @@ listen(document, 'pointermove', event => {
     summary.textContent = detail.length > 260 ? detail.slice(0, 260).replace(/\s+\S*$/, '') + '…' : detail;
     const hint = document.createElement('small');
     hint.textContent = document.documentElement.lang === 'id' ? 'Klik dua kali untuk rincian' : 'Double-click for full details';
-    matrixPreview.replaceChildren(heading, ...(detail ? [summary] : []), hint);
+    const id = document.documentElement.lang === 'id';
+    const labels = match.kind === 'tows'
+      ? (id ? ['Faktor yang kami pasangkan', 'Mengapa kami memilih strategi ini'] : ['Factors we matched', 'Why we chose this strategy'])
+      : (id ? ['Mengapa kami memberi nilai ini', 'Mengapa faktor ini diberi bobot ini'] : ['Why we gave this rating', 'Why we chose this weight']);
+    const entries = match.kind === 'qspm' ? [
+      [id ? 'Dari mana bobotnya' : 'Where the weight comes from', weightReason],
+      [id ? 'Mengapa skor AS berbeda' : 'Why we gave these AS ratings', rationale],
+      [id ? 'Cara menghitung TAS' : 'How TAS is calculated', math],
+    ] : [[labels[0], rationale], [labels[1], weightReason]];
+    const sections = entries.filter(([, text]) => text).map(([label, text]) => {
+      const section = document.createElement('div');
+      section.className = 'matrix-preview-section';
+      const heading = document.createElement('strong');
+      heading.textContent = label;
+      section.append(heading);
+      for (const paragraph of text.split(' | ')) {
+        const body = document.createElement('p');
+        body.textContent = paragraph;
+        section.append(body);
+      }
+      return section;
+    });
+    matrixPreview.replaceChildren(heading, ...(detail ? [summary] : []), ...sections, hint);
     previewTarget = match.target;
   }
   matrixPreview.hidden = false;
@@ -527,10 +571,16 @@ function openMatrixDrawer(match) {
     evidence.textContent = category === 'S' && factorIndex === '4'
       ? (id ? 'Pada akhir 2020, Hypermart Online tersedia di 103 gerai, Chat & Shop di 125 gerai, dan GrabMart di 97 gerai virtual.' : 'At year-end 2020, Hypermart Online covered 103 stores, Chat & Shop covered 125 stores, and GrabMart had 97 virtual stores.')
       : factor.replace(/^[SWOT]\d+\s*/, '');
+    const [, , ratingReason, weightReason] = matrixPreviewContent(match);
     section.append(evidence);
+    for (const text of [weightReason, ratingReason]) {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = text;
+      section.append(paragraph);
+    }
     for (const [name, rating, weightedScore] of [
-      [id ? 'S1 · Perluas Hyfresh' : 'S1 · Expand Hyfresh', s1, tas1],
-      [id ? 'S2 · Sesuaikan ukuran Hypermart' : 'S2 · Resize Hypermart', s2, tas2],
+      [id ? 'Strat. 1 · Perluas Hyfresh' : 'Strat. 1 · Expand Hyfresh', s1, tas1],
+      [id ? 'Strat. 2 · Sesuaikan ukuran Hypermart' : 'Strat. 2 · Resize Hypermart', s2, tas2],
     ]) {
       const card = document.createElement('div');
       card.className = 'matrix-card qspm-detail-score';
@@ -745,6 +795,28 @@ function openMatrixDrawer(match) {
 
   // BCG Calculations detail if present
   if (kind === 'bcg' && calcData) {
+    const renderEquation = (formula, label, heading) => {
+      const [, numerator, denominator, result, note] =
+        formula?.match(/^[A-Z]+ = (.+?) ÷ (.+?) = ([+-]?[\d.,]+%?)(?: \((.+)\))?$/) || [];
+      if (!numerator) return `<p class="matrix-calc-row">${formula || ''}</p>`;
+
+      const growth = numerator.match(/^(.+?) 2020: (Rp[\d.,]+[BM]) − 2019: (Rp[\d.,]+[BM])[\])]?$/);
+      const market = denominator.match(/^(Rp[\d.,]+ [BM]) \((.+)\)$/);
+      const benchmark = growth?.[1].replace(/^\[/, '').replace(/ \(([^()]*)$/, ' · $1') || market?.[2];
+      const top = growth ? `<mtext>${growth[2]}</mtext><mo>−</mo><mtext>${growth[3]}</mtext>` : `<mtext>${numerator}</mtext>`;
+      const bottom = market?.[1] || denominator;
+
+      return `<div class="matrix-equation">
+        <h5>${heading} (${label})</h5>
+        ${benchmark ? `<p class="matrix-calc-row">${id ? 'Pembanding' : 'Benchmark'} · ${benchmark}</p>` : ''}
+        <div class="matrix-equation-scroll"><math display="block"><mrow>
+          <mi mathvariant="normal">${label}</mi><mo>=</mo>
+          <mfrac><mrow>${top}</mrow><mtext>${bottom}</mtext></mfrac>
+          <mo>=</mo><mtext>${result.replace(/^-/,'−')}</mtext>
+        </mrow></math></div>
+        ${note ? `<p class="matrix-calc-row">${id ? 'Penyesuaian pada grafik' : 'Adjustment shown on chart'} · ${note}</p>` : ''}
+      </div>`;
+    };
     const calcSection = document.createElement('section');
     calcSection.className = 'matrix-detail-section';
     calcSection.innerHTML = `
@@ -755,8 +827,8 @@ function openMatrixDrawer(match) {
         <h4>${id ? 'Kalkulasi Matematis' : 'Mathematical Derivations'}</h4>
       </div>
       <div class="matrix-calc-card">
-        <p class="matrix-calc-row"><strong>RMSP:</strong> ${id ? calcData.rmspCalcId : calcData.rmspCalc}</p>
-        <p class="matrix-calc-row"><strong>IGR:</strong> ${id ? calcData.igrFormulaId : calcData.igrFormula}</p>
+        ${renderEquation(id ? calcData.rmspCalcId : calcData.rmspCalc, 'RMSP', id ? 'Pangsa pasar relatif' : 'Relative market share')}
+        ${renderEquation(id ? calcData.igrFormulaId : calcData.igrFormula, 'IGR', id ? 'Laju pertumbuhan industri' : 'Industry growth rate')}
         <p class="matrix-calc-row" style="color:#64748b;font-size:11.5px;margin-top:4px;">${id ? calcData.igrDetailId : calcData.igrDetail}</p>
       </div>
     `;
@@ -838,12 +910,12 @@ listen(document, 'click', event => {
     const expansion = card.dataset.qspmStrategy === '1';
     const [matching, evidence, input] = expansion
       ? [
-          id ? 'Matriks SWOT slide 22 menggabungkan SO3 (membuka supermarket Hyfresh kompak) dan SO4 (menyatukan merek di bawah Hy-).' : 'On SWOT Matrix slide 22, SO3 proposes opening compact Hyfresh supermarkets and SO4 proposes bringing selected banners under Hy-. The case team combined these two ideas into Strategy 1.',
+          id ? 'Matriks SWOT (TOWS) menggabungkan SO3 (membuka supermarket Hyfresh kompak) dan SO4 (menyatukan merek di bawah Hy-).' : 'In the SWOT (TOWS) Matrix, SO3 proposes opening compact Hyfresh supermarkets and SO4 proposes bringing selected banners under Hy-. The case team combined these two ideas into Strategy 1.',
           id ? 'Laporan Tahunan 2020 hlm. 45–46 menunjukkan bahwa Hyfresh sudah beroperasi dan memiliki sembilan gerai pada akhir 2020. Penyatuan merek adalah usulan tim kasus.' : 'The 2020 Annual Report, pp. 45–46, records nine Hyfresh stores at year-end. The rollout and shared brand are proposals from the case analysis.',
           'D325'
         ]
       : [
-          id ? 'Matriks SWOT slide 22 mengaitkan WO1 (mengurangi kelebihan ruang Hypermart) dengan SO1 (kemitraan pengiriman).' : 'On SWOT Matrix slide 22, WO1 proposes reducing excess Hypermart space through subleasing, and SO1 proposes using delivery partners. Strategy 2 combines those ideas by resizing selected stores and using them to fulfill online orders.',
+          id ? 'Matriks SWOT (TOWS) mengaitkan WO1 (mengurangi kelebihan ruang Hypermart) dengan SO1 (kemitraan pengiriman).' : 'In the SWOT (TOWS) Matrix, WO1 proposes reducing excess Hypermart space through subleasing, and SO1 proposes using delivery partners. Strategy 2 combines those ideas by resizing selected stores and using them to fulfill online orders.',
           id ? 'Laporan Tahunan 2020 hlm. 25 dan 46 mencatat Hypermart Online di 103 gerai dan kontribusi Hypermart sebesar 84,5% terhadap penjualan.' : 'The 2020 Annual Report, pp. 25 and 46, reports Hypermart Online at 103 stores and Hypermart accounting for 84.5% of sales. These figures explain why the existing network is a candidate for the proposal.',
           'F325'
         ];
@@ -873,7 +945,8 @@ listen(document, 'click', event => {
     matrixDrawer.showModal();
     return;
   }
-  if (event.target.closest?.('.qspm-factor-detail') && !matrixDrawer.open) openMatrixDrawer(findMatrixItem(event.target));
+  const bcgItem = event.target.closest?.('.bcg-row, .bcg-bubble-group, .bcg-fmt-btn:not([data-division="all"])');
+  if (bcgItem || event.target.closest?.('.qspm-factor-detail')) openMatrixDrawer(findMatrixItem(event.target));
 });
 
 listen(document, 'keydown', event => {
