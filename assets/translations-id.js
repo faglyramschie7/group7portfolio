@@ -6431,3 +6431,28 @@ Object.assign(window.MPPA_TRANSLATIONS_ID, {
   "[W2, W6, T2, T3, T8]": "[W2, W6, T2, T3, T8]",
   "[W1, W2, T2, T9, T10]": "[W1, W2, T2, T9, T10]"
 });
+
+
+Object.assign(window.MPPA_TRANSLATIONS_ID, {
+  "Integration (Upstream / Downstream) (3)": "Integrasi (Hulu / Hilir) (3)",
+  "Forward Integration (Downstream): O2O Dark Stores & GrabMart": "Integrasi ke Hilir (Downstream): O2O Dark Stores & GrabMart",
+  "Forward Integration (Downstream): O2O Dark Stores &amp; GrabMart": "Integrasi ke Hilir (Downstream): O2O Dark Stores & GrabMart",
+  "Forward Integration (Downstream): O2O Dark Stores & GrabMart Sample Slide 22": "Integrasi ke Hilir (Downstream): O2O Dark Stores & GrabMart Contoh Slide 22",
+  "Forward Integration (Downstream): O2O Dark Stores &amp; GrabMart Sample Slide 22": "Integrasi ke Hilir (Downstream): O2O Dark Stores & GrabMart Contoh Slide 22",
+  "Backward Integration (Upstream): Direct Farm Cold-Chain Logistics": "Integrasi ke Hulu (Upstream): Logistik Rantai Pasok Dingin Petani",
+  "Backward Integration (Upstream): Direct Farm Cold-Chain Logistics Sample Slide 21": "Integrasi ke Hulu (Upstream): Logistik Rantai Pasok Dingin Petani Contoh Slide 21",
+  "DOWNSTREAM ENABLER · DIRECT-TO-CONSUMER DIGITAL FULFILLMENT": "PENDUKUNG HILIR · PEMENUHAN DIGITAL LANGSUNG KE KONSUMEN",
+  "DOWNSTREAM ENABLER · DIGITAL DELIVERY WITHOUT FLEET CAPEX": "PENDUKUNG HILIR · PENGIRIMAN DIGITAL TANPA BELANJA MODAL ARMADA",
+  "UPSTREAM ENABLER · 66,755 M² HALAL DC MOAT": "PENDUKUNG HULU · BENTENG DC HALAL 66.755 M²",
+  "UPSTREAM ENABLER · 66,755 M² HALAL COLD-CHAIN MOAT": "PENDUKUNG HULU · BENTENG RANTAI PASOK DINGIN HALAL 66.755 M²",
+  "Downstream": "Hilir",
+  "Upstream": "Hulu",
+  "7. Forward Integration (Downstream / Hilir): Multi-Platform O2O & Dark Stores": "7. Integrasi ke Hilir (Downstream): Multi-Platform O2O & Dark Store",
+  "8. Backward Integration (Upstream / Hulu): Direct Farm Cold-Chain Logistics": "8. Integrasi ke Hulu (Upstream): Logistik Rantai Pasok Dingin Petani",
+  "Fred David Strategy Classification: Forward (Downstream) Integration · Sample PPT Slide 22": "Klasifikasi Strategi Fred David: Integrasi ke Hilir (Downstream) · Contoh Slide 22",
+  "Fred David Strategy Classification: Backward (Upstream) Integration · Sample PPT Slide 21": "Klasifikasi Strategi Fred David: Integrasi ke Hulu (Upstream) · Contoh Slide 21",
+  "Forward (Downstream / Hilir) Integration gains direct control over distribution channels and consumer touchpoints. In the sample deck (Slide 22), this highlights integrating downstream delivery aggregators (GrabMart, Shopee, Tokopedia) and dark store micro-fulfillment hubs to control doorstep grocery fulfillment with zero fleet CapEx.": "Integrasi ke Hilir (Downstream / Forward Integration) memperoleh kendali langsung atas saluran distribusi dan titik temu konsumen. Pada contoh slide (Slide 22), ini menekankan integrasi agregator pengiriman hilir (GrabMart, Shopee, Tokopedia) dan pusat pemenuhan mikro dark store untuk mengendalikan pengiriman belanjaan ke pintu rumah tanpa belanja modal armada.",
+  "Backward (Upstream / Hulu) Integration increases control over agricultural suppliers and procurement sources. In the sample deck (Slide 21), this emphasizes disintermediating wholesale middlemen to contract directly with farmers (Lembang, Batu) and route goods through central Halal cold-chain DCs, securing supply continuity and cutting food spoilage.": "Integrasi ke Hulu (Upstream / Backward Integration) meningkatkan kendali atas pemasok pertanian dan sumber pengadaan. Pada contoh slide (Slide 21), ini menekankan pemangkasan perantara grosir untuk mengontrak langsung petani (Lembang, Batu) dan menyalurkan barang melalui pusat distribusi berpendingin Halal terpusat, mengamankan pasokan berkelanjutan dan mengurangi pembusukan makanan.",
+  "Forward (Downstream / Hilir) Integration gains direct control over distribution channels and consumer touchpoints. Sample Slide 22 highlights integrating downstream delivery aggregators (GrabMart, Shopee, Tokopedia) and dark store micro-fulfillment hubs to control doorstep grocery fulfillment with zero fleet CapEx.": "Integrasi ke Hilir (Downstream / Forward Integration) memperoleh kendali langsung atas saluran distribusi dan titik temu konsumen. Contoh Slide 22 menekankan integrasi agregator pengiriman hilir (GrabMart, Shopee, Tokopedia) dan pusat pemenuhan mikro dark store untuk mengendalikan pengiriman belanjaan ke pintu rumah tanpa belanja modal armada.",
+  "Backward (Upstream / Hulu) Integration increases control over agricultural suppliers and procurement sources. Sample Slide 21 emphasizes disintermediating wholesale middlemen to contract directly with farmers (Lembang, Batu) and route goods through central Halal cold-chain DCs, securing supply continuity and cutting food spoilage.": "Integrasi ke Hulu (Upstream / Backward Integration) meningkatkan kendali atas pemasok pertanian dan sumber pengadaan. Contoh Slide 21 menekankan pemangkasan perantara grosir untuk mengontrak langsung petani (Lembang, Batu) dan menyalurkan barang melalui pusat distribusi berpendingin Halal terpusat, mengamankan pasokan berkelanjutan dan mengurangi pembusukan makanan."
+});
