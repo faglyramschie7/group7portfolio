@@ -124,8 +124,8 @@ const milestones = [
   },
   {
     year: '2009–2010', split: true,
-    en: { title: 'Department stores split off', description: 'In 2009, Matahari Department Store became a separate company (LPPF). In 2010, an investment firm called CVC partnered with MPPA to buy most of its shares. MPPA continued to run Hypermart and its other grocery stores.' },
-    id: { title: 'Pemisahan bisnis department store', description: 'Pada 2009, Matahari Department Store menjadi perusahaan terpisah (LPPF). Pada 2010, perusahaan investasi CVC bekerja sama dengan MPPA untuk membeli sebagian besar sahamnya. MPPA tetap mengelola Hypermart dan gerai bahan makanan lainnya.' }
+    en: { title: 'Department stores split off', description: 'In 2009, Matahari Department Store became a separate company (LPPF). In 2010, PT Meadow Indonesia, backed by CVC, acquired a controlling stake in Matahari Department Store (LPPF). MPPA continued to run Hypermart and its other grocery stores.' },
+    id: { title: 'Pemisahan bisnis department store', description: 'Pada 2009, Matahari Department Store menjadi perusahaan terpisah (LPPF). Pada 2010, PT Meadow Indonesia, yang didukung CVC, mengakuisisi saham pengendali Matahari Department Store (LPPF). MPPA tetap mengelola Hypermart dan gerai bahan makanan lainnya.' }
   },
   {
     year: 2018, image: 'hypermart-logo.png', logo: true,

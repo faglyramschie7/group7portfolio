@@ -1488,7 +1488,6 @@ window.MPPA_TRANSLATIONS_ID = {
   "Interest Coverage Ratio": "Rasio Cakupan Bunga",
   "60 Min": "60 Menit",
   "Sources: Fred David Strategic Management Ch. 6; Case 23 pp. 587–596 · Sample PPT Slide 30 · Audited AR2020": "Sumber: Fred David Bab 6; Kasus 23 hlm. 588–596 · Slide 30 PPT Sampel · AR2020 Teraudit",
-,
   "Corporate Valuation Analysis: MPPA vs. Alfamart Benchmark": "Analisis Valuasi Perusahaan: MPPA vs. Tolok Ukur Alfamart",
   "Evaluating firm worth using Fred David's 4-method framework (Net Worth, 5x Net Income, P/E Multiple, Market Cap) derived from Matahari.xlsx Sheet 'Company Valuation'": "Mengevaluasi nilai perusahaan menggunakan kerangka 4-metode Fred David (Kekayaan Bersih, 5x Laba Bersih, Kelipatan P/E, Kapitalisasi Pasar) dari Matahari.xlsx Lembar \"Company Valuation\"",
   "RETAIL PEER BENCHMARK": "TOLOK UKUR RITEL PEMBANDING",
