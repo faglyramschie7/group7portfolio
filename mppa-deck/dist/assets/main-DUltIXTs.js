@@ -3543,7 +3543,7 @@ FY2020 baseline · Planning horizon 2021–2025
     <button type="button" class="alt-flt-btn is-active-flt" data-cluster="all" onclick="filterStratAlternatives('all')">All Strategies (9)</button>
     <button type="button" class="alt-flt-btn" data-cluster="intensive" onclick="filterStratAlternatives('intensive')">Intensive Growth (3)</button>
     <button type="button" class="alt-flt-btn" data-cluster="defensive" onclick="filterStratAlternatives('defensive')">Defensive Restructuring (3)</button>
-    <button type="button" class="alt-flt-btn" data-cluster="integration" onclick="filterStratAlternatives('integration')">Supply Chain &amp; Moat (3)</button>
+    <button type="button" class="alt-flt-btn" data-cluster="integration" onclick="filterStratAlternatives('integration')">Integration &amp; Moat (3)</button>
   </div>
   <div class="alt-top-pill">
     <span>Priority Framework:</span> 1 Primary Growth · 5 Supporting Enablers · 3 Selective (Self-Funding)
