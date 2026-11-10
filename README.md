@@ -2,7 +2,7 @@
 
 An interactive study and HTML presentation about PT Matahari Putra Prima Tbk, built with Vue without a build step.
 
-Open `mppa-case-study.html` in a browser. Select **Notes** for the detailed analysis or **PowerPoint** for the presentation. Select **Ideas Board**, then the **Environment (Food Waste)** horizontal tab, for sticky notes with possible solutions, overseas examples, evidence gaps, and sections to revisit. Use **EN / ID** to switch the study and presentation between English and Indonesian; the browser remembers your choice. Arrow keys navigate slides; **Present** opens fullscreen.
+The hosted Vue app opens directly to the presentation at `/study/`. The written study is available at `/study/notes`. Old links to the site root carry their query string and section link forward. For the standalone offline version, open `mppa-case-study.html` in a browser. In the standalone version, select **Notes** for the detailed analysis or **PowerPoint** for the presentation. Select **Ideas Board**, then the **Environment (Food Waste)** horizontal tab, for sticky notes with possible solutions, overseas examples, evidence gaps, and sections to revisit. Use **EN / ID** to switch the study and presentation between English and Indonesian; the browser remembers your choice. Arrow keys navigate slides; **Present** opens fullscreen.
 
 In the PESTLE evidence slide, select **Technological**, then **2020 channels** or **Reach & downloads**. Both evidence views include an external-context takeaway. PESTLE describes external conditions and sector relevance; SWOT classifications, internal capability judgments and response proposals are reserved for later analysis. Download dates and platform differences remain labelled.
 

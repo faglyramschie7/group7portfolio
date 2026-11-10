@@ -253,18 +253,18 @@ export function initPostMountInspectors({
   function renderBrandPills(logoKeys) {
     if (!logoKeys) return '';
     const map = {
-      'hypermart': '<div class="brand-logo-badge" title="Hypermart"><img src="assets/hypermart-logo.png" alt="Hypermart" class="brand-logo-img"/></div>',
-      'hyfresh': '<div class="brand-logo-badge" title="Hyfresh"><img src="assets/hyfresh-logo.png" alt="Hyfresh" class="brand-logo-img"/></div>',
-      'grab': '<div class="brand-logo-badge" title="GrabMart"><img src="assets/grab-logo.svg" alt="Grab" class="brand-logo-img"/></div>',
-      'ovo': '<div class="brand-logo-badge" title="OVO"><img src="assets/ovo-logo.svg" alt="OVO" class="brand-logo-img"/></div>',
-      'shopee': '<div class="brand-logo-badge" title="Shopee"><img src="assets/shopee-logo.svg" alt="Shopee" class="brand-logo-img"/></div>',
-      'happyfresh': '<div class="brand-logo-badge" title="HappyFresh"><img src="assets/happyfresh-logo.svg" alt="HappyFresh" class="brand-logo-img"/></div>',
-      'indomaret': '<div class="brand-logo-badge" title="Indomaret"><img src="assets/indomaret-logo.svg" alt="Indomaret" class="brand-logo-img"/></div>',
-      'alfamart': '<div class="brand-logo-badge" title="Alfamart"><img src="assets/alfamart-logo.svg" alt="Alfamart" class="brand-logo-img"/></div>',
-      'alfamidi': '<div class="brand-logo-badge" title="Alfamidi"><img src="assets/alfamidi-logo.svg" alt="Alfamidi" class="brand-logo-img"/></div>',
-      'transmart': '<div class="brand-logo-badge" title="Transmart"><img src="assets/transmart-logo.svg" alt="Transmart" class="brand-logo-img"/></div>',
-      'lottemart': '<div class="brand-logo-badge" title="LotteMart"><img src="assets/lottemart-logo.svg" alt="LotteMart" class="brand-logo-img"/></div>',
-      'lippo': '<div class="brand-logo-badge" title="Lippo Group"><img src="assets/lippo-logo.svg" alt="Lippo Group" class="brand-logo-img"/></div>',
+      'hypermart': '<div class="brand-logo-badge" title="Hypermart"><img src="/assets/hypermart-logo.png" alt="Hypermart" class="brand-logo-img"/></div>',
+      'hyfresh': '<div class="brand-logo-badge" title="Hyfresh"><img src="/assets/hyfresh-logo.png" alt="Hyfresh" class="brand-logo-img"/></div>',
+      'grab': '<div class="brand-logo-badge" title="GrabMart"><img src="/assets/grab-logo.svg" alt="Grab" class="brand-logo-img"/></div>',
+      'ovo': '<div class="brand-logo-badge" title="OVO"><img src="/assets/ovo-logo.svg" alt="OVO" class="brand-logo-img"/></div>',
+      'shopee': '<div class="brand-logo-badge" title="Shopee"><img src="/assets/shopee-logo.svg" alt="Shopee" class="brand-logo-img"/></div>',
+      'happyfresh': '<div class="brand-logo-badge" title="HappyFresh"><img src="/assets/happyfresh-logo.svg" alt="HappyFresh" class="brand-logo-img"/></div>',
+      'indomaret': '<div class="brand-logo-badge" title="Indomaret"><img src="/assets/indomaret-logo.svg" alt="Indomaret" class="brand-logo-img"/></div>',
+      'alfamart': '<div class="brand-logo-badge" title="Alfamart"><img src="/assets/alfamart-logo.svg" alt="Alfamart" class="brand-logo-img"/></div>',
+      'alfamidi': '<div class="brand-logo-badge" title="Alfamidi"><img src="/assets/alfamidi-logo.svg" alt="Alfamidi" class="brand-logo-img"/></div>',
+      'transmart': '<div class="brand-logo-badge" title="Transmart"><img src="/assets/transmart-logo.svg" alt="Transmart" class="brand-logo-img"/></div>',
+      'lottemart': '<div class="brand-logo-badge" title="LotteMart"><img src="/assets/lottemart-logo.svg" alt="LotteMart" class="brand-logo-img"/></div>',
+      'lippo': '<div class="brand-logo-badge" title="Lippo Group"><img src="/assets/lippo-logo.svg" alt="Lippo Group" class="brand-logo-img"/></div>',
       'siloam': '<span class="brand-text-badge">Siloam</span>',
       'dc': '<span class="brand-text-badge">Central DC</span>',
       'sublease': '<span class="brand-text-badge">Sublease</span>',
@@ -363,7 +363,379 @@ function findMatrixItem(element) {
   }
   return null;
 }
+
+const financialRatiosData = {
+  current_ratio: {
+    title: "Current Ratio · Liquidity Buffer (0.56x → 1.97x)",
+    title_id: "Rasio Lancar · Bantalan Likuiditas (0,56x → 1,97x)",
+    summary: "Measures MPPA's ability to cover short-term liabilities with liquid assets.",
+    summary_id: "Mengukur kemampuan MPPA melunasi liabilitas jangka pendek dengan aset lancar.",
+    formula: "Current Assets ÷ Current Liabilities (Audited AR2020 p. 182)",
+    formula_id: "Aset Lancar ÷ Liabilitas Jangka Pendek (Laporan Tahunan 2020 hlm. 182)",
+    benchmark: "Retail benchmark 1.20x–1.50x. 2020A plummeted to 0.56x (acute cash squeeze); 2023P recovers to 1.97x (+252%) ending cash squeeze.",
+    benchmark_id: "Patokan industri ritel 1,20x–1,50x. 2020A anjlok ke 0,56x (krisis likuiditas); 2023P pulih ke 1,97x (+252%) menuntaskan krisis kas.",
+    rationale: "Turnaround driver: Inventory reduction and positive operating cash flow from compact fresh stores eliminate the working capital deficit without requiring new bank loans.",
+    rationale_id: "Pendorong pemulihan: Pengurangan persediaan dan arus kas operasi positif dari gerai format segar kompak menghapus defisit modal kerja tanpa perlu utang baru."
+  },
+  quick_ratio: {
+    title: "Quick Ratio · Acid-Test Liquidity (0.21x → 1.79x)",
+    title_id: "Rasio Cepat · Bantalan Likuiditas Uji Asam (0,21x → 1,79x)",
+    summary: "Measures immediate liquid solvency without relying on inventory sales.",
+    summary_id: "Mengukur solvabilitas likuid seketika tanpa bergantung pada penjualan persediaan.",
+    formula: "(Cash & Cash Equivalents + Current Receivables) ÷ Current Liabilities",
+    formula_id: "(Kas & Setara Kas + Piutang Usaha Lancar) ÷ Liabilitas Jangka Pendek",
+    benchmark: "1.00x minimum liquidity floor. Surged from distressed 0.21x (2020A) to 1.79x (2023P), lifting quick assets by +752%.",
+    benchmark_id: "Batas aman minimal 1,00x. Melonjak dari 0,21x (2020A) menjadi 1,79x (2023P), mengangkat aset likuid cepat sebesar +752%.",
+    rationale: "Turnaround driver: Ensures an instant cash buffer to pay trade suppliers on time, permanently eliminating the risk of supplier payment freezes or merchandise embargoes.",
+    rationale_id: "Pendorong pemulihan: Memastikan bantalan kas seketika untuk membayar pemasok dagang tepat waktu, mengeliminasi risiko pembekuan pasokan barang."
+  },
+  debt_to_assets: {
+    title: "Total Debt to Total Assets · Balance Sheet Leverage (95.9% → 63.8%)",
+    title_id: "Total Liabilitas terhadap Total Aset · Pengungkit Neraca (95,9% → 63,8%)",
+    summary: "Proportion of MPPA's asset base financed through debt and lease liabilities.",
+    summary_id: "Proporsi aset MPPA yang didanai melalui liabilitas dan sewa pembiayaan.",
+    formula: "Total Liabilities ÷ Total Assets (Audited AR2020 Consolidated Balance Sheet)",
+    formula_id: "Total Liabilitas ÷ Total Aset (Neraca Konsolidasian AR2020)",
+    benchmark: "Prudent retail ceiling < 70.0%. Peaked at 95.9% in 2020A due to Rp2.87T capitalized PSAK 73 lease obligations; de-bulks to 63.8% by 2023P (-32.1 pp).",
+    benchmark_id: "Batas aman industri ritel < 70,0%. Memuncak di 95,9% pada 2020A akibat beban sewa PSAK 73 sebesar Rp2,87T; turun ke 63,8% pada 2023P (-32,1 pp).",
+    rationale: "Turnaround driver: Subleasing excess hypermarket floorplates and rightsizing anchor mall contracts sheds Rp1.2T in lease liabilities, restoring balance sheet resilience.",
+    rationale_id: "Pendorong pemulihan: Sub-sewa kelebihan luas lantai hipermarket dan penyesuaian sewa mal memangkas liabilitas sewa Rp1,2T, memulihkan ketahanan neraca."
+  },
+  debt_to_equity: {
+    title: "Long-term Bank Debt / Equity · Covenant Solvency (0.0% → 0.1%)",
+    title_id: "Utang Bank Jangka Panjang / Ekuitas · Solvabilitas Kovenan (0,0% → 0,1%)",
+    summary: "Tests compliance with long-term bank financing covenant limits.",
+    summary_id: "Menguji kepatuhan terhadap batas kovenan pembiayaan bank jangka panjang.",
+    formula: "Long-term Bank Borrowings ÷ Total Stockholders' Equity (AR2020 Note 15 & 18)",
+    formula_id: "Pinjaman Bank Jangka Panjang ÷ Total Ekuitas (AR2020 Catatan 15 & 18)",
+    benchmark: "BNI Loan Covenant Ceiling: 250% / 2.50x. MPPA long-term bank debt is virtually zero (0.0% in 2020A; 0.1% in 2023P pro forma).",
+    benchmark_id: "Batas Atas Kovenan BNI: 250% / 2,50x. Utang bank jangka panjang MPPA mendekati nol (0,0% di 2020A; 0,1% di 2023P proforma).",
+    rationale: "Turnaround driver: Entire turnaround and store expansion is self-funded via Rp120B asset sales and operational cash flow, completely avoiding dilutive debt burdens.",
+    rationale_id: "Pendorong pemulihan: Seluruh pemulihan didanai mandiri dari pelepasan aset Rp120M dan arus kas operasi, terbebas dari jeratan beban bunga utang baru."
+  },
+  tie: {
+    title: "Times-Interest-Earned (TIE) · Operating Interest Coverage (-0.52x → 5.34x)",
+    title_id: "Cakupan Bunga (TIE) · Rasio Pelunasan Bunga Operasional (-0,52x → 5,34x)",
+    summary: "Operating profit buffer available to service net finance costs.",
+    summary_id: "Kapasitas laba usaha untuk menutupi biaya keuangan neto.",
+    formula: "Operating Profit (EBIT) ÷ Net Finance Costs (Matahari.xlsx Part II Row 162)",
+    formula_id: "Laba Usaha (EBIT) ÷ Biaya Keuangan Neto (Matahari.xlsx Bagian II Baris 162)",
+    benchmark: "BNI Loan Covenant Floor: 2.00x minimum coverage. Sunk to -0.52x in 2020A; surges to 4.89x in 2021P and 5.34x in 2023P, safely above bank covenants.",
+    benchmark_id: "Batas Minimal Kovenan BNI: 2,00x. Anjlok ke -0,52x di 2020A; melonjak ke 4,89x (2021P) dan 5,34x (2023P), jauh di atas batas aman bank.",
+    rationale: "Turnaround driver: Halts 4 consecutive loss years as EBIT rebounds to Rp1.43T through higher fresh food gross margins and elimination of negative store rental bleed.",
+    rationale_id: "Pendorong pemulihan: Menghentikan kerugian 4 tahun berturut-turut seiring laba usaha (EBIT) berbalik ke Rp1,43T berkat margin segar dan pemangkasan sewa gerai rugi."
+  },
+  inv_turnover: {
+    title: "Inventory Turnover · Stock Velocity (5.64x → 7.14x)",
+    title_id: "Perputaran Persediaan · Kecepatan Arus Barang (5,64x → 7,14x)",
+    summary: "Frequency of inventory cycling and replenishment per year.",
+    summary_id: "Frekuensi perputaran dan pembaruan stok persediaan dalam setahun.",
+    formula: "Cost of Goods Sold (COGS) ÷ Average Merchandise Inventory",
+    formula_id: "Beban Pokok Penjualan (HPP) ÷ Rata-rata Persediaan Barang Dagang",
+    benchmark: "Modern grocery retail benchmark 6.0x–8.0x. Accelerates +27% from 5.64x (2020A) to 7.14x across 2021P–2023P.",
+    benchmark_id: "Patokan ritel bahan pokok modern 6,0x–8,0x. Meningkat +27% dari 5,64x (2020A) menjadi 7,14x sepanjang 2021P–2023P.",
+    rationale: "Turnaround driver: Compact Hyfresh format emphasizes fresh perishables with daily delivery cycles, drastically reducing non-food inventory obsolescence and markdown write-offs.",
+    rationale_id: "Pendorong pemulihan: Format Hyfresh kompak berfokus pada pangan segar dengan siklus kirim harian, memangkas persediaan lambat laku dan risiko pembusukan."
+  },
+  fixed_asset_turnover: {
+    title: "Fixed Assets Turnover · Floorplate Productivity (8.54x → 9.47x)",
+    title_id: "Perputaran Aset Tetap · Produktivitas Luas Lantai (8,54x → 9,47x)",
+    summary: "Sales generation efficiency per unit of net physical retail property & equipment.",
+    summary_id: "Efisiensi penjualan neto yang dihasilkan per unit aset tetap fisik gerai.",
+    formula: "Net Sales ÷ Net Property, Plant & Equipment (Fixed Assets)",
+    formula_id: "Penjualan Neto ÷ Aset Tetap Neto",
+    benchmark: "Retail standard 7.0x–9.0x. Improves from 8.54x in 2020A to 9.47x in 2023P, establishing top-tier asset revenue density.",
+    benchmark_id: "Standar ritel 7,0x–9,0x. Meningkat dari 8,54x di 2020A ke 9,47x di 2023P, mencapai densitas penjualan aset papan atas.",
+    rationale: "Turnaround driver: High revenue density per m² in compact neighborhood supermarkets replaces cavernous, low-yield hypermarket floorplates.",
+    rationale_id: "Pendorong pemulihan: Densitas penjualan per m² yang tinggi pada supermarket pemukiman menggantikan gerai hipermarket raksasa yang tidak produktif."
+  },
+  total_asset_turnover: {
+    title: "Total Assets Turnover · Capital Efficiency (1.50x → 1.01x)",
+    title_id: "Perputaran Total Aset · Efisiensi Modal (1,50x → 1,01x)",
+    summary: "Overall corporate sales throughput relative to total balance sheet assets.",
+    summary_id: "Kapasitas penjualan korporat secara keseluruhan terhadap total aset neraca.",
+    formula: "Net Sales ÷ Total Corporate Assets (Audited Balance Sheet)",
+    formula_id: "Penjualan Neto ÷ Total Aset Korporat (Neraca Auditan)",
+    benchmark: "Grocery retail norm 1.0x–1.5x. Moderates from 1.50x in 2020A to 1.01x in 2023P as asset base strengthens with accumulated cash.",
+    benchmark_id: "Norma ritel bahan pokok 1,0x–1,5x. Bergerak dari 1,50x di 2020A ke 1,01x di 2023P seiring penguatan aset melalui akumulasi kas likuid.",
+    rationale: "Turnaround driver: Total asset base expands with massive cash buildup (Rp3.5T liquid assets by 2023P), stabilizing corporate liquidity.",
+    rationale_id: "Pendorong pemulihan: Total aset membesar karena akumulasi kas yang kuat (mencapai Rp3,5T di 2023P), menstabilkan ketahanan likuiditas korporat."
+  },
+  ar_turnover: {
+    title: "Accounts Receivable Turnover · Settlement Speed (34.92x → 14.29x)",
+    title_id: "Perputaran Piutang Usaha · Kecepatan Kliring (34,92x → 14,29x)",
+    summary: "Speed of customer and partner payment collection across retail channels.",
+    summary_id: "Kecepatan penerimaan pembayaran pelanggan dan mitra kanal ritel.",
+    formula: "Net Sales ÷ Average Accounts Receivable (Trade & Other Receivables)",
+    formula_id: "Penjualan Neto ÷ Rata-rata Piutang Usaha",
+    benchmark: "FMCG / Grocery retail benchmark 12.0x–20.0x. Adjusts from 34.92x in 2020A to 14.29x across 2021P–2023P.",
+    benchmark_id: "Patokan ritel sembako/konsumsi 12,0x–20,0x. Bergerak dari 34,92x di 2020A ke 14,29x pada 2021P–2023P.",
+    rationale: "Turnaround driver: Reflects the strategic expansion of omnichannel on-demand delivery partnerships (GrabMart, Shopee, GoMart) which operate on scheduled 20–25 day clearing terms.",
+    rationale_id: "Pendorong pemulihan: Mencerminkan ekspansi kemitraan e-groceries (GrabMart, Shopee, GoMart) dengan siklus penagihan terjadwal 20–25 hari."
+  },
+  collection_period: {
+    title: "Average Collection Period · Days Sales Outstanding (10.5 → 25.6 days)",
+    title_id: "Periode Penagihan Rata-rata · Hari Penagihan Piutang (10,5 → 25,6 hari)",
+    summary: "Average number of days required to collect trade receivables into cash.",
+    summary_id: "Jumlah hari rata-rata yang dibutuhkan untuk mencairkan piutang menjadi kas.",
+    formula: "365 Days ÷ Accounts Receivable Turnover",
+    formula_id: "365 Hari ÷ Perputaran Piutang Usaha",
+    benchmark: "Modern retail standard 15–30 days. Moves from 10.5 days (2020A cash checkout) to 25.6 days (marketplace partner settlements).",
+    benchmark_id: "Standar ritel modern 15–30 hari. Bergeser dari 10,5 hari (kasir tunai 2020A) ke 25,6 hari (penyelesaian mitra platform daring).",
+    rationale: "Turnaround driver: While direct in-store shoppers pay instantly, marketplace on-demand delivery sales run on 25-day settlement cycles, well within safe working capital limits.",
+    rationale_id: "Pendorong pemulihan: Konsumen gerai fisik membayar seketika, sedangkan penjualan lewat mitra e-commerce cair dalam 25 hari, tetap aman dalam batas modal kerja."
+  },
+  gross_profit_margin: {
+    title: "Gross Profit Margin · Merchandising Markup (19.4% → 50.0%)",
+    title_id: "Margin Laba Kotor · Nilai Tambah Dagang (19,4% → 50,0%)",
+    summary: "Gross merchandising value retained after accounting for direct cost of goods sold.",
+    summary_id: "Nilai tambah perdagangan yang tersisa setelah memperhitungkan beban pokok penjualan.",
+    formula: "Gross Profit ÷ Net Sales × 100% (Matahari.xlsx Part II Row 156)",
+    formula_id: "Laba Kotor ÷ Penjualan Neto × 100% (Matahari.xlsx Bagian II Baris 156)",
+    benchmark: "Grocery benchmark 18%–24%; fresh food specialty 28%–35%. Model's upside case reaches 50.0% (illustrative scenario).",
+    benchmark_id: "Patokan ritel sembako 18%–24%; gerai segar khusus 28%–35%. Skenario optimis model mencapai 50,0% (skenario ilustratif).",
+    rationale: "Turnaround driver: (1) Direct farmgate procurement bypassing middlemen via Balaraja central cold chain; (2) Shifting sales mix to 60%+ fresh produce (28–35% gross margins); (3) Exiting low-margin SmartClub wholesale.",
+    rationale_id: "Pendorong pemulihan: (1) Pasokan langsung dari sentra tani via rantai dingin Balaraja; (2) Porsi pangan segar ditingkatkan hingga 60%+ (margin 28–35%); (3) Penghentian grosir SmartClub bermargin tipis."
+  },
+  operating_profit_margin: {
+    title: "Operating Profit Margin · Core Business Earnings (-2.1% → +19.0%)",
+    title_id: "Margin Laba Usaha · Keuntungan Operasional Inti (-2,1% → +19,0%)",
+    summary: "Operating profit (EBIT) percentage generated from every rupiah of net sales.",
+    summary_id: "Persentase laba operasional (EBIT) yang dihasilkan dari setiap rupiah penjualan neto.",
+    formula: "Operating Profit (EBIT) ÷ Net Sales × 100%",
+    formula_id: "Laba Usaha (EBIT) ÷ Penjualan Neto × 100%",
+    benchmark: "Modern supermarket industry standard 4.0%–7.0%. Rebounds from -2.1% in 2020A to +19.0% in 2023P, halting 4 consecutive loss years (-Rp3.53T).",
+    benchmark_id: "Standar industri supermarket modern 4,0%–7,0%. Berbalik dari -2,1% di 2020A ke +19,0% di 2023P, menghentikan kerugian 4 tahun berturut-turut (-Rp3,53T).",
+    rationale: "Turnaround driver: The Scissors Effect—expanding high-margin compact fresh sales while eliminating Rp180B in mall rental cash burn and reducing SG&A overhead.",
+    rationale_id: "Pendorong pemulihan: Efek Gunting (Scissors Effect)—memperluas gerai segar bermargin tinggi sekaligus memangkas beban sewa mal Rp180M dan beban umum usaha."
+  },
+  roa: {
+    title: "Return on Assets (ROA) · Capital Deployment Quality (-9.0% → +11.7%)",
+    title_id: "Imbal Hasil atas Aset (ROA) · Mutu Alokasi Modal (-9,0% → +11,7%)",
+    summary: "Net bottom-line profitability generated across all corporate assets.",
+    summary_id: "Kemampuan seluruh aset korporat dalam menghasilkan laba bersih setelah pajak.",
+    formula: "Net Income ÷ Total Assets × 100%",
+    formula_id: "Laba Bersih ÷ Total Aset × 100%",
+    benchmark: "Supermarket industry peer average 4.5%–6.0%. Recovers from -9.0% in 2020A to +11.7% in 2023P, delivering superior capital productivity.",
+    benchmark_id: "Rata-rata industri supermarket 4,5%–6,0%. Pulih dari -9,0% di 2020A ke +11,7% di 2023P, memberikan produktivitas modal prima.",
+    rationale: "Turnaround driver: Downsizing hypermarket boxes lifts sales density per invested asset, transforming dead mall space into productive retail.",
+    rationale_id: "Pendorong pemulihan: Pengecilan luas hipermarket meningkatkan densitas penjualan per aset investasi, mengubah ruang mal pasif menjadi gerai produktif."
+  },
+  roe: {
+    title: "Return on Equity (ROE) · Shareholder Value Rebound (-219.4% → +32.3%)",
+    title_id: "Imbal Hasil atas Ekuitas (ROE) · Nilai Pemegang Saham (-219,4% → +32,3%)",
+    summary: "Rate of return generated on shareholders' equity capital.",
+    summary_id: "Tingkat pengembalian laba yang dihasilkan atas modal ekuitas pemegang saham.",
+    formula: "Net Income ÷ Total Stockholders' Equity × 100%",
+    formula_id: "Laba Bersih ÷ Total Ekuitas Pemegang Saham × 100%",
+    benchmark: "High-performing retailer hurdle 15.0%–25.0%. Recovers from catastrophic -219.4% in 2020A to +32.3% in 2023P.",
+    benchmark_id: "Target kinerja ritel unggul 15,0%–25,0%. Pulih dari posisi ekstrem -219,4% di 2020A menjadi +32,3% di 2023P.",
+    rationale: "Turnaround driver: Restores cumulative equity from depleted Rp185B back to Rp2.69T through retained earnings without any dilutive share issuance.",
+    rationale_id: "Pendorong pemulihan: Memulihkan ekuitas dari Rp185M menjadi Rp2,69T murni dari akumulasi laba bersih ditahan tanpa hak memesan efek terlebih dahulu (rights issue)."
+  }
+};
+
+const ieRatioDivisionData = {
+  hypermart: {
+    name: "Hypermart",
+    name_id: "Hypermart",
+    sales: "Rp5,698 B",
+    share: "84.5%",
+    ife: "2.16 (Average)",
+    ife_id: "2.16 (Rata-rata)",
+    efe: "2.42 (Medium)",
+    efe_id: "2.42 (Sedang)",
+    cell: "Cell V / VIII Drag",
+    presc: "Reducing Store Size & Online Order Centers",
+    presc_id: "Perampingan Luas & Hub Pesanan Daring",
+    shareExpl: "84.5% revenue concentration indicates high portfolio vulnerability to large-format hypermarket foot-traffic contraction.",
+    shareExpl_id: "Pangsa 84,5% menunjukkan konsentrasi pendapatan tinggi dan kerentanan terhadap penurunan kunjungan mal.",
+    ifeExpl: "Score 2.16 reflects strong logistics infrastructure offset by high PSAK 73 lease liabilities and consecutive loss years.",
+    ifeExpl_id: "Skor 2,16 mencerminkan keunggulan rantai pasok yang terbebani liabilitas sewa PSAK 73 dan kerugian beruntun.",
+    efeExpl: "Score 2.42 indicates moderate response to external headwinds; digital delivery partnerships offset mall restrictions.",
+    efeExpl_id: "Skor 2,42 mencerminkan respons memadai terhadap tantangan; kemitraan belanja daring mengimbangi pembatasan mal.",
+    prescExpl: "Downsize 6,000 m² boxes to 2,500 m² active storefronts with rear multi-platform on-demand delivery dispatch.",
+    prescExpl_id: "Perampingan gerai 6.000 m² ke 2.500 m² dengan hub pengantaran daring multi-platform di area belakang."
+  },
+  foodmart: {
+    name: "Foodmart & Primo",
+    name_id: "Foodmart & Primo",
+    sales: "Rp689 B",
+    share: "10.2%",
+    ife: "2.38 (Average)",
+    ife_id: "2.38 (Rata-rata)",
+    efe: "2.52 (Medium)",
+    efe_id: "2.52 (Sedang)",
+    cell: "Cell V Hold & Maintain",
+    presc: "Market Penetration (Gourmet)",
+    presc_id: "Penetrasi Pasar (Gourmet)",
+    shareExpl: "Contributes 10.2% of MPPA sales across 25 supermarket and gourmet locations.",
+    shareExpl_id: "Menyumbang 10,2% penjualan MPPA dari 25 gerai supermarket dan segmen gourmet.",
+    ifeExpl: "Established premium brand equity and fresh assortment, constrained by fragmented marketing.",
+    ifeExpl_id: "Ekuitas merek premium dan kurasi produk segar baik, namun terpecah oleh fragmentasi pemasaran.",
+    efeExpl: "Scores 2.52; affluent residential catchments provide stable basket sizes despite competition.",
+    efeExpl_id: "Skor 2,52; perumahan kelas atas memberikan nilai transaksi stabil di tengah persaingan ketat.",
+    prescExpl: "Rebrand mainstream Foodmart under the unified \"Hy-\" master brand family while protecting Primo as a premium niche.",
+    prescExpl_id: "Penyatuan merek Foodmart ke bawah bendera \"Hy-\" dan mempertahankan Primo untuk ceruk premium."
+  },
+  hyfresh: {
+    name: "Hyfresh",
+    name_id: "Hyfresh",
+    sales: "Rp135 B",
+    share: "2.0%",
+    ife: "2.85 (Average-Strong)",
+    ife_id: "2.85 (Rata-rata Kuat)",
+    efe: "3.10 (High)",
+    efe_id: "3.10 (Tinggi)",
+    cell: "Cell II Grow & Build",
+    presc: "Aggressive Store Rollout",
+    presc_id: "Ekspansi Gerai Agresif",
+    shareExpl: "Currently 2.0% share (9 stores); represents MPPA's primary turnaround growth vehicle.",
+    shareExpl_id: "Saat ini 2,0% pangsa (9 gerai); motor utama pertumbuhan pemulihan MPPA.",
+    ifeExpl: "Score 2.85 reflects superior sales density, lean operational costs, and high fresh mix (60%+).",
+    ifeExpl_id: "Skor 2,85 berkat densitas penjualan tinggi, biaya operasional ramping, dan bauran segar 60%+.",
+    efeExpl: "Score 3.10 capitalizes on neighborhood residential grocery shifts and proximity shopping demand.",
+    efeExpl_id: "Skor 3,10 memanfaatkan pergeseran konsumen ke belanja kebutuhan pokok di pemukiman sekitar.",
+    prescExpl: "Aggressively expand 500–1,000 m² neighborhood supermarket footprint competing directly with Alfamidi.",
+    prescExpl_id: "Ekspansi agresif gerai pemukiman 500–1.000 m² bersaing langsung dengan Alfamidi."
+  },
+  boston: {
+    name: "Boston Health & Beauty",
+    name_id: "Boston Health & Beauty",
+    sales: "Rp45 B",
+    share: "0.7%",
+    ife: "2.75 (Average-Strong)",
+    ife_id: "2.75 (Rata-rata Kuat)",
+    efe: "3.15 (High)",
+    efe_id: "3.15 (Tinggi)",
+    cell: "Cell II Grow & Build",
+    presc: "Online And In-Store & Store-in-Store",
+    presc_id: "Daring & Luring serta Toko-dalam-Toko",
+    shareExpl: "Contributes 0.7% of sales across 62 pharmacy and personal care locations.",
+    shareExpl_id: "Menyumbang 0,7% penjualan dari 62 lokasi apotek dan perawatan diri.",
+    ifeExpl: "Strong 28–32% gross margin profile and pharmacy licensing synergies across the store network.",
+    ifeExpl_id: "Profil margin kotor kuat 28–32% dan sinergi perizinan farmasi di jaringan gerai.",
+    efeExpl: "Score 3.15 is driven by massive pandemic-era health, vitamin, and personal wellness demand.",
+    efeExpl_id: "Skor 3,15 didorong lonjakan kebutuhan vitamin, sanitasi, dan kesehatan selama pandemi.",
+    prescExpl: "Deploy store-in-store modules inside all Hyfresh and resized Hypermart locations; exit unprofitable standalone mall kiosks.",
+    prescExpl_id: "Penerapan konsep toko-dalam-toko di semua Hyfresh dan gerai perampingan Hypermart; keluar dari kios mal mandiri yang rugi."
+  },
+  smartclub: {
+    name: "SmartClub Wholesale",
+    name_id: "SmartClub Wholesale",
+    sales: "Rp134 B",
+    share: "2.0%",
+    ife: "1.65 (Weak)",
+    ife_id: "1.65 (Lemah)",
+    efe: "1.60 (Low)",
+    efe_id: "1.60 (Rendah)",
+    cell: "Cell IX Harvest / Divest",
+    presc: "Liquidation & Lease Exit",
+    presc_id: "Likuidasi & Pengakhiran Sewa",
+    shareExpl: "2.0% share from 2 wholesale units; subscale operations drag consolidated profitability.",
+    shareExpl_id: "Pangsa 2,0% dari 2 gerai grosir; skala kecil membebani profitabilitas konsolidasi.",
+    ifeExpl: "Score 1.65 reflects thin wholesale gross margins, high working capital inventory tie-up, and B2B credit risk.",
+    ifeExpl_id: "Skor 1,65 karena margin grosir tipis, modal kerja tertahan di persediaan, dan risiko kredit B2B.",
+    efeExpl: "Score 1.60 reflects fierce price wars against dominant wholesale incumbents (Lotte Wholesale, IndoGrosir).",
+    efeExpl_id: "Skor 1,60 akibat perang harga menghadapi pemain grosir mapan (Lotte Wholesale, IndoGrosir).",
+    prescExpl: "Liquidate wholesale inventory and exit leases to release ~Rp70B in working capital to fund Hyfresh expansion.",
+    prescExpl_id: "Likuidasi persediaan dan pengakhiran sewa untuk membebaskan ~Rp70M modal kerja guna ekspansi Hyfresh."
+  },
+  fmx: {
+    name: "FMX (Foodmart Xpress)",
+    name_id: "FMX (Foodmart Xpress)",
+    sales: "Rp46 B",
+    share: "0.7%",
+    ife: "1.80 (Weak)",
+    ife_id: "1.80 (Lemah)",
+    efe: "1.85 (Low)",
+    efe_id: "1.85 (Rendah)",
+    cell: "Cell IX Harvest / Divest",
+    presc: "Hy-Express Pilot (12–18 mo gate)",
+    presc_id: "Uji Coba Hy-Express (Evaluasi 12–18 Bulan)",
+    shareExpl: "0.7% share across 14 convenience kiosks with chronic negative unit economics.",
+    shareExpl_id: "Pangsa 0,7% dari 14 kios minimarket dengan ekonomi unit yang merugi berkepanjangan.",
+    ifeExpl: "Score 1.80 reflects lack of scale against 30,000+ minimarket incumbents (Indomaret & Alfamart).",
+    ifeExpl_id: "Skor 1,80 karena kalah skala jauh dibanding 30.000+ gerai Indomaret & Alfamart.",
+    efeExpl: "Score 1.85 indicates inability to compete on convenience store density without billions in capex.",
+    efeExpl_id: "Skor 1,85 menunjukkan ketidakmampuan bersaing pada kerapatan gerai tanpa capex raksasa.",
+    prescExpl: "Prune chronically loss-making mall kiosks; pilot 5–6 asset-light transit pickup nodes under \"Hy-Express\" with strict milestones.",
+    prescExpl_id: "Tutup kios mal yang rugi; uji coba 5–6 titik transit ringan modal \"Hy-Express\" dengan target evaluasi ketat."
+  },
+  corporate: {
+    name: "MPPA Corporate Total",
+    name_id: "MPPA Total Konsolidasian",
+    sales: "Rp6,747 B",
+    share: "100.0%",
+    ife: "2.21 (Weighted Average)",
+    ife_id: "2.21 (Rata-rata Tertimbang)",
+    efe: "2.46 (Weighted Medium)",
+    efe_id: "2.46 (Sedang Tertimbang)",
+    cell: "Cell V Hold & Maintain",
+    presc: "Portfolio Restructuring",
+    presc_id: "Restrukturisasi Portofolio",
+    shareExpl: "Reconciled audited 2020 net retail sales across all 211 stores in the multi-format portfolio.",
+    shareExpl_id: "Total penjualan neto ritel 2020 auditan dari seluruh 211 gerai dalam portofolio.",
+    ifeExpl: "Weighted score 2.21 falls below the 2.50 threshold due to 4 consecutive loss years (-Rp3.53T) and PSAK 73 liabilities.",
+    ifeExpl_id: "Skor tertimbang 2,21 berada di bawah ambang 2,50 akibat rugi 4 tahun (-Rp3,53T) dan liabilitas PSAK 73.",
+    efeExpl: "Weighted score 2.46 indicates moderate external responsiveness, balancing e-grocery strengths against mall traffic restrictions.",
+    efeExpl_id: "Skor tertimbang 2,46 menunjukkan responsivitas sedang, mengimbangi kekuatan e-groceries dengan kendala mal.",
+    prescExpl: "Execute Alfamart/Alfamidi playbook: Downsize hypermarkets to fund compact fresh rollout and divest non-core wholesale.",
+    prescExpl_id: "Jalankan strategi terpadu: Perampingan hipermarket untuk mendanai gerai segar kompak dan divestasi grosir non-inti."
+  }
+};
+
 function matrixPreviewContent({kind, target}) {
+  if (kind === 'financial-ratio') {
+    const id = document.documentElement.lang === 'id';
+    const key = target.dataset.ratio;
+    const item = financialRatiosData[key];
+    if (!item) return ['Financial Ratio', '', '', ''];
+    const title = id ? item.title_id : item.title;
+    const summary = id ? item.summary_id : item.summary;
+    const formula = (id ? 'Formula' : 'Formula') + ': ' + (id ? item.formula_id : item.formula) + ' | ' + (id ? 'Patokan' : 'Benchmark') + ': ' + (id ? item.benchmark_id : item.benchmark);
+    const rationale = id ? item.rationale_id : item.rationale;
+    return [title, summary, rationale, formula];
+  }
+
+  if (kind === 'ie-ratio-cell') {
+    const id = document.documentElement.lang === 'id';
+    const cellType = target.dataset.ratioType;
+    const divisionKey = target.closest('tr')?.dataset.division || 'corporate';
+    const div = ieRatioDivisionData[divisionKey] || ieRatioDivisionData.corporate;
+    const divName = id ? div.name_id : div.name;
+
+    if (cellType === 'share') {
+      const title = divName + ' · ' + (id ? 'Rasio Kontribusi Penjualan' : 'Sales Contribution Ratio');
+      const summary = div.sales + ' (' + div.share + (id ? ' dari Total Penjualan MPPA Rp6.747 B)' : ' of Total MPPA Sales Rp6,747 B)');
+      const formula = (id ? 'Formula: Penjualan Format ÷ Total Penjualan MPPA (Rp6.747 B) × 100%' : 'Formula: Format Sales ÷ Total MPPA Sales (Rp6,747 B) × 100%') + ' | ' + (id ? 'Patokan: Mengukur konsentrasi pendapatan portofolio' : 'Benchmark: Measures revenue dependency across retail formats');
+      const rationale = id ? div.shareExpl_id : div.shareExpl;
+      return [title, summary, rationale, formula];
+    }
+    if (cellType === 'ife') {
+      const title = divName + ' · IFE ' + (id ? 'Skor Tertimbang' : 'Weighted Score') + ': ' + (id ? div.ife_id : div.ife);
+      const summary = id ? 'Skor Evaluasi Faktor Internal pada skala 1,0 (Lemah) hingga 4,0 (Kuat)' : 'Internal Factor Evaluation score on 1.0 (Weak) to 4.0 (Strong) scale';
+      const formula = (id ? 'Formula: ∑ (Bobot Faktor Internal × Peringkat)' : 'Formula: ∑ (Internal Factor Weights × Ratings)') + ' | ' + (id ? 'Ambang Batas: Nilai 2,50 membedakan kemampuan lemah (<2,50) dan kuat (≥2,50)' : 'Benchmark: 2.50 threshold divides weak (<2.50) from strong (≥2.50)');
+      const rationale = id ? div.ifeExpl_id : div.ifeExpl;
+      return [title, summary, rationale, formula];
+    }
+    if (cellType === 'efe') {
+      const title = divName + ' · EFE ' + (id ? 'Skor Tertimbang' : 'Weighted Score') + ': ' + (id ? div.efe_id : div.efe);
+      const summary = id ? 'Skor Evaluasi Faktor Eksternal pada skala 1,0 (Rendah) hingga 4,0 (Tinggi)' : 'External Factor Evaluation score on 1.0 (Low) to 4.0 (High) scale';
+      const formula = (id ? 'Formula: ∑ (Bobot Faktor Eksternal × Peringkat)' : 'Formula: ∑ (External Factor Weights × Ratings)') + ' | ' + (id ? 'Ambang Batas: Nilai 2,50 membedakan responsivitas rendah (<2,50) dari tinggi (≥2,50)' : 'Benchmark: 2.50 threshold divides low (<2.50) from high (≥2.50) responsiveness');
+      const rationale = id ? div.efeExpl_id : div.efeExpl;
+      return [title, summary, rationale, formula];
+    }
+    if (cellType === 'presc') {
+      const title = divName + ' · ' + div.cell + ' (' + (id ? div.presc_id : div.presc) + ')';
+      const summary = id ? 'Pemetaan 9-Sel Matriks Internal-External Fred David' : 'Fred David 9-Cell Internal-External Matrix positioning';
+      const formula = (id ? 'Koordinat: Sumbu X (IFE ' + (id ? div.ife_id : div.ife) + ') & Sumbu Y (EFE ' + (id ? div.efe_id : div.efe) + ')' : 'Coordinates: X-axis (IFE ' + div.ife + ') & Y-axis (EFE ' + div.efe + ')') + ' | ' + (id ? 'Wilayah Strategis: I (Tumbuh/Bangun), II (Pertahankan), III (Panen/Divestasi)' : 'Strategic Region: I (Grow & Build), II (Hold & Maintain), III (Harvest / Divest)');
+      const rationale = id ? div.prescExpl_id : div.prescExpl;
+      return [title, summary, rationale, formula];
+    }
+    return [divName, '', '', ''];
+  }
+
   if (kind === 'financial-cell') {
     const id = document.documentElement.lang === 'id';
     const row = target.parentElement;
@@ -438,7 +810,20 @@ function matrixPreviewContent({kind, target}) {
     if (factor) return [id ? factor.title_id : factor.title, id ? factor.defense_id : factor.defense];
   }
   if (kind === 'space') return [tr(data.name || company.shortName), tr(company.dimExpls?.[data.dim] || company.inspectorTitle || company.postureSub)];
-  const division = kind === 'gsm' ? window.gsmDivisionsData?.[data.division] : kind === 'bcg' ? bcgDivisionsData[data.division] : kind === 'ie' ? matrixIePreview?.(data.division) : null;
+  if (kind === 'ie') {
+    const divKey = data.division || target.closest('[data-division]')?.dataset.division || 'all';
+    const ieData = window.ieDivisionsData || {};
+    const div = ieData[divKey] || (typeof matrixIePreview === 'function' ? matrixIePreview(divKey) : null) || ieData.all;
+    if (div) {
+      const title = id ? (div.title_id || div.title) : div.title;
+      const explanation = id ? (div.defense_id || div.defense) : div.defense;
+      const efeBasis = id ? (div.efe_basis_id || div.efe_basis) : (div.efe_basis || '');
+      const ifeBasis = id ? (div.ife_basis_id || div.ife_basis) : (div.ife_basis || '');
+      const method = id ? (div.method_id || div.method) : (div.method || '');
+      return [title, explanation, efeBasis, ifeBasis, method];
+    }
+  }
+  const division = kind === 'gsm' ? window.gsmDivisionsData?.[data.division] : kind === 'bcg' ? bcgDivisionsData[data.division] : null;
   if (division) return [id ? division.title_id : division.title, id ? division.defense_id : division.defense];
   return [tr(data.name || data.factor) || target.getAttribute('aria-label') || target.textContent.trim(), tr(data.rationale || data.evidence || data.expl)];
 }
@@ -454,8 +839,12 @@ let previewTarget;
 listen(document, 'pointermove', event => {
   const strategy = event.target.closest?.('.qspm-strat-card');
   const financialCell = event.target.closest?.('.financial-slide-wrapper .fin-table tbody td:is(.td-num,.td-desc)');
+  const financialRatioRow = event.target.closest?.('.ratios-slide-wrapper .ratio-table tbody tr[data-ratio]');
+  const ieRatioCell = event.target.closest?.('.ie-table tbody td:is(.ie-td-share, .ie-td-ife, .ie-td-efe, .ie-td-presc)');
   const match = strategy ? {kind: 'qspm-strategy', target: strategy}
     : financialCell?.parentElement.querySelector('.td-desc') ? {kind: 'financial-cell', target: financialCell}
+    : financialRatioRow ? {kind: 'financial-ratio', target: financialRatioRow}
+    : ieRatioCell ? {kind: 'ie-ratio-cell', target: ieRatioCell}
     : findMatrixItem(event.target);
   if (!match || matrixDrawer.open || event.pointerType === 'touch') {
     matrixPreview.hidden = true;
@@ -470,7 +859,9 @@ listen(document, 'pointermove', event => {
     heading.textContent = title;
     const summary = document.createElement('span');
     const detail = explanation?.replace(/^(Rationale|Rasional):\s*/, '').trim() || '';
-    summary.textContent = detail.length > 260 ? detail.slice(0, 260).replace(/\s+\S*$/, '') + '…' : detail;
+    summary.textContent = match.kind === 'ie'
+      ? (detail.length > 140 ? detail.slice(0, 140).replace(/\s+\S*$/, '') + '…' : detail)
+      : (detail.length > 260 ? detail.slice(0, 260).replace(/\s+\S*$/, '') + '…' : detail);
     const hint = document.createElement('small');
     const id = document.documentElement.lang === 'id';
     hint.textContent = match.kind === 'qspm-strategy'
@@ -482,6 +873,12 @@ listen(document, 'pointermove', event => {
     const entries = match.kind === 'financial-cell' ? [
       [weightReason ? (id ? 'Mengapa margin bisa naik' : 'Why margin could rise') : (id ? 'Perhitungan dan sumber' : 'Calculation and basis'), rationale],
       [id ? 'Dasar asumsi 50%' : 'Basis for the 50% assumption', weightReason],
+    ] : match.kind === 'financial-ratio' ? [
+      [id ? 'Formula & Patokan Industri' : 'Formula & Industry Benchmark', weightReason],
+      [id ? 'Analisis Pemulihan Strategis' : 'Strategic Turnaround Rationale', rationale],
+    ] : match.kind === 'ie-ratio-cell' ? [
+      [id ? 'Formula & Metodologi Perhitungan' : 'Calculation Formula & Methodology', weightReason],
+      [id ? 'Makna & Implikasi Portofolio' : 'Strategic Meaning & Portfolio Role', rationale],
     ] : match.kind === 'qspm-strategy' ? [
       [id ? 'Mengapa opsi ini masuk daftar' : 'Why this option made the shortlist', rationale],
       [id ? 'Cara kami membentuk dua opsi' : 'How we narrowed it to two', weightReason],
@@ -489,6 +886,10 @@ listen(document, 'pointermove', event => {
       [id ? 'Dari mana bobotnya' : 'Where the weight comes from', weightReason],
       [id ? 'Mengapa skor AS berbeda' : 'Why we gave these AS ratings', rationale],
       [id ? 'Cara menghitung TAS' : 'How TAS is calculated', math],
+    ] : match.kind === 'ie' ? [
+      [id ? 'Dasar Penentuan EFE (Eksternal)' : 'How EFE Was Derived (External)', rationale],
+      [id ? 'Dasar Penentuan IFE (Internal)' : 'How IFE Was Derived (Internal)', weightReason],
+      [id ? 'Metodologi Fred David & Rekonsiliasi' : 'Fred David Methodology & Reconciliation', math],
     ] : [[labels[0], rationale], [labels[1], weightReason]];
     const sections = entries.filter(([, text]) => text).map(([label, text]) => {
       const section = document.createElement('div');
@@ -503,14 +904,16 @@ listen(document, 'pointermove', event => {
       }
       return section;
     });
-    matrixPreview.replaceChildren(heading, ...(detail ? [summary] : []), ...sections, ...(match.kind === 'financial-cell' ? [] : [hint]));
+    matrixPreview.replaceChildren(heading, ...(detail ? [summary] : []), ...sections, ...(match.kind === 'financial-cell' || match.kind === 'financial-ratio' || match.kind === 'ie-ratio-cell' ? [] : [hint]));
     previewTarget = match.target;
   }
   matrixPreview.hidden = false;
   const {width, height} = matrixPreview.getBoundingClientRect();
+  const isRightSide = event.clientX > window.innerWidth * 0.52;
+  const left = isRightSide ? event.clientX - width - 16 : event.clientX + 16;
   const below = event.clientY + 16;
-  const top = below + height + 8 <= window.innerHeight ? below : event.clientY - height - 16;
-  matrixPreview.style.left = Math.max(8, Math.min(event.clientX + 12, window.innerWidth - width - 8)) + 'px';
+  const top = (below + height + 8 <= window.innerHeight) ? below : Math.max(8, event.clientY - height - 16);
+  matrixPreview.style.left = Math.max(8, Math.min(left, window.innerWidth - width - 8)) + 'px';
   matrixPreview.style.top = Math.max(8, top) + 'px';
 });
 listen(document, 'pointerout', event => {
@@ -881,6 +1284,53 @@ function openMatrixDrawer(match) {
       </div>
     `;
     content.append(calcSection);
+  }
+
+  // IE Derivations and Fred David Reconciliation detail if present
+  if (kind === 'ie' && divisionData) {
+    const efeText = id ? (divisionData.efe_basis_id || divisionData.efe_basis) : (divisionData.efe_basis || '');
+    const ifeText = id ? (divisionData.ife_basis_id || divisionData.ife_basis) : (divisionData.ife_basis || '');
+    const methodText = id ? (divisionData.method_id || divisionData.method) : (divisionData.method || '');
+
+    if (efeText || ifeText || methodText) {
+      const ieSection = document.createElement('section');
+      ieSection.className = 'matrix-detail-section';
+      ieSection.innerHTML = `
+        <div class="matrix-section-header">
+          <span class="matrix-sec-icon" style="color:#0055b8;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+          </span>
+          <h4>${id ? 'Derivasi Skor IFE & EFE (Metodologi Fred David Bab 6)' : 'IFE & EFE Score Derivations (Fred David Ch. 6 Methodology)'}</h4>
+        </div>
+        <div class="matrix-calc-card" style="display:flex;flex-direction:column;gap:8px;">
+          ${efeText ? `
+            <div class="matrix-equation">
+              <h5 style="color:#00875a;font-weight:800;font-size:12px;margin-bottom:3px;">
+                ${id ? '1. Dasar Penentuan Skor EFE (Dinamika Eksternal Pasar)' : '1. How EFE Score Was Derived (External Sector Drivers)'}
+              </h5>
+              <p class="matrix-calc-row" style="color:#29272b;line-height:1.45;font-size:12px;">${efeText}</p>
+            </div>
+          ` : ''}
+          ${ifeText ? `
+            <div class="matrix-equation">
+              <h5 style="color:#0055b8;font-weight:800;font-size:12px;margin-bottom:3px;">
+                ${id ? '2. Dasar Penentuan Skor IFE (Ekonomi Unit Internal Format)' : '2. How IFE Score Was Derived (Internal Unit Economics & Leases)'}
+              </h5>
+              <p class="matrix-calc-row" style="color:#29272b;line-height:1.45;font-size:12px;">${ifeText}</p>
+            </div>
+          ` : ''}
+          ${methodText ? `
+            <div class="matrix-equation">
+              <h5 style="color:#b45309;font-weight:800;font-size:12px;margin-bottom:3px;">
+                ${id ? '3. Metodologi Fred David & Rekonsiliasi Audit Matematis' : '3. Fred David Textbook Methodology & Audit Mathematical Reconciliation'}
+              </h5>
+              <p class="matrix-calc-row" style="color:#29272b;line-height:1.45;font-size:12px;">${methodText}</p>
+            </div>
+          ` : ''}
+        </div>
+      `;
+      content.append(ieSection);
+    }
   }
 
   // 4. Strategic Recommendation Section

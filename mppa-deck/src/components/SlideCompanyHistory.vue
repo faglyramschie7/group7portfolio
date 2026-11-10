@@ -28,7 +28,7 @@
               <strong>LPPF</strong>
             </span>
           </span>
-          <img v-else :src="'assets/' + milestone.image" alt="">
+          <img v-else :src="'/assets/' + milestone.image" alt="">
           <span :id="'history-' + milestone.year" hidden>{{ milestone[language].description }}</span>
         </span>
         <span class="history-caption">

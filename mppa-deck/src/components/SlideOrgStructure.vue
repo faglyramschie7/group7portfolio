@@ -57,7 +57,7 @@
           <p><strong>{{ selectedNode.kpi }}</strong></p>
         </section>
         <figure class="org-detail-photo">
-          <img :src="'assets/' + selectedPhoto.file" alt="">
+          <img :src="'/assets/' + selectedPhoto.file" alt="">
           <figcaption>{{ selectedPhoto.caption }}</figcaption>
         </figure>
         <section>

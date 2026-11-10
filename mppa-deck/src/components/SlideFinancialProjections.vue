@@ -143,7 +143,7 @@
             </thead>
             <tbody>
               <tr class="clickable-row" @click="openDetail('revenue')" title="Click for detailed mathematical derivation">
-                <td class="td-bold td-interactive">{{ t("Revenues (Sales)") }} <span class="row-inspect-icon">↗</span></td>
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Revenues (Sales)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">8,654,646</td>
                 <td class="td-num">6,746,594</td>
                 <td class="td-num td-proj">6,881,526</td>
@@ -152,7 +152,7 @@
                 <td class="td-desc">{{ t("+2% ('21), +3% ('22), +6% ('23): Net growth reflects opening 50 compact Hyfresh stores (+Rp750B) while reducing store size 45 hypermarkets and closing SmartClub (-Rp500B low-margin bulk sales).") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('cogs')" title="Click for COGS breakdown and direct farm sourcing model">
-                <td class="td-interactive">{{ t("Cost of Goods Sold (COGS)") }} <span class="row-inspect-icon">↗</span></td>
+                <td><span class="row-inspect-label"><span>{{ t("Cost of Goods Sold (COGS)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">7,074,249</td>
                 <td class="td-num">5,439,936</td>
                 <td class="td-num td-proj">3,440,763</td>
@@ -161,7 +161,7 @@
                 <td class="td-desc">{{ t("COGS reduced to 50% of sales through direct farm procurement, bypassing distributor markups and leveraging 66,755 m² central cold-chain storage to slash perishable waste.") }}</td>
               </tr>
               <tr class="row-subtotal clickable-row" @click="openDetail('gross_profit')" title="Click for Gross Margin expansion drivers">
-                <td class="td-bold td-interactive">{{ t("Gross Profit") }} <span class="row-inspect-icon">↗</span></td>
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Gross Profit") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-bold">1,580,397</td>
                 <td class="td-num td-bold">1,306,658</td>
                 <td class="td-num td-bold td-proj">3,440,763</td>
@@ -170,7 +170,7 @@
                 <td class="td-desc td-bold">{{ t("Gross margin expands to 50% via 3 strategic drivers: (1) Portfolio shift to high-margin perishables & fresh bakery (28–35% margin) vs bulk FMCG; (2) Direct farm cold-chain sourcing cutting middleman margins & spoilage; (3) Elimination of low-margin SmartClub wholesale dilution.") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('opex')" title="Click for OpEx buffer analysis">
-                <td class="td-interactive">{{ t("Operating Expenses (OpEx)") }} <span class="row-inspect-icon">↗</span></td>
+                <td><span class="row-inspect-label"><span>{{ t("Operating Expenses (OpEx)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">1,776,502</td>
                 <td class="td-num">1,446,926</td>
                 <td class="td-num td-proj">2,133,273</td>
@@ -181,7 +181,7 @@
                 </td>
               </tr>
               <tr class="row-highlight clickable-row" @click="openDetail('ebit')" title="Click for EBIT turnaround formula & bridge">
-                <td class="td-bold td-interactive td-profit">{{ t("EBIT (Operating Income)") }} <span class="row-inspect-icon">↗</span></td>
+                <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("EBIT (Operating Income)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-196,105</td>
                 <td class="td-num td-loss">-140,268</td>
                 <td class="td-num td-bold td-profit">1,307,490</td>
@@ -190,7 +190,7 @@
                 <td class="td-desc td-profit">{{ t("Turnaround driven by operational scissors effect: high-yield compact fresh store gross profit combined with PSAK 73 lease expense reduction from reducing store size 45 large hypermarket anchor spaces.") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and covenant details">
-                <td class="td-interactive">{{ t("Net Finance Costs (Interest)") }} <span class="row-inspect-icon">↗</span></td>
+                <td><span class="row-inspect-label"><span>{{ t("Net Finance Costs (Interest)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">118,496</td>
                 <td class="td-num">267,419</td>
                 <td class="td-num td-proj">267,519</td>
@@ -217,7 +217,7 @@
                 <td class="td-desc">{{ t("Corporate tax rate applied: statutory 23% in 2021–2022, 25% in 2023, reflecting full compliance with Indonesian fiscal regulations.") }}</td>
               </tr>
               <tr class="row-total clickable-row" @click="openDetail('net_income')" title="Click for Net Income & equity restoration details">
-                <td class="td-bold td-interactive td-profit">{{ t("Net Income (PAT)") }} <span class="row-inspect-icon">↗</span></td>
+                <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("Net Income (PAT)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-552,674</td>
                 <td class="td-num td-loss">-405,307</td>
                 <td class="td-num td-bold td-profit">800,778</td>
@@ -254,7 +254,7 @@
             <tbody>
               <tr class="row-section"><td colspan="7">{{ t("ASSETS") }}</td></tr>
               <tr class="clickable-row" @click="openDetail('debt')">
-                <td class="td-interactive">{{ t("Cash & Short-Term Investments") }} <span class="row-inspect-icon">↗</span></td>
+                <td><span class="row-inspect-label"><span>{{ t("Cash & Short-Term Investments") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">304,295</td>
                 <td class="td-num">299,805</td>
                 <td class="td-num td-proj">1,776,827</td>
@@ -272,7 +272,7 @@
                 <td class="td-desc">{{ t("Maintained at 7% of revenue; predominantly instant consumer cash transactions and digital e-wallet settlements.") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('revenue')">
-                <td class="td-interactive">{{ t("Inventories") }} <span class="row-inspect-icon">↗</span></td>
+                <td><span class="row-inspect-label"><span>{{ t("Inventories") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">1,191,567</td>
                 <td class="td-num">964,503</td>
                 <td class="td-num td-proj">481,707</td>
@@ -336,7 +336,7 @@
                 <td class="td-desc">{{ t("Supplier trade payables managed smoothly with shortened payment cycles, restoring tier-1 supplier trust.") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and self-funding sources">
-                <td class="td-interactive">{{ t("Long-Term Bank Debt") }} <span class="row-inspect-icon">↗</span></td>
+                <td><span class="row-inspect-label"><span>{{ t("Long-Term Bank Debt") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">250,000</td>
                 <td class="td-num">0</td>
                 <td class="td-num td-proj">2,000</td>
@@ -345,7 +345,7 @@
                 <td class="td-desc">{{ t("Zero new bank borrowing; preserves BNI credit line covenants (ceiling 250% debt-to-equity) without financial distress.") }}</td>
               </tr>
               <tr class="row-highlight clickable-row" @click="openDetail('net_income')" title="Click for equity restoration details">
-                <td class="td-bold td-interactive td-profit">{{ t("Total Stockholders' Equity") }} <span class="row-inspect-icon">↗</span></td>
+                <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("Total Stockholders' Equity") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">530,681</td>
                 <td class="td-num td-loss">184,734</td>
                 <td class="td-num td-bold td-profit">985,512</td>
@@ -380,22 +380,22 @@
             </thead>
             <tbody>
               <tr class="clickable-row" @click="openDetail('epsebit')">
-                <td class="td-bold td-interactive">{{ t("Plan A: 100% Stock") }} <span class="row-inspect-icon">↗</span><br><small>Issue 1.96M Shares</small></td>
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Plan A: 100% Stock") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span><small>Issue 1.96M Shares</small></td>
                 <td class="td-num">Rp 7,700M<br><small>EPS: Rp 1.71</small></td>
                 <td class="td-num">Rp 11,550M<br><small>EPS: Rp 2.56</small></td>
                 <td class="td-num">Rp 13,860M<br><small>EPS: Rp 3.07</small></td>
                 <td class="td-desc">{{ t("Dilutes existing shareholders; depressed P/E makes share issuance unattractive") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('epsebit')">
-                <td class="td-bold td-interactive">{{ t("Plan B: 100% Debt") }} <span class="row-inspect-icon">↗</span><br><small>Rp 5,000M Debt @ 5%</small></td>
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Plan B: 100% Debt") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span><small>Rp 5,000M Debt @ 5%</small></td>
                 <td class="td-num">Rp 7,508M<br><small>EPS: Rp 2.94</small></td>
                 <td class="td-num">Rp 11,358M<br><small>EPS: Rp 4.45</small></td>
                 <td class="td-num">Rp 13,668M<br><small>EPS: Rp 5.36</small></td>
                 <td class="td-desc">{{ t("Higher EPS, but introduces Rp 250M interest burden & breach of loan conditions risk") }}</td>
               </tr>
               <tr class="row-winner clickable-row" @click="openDetail('epsebit')">
-                <td class="td-bold td-winner td-interactive">
-                  {{ t("★ RECOMMENDED:") }} <span class="row-inspect-icon">↗</span><br>
+                <td class="td-bold td-winner">
+                  <span class="row-inspect-label"><span>{{ t("★ RECOMMENDED:") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span>
                   <strong>{{ t("Internal Self-Funding") }}</strong>
                 </td>
                 <td class="td-num td-bold td-winner">
@@ -1001,10 +1001,11 @@ function closeDetail() {
 .td-bold { font-weight: 800; color: #0f172a; }
 .td-desc { font-size: 0.77cqw; color: #475569; line-height: 1.35; }
 
-.td-interactive {
+.row-inspect-label {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: .35cqw;
 }
 .row-inspect-icon {
   font-size: 0.65cqw;
