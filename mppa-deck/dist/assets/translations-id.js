@@ -1,5 +1,8 @@
 /* Indonesian translations for the MPPA study. Original source titles and proper names are retained. */
 window.MPPA_TRANSLATIONS_ID = {
+  "Fred David’s classification": "Klasifikasi Fred David",
+  "Evidence from the matrices": "Bukti dari matriks",
+  "How it fits the recommendation": "Peran dalam rekomendasi",
   "TOWS to QSPM: How we built the two options": "Dari TOWS ke QSPM: Cara kami menyusun dua opsi",
   "TOWS generated 16 ideas. We bundled related ideas into two options for comparison. QSPM scores those two options.": "TOWS menghasilkan 16 ide. Kami menggabungkan ide yang berkaitan menjadi dua opsi untuk dibandingkan. QSPM memberi skor pada kedua opsi itu.",
   "SO3 (open compact Hyfresh stores) + SO4 (unify brands under Hy-) → Strategy 1": "SO3 (buka gerai Hyfresh kompak) + SO4 (satukan merek di bawah Hy-) → Strategi 1",

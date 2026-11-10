@@ -364,6 +364,18 @@ function findMatrixItem(element) {
   return null;
 }
 function matrixPreviewContent({kind, target}) {
+  if (kind === 'qspm-strategy') {
+    const id = document.documentElement.lang === 'id';
+    const expansion = target.dataset.qspmStrategy === '1';
+    const reason = expansion
+      ? (id ? 'Kami memilih paket ini sebagai opsi pertumbuhan. SO3 membuka gerai Hyfresh kompak dekat pelanggan, dan SO4 menyatukan merek terpilih di bawah Hy-. Keduanya menjawab pertanyaan yang sama: dari mana pertumbuhan penjualan baru akan datang?' : 'We shortlisted this as the growth option. SO3 puts compact Hyfresh stores closer to shoppers, and SO4 brings selected banners under Hy-. Together they answer one question: where can new sales growth come from?')
+      : (id ? 'Kami memilih paket ini sebagai opsi untuk memperbaiki gerai yang sudah ada. WO1 mengurangi ruang Hypermart yang kurang produktif, dan SO1 memanfaatkan mitra pengiriman. Bersama-sama, keduanya bisa menekan biaya ruang dan melayani pesanan daring.' : 'We shortlisted this as the option for improving existing stores. WO1 reduces underused Hypermart space, and SO1 brings in delivery partners. Together they can lower space costs and serve online orders.');
+    const method = id
+      ? 'Pada Langkah 3 QSPM, kami menggabungkan ide TOWS yang terkait dan memilih dua paket yang layak untuk dibandingkan. Ide pendukung seperti pembelian langsung dari petani atau negosiasi sewa bisa dijalankan di dalam paket tersebut. QSPM kemudian menilai paket mana yang diprioritaskan.'
+      : 'In QSPM Step 3, we grouped related TOWS ideas into two feasible packages. Supporting ideas such as direct farmer sourcing or rent renegotiation can sit within those packages. QSPM then scores which package should lead.';
+    return [target.querySelector('.qspm-card-title').textContent, '', reason, method];
+  }
+
   if (kind === 'qspm') {
     const [, weight, s1, tas1, s2, tas2] = Array.from(target.cells, cell => cell.textContent.trim());
     const id = document.documentElement.lang === 'id';
@@ -416,7 +428,8 @@ function clearMatrixSelection() {
 }
 let previewTarget;
 listen(document, 'pointermove', event => {
-  const match = findMatrixItem(event.target);
+  const strategy = event.target.closest?.('.qspm-strat-card');
+  const match = strategy ? {kind: 'qspm-strategy', target: strategy} : findMatrixItem(event.target);
   if (!match || matrixDrawer.open || event.pointerType === 'touch') {
     matrixPreview.hidden = true;
     previewTarget = null;
@@ -432,12 +445,17 @@ listen(document, 'pointermove', event => {
     const detail = explanation?.replace(/^(Rationale|Rasional):\s*/, '').trim() || '';
     summary.textContent = detail.length > 260 ? detail.slice(0, 260).replace(/\s+\S*$/, '') + '…' : detail;
     const hint = document.createElement('small');
-    hint.textContent = document.documentElement.lang === 'id' ? 'Klik dua kali untuk rincian' : 'Double-click for full details';
     const id = document.documentElement.lang === 'id';
+    hint.textContent = match.kind === 'qspm-strategy'
+      ? (id ? 'Klik untuk bukti dan sumber' : 'Click for evidence and sources')
+      : (id ? 'Klik dua kali untuk rincian' : 'Double-click for full details');
     const labels = match.kind === 'tows'
       ? (id ? ['Faktor yang kami pasangkan', 'Mengapa kami memilih strategi ini'] : ['Factors we matched', 'Why we chose this strategy'])
       : (id ? ['Mengapa kami memberi nilai ini', 'Mengapa faktor ini diberi bobot ini'] : ['Why we gave this rating', 'Why we chose this weight']);
-    const entries = match.kind === 'qspm' ? [
+    const entries = match.kind === 'qspm-strategy' ? [
+      [id ? 'Mengapa opsi ini masuk daftar' : 'Why this option made the shortlist', rationale],
+      [id ? 'Cara kami membentuk dua opsi' : 'How we narrowed it to two', weightReason],
+    ] : match.kind === 'qspm' ? [
       [id ? 'Dari mana bobotnya' : 'Where the weight comes from', weightReason],
       [id ? 'Mengapa skor AS berbeda' : 'Why we gave these AS ratings', rationale],
       [id ? 'Cara menghitung TAS' : 'How TAS is calculated', math],
@@ -940,6 +958,29 @@ listen(document, 'click', event => {
         <p class="qspm-detail-key">${id ? 'David, Bab 6, Tabel 6-4 dan 6-5, menjelaskan metode QSPM.' : 'David’s Chapter 6, Tables 6-4 and 6-5, explains the QSPM method used to compare the case proposals.'}</p>
       </section>
     `;
+    const illustration = card.querySelector('.qspm-strategy-image')?.cloneNode();
+    if (illustration) {
+      illustration.className = 'qspm-detail-image';
+      const figure = document.createElement('figure');
+      figure.className = 'qspm-detail-figure';
+      const caption = document.createElement('figcaption');
+      caption.textContent = id ? 'Ilustrasi konsep' : 'Concept illustration';
+      figure.append(illustration, caption);
+      content.prepend(figure);
+    }
+    const total = card.querySelector('.qspm-card-tas strong')?.textContent.trim();
+    if (total) {
+      const score = document.createElement('div');
+      score.className = 'matrix-kpi-card qspm-detail-total';
+      const label = document.createElement('span');
+      label.className = 'matrix-kpi-label';
+      label.textContent = id ? 'Total skor QSPM' : 'Total QSPM score';
+      const value = document.createElement('strong');
+      value.className = 'matrix-kpi-val';
+      value.textContent = total;
+      score.append(label, value);
+      content.prepend(score);
+    }
     content.scrollTop = 0;
     (document.fullscreenElement || document.body).append(matrixDrawer);
     matrixDrawer.showModal();
