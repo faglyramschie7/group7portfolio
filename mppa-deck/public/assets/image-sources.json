@@ -87,5 +87,19 @@
     "file": "matahari-department-store-logo.svg",
     "source": "https://matahari.com/cdn/shop/files/logo.svg",
     "desc": "Current Matahari Department Store logo"
+  },
+  {
+    "file": "psbb-jakarta-supermarket.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Panic_buying_in_Jakarta_due_to_COVID-19.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "SquidHomme",
+    "desc": "Indonesian consumers in face masks shopping in a Jakarta modern supermarket during early COVID-19 restriction announcements (March/April 2020)"
+  },
+  {
+    "file": "psbb-tangerang-rules.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PSBB-LSSR_information_in_South_Tangerang_City,_Indonesia.jpg",
+    "license": "Public Domain",
+    "author": "Indonesian General Elections Commission in South Tangerang",
+    "desc": "Official South Tangerang municipal PSBB rules infographic illustrating movement restrictions and essential food sector exemptions (April 2020)"
   }
 ]

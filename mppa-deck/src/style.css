@@ -3604,3 +3604,338 @@
 .exhibit6-visual-summary .ex6-donut { width: 11cqw; }
 .exhibit6-visual-summary .ex6-donut span { font-size: 1.65cqw; }
 .exhibit6-visual-summary .ex6-donut small { font-size: .78cqw; }
+
+.pestle-detail-slide .pestle-selector { margin-bottom: .7cqw; }
+.pestle-detail-slide .technology-tabs { margin: 0 0 .55cqw; }
+.pestle-detail-slide .pestle-intro {
+  margin: 0 0 .85cqw;
+  padding: .58cqw .8cqw;
+  border-left: 2px solid #df0036;
+  background: #faf6f8;
+  font-size: 1.02cqw;
+  line-height: 1.38;
+}
+.pestle-detail-slide .pestle-detail-layout,
+.pestle-detail-slide .technology-channel-body,
+.pestle-detail-slide .technology-reach-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: .45cqw; }
+.pestle-detail-slide .pestle-detail-layout { align-content: start; }
+.pestle-detail-slide .pestle-evidence-panel { min-width: 0; }
+
+.pestle-detail-slide .pestle-content { flex: 1; min-height: 0; }
+.pestle-detail-slide .pestle-content {
+  display: grid;
+  grid-template-columns: minmax(0, 27fr) minmax(0, 73fr);
+  align-items: start;
+  gap: 2cqw;
+  margin-top: 1cqw;
+}
+.pestle-detail-slide .pestle-tech-intro {
+  padding: .9cqw 1cqw;
+  border-left: 2px solid #df0036;
+  background: #faf6f8;
+}
+.pestle-detail-slide .pestle-tech-intro h3 { margin: 0 0 .5cqw; font-size: 1.32cqw; }
+.pestle-detail-slide .pestle-tech-intro p { margin: 0; font-size: 1.02cqw; line-height: 1.45; }
+.pestle-detail-slide .pestle-tech-intro p + p { margin-top: .7cqw; padding-top: .65cqw; border-top: 1px solid #e9dfe5; }
+.technology-detail .technology-matched-panel { min-width: 0; }
+.technology-detail .matched-bar-row { margin-bottom: .5cqw; }
+
+.pestle-detail-slide .pestle-selector {
+  position: absolute;
+  top: 9%;
+  right: 5.5%;
+  margin: 0;
+  gap: .25cqw;
+}
+.pestle-detail-slide .pestle-selector button {
+  display: grid;
+  place-items: center;
+  width: 1.75cqw;
+  height: 1.65cqw;
+  padding: 0;
+  border: 0;
+  border-radius: .18cqw;
+  background: #f0edf0;
+  color: #66616a;
+  font-size: .95cqw;
+  font-weight: 700;
+}
+.pestle-detail-slide .pestle-selector button[aria-pressed="true"] {
+  background: #c90035;
+  color: #fff;
+}
+
+.pestle-retail-sector {
+  margin-top: .8cqw;
+  padding: .75cqw .9cqw;
+  border: 1px solid #e9dfe5;
+  background: #faf7f9;
+}
+.pestle-retail-sector h4 { margin: 0 0 .45cqw; font-size: 1.1cqw; }
+.pestle-retail-periods { display: flex; gap: 2cqw; }
+.pestle-retail-periods div { display: flex; align-items: baseline; gap: .45cqw; font-size: .96cqw; }
+.pestle-retail-periods strong { color: #a8002b; font-size: 1.45cqw; }
+.pestle-retail-sector p { margin: .45cqw 0 0; font-size: .86cqw; line-height: 1.35; }
+
+.pestle-retail-periods { gap: 2.5cqw; }
+.pestle-retail-periods .retail-index-comparison { align-items: center; gap: .65cqw; }
+.retail-index-ring {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 4.4cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(#df0036 var(--drop), #ded6dc 0);
+}
+.pestle-retail-periods .retail-index-ring strong {
+  display: grid;
+  place-items: center;
+  width: 76%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #faf7f9;
+  font-size: 1.03cqw;
+}
+.retail-index-comparison small { display: block; color: #665861; font-size: .82cqw; }
+
+.pestle-retail-growth { width: 100%; }
+.pestle-retail-growth h5 { margin: 0 0 .3cqw; font-size: .95cqw; }
+.retail-growth-row {
+  display: grid;
+  grid-template-columns: 2.5cqw minmax(0, 1fr) 3.6cqw;
+  align-items: center;
+  gap: .4cqw;
+  margin: .24cqw 0;
+  font-size: .84cqw;
+}
+.retail-growth-row strong { text-align: right; font-variant-numeric: tabular-nums; }
+.retail-growth-track {
+  position: relative;
+  height: .68cqw;
+  background: linear-gradient(to right, #eee8ec 49.75%, #a89ca5 49.75% 50.25%, #eee8ec 50.25%);
+}
+.retail-growth-track i { position: absolute; inset-block: 0; width: var(--bar); }
+.retail-growth-track .gain { left: 50%; background: #07834b; }
+.retail-growth-track .loss { right: 50%; background: #df0036; }
+
+.pestle-detail-slide .pestle-range-counter { margin: .8cqw 0 .5cqw; }
+.pestle-counter-digits { display: flex; align-items: center; gap: .35cqw; }
+.pestle-counter-digit {
+  display: grid;
+  place-items: center;
+  width: 3.9cqw;
+  height: 4.8cqw;
+  border-radius: .35cqw;
+  background: linear-gradient(#c40031 49%, #930023 49%, #930023 51%, #df0036 51%);
+  color: #fff;
+  font-size: 3.6cqw;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  animation: pestle-counter-flip .45s ease-out both;
+}
+.pestle-counter-digit:nth-child(2) { animation-delay: .06s; }
+.pestle-counter-digit:nth-child(4) { animation-delay: .12s; }
+.pestle-counter-digit:nth-child(5) { animation-delay: .18s; }
+.pestle-counter-dash { padding: 0 .35cqw; color: #a8002b; font-size: 2.4cqw; }
+.pestle-counter-unit { display: block; margin-top: .65cqw; font-size: 1.17cqw; font-weight: 700; }
+.pestle-range-counter p { margin: .35cqw 0 0; font-size: .95cqw; color: #73616c; }
+@keyframes pestle-counter-flip {
+  from { transform: perspective(220px) rotateX(-75deg); opacity: .4; }
+  to { transform: perspective(220px) rotateX(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pestle-counter-digit { animation: none; }
+}
+
+/* =========================================================
+   PESTLE POLITICAL SLIDE (SLIDE 16) - HISTORICAL PHOTO & EXEMPTION
+   ========================================================= */
+.pestle-political-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 1.6cqw;
+  align-items: start;
+  margin-top: .4cqw;
+}
+.pestle-political-left {
+  display: flex;
+  flex-direction: column;
+  gap: .8cqw;
+  min-width: 0;
+}
+.pestle-political-container .pestle-timeline {
+  display: grid;
+  gap: .35cqw;
+  margin: 0;
+}
+.pestle-political-container .pestle-timeline > div {
+  display: grid;
+  grid-template-columns: 8.5cqw 1fr;
+  gap: .8cqw;
+  padding: .45cqw 0;
+  border-bottom: 1px solid #ebdbe2;
+  font-size: .95cqw;
+  line-height: 1.35;
+}
+.pestle-political-container .pestle-timeline strong {
+  color: #df0036;
+  font-weight: 700;
+}
+.pestle-political-container .pestle-evidence-text {
+  margin: .1cqw 0 0;
+  font-size: .88cqw;
+  color: #6a5762;
+  font-weight: 600;
+}
+.pestle-political-card {
+  background: #faf6f8;
+  border: 1px solid #ebdbe2;
+  border-left: 3px solid #df0036;
+  border-radius: 4px;
+  padding: .65cqw .85cqw;
+}
+.political-card-badge {
+  display: inline-block;
+  font-size: .68cqw;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #a8002b;
+  background: #fbebee;
+  padding: .12cqw .4cqw;
+  border-radius: 3px;
+  margin-bottom: .35cqw;
+}
+.pestle-political-card h4 {
+  margin: 0 0 .25cqw;
+  font-size: .92cqw;
+  font-weight: 700;
+  color: #24161f;
+}
+.pestle-political-card p {
+  margin: 0;
+  font-size: .78cqw;
+  line-height: 1.36;
+  color: #4a3e46;
+}
+.pestle-political-right {
+  min-width: 0;
+}
+.political-photo-card {
+  background: #ffffff;
+  border: 1px solid #ebdbe2;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(60, 20, 35, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+.political-photo-toolbar {
+  display: flex;
+  gap: .35cqw;
+  padding: .35cqw .5cqw;
+  background: #f8f3f6;
+  border-bottom: 1px solid #ebdbe2;
+}
+.political-photo-toolbar button {
+  background: #ece3e8;
+  color: #584852;
+  border: 0;
+  border-radius: 4px;
+  padding: .3cqw .65cqw;
+  font-size: .76cqw;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.political-photo-toolbar button:hover {
+  background: #dfd4db;
+}
+.political-photo-toolbar button.active {
+  background: #df0036;
+  color: #ffffff;
+}
+.political-photo-media {
+  position: relative;
+  width: 100%;
+  height: 15cqw;
+  background: #181115;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.political-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: opacity .2s ease;
+}
+.political-photo-img.is-contain {
+  object-fit: contain;
+  background: #251c23;
+}
+.political-photo-meta {
+  padding: .55cqw .75cqw .6cqw;
+  display: flex;
+  flex-direction: column;
+  gap: .25cqw;
+  background: #ffffff;
+}
+.political-photo-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5cqw;
+}
+.political-photo-title strong {
+  font-size: .88cqw;
+  font-weight: 700;
+  color: #1e1319;
+}
+.political-photo-tag {
+  font-size: .66cqw;
+  font-weight: 600;
+  color: #8c7380;
+  background: #f3edf1;
+  padding: .12cqw .38cqw;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.political-photo-text {
+  margin: 0;
+  font-size: .76cqw;
+  line-height: 1.34;
+  color: #4d3f48;
+}
+.political-photo-attribution {
+  margin-top: .1cqw;
+  font-size: .66cqw;
+  color: #8e7a85;
+}
+
+/* Ensure dock never overlaps presentation */
+.presentation-view:fullscreen .deck-slide-dock,
+.presentation-view:fullscreen .deck-dock-handle {
+  display: none !important;
+}
+
+.forces-detail .force-company-evidence {
+  margin-top: .85cqw;
+  padding: .65cqw .8cqw;
+  border: 1px solid #eadce3;
+  border-left: 3px solid #df0036;
+  background: #faf5f7;
+}
+.forces-detail .force-company-evidence h3 {
+  margin: 0 0 .3cqw;
+  color: #a8002b;
+}
+.forces-detail .force-company-evidence .force-fact {
+  margin: .25cqw 0 0;
+  padding: 0;
+  border: 0;
+}

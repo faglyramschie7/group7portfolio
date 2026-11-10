@@ -5919,3 +5919,55 @@ Object.assign(window.MPPA_TRANSLATIONS_ID, {
   "Financial Ratios": "Rasio Keuangan",
   "Slide 36: Turnaround Governance Roadmap & Executive Conclusion": "Slide 36 · Peta Jalan Tata Kelola Pemulihan dan Kesimpulan"
 });
+
+Object.assign(window.MPPA_TRANSLATIONS_ID, {
+  "Jakarta began PSBB on 10 April 2020. Essential food retailers could still operate, but movement restrictions could make stores harder to reach. The policy applied to Jakarta, and the evidence does not quantify visits to individual MPPA stores.": "Jakarta memulai PSBB pada 10 April 2020. Ritel pangan tetap boleh beroperasi, tetapi pembatasan mobilitas dapat menyulitkan akses ke gerai. Kebijakan ini berlaku di Jakarta, dan bukti yang tersedia tidak mengukur kunjungan ke masing-masing gerai MPPA.",
+  "Indonesia’s real household consumption contracted 2.63% in 2020, after growing 5.04% in 2019. The growth rate fell 7.67 percentage points. This describes national household spending, while MPPA’s own sales are measured separately.": "Konsumsi riil rumah tangga Indonesia turun 2,63% pada 2020 setelah tumbuh 5,04% pada 2019. Laju pertumbuhan turun 7,67 poin persentase. Angka ini menggambarkan konsumsi rumah tangga nasional, sedangkan penjualan MPPA diukur secara terpisah.",
+  "In 2020, 37% of Indonesia’s digital-service consumers were new. Of those new users, 93% said they intended to continue after the pandemic. The survey measured intentions across digital services, so it cannot establish lasting online grocery habits.": "Pada 2020, 37% konsumen layanan digital di Indonesia merupakan pengguna baru. Dari pengguna baru tersebut, 93% berniat terus menggunakan layanan digital setelah pandemi. Survei ini mengukur niat penggunaan berbagai layanan digital dan tidak membuktikan kebiasaan belanja pangan daring jangka panjang.",
+  "Digital ordering, payments, and delivery made remote grocery shopping possible. Bank Indonesia reported 5 million merchants using QRIS by 16 October 2020. The table shows how retailers responded with their own ordering and fulfillment channels.": "Pemesanan dan pembayaran digital serta layanan pengiriman memungkinkan belanja pangan jarak jauh. Bank Indonesia mencatat 5 juta pedagang menggunakan QRIS per 16 Oktober 2020. Tabel menunjukkan bagaimana peritel merespons melalui kanal pemesanan dan pemenuhan pesanan masing-masing.",
+  "Indonesia’s PP No. 80/2019 governed electronic commerce in 2020. Article 27 requires covered businesses to provide a consumer complaints service. For MPPA, this is a compliance consideration when selling through online channels.": "PP No. 80 Tahun 2019 mengatur perdagangan elektronik pada 2020. Pasal 27 mewajibkan pelaku usaha yang tercakup menyediakan layanan pengaduan konsumen. Ketentuan ini menjadi pertimbangan kepatuhan bagi MPPA saat berjualan melalui kanal daring.",
+  "Bappenas estimated 23–48 million tonnes of food loss and waste per year across Indonesia’s food chain in 2000–2019. The 2021 study looks back at that period. It gives context for MPPA’s exposure to spoilage in fresh products, while MPPA’s own waste and potential savings require separate measurement.": "Bappenas memperkirakan susut dan sisa pangan sebesar 23–48 juta ton per tahun di sepanjang rantai pangan Indonesia pada 2000–2019. Studi yang terbit pada 2021 meninjau periode tersebut. Angka ini memberi konteks atas risiko kerusakan produk segar MPPA, sementara limbah dan potensi penghematan perusahaan perlu diukur secara terpisah.",
+  "The April 2020 Android snapshot shows that grocery apps, including Hypermart Online, were already available. The separate Alfagift total covers Android and iOS. Downloads indicate app reach but cannot establish active grocery buyers or sales.": "Cuplikan Android April 2020 menunjukkan bahwa aplikasi belanja pangan, termasuk Hypermart Online, sudah tersedia. Angka Alfagift mencakup Android dan iOS. Unduhan menggambarkan jangkauan aplikasi, tetapi tidak mengukur pembeli aktif atau penjualan.",
+  "More consumers tried digital services": "Lebih banyak konsumen mencoba layanan digital",
+  "37% of digital-service consumers were new. Of those new users, 93% intended to continue.": "Sebanyak 37% konsumen layanan digital adalah pengguna baru. Dari pengguna baru tersebut, 93% berniat melanjutkan penggunaan.",
+  "New users tried digital services": "Pengguna baru mencoba layanan digital",
+  "New digital-service users and stated intentions (2020)": "Pengguna baru layanan digital dan niat melanjutkan (2020)",
+  "New users who intended to continue": "Pengguna baru yang berniat melanjutkan",
+  "Two different denominators · Google / Temasek / Bain 2020": "Dua kelompok pembanding berbeda · Google / Temasek / Bain 2020",
+  "Digital ordering and delivery expanded; QRIS reached 5 million merchants by 16 October 2020.": "Pemesanan digital dan pengiriman meluas; QRIS menjangkau 5 juta pedagang per 16 Oktober 2020.",
+  "Six external factors shaping profitable sales and resource use": "Enam faktor eksternal yang memengaruhi penjualan dan penggunaan sumber daya",
+  "Legal": "Hukum",
+  "Consumer protection in online retail": "Perlindungan konsumen dalam ritel daring",
+  "PP No. 80/2019, Article 27 requires a consumer complaints service.": "PP No. 80 Tahun 2019 Pasal 27 mewajibkan layanan pengaduan konsumen.",
+  "Online consumer complaints requirements": "Ketentuan pengaduan konsumen daring",
+  "Contact": "Kontak",
+  "Procedure": "Prosedur",
+  "Resolution": "Penyelesaian",
+  "Provide a complaint address and contact number.": "Sediakan alamat dan nomor kontak pengaduan.",
+  "Explain how consumers can submit complaints and how the business follows up.": "Jelaskan tata cara pengaduan dan mekanisme tindak lanjut.",
+  "Assign qualified staff and specify a resolution time frame.": "Sediakan petugas yang kompeten dan tetapkan jangka waktu penyelesaian.",
+  "What Article 27 requires": "Ketentuan Pasal 27",
+  "PP No. 80/2019, Article 27": "PP No. 80 Tahun 2019, Pasal 27"
+});
+
+Object.assign(window.MPPA_TRANSLATIONS_ID, {
+  "Jakarta policy timing": "Jadwal Kebijakan PSBB Jakarta",
+  "Policy announced": "Kebijakan diumumkan",
+  "Implementation began": "Pelaksanaan dimulai",
+  "Initial 14 days": "14 Hari Pertama",
+  "Extendable; essential sectors exempt": "Dapat diperpanjang; sektor esensial dikecualikan",
+  "Essential food retail remained permitted.": "Ritel pangan pokok tetap diizinkan beroperasi.",
+  "Key Regulation · DKI Pergub 33/2020": "Regulasi Kunci · Pergub DKI 33/2020",
+  "Essential Food Retail Status & Exemption": "Status Ritel Kebutuhan Pokok sebagai Sektor Esensial",
+  "Article 13 explicitly exempted supermarkets, hypermarkets, and essential food retailers from mandatory shutdowns. Grocery stores remained operational to maintain public food supply, though physical distancing, mandatory face coverings, and general mall movement curbs severely suppressed in-store foot traffic.": "Pasal 13 secara tegas mengecualikan supermarket, hipermarket, dan toko kebutuhan pangan dari kewajiban penutupan. Ritel sembako tetap beroperasi untuk mengamankan ketahanan pangan publik, namun pembatasan mobilitas umum dan penutupan tenant mall non-pangan menekan lalu lintas fisik konsumen.",
+  "🛒 Store Environment 2020": "🛒 Suasana Gerai Pangan 2020",
+  "📜 Official PSBB Notice": "📜 Ketentuan Resmi PSBB",
+  "Essential Grocery Retail Shopping during PSBB": "Protokol Belanja Ritel Pangan saat Pembatasan Sosial",
+  "Official South Tangerang PSBB Guidance (Apr 2020)": "Sosialisasi Resmi PSBB Tangerang Selatan (Apr 2020)",
+  "Indonesian consumers purchasing food and household essentials in a Jakarta supermarket aisle with face coverings (2020). MPPA maintained store continuity across Hypermart locations while accelerating contactless channels (Chat & Shop and on-demand delivery partnerships).": "Konsumen berbelanja kebutuhan pokok dengan masker dan jaga jarak fisik di supermarket Jakarta (2020). MPPA menjaga kontinuitas pasokan pangan di gerai Hypermart sembari mempercepat integrasi kanal belanja tanpa kontak (Chat & Shop dan kemitraan e-groceries).",
+  "Official municipal PSBB notice in South Tangerang, home to MPPA’s headquarters and key stores. Outlines social restriction rules and non-essential mall limitations alongside full exemptions for food logistics and grocery distribution.": "Pedoman resmi pelaksanaan PSBB di Tangerang Selatan, lokasi kantor pusat Lippo Karawaci dan gerai MPPA. Menegaskan pembatasan mobilitas warga dan kegiatan non-esensial, dengan pengecualian penuh bagi sektor logistik dan pemenuhan kebutuhan pangan.",
+  "Jakarta Photo": "Dokumentasi Jakarta",
+  "MPPA Headquarter Region": "Wilayah Kantor Pusat MPPA",
+  "Pemerintah Provinsi DKI Jakarta & Tangerang Selatan — Pergub No. 33/2020 tentang Pelaksanaan PSBB & Ketentuan Sektor Esensial Pangan": "Pemerintah Provinsi DKI Jakarta & Tangerang Selatan — Pergub No. 33/2020 tentang Pelaksanaan PSBB & Ketentuan Sektor Esensial Pangan",
+  "DKI Jakarta & South Tangerang Municipal Governments — Regulation No. 33/2020 on PSBB Implementation & Essential Food Retail Exemptions": "Pemerintah Provinsi DKI Jakarta & Tangerang Selatan — Pergub No. 33/2020 tentang Pelaksanaan PSBB & Ketentuan Sektor Esensial Pangan"
+});
