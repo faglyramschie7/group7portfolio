@@ -48,7 +48,7 @@
       <div class="fin-kpi-card">
         <div class="kpi-card-top">
           <span class="fin-kpi-tag">{{ t("REVENUE TRAJECTORY") }}</span>
-          <span class="kpi-badge">{{ t("+11.4% Net Growth") }}</span>
+          <span class="kpi-badge badge-brand">{{ t("+11.4% Net Growth") }}</span>
         </div>
         <div class="fin-kpi-val">
           <span class="kpi-from">Rp 6.75T</span>
@@ -65,12 +65,12 @@
       <div class="fin-kpi-card">
         <div class="kpi-card-top">
           <span class="fin-kpi-tag">{{ t("EBIT TURNAROUND") }}</span>
-          <span class="kpi-badge">{{ t("+Rp 1.57T Swing") }}</span>
+          <span class="kpi-badge badge-profit">{{ t("+Rp 1.57T Swing") }}</span>
         </div>
         <div class="fin-kpi-val">
-          <span class="kpi-from">-Rp 140B</span>
+          <span class="kpi-loss">-Rp 140B</span>
           <span class="kpi-arrow">→</span>
-          <span class="kpi-to">+Rp 1,428B</span>
+          <span class="kpi-profit">+Rp 1,428B</span>
         </div>
         <div class="kpi-driver-tags">
           <span class="driver-tag">{{ t("Fresh Grocery Margin") }}</span>
@@ -82,7 +82,7 @@
       <div class="fin-kpi-card">
         <div class="kpi-card-top">
           <span class="fin-kpi-tag">{{ t("STRATEGIC FINANCING") }}</span>
-          <span class="kpi-badge">{{ t("100% Self-Funded") }}</span>
+          <span class="kpi-badge badge-brand">{{ t("100% Self-Funded") }}</span>
         </div>
         <div class="fin-kpi-val">
           <span class="kpi-to">{{ t("Zero New Bank Debt") }}</span>
@@ -565,15 +565,22 @@ const activeTab = ref('income');
 }
 
 .fin-kpi-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
+  background: #faf7f9;
+  border: 1px solid #ebdbe2;
+  border-top: 3px solid #df0036;
   border-radius: 6px;
   padding: 0.55cqw 0.85cqw 0.5cqw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
+  box-shadow: 0 1px 3px rgba(48, 37, 43, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   min-width: 0;
+}
+
+.fin-kpi-card:hover {
+  box-shadow: 0 3px 10px rgba(223, 0, 54, 0.08);
+  border-color: #df0036;
 }
 
 .kpi-card-top {
@@ -584,29 +591,38 @@ const activeTab = ref('income');
 }
 
 .fin-kpi-tag {
-  color: #64748b;
+  color: #73616c;
   font-size: 0.68cqw;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .kpi-badge {
   font-size: 0.62cqw;
-  font-weight: 700;
-  padding: 0.1cqw 0.4cqw;
-  border-radius: 3px;
-  background: #f1f5f9;
-  color: #334155;
-  border: 1px solid #e2e8f0;
-  letter-spacing: 0.01em;
+  font-weight: 800;
+  padding: 0.1cqw 0.45cqw;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
   white-space: nowrap;
+}
+
+.badge-brand {
+  background: #fcebf0;
+  color: #b6002d;
+  border: 1px solid #f8ccd7;
+}
+
+.badge-profit {
+  background: #e6f4ea;
+  color: #137333;
+  border: 1px solid #ceead6;
 }
 
 .fin-kpi-val {
   font-size: 1.35cqw;
   font-weight: 900;
-  color: #0f172a;
+  color: #1e181c;
   line-height: 1.15;
   display: flex;
   align-items: baseline;
@@ -616,17 +632,27 @@ const activeTab = ref('income');
 }
 
 .kpi-from {
-  color: #475569;
+  color: #625762;
+}
+
+.kpi-loss {
+  color: #b6002d;
+  font-weight: 800;
 }
 
 .kpi-arrow {
-  color: #94a3b8;
-  font-weight: 500;
-  font-size: 1.1cqw;
+  color: #a89ba3;
+  font-weight: 600;
+  font-size: 1.05cqw;
 }
 
 .kpi-to {
-  color: #0f172a;
+  color: #1e181c;
+  font-weight: 900;
+}
+
+.kpi-profit {
+  color: #137333;
   font-weight: 900;
 }
 
@@ -637,11 +663,11 @@ const activeTab = ref('income');
 }
 
 .driver-tag {
-  font-size: 0.65cqw;
+  font-size: 0.64cqw;
   font-weight: 600;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  color: #475569;
+  background: #ffffff;
+  border: 1px solid #ebdbe2;
+  color: #4a3b43;
   padding: 0.1cqw 0.4cqw;
   border-radius: 3px;
   line-height: 1.25;
