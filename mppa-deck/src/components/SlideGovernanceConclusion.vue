@@ -6,7 +6,7 @@
       <div class="title-block">
         <h2 class="slide-title">{{ t("Turnaround Execution Roadmap & Executive Conclusion (2021–2025)") }}</h2>
         <p class="slide-subtitle">
-          {{ t("Synthesizing Fred David's 4-stage strategic management framework into an unbroken golden thread, delivering self-funded profitability, debt covenant safety, and restored shareholder value.") }}
+          {{ t("Synthesizing Fred David's 4-stage strategic management framework into an unbroken golden thread, delivering self-funded profitability, loan condition safety, and restored shareholder value.") }}
         </p>
       </div>
 
@@ -27,7 +27,7 @@
       <div class="exec-kpi-card">
         <span class="exec-kpi-tag tag-green">{{ t("PHASE 2: FORMAT TRANSFORMATION") }}</span>
         <div class="exec-kpi-val">50 Hyfresh Stores</div>
-        <div class="exec-kpi-sub">{{ t("High-margin fresh grocery (>35% mix) across 5 Java clusters + 45 dark fulfillment hubs.") }}</div>
+        <div class="exec-kpi-sub">{{ t("High-margin fresh grocery (>35% mix) across 5 Java clusters + 45 online order packing hubs.") }}</div>
       </div>
       <div class="exec-kpi-card">
         <span class="exec-kpi-tag tag-purple">{{ t("PHASE 3: EQUITY RECONSTITUTION") }}</span>
@@ -49,11 +49,11 @@
           <div class="phase-block phase-1">
             <div class="phase-hdr">
               <span class="phase-tag">{{ t("PHASE 1 · 2021 (MONTHS 1–12)") }}</span>
-              <strong class="phase-name">{{ t("Retrenchment & Solvency Stabilization") }}</strong>
+              <strong class="phase-name">{{ t("Cost And Store Cutbacks & Solvency Stabilization") }}</strong>
             </div>
             <ul class="phase-tasks">
               <li><strong>{{ t("Executive Governance:") }}</strong> {{ t("Appoint Chief Operating Officer (COO) to relieve CFO from retail operations.") }}</li>
-              <li><strong>{{ t("Asset Divestitures:") }}</strong> {{ t("Orderly liquidation of SmartClub wholesale & 14 FMX kiosks; unlock +Rp 120B cash.") }}</li>
+              <li><strong>{{ t("Asset Business And Asset Sales:") }}</strong> {{ t("Orderly liquidation of SmartClub wholesale & 14 FMX kiosks; unlock +Rp 120B cash.") }}</li>
               <li><strong>{{ t("Occupancy Relief:") }}</strong> {{ t("Renegotiate 15 anchor hypermarket mall leases; reduce annual PSAK 73 burden by Rp 36B.") }}</li>
               <li><strong>{{ t("Covenant Defense:") }}</strong> {{ t("Freeze bank borrowing; preserve BNI Rp 500B credit facility with TIE > 4.8x.") }}</li>
             </ul>
@@ -67,7 +67,7 @@
             </div>
             <ul class="phase-tasks">
               <li><strong>{{ t("Hyfresh Expansion:") }}</strong> {{ t("Roll out 50 compact supermarkets (500–1,000 m²) across Java clusters (Rp 225B CapEx).") }}</li>
-              <li><strong>{{ t("Dark Store Activation:") }}</strong> {{ t("Retrofit 45 oversized hypermarket backrooms into micro-fulfillment dark hubs (Rp 135B).") }}</li>
+              <li><strong>{{ t("Online Order Center Activation:") }}</strong> {{ t("Retrofit 45 oversized hypermarket backrooms into micro-fulfillment online order centers (Rp 135B).") }}</li>
               <li><strong>{{ t("Supply Chain Direct:") }}</strong> {{ t("Direct farm contracting with 750+ Java growers; achieve 50.0% gross margin.") }}</li>
               <li><strong>{{ t("EBIT Turnaround:") }}</strong> {{ t("Generate +Rp 1,307B (2021) and +Rp 1,346B (2022) operating profit.") }}</li>
             </ul>
@@ -80,7 +80,7 @@
               <strong class="phase-name">{{ t("Market Leadership & Shareholder Value Harvest") }}</strong>
             </div>
             <ul class="phase-tasks">
-              <li><strong>{{ t("Omnichannel Scale:") }}</strong> {{ t("Expand 30-minute rapid delivery to 25%+ of total revenue via GrabMart & Shopee.") }}</li>
+              <li><strong>{{ t("Online And In-Store Scale:") }}</strong> {{ t("Expand 30-minute rapid delivery to 25%+ of total revenue via GrabMart & Shopee.") }}</li>
               <li><strong>{{ t("Cold Logistics Moat:") }}</strong> {{ t("Maximize 66,755 m² central DC throughput; lower shrinkage below 1.2%.") }}</li>
               <li><strong>{{ t("Free Cash Flow:") }}</strong> {{ t("Achieve negative cash conversion cycle; restore positive retained earnings.") }}</li>
               <li><strong>{{ t("Dividend Resumption:") }}</strong> {{ t("Resume conservative dividend payouts once accumulated deficit is fully erased.") }}</li>
@@ -108,7 +108,7 @@
             <div class="step-num">2</div>
             <div class="step-content">
               <strong>{{ t("Stage 2: Matching Matrices (SPACE · BCG · IE · GSM)") }}</strong>
-              <p>{{ t("All 4 matrices aligned: SPACE mandated Defensive retrenchment (-1.0, -0.6); BCG classified Hypermart as transitioning Cash Cow/Dog; IE placed MPPA in Cell V.") }}</p>
+              <p>{{ t("All 4 matrices aligned: SPACE mandated Defensive cost and store cutbacks (-1.0, -0.6); BCG classified Hypermart as transitioning Cash Cow/Dog; IE placed MPPA in Cell V.") }}</p>
             </div>
           </div>
 
@@ -116,7 +116,7 @@
             <div class="step-num">3</div>
             <div class="step-content">
               <strong>{{ t("Stage 3: Decision Matrix (QSPM: TAS 6.620 vs. 5.460)") }}</strong>
-              <p>{{ t("Quantitatively proved Strategy 1 (Hyfresh compact rollout) decisively beats pure hypermarket rightsizing (+1.160 point lead), while retaining rightsizing as a self-funder.") }}</p>
+              <p>{{ t("Quantitatively proved Strategy 1 (Hyfresh compact rollout) decisively beats pure hypermarket reducing store size (+1.160 point lead), while retaining reducing store size as a self-funder.") }}</p>
             </div>
           </div>
 
@@ -124,7 +124,7 @@
             <div class="step-num step-star">4</div>
             <div class="step-content">
               <strong>{{ t("Stage 4: Implementation, Governance & Finance") }}</strong>
-              <p>{{ t("Created COO format-level SBUs; self-funded Rp 450B CapEx with Rp 0 bank debt; preserved BNI covenants (TIE 5.3x); reconstituted equity from Rp 185B to Rp 2.69T.") }}</p>
+              <p>{{ t("Created COO format-level SBUs; self-funded Rp 450B CapEx with Rp 0 bank debt; preserved BNI loan conditions (TIE 5.3x); reconstituted equity from Rp 185B to Rp 2.69T.") }}</p>
             </div>
           </div>
 

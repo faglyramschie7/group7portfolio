@@ -3339,6 +3339,10 @@
 .problem-slide .income-bridge .income-highlight { background: #fff2f5; color: #a8002b; }
 .problem-slide .income-bridge .income-highlight th { box-shadow: inset 2px 0 #df0036; font-weight: 700; }
 .problem-slide .income-bridge .income-bottom-line th { font-weight: 700; }
+.problem-slide .income-bridge .income-selected-total { background:#a8002b; color:#fff; }
+.problem-slide .income-bridge .income-selected-total :is(th,td) { font-weight:800; border-bottom-color:#a8002b; }
+.problem-slide .income-bridge .income-selected-total td:last-child { background:#850021; }
+
 .problem-slide .problem-question {
   align-self: start;
   padding: 1.2cqw;

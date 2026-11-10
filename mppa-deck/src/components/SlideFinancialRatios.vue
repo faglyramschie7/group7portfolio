@@ -6,7 +6,7 @@
       <div class="title-block">
         <h2 class="slide-title">{{ t("Financial Ratios Dashboard: 5-Year Turnaround Trajectory (2019A–2023P)") }}</h2>
         <p class="slide-subtitle">
-          {{ t("Tracking 14 key financial ratios across Liquidity, Leverage, Operating Velocity, and Profitability derived from Matahari.xlsx Sheet 'Ratios', proving solvency recovery and strict BNI debt covenant compliance.") }}
+          {{ t("Tracking 14 key financial ratios across Liquidity, Leverage, Operating Velocity, and Profitability derived from Matahari.xlsx Sheet 'Ratios', illustrating how the upside scenario changes the ratios.") }}
         </p>
       </div>
 
@@ -25,9 +25,9 @@
         <div class="ratio-kpi-sub">{{ t("Current Ratio recovers +252%; Quick Ratio surges from 0.21x to 1.79x.") }}</div>
       </div>
       <div class="ratio-kpi-card">
-        <span class="ratio-kpi-tag tag-green">{{ t("BNI COVENANT SAFEGUARD") }}</span>
+        <span class="ratio-kpi-tag tag-green">{{ t("ABILITY TO PAY INTEREST") }}</span>
         <div class="ratio-kpi-val">TIE: -0.52x → 5.34x</div>
-        <div class="ratio-kpi-sub">{{ t("Safely exceeds BNI > 2.0x floor; Debt/Equity remains < 0.2% vs. 250% limit.") }}</div>
+        <div class="ratio-kpi-sub">{{ t("Projected interest cover is based on the upside forecast. MPPA did not publish the bank’s required minimum.") }}</div>
       </div>
       <div class="ratio-kpi-card">
         <span class="ratio-kpi-tag tag-purple">{{ t("PROFITABILITY RECOVERY") }}</span>
@@ -102,7 +102,7 @@
                 <td class="td-num td-proj">0.2%</td>
                 <td class="td-num td-proj">0.1%</td>
                 <td class="td-num td-bold td-profit">0.1%</td>
-                <td class="td-desc td-profit">{{ t("★ BNI Covenant Limit: < 250% (2.5x). Self-funding keeps ratio at 0.1%.") }}</td>
+                <td class="td-desc td-profit">{{ t("This ratio uses long-term bank debt only. The loan tests refer to net debt, which is a different measure.") }}</td>
               </tr>
               <tr class="row-highlight">
                 <td class="td-cat">Leverage</td>
@@ -112,7 +112,7 @@
                 <td class="td-num td-bold td-profit">4.89x</td>
                 <td class="td-num td-bold td-profit">5.03x</td>
                 <td class="td-num td-bold td-profit">5.34x</td>
-                <td class="td-desc td-profit">{{ t("★ BNI Covenant Floor: > 2.0x. Robust 5.3x coverage eliminates default.") }}</td>
+                <td class="td-desc td-profit">{{ t("The model divides operating profit by net finance costs. The bank’s cash-based test may use different figures.") }}</td>
               </tr>
 
               <!-- 3. Operating Velocity -->
@@ -215,40 +215,40 @@
         </div>
       </div>
 
-      <!-- Right: BNI Debt Covenant Compliance Ledger -->
+      <!-- Right: BNI Loan Condition Compliance Ledger -->
       <div class="covenant-card">
         <div class="covenant-header">
           <span class="cov-card-tag">{{ t("SOLVENCY GOVERNANCE · AR2020 NOTE 15") }}</span>
-          <h3 class="cov-card-title">{{ t("BNI Credit Facility Covenant Safeguards") }}</h3>
+          <h3 class="cov-card-title">{{ t("What MPPA’s banks check") }}</h3>
         </div>
         <div class="cov-body">
           <div class="cov-item">
-            <div class="cov-icon icon-pass">✓</div>
+            <div class="cov-icon">i</div>
             <div class="cov-text">
-              <strong>{{ t("Covenant 1: Debt-to-Equity < 2.5x (250%)") }}</strong>
-              <p>{{ t("Actual: 0.1% – 0.2%. Because the Rp 450B CapEx is 100% self-funded without new bank debt, MPPA maintains almost 0% bank debt relative to equity.") }}</p>
+              <strong>{{ t("Debt compared with equity") }}</strong>
+              <p>{{ t("Note 15 lists net debt compared with equity and with earnings before interest, tax, depreciation and amortization (EBITDA).") }}</p>
             </div>
           </div>
 
           <div class="cov-item">
-            <div class="cov-icon icon-pass">✓</div>
+            <div class="cov-icon">i</div>
             <div class="cov-text">
-              <strong>{{ t("Covenant 2: Times Interest Earned > 2.0x") }}</strong>
-              <p>{{ t("Actual: 4.89x (2021P) → 5.34x (2023P). EBIT turnaround to +Rp 1.43T provides 5.3x interest coverage, eliminating covenant violation risks.") }}</p>
+              <strong>{{ t("Cash available to pay interest") }}</strong>
+              <p>{{ t("Note 15 lists an interest cash cover test. The report does not disclose its minimum or calculation rules.") }}</p>
             </div>
           </div>
 
           <div class="cov-item">
-            <div class="cov-icon icon-pass">✓</div>
+            <div class="cov-icon">i</div>
             <div class="cov-text">
-              <strong>{{ t("Covenant 3: Current Ratio > 1.0x") }}</strong>
-              <p>{{ t("Actual: 1.41x (2021P) → 1.97x (2023P). Working capital expands via +Rp 120B non-core divestiture and negative cash conversion cycle.") }}</p>
+              <strong>{{ t("Short-term assets compared with short-term bills") }}</strong>
+              <p>{{ t("The current ratio measures whether short-term assets cover short-term bills. The report does not disclose the bank’s required minimum.") }}</p>
             </div>
           </div>
 
           <div class="cov-summary-box">
             <span class="cov-sum-tag">{{ t("STRATEGIC SOLVENCY TAKEAWAY") }}</span>
-            <p>{{ t("By avoiding the Rp 250M additional interest burden of debt financing (from Slide 33 EPS/EBIT), MPPA fully preserves its Rp 500B BNI credit facility as an untouched safety cushion.") }}</p>
+            <p>{{ t("MPPA had drawn the full Rp500B BNI working-capital loan at year-end 2020. The rollout plan still depends on repayment or renewal of existing loans.") }}</p>
           </div>
         </div>
       </div>
@@ -258,7 +258,7 @@
     <div class="ratios-footer-bar">
       <div class="footer-left">
         <strong>{{ t("Strategic Solvency Summary:") }}</strong>
-        <span>{{ t("100% BNI covenant compliance achieved. Solvency restored purely via retained operational cash flows and working capital discipline.") }}</span>
+        <span>{{ t("MPPA reported meeting its loan conditions or obtaining a waiver in 2020. Forecast ratios do not establish future compliance.") }}</span>
       </div>
       <div class="footer-right">
         <span class="cite-pill">{{ t("Matahari.xlsx Sheet 'Ratios' · AR2020 Note 15 · Fred David Ch. 8") }} · {{ slideNumber }}</span>

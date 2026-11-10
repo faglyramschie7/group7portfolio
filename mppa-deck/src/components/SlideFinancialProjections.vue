@@ -64,7 +64,7 @@
         </div>
         <div class="kpi-driver-tags">
           <span class="driver-tag">{{ t("50 Hyfresh Stores") }}</span>
-          <span class="driver-tag">{{ t("45 Dark Hubs") }}</span>
+          <span class="driver-tag">{{ t("45 Online Order Centers") }}</span>
         </div>
       </div>
 
@@ -91,7 +91,7 @@
         </div>
         <div class="kpi-driver-tags">
           <span class="driver-tag">{{ t("Fresh Grocery Margin") }}</span>
-          <span class="driver-tag">{{ t("Lease Rightsizing") }}</span>
+          <span class="driver-tag">{{ t("Lease Reducing Store Size") }}</span>
         </div>
       </div>
 
@@ -149,7 +149,7 @@
                 <td class="td-num td-proj">6,881,526</td>
                 <td class="td-num td-proj">7,087,972</td>
                 <td class="td-num td-proj td-highlight">7,513,250</td>
-                <td class="td-desc">{{ t("+2% ('21), +3% ('22), +6% ('23): Net growth reflects opening 50 compact Hyfresh stores (+Rp750B) while rightsizing 45 hypermarkets and closing SmartClub (-Rp500B low-margin bulk sales).") }}</td>
+                <td class="td-desc">{{ t("+2% ('21), +3% ('22), +6% ('23): Net growth reflects opening 50 compact Hyfresh stores (+Rp750B) while reducing store size 45 hypermarkets and closing SmartClub (-Rp500B low-margin bulk sales).") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('cogs')" title="Click for COGS breakdown and direct farm sourcing model">
                 <td class="td-interactive">{{ t("Cost of Goods Sold (COGS)") }} <span class="row-inspect-icon">↗</span></td>
@@ -187,7 +187,7 @@
                 <td class="td-num td-bold td-profit">1,307,490</td>
                 <td class="td-num td-bold td-profit">1,346,715</td>
                 <td class="td-num td-bold td-profit">1,427,517</td>
-                <td class="td-desc td-profit">{{ t("Turnaround driven by operational scissors effect: high-yield compact fresh store gross profit combined with PSAK 73 lease expense reduction from rightsizing 45 large hypermarket anchor spaces.") }}</td>
+                <td class="td-desc td-profit">{{ t("Turnaround driven by operational scissors effect: high-yield compact fresh store gross profit combined with PSAK 73 lease expense reduction from reducing store size 45 large hypermarket anchor spaces.") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and covenant details">
                 <td class="td-interactive">{{ t("Net Finance Costs (Interest)") }} <span class="row-inspect-icon">↗</span></td>
@@ -314,7 +314,7 @@
                 <td class="td-num td-proj">550,522</td>
                 <td class="td-num td-proj">567,038</td>
                 <td class="td-num td-proj">601,060</td>
-                <td class="td-desc">{{ t("PSAK 73 right-of-use asset liabilities reduced substantially by rightsizing 45 anchor hypermarket leases.") }}</td>
+                <td class="td-desc">{{ t("PSAK 73 right-of-use asset liabilities reduced substantially by reducing store size 45 anchor hypermarket leases.") }}</td>
               </tr>
               <tr class="row-total">
                 <td class="td-bold">{{ t("Total Assets") }}</td>
@@ -391,7 +391,7 @@
                 <td class="td-num">Rp 7,508M<br><small>EPS: Rp 2.94</small></td>
                 <td class="td-num">Rp 11,358M<br><small>EPS: Rp 4.45</small></td>
                 <td class="td-num">Rp 13,668M<br><small>EPS: Rp 5.36</small></td>
-                <td class="td-desc">{{ t("Higher EPS, but introduces Rp 250M interest burden & covenant breach risk") }}</td>
+                <td class="td-desc">{{ t("Higher EPS, but introduces Rp 250M interest burden & breach of loan conditions risk") }}</td>
               </tr>
               <tr class="row-winner clickable-row" @click="openDetail('epsebit')">
                 <td class="td-bold td-winner td-interactive">
@@ -432,7 +432,7 @@
             <div class="rat-item">
               <span class="rat-bullet">2</span>
               <div>
-                <strong>{{ t("Safeguarding BNI Debt Covenants:") }}</strong>
+                <strong>{{ t("Safeguarding BNI Loan Conditions:") }}</strong>
                 <p>{{ t("Adding bank debt introduces rigid debt-service coverage ratios and risks covenant default; keeping long-term bank debt near zero protects financial independence.") }}</p>
               </div>
             </div>
@@ -545,7 +545,7 @@
                 <span>{{ selectedDetail.whereWeGotIt.caseRef }}</span>
               </div>
               <div v-if="selectedDetail.whereWeGotIt.regulatory" class="fin-doc-row">
-                <span class="fin-doc-label">⚖️ {{ language === 'id' ? 'Regulasi / Kovenan' : 'Regulatory / Covenant' }}:</span>
+                <span class="fin-doc-label">⚖️ {{ language === 'id' ? 'Regulasi / Syarat Pinjaman' : 'Regulatory / Covenant' }}:</span>
                 <span>{{ selectedDetail.whereWeGotIt.regulatory }}</span>
               </div>
             </div>
@@ -592,13 +592,13 @@
           </div>
         </section>
 
-        <!-- 5. Sensitivity & Covenant Safeguards -->
+        <!-- 5. Sensitivity & Measures To Meet Loan Conditions -->
         <section v-if="selectedDetail.sensitivity" class="matrix-detail-section">
           <div class="matrix-section-header">
             <span class="matrix-sec-icon" style="color:#df0036;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
             </span>
-            <h4>{{ language === 'id' ? 'Uji Sensitivitas & Perlindungan Kovenan' : 'Sensitivity & Covenant Safeguards' }}</h4>
+            <h4>{{ language === 'id' ? 'Uji Sensitivitas & Perlindungan Syarat Pinjaman' : 'Sensitivity & Measures To Meet Loan Conditions' }}</h4>
           </div>
           <div class="matrix-card matrix-rec-card">
             <div class="matrix-rec-title">{{ language === 'id' ? 'Pertahanan Proyeksi:' : 'Defending the Projections:' }}</div>

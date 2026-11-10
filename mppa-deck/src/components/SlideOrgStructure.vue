@@ -6,7 +6,7 @@
       <div class="header-titles">
         <h2 class="org-slide-title">{{ t("Proposed Organizational Structure: Divisional Design by Format") }}</h2>
         <p class="org-slide-subtitle">
-          {{ t("Restructured under Fred David Chapter 7 & Case pp. 587–588: Resolving CEO Elliot Dickson's span bottleneck via a dedicated COO, instituting 4 format-level SBU profit centers, and elevating cold logistics and omnichannel enablers.") }}
+          {{ t("Restructured under Fred David Chapter 7 & Case pp. 587–588: Resolving CEO Elliot Dickson's span bottleneck via a dedicated COO, instituting 4 format-level SBU profit centers, and elevating cold logistics and online and in-store enablers.") }}
         </p>
       </div>
 
@@ -107,7 +107,7 @@ const detailContent = ref(null);
 const rolePhotos = {
   board: ['mall-anchor.jpg', 'Mall locations illustrate the lease exposure the board oversees.', 'Lokasi mal menggambarkan risiko sewa yang diawasi dewan.'],
   ceo: ['foodmart-store.jpg', 'Foodmart illustrates the retail portfolio the CEO must prioritize.', 'Foodmart menggambarkan portofolio ritel yang menjadi tanggung jawab CEO.'],
-  cfo: ['mall-anchor.jpg', 'Mall leases are a focus of the CFO’s cash and covenant planning.', 'Sewa gerai di mal menjadi fokus perencanaan kas dan kovenan CFO.'],
+  cfo: ['mall-anchor.jpg', 'Mall leases are a focus of the CFO’s cash and covenant planning.', 'Sewa gerai di mal menjadi fokus perencanaan kas dan syarat pinjaman CFO.'],
   coo: ['hypermart-store.jpg', 'Hypermart illustrates the store operations the COO coordinates across formats.', 'Hypermart menggambarkan operasi gerai lintas format yang dikoordinasikan COO.'],
   cio: ['dark-store.jpg', 'Digital fulfillment relies on the order and inventory systems the CIO integrates.', 'Pemenuhan pesanan digital bergantung pada integrasi sistem pesanan dan persediaan oleh CIO.'],
   chro: ['supermarket-checkout.jpg', 'Store operations illustrate where staffing and retraining are put into practice.', 'Operasi gerai menggambarkan penerapan penempatan staf dan pelatihan ulang.'],
@@ -115,9 +115,9 @@ const rolePhotos = {
   sbu2: ['hypermart-store.jpg', 'Hypermart is the format targeted for store resizing and fulfillment conversions.', 'Hypermart adalah format yang ditargetkan untuk penyesuaian luas gerai dan konversi ruang penyiapan pesanan.'],
   sbu3: ['primo-store.jpg', 'Foodmart Primo represents the premium formats managed by this unit.', 'Foodmart Primo mewakili format premium yang dikelola unit ini.'],
   sbu4: ['fmx-store.jpg', 'FMX is one of the non-core formats in the proposed exit plan.', 'FMX adalah salah satu format non-inti dalam rencana pelepasan.'],
-  enablers: ['dark-store.jpg', 'Dark hubs illustrate a shared capability used by the retail formats.', 'Dark hub menggambarkan fasilitas bersama yang digunakan berbagai format ritel.'],
+  enablers: ['dark-store.jpg', 'Online order centers illustrate a shared capability used by the retail formats.', 'Dark hub menggambarkan fasilitas bersama yang digunakan berbagai format ritel.'],
   logistics: ['cold-storage.jpg', 'Temperature-controlled storage illustrates the team’s cold-chain responsibilities.', 'Penyimpanan bersuhu terkendali menggambarkan tanggung jawab tim atas rantai dingin.'],
-  omni: ['dark-store.jpg', 'Dark hubs prepare online orders for delivery.', 'Dark hub menyiapkan pesanan daring untuk dikirim.'],
+  omni: ['dark-store.jpg', 'Online order centers prepare online orders for delivery.', 'Dark hub menyiapkan pesanan daring untuk dikirim.'],
   procurement: ['hyfresh-store.jpg', 'Hyfresh is a retail outlet for the fresh assortment this team sources.', 'Hyfresh menjual produk segar yang dipasok oleh tim pengadaan.']
 };
 let chartInstance = null;
@@ -150,7 +150,7 @@ const treeData = computed(() => {
       tag: isId ? 'KEPEMIMPINAN STRATEGIS' : 'APEX STRATEGY & SOLVENCY',
       theme: '#df0036',
       bg: '#fffdfd',
-      desc: isId ? 'Strategi Pemulihan · Alokasi Modal Rp 450M · Kovenan BNI' : 'Turnaround Strategy · CapEx Allocation · BNI Debt Covenants',
+      desc: isId ? 'Strategi Pemulihan · Alokasi Modal Rp 450M · Syarat pinjaman BNI' : 'Turnaround Strategy · CapEx Allocation · BNI Loan Conditions',
       responsibilities: isId ? "Menetapkan prioritas pemulihan, menyetujui alokasi modal, dan menimbang ekspansi, penyesuaian gerai, serta likuiditas." : "Sets turnaround priorities, approves capital allocation, and resolves trade-offs between expansion, store resizing, and liquidity.",
       rationale: isId ? "Menetapkan satu penanggung jawab pemulihan sementara COO mengelola operasi harian." : "Gives the turnaround one accountable executive while the COO runs day-to-day operations.",
       kpi: isId ? 'Target: Hentikan Rugi 4 Tahun (-Rp 3,53T) · Pembiayaan Mandiri' : 'Target: Halt 4 Loss Years (-Rp 3.53T) · Self-Funding'
@@ -164,10 +164,10 @@ const treeData = computed(() => {
       tag: isId ? 'KEUANGAN & UTANG' : 'FINANCE & SOLVENCY',
       theme: '#0284c7',
       bg: '#f8fafc',
-      desc: isId ? 'Keringanan Sewa PSAK 73 · Kovenan Utang BNI Tanpa Utang Baru' : 'PSAK 73 Lease Relief & BNI Debt Covenants with Rp 0 Bank Debt',
-      responsibilities: isId ? "Memproyeksikan kas, mengevaluasi restrukturisasi sewa, dan memantau belanja serta ruang terhadap batas kovenan BNI." : "Forecasts cash, evaluates lease restructuring, and tracks spending and BNI covenant headroom.",
-      rationale: isId ? "Memastikan likuiditas dan kovenan dipertimbangkan sebelum dana investasi dialokasikan." : "Puts liquidity and covenant monitoring alongside investment decisions before funds are committed.",
-      kpi: isId ? 'Target: Pertahankan Batas Kredit BNI Rp 400M' : 'Target: Preserve Rp 400B BNI Covenant'
+      desc: isId ? 'Keringanan Sewa PSAK 73 · Syarat Pinjaman BNI Tanpa Utang Baru' : 'PSAK 73 Lease Relief & BNI Loan Conditions with Rp 0 Bank Debt',
+      responsibilities: isId ? "Memproyeksikan kas, mengevaluasi restrukturisasi sewa, dan memantau belanja serta ruang terhadap batas syarat pinjaman BNI." : "Forecasts cash, evaluates lease restructuring, and tracks spending and BNI loan conditions headroom.",
+      rationale: isId ? "Memastikan likuiditas dan syarat pinjaman dipertimbangkan sebelum dana investasi dialokasikan." : "Puts liquidity and covenant monitoring alongside investment decisions before funds are committed.",
+      kpi: isId ? 'Target: Pertahankan Batas Kredit BNI Rp 400M' : 'Target: Preserve Rp 400B BNI loan conditions'
     },
     {
       id: 'coo',
@@ -227,13 +227,13 @@ const treeData = computed(() => {
     {
       id: 'sbu2',
       parentId: 'coo',
-      role: isId ? 'Presiden · Hypermart & Rightsizing' : 'President · Hypermart & Rightsizing',
-      name: isId ? 'Restrukturisasi Format Besar' : 'Footprint Downsizing & Dark Hubs',
+      role: isId ? 'Presiden · Hypermart & Reducing Store Size' : 'President · Hypermart & Reducing Store Size',
+      name: isId ? 'Restrukturisasi Format Besar' : 'Footprint Downsizing & Online Order Centers',
       tag: isId ? 'SBU 2 · RESTRUKTURISASI (QSPM #2)' : 'SBU 2 · RESTRUCTURING (QSPM #2)',
       theme: '#1d4ed8',
       bg: '#eff6ff',
       badgeClass: 'badge-rightsize',
-      desc: isId ? 'Perkecil 45 Gerai (30–40%) · Ubah Area Belakang Menjadi Dark Hub' : 'Downsize 45 Stores by 30–40% · Convert Backrooms to Dark Hubs',
+      desc: isId ? 'Perkecil 45 Gerai (30–40%) · Ubah Area Belakang Menjadi Dark Hub' : 'Downsize 45 Stores by 30–40% · Convert Backrooms to Online Order Centers',
       responsibilities: isId ? "Memilih gerai yang akan diperkecil, menata ulang area penjualan, dan mengoordinasikan konversi ruang belakang untuk pesanan daring." : "Selects stores to resize, redesigns selling space, and coordinates backroom conversions for online fulfillment.",
       rationale: isId ? "Menetapkan satu penanggung jawab untuk menjaga kinerja gerai sambil menekan biaya ruang dan menambah kapasitas penyiapan pesanan." : "Assigns one owner to protect store performance while reducing space costs and adding fulfillment capacity.",
       kpi: isId ? '🎯 Target: Pangkas Liabilitas Sewa Rp 180M' : '🎯 Target: Cut Rp 180B Lease Debt · Negative Cash Cycle'
@@ -257,7 +257,7 @@ const treeData = computed(() => {
       parentId: 'coo',
       role: isId ? 'Kepala · Kantor Likuidasi Non-Inti' : 'Head · Non-Core Liquidation Office',
       name: isId ? 'Satgas Divestasi SmartClub & FMX' : 'SmartClub & FMX Liquidation Taskforce',
-      tag: isId ? 'SBU 4 · DIVESTASI 2021–2022' : 'SBU 4 · DIVESTITURE TASKFORCE',
+      tag: isId ? 'SBU 4 · DIVESTASI 2021–2022' : 'SBU 4 · SALE OF A BUSINESS OR ASSETS TASKFORCE',
       theme: '#be123c',
       bg: '#fff1f2',
       badgeClass: 'badge-exit',
@@ -298,13 +298,13 @@ const treeData = computed(() => {
     {
       id: 'omni',
       parentId: 'enablers',
-      role: isId ? 'VP · Perdagangan Digital & Omnichannel' : 'VP · Omnichannel & Digital Commerce',
+      role: isId ? 'VP · Perdagangan Digital & Online And In-Store' : 'VP · Online And In-Store & Digital Commerce',
       name: isId ? 'Pengiriman Kilat 30 Menit' : '30-Minute Rapid Delivery',
-      tag: isId ? 'EKSEKUSI OMNICHANNEL O2O' : '30-MIN RAPID FULFILLMENT',
+      tag: isId ? 'EKSEKUSI ONLINE AND IN-STORE O2O' : '30-MIN RAPID FULFILLMENT',
       theme: '#4338ca',
       bg: '#f8fafc',
-      desc: isId ? 'Kemitraan GrabMart, Shopee & Tokopedia · Dark Hub Hypermart' : 'GrabMart, Shopee & Tokopedia Unified Routing · Dark Hubs',
-      responsibilities: isId ? "Mengelola kemitraan platform, mengarahkan pesanan ke gerai atau dark hub, dan memantau kinerja pengiriman." : "Manages marketplace partnerships, routes orders to stores or dark hubs, and tracks delivery performance.",
+      desc: isId ? 'Kemitraan GrabMart, Shopee & Tokopedia · Dark Hub Hypermart' : 'GrabMart, Shopee & Tokopedia Unified Routing · Online Order Centers',
+      responsibilities: isId ? "Mengelola kemitraan platform, mengarahkan pesanan ke gerai atau dark hub, dan memantau kinerja pengiriman." : "Manages marketplace partnerships, routes orders to stores or online order centers, and tracks delivery performance.",
       rationale: isId ? "Menetapkan satu penanggung jawab pemenuhan pesanan lintas platform dan format, dari pengalihan pesanan hingga serah terima." : "Gives online fulfillment one owner across platforms and formats, from order routing through handoff.",
       kpi: isId ? 'Target: Kontribusi O2O 12–15% dari Total Penjualan' : 'Target: 12–15% O2O Sales Contribution'
     },

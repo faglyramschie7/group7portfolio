@@ -42,7 +42,7 @@ export const financialDetailData = {
       operationalBridge: [
         { item: "50 Compact Hyfresh Supermarkets", impact: "+Rp 750.0 B", desc: "50 neighborhood stores (500–1,200 m²) averaging Rp 15.0 B in annual fresh sales per store." },
         { item: "45 Hypermarket Downsizing & SmartClub Closure", impact: "-Rp 500.0 B", desc: "Eliminating subscale bulk wholesale sales and trimming excess 4,000 m² non-food suburban sales space." },
-        { item: "Omnichannel Dark-Hub Digital Re-Orders", impact: "+Rp 516.7 B", desc: "45 backroom dark hubs scaling GrabMart/Shopee digital delivery to 15% of consolidated revenue." },
+        { item: "Online And In-Store Dark-Hub Digital Re-Orders", impact: "+Rp 516.7 B", desc: "45 backroom online order centers scaling GrabMart/Shopee digital delivery to 15% of consolidated revenue." },
         { item: "Net Strategic Bridge Total", impact: "+Rp 766.7 B", desc: "Matches exact workbook projected top-line expansion." }
       ]
     },
@@ -90,11 +90,11 @@ export const financialDetailData = {
       operationalBridge: [
         { item: "Direct Farm Procurement & Bypassing Middlemen", impact: "+Rp 420.0 B", desc: "Contract farming across West/East Java cuts Tier-1 distributor markups (12–15%)." },
         { item: "Central Cold-Chain Spoilage Reduction", impact: "+Rp 280.0 B", desc: "Balaraja & Surabaya DCs reduce perishable spoilage and shrinkage from 9.2% down to 2.8%." },
-        { item: "PSAK 73 Hypermarket Lease Downsizing", impact: "+Rp 180.0 B", desc: "Rightsizing 45 hypermarket anchors slashes annual fixed rental and facility maintenance costs." },
+        { item: "PSAK 73 Hypermarket Lease Downsizing", impact: "+Rp 180.0 B", desc: "Reducing Store Size 45 hypermarket anchors slashes annual fixed rental and facility maintenance costs." },
         { item: "Exit Loss-Making SmartClub Wholesale", impact: "+Rp 145.0 B", desc: "Eliminating subscale bulk warehousing halts recurring operating cash drain." }
       ]
     },
-    strategicRationale: "The turnaround is driven by the 'Operating Scissors Effect': simultaneously expanding gross margins (top blade) while rightsizing lease drag (bottom blade). High-margin perishables, bakery, and fresh produce (28–38% gross margin) replace low-margin electronics, while budgeting OpEx conservatively at 31% (up from 21.5% in 2020) provides an ample Rp 882 B expense buffer for new store fit-outs and digital delivery commissions.",
+    strategicRationale: "The turnaround is driven by the 'Operating Scissors Effect': simultaneously expanding gross margins (top blade) while reducing store size lease drag (bottom blade). High-margin perishables, bakery, and fresh produce (28–38% gross margin) replace low-margin electronics, while budgeting OpEx conservatively at 31% (up from 21.5% in 2020) provides an ample Rp 882 B expense buffer for new store fit-outs and digital delivery commissions.",
     sensitivity: "Stress Test: If Gross Margin only achieves 30.0% (instead of 50.0%) and OpEx normalizes at 22.0%, 2023 EBIT remains solidly profitable at +Rp 601.1 B (8.0% margin). The 50% case represents the upside benchmark of complete cold-chain direct farm conversion."
   },
 
@@ -115,7 +115,7 @@ export const financialDetailData = {
       { label: 'New Bank Borrowing', labelId: 'Utang Bank Baru', val: 'Rp 0', sub: 'Preserves BNI Line Covenants' },
       { label: 'New Equity Shares', labelId: 'Penerbitan Saham', val: '0 Shares', sub: 'Zero Shareholder Dilution' },
       { label: 'Internal Sources', labelId: 'Sumber Internal', val: 'Rp 450.0 B', sub: '100% Fully Covered', isProfit: true },
-      { label: 'BNI D/E Covenant', labelId: 'Kovenan D/E BNI', val: '0.07%', sub: 'Far below 250% Ceiling', isProfit: true }
+      { label: 'BNI D/E Covenant', labelId: 'Syarat Pinjaman D/E BNI', val: '0.07%', sub: 'Far below 250% Ceiling', isProfit: true }
     ],
     whereWeGotIt: {
       workbook: "Matahari.xlsx",
@@ -143,7 +143,7 @@ export const financialDetailData = {
         { item: "Total Internal Self-Funding Engine", impact: "Rp 450.0 B (100.0%)", desc: "Fully covers all rollout and tech investments without borrowing Rp 1 from banks." }
       ]
     },
-    strategicRationale: "Why 100% Self-Funding is Superior: (1) Prevents Severe Shareholder Dilution: MPPA stock traded at distressed penny-stock levels (Rp 102/share) in 2020. Raising Rp 450 B via rights issue would require issuing 4.41 billion new shares, diluting existing shareholders by ~37%. (2) Protects BNI Debt Covenants: Commercial bank debt at 10.5% interest would add Rp 47.3 B in mandatory annual interest and breach BNI's 250% D/E ceiling. (3) Reallocating non-core assets enforces capital discipline and protects solvency.",
+    strategicRationale: "Why 100% Self-Funding is Superior: (1) Prevents Severe Shareholder Dilution: MPPA stock traded at distressed penny-stock levels (Rp 102/share) in 2020. Raising Rp 450 B via rights issue would require issuing 4.41 billion new shares, diluting existing shareholders by ~37%. (2) Protects BNI Loan Conditions: Commercial bank debt at 10.5% interest would add Rp 47.3 B in mandatory annual interest and breach BNI's 250% D/E ceiling. (3) Reallocating non-core assets enforces capital discipline and protects solvency.",
     sensitivity: "Covenant Cushion: With long-term bank debt maintained at just Rp 2.0 B against 2023 Stockholders' Equity of Rp 2,689.5 B, the Debt-to-Equity ratio is 0.07%, leaving a massive 249.93% safety margin below BNI's 250% ceiling."
   },
 
@@ -230,7 +230,7 @@ export const financialDetailData = {
       ]
     },
     strategicRationale: "Expanding gross margin to 50% is achieved via 3 strategic drivers: (1) Portfolio shift to high-margin perishables and fresh bakery (28–38% margin) vs bulk FMCG; (2) Direct farm cold-chain sourcing cutting middleman margins and spoilage; (3) Elimination of low-margin SmartClub wholesale dilution.",
-    sensitivity: "Baseline Validation: Even at a standard supermarket industry gross margin of 24%–28%, MPPA's rightsized compact cost base generates positive operating income."
+    sensitivity: "Baseline Validation: Even at a standard supermarket industry gross margin of 24%–28%, MPPA's made smaller compact cost base generates positive operating income."
   },
 
   opex: {
