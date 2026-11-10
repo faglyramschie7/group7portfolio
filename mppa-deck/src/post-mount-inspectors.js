@@ -359,7 +359,8 @@ function findMatrixItem(element) {
 function matrixPreviewContent({kind, target}) {
   if (kind === 'qspm') {
     const [, weight, s1, tas1, s2, tas2] = Array.from(target.cells, cell => cell.textContent.trim());
-    return [target.querySelector('.qspm-factor-detail').textContent, 'Weight ' + weight + ' · S1: ' + s1 + ' → ' + tas1 + ' · S2: ' + s2 + ' → ' + tas2];
+    const weightLabel = document.documentElement.lang === 'id' ? 'Bobot' : 'Weight';
+    return [target.querySelector('.qspm-factor-detail').textContent, `${weightLabel} ${weight} · Strat. 1 AS ${s1} → TAS ${tas1} · Strat. 2 AS ${s2} → TAS ${tas2}`];
   }
   const data = target.dataset;
   const id = document.documentElement.lang === 'id';

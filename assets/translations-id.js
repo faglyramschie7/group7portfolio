@@ -1,5 +1,9 @@
 /* Indonesian translations for the MPPA study. Original source titles and proper names are retained. */
 window.MPPA_TRANSLATIONS_ID = {
+  "Strat. 1 = Hyfresh expansion and Hy- consolidation. Strat. 2 = Hypermart resizing and online fulfillment.": "Strat. 1 = ekspansi Hyfresh dan konsolidasi merek Hy-. Strat. 2 = perampingan Hypermart dan pemenuhan pesanan daring.",
+  "AS = Attractiveness Score (1–4), a judgment of how well each strategy addresses the factor.": "AS = skor daya tarik (1–4), penilaian seberapa baik setiap strategi menanggapi faktor.",
+  "Weight = the factor’s importance from the IFE or EFE matrix. TAS = Total Attractiveness Score for that row (Weight × AS). The overall score is the sum of the row scores.": "Bobot = tingkat kepentingan faktor dari matriks IFE atau EFE. TAS = skor daya tarik tertimbang per baris (bobot × AS). Skor keseluruhan adalah jumlah skor semua baris.",
+  "S / W / O / T = Strength / Weakness / Opportunity / Threat. S1 and S2 in the first column mean Strength 1 and Strength 2.": "S / W / O / T = kekuatan / kelemahan / peluang / ancaman. S1 dan S2 di kolom pertama berarti kekuatan 1 dan kekuatan 2.",
   "ACCOUNTING BASIS:": "DASAR AKUNTANSI:",
   "STATEMENT LEDGER:": "ALIRAN LAPORAN KEUANGAN:",
   "Accounting Rationale & Mathematical Derivation": "Dasar Akuntansi & Penurunan Matematis",
