@@ -6079,6 +6079,7 @@ Object.assign(window.MPPA_TRANSLATIONS_ID, {
   "Cell V / VIII Drag": "Tekanan Sel V / VIII",
   "Reducing Store Size & Online Order Centers": "Penyesuaian luas gerai dan penyiapan pesanan daring",
   "Market Penetration (Gourmet)": "Penetrasi pasar (produk premium)",
+  "Rebrand to Hyfresh · Retain Primo Gourmet": "Rebranding ke Hyfresh · Pertahankan Primo Gourmet",
   "9 stores · Compact Fresh Supermarket": "9 gerai · Supermarket produk segar berformat kecil",
   "Cell II Grow & Build": "Sel II · Tumbuh dan Bangun",
   "Aggressive Store Rollout": "Percepatan pembukaan gerai",
