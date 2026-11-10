@@ -261,7 +261,7 @@
         <span>{{ t("100% BNI covenant compliance achieved. Solvency restored purely via retained operational cash flows and working capital discipline.") }}</span>
       </div>
       <div class="footer-right">
-        <span class="cite-pill">{{ t("Matahari.xlsx Sheet 'Ratios' · AR2020 Note 15 · Fred David Ch. 8 · 35 / 36") }}</span>
+        <span class="cite-pill">{{ t("Matahari.xlsx Sheet 'Ratios' · AR2020 Note 15 · Fred David Ch. 8") }} · {{ slideNumber }}</span>
       </div>
     </div>
   </div>
@@ -269,6 +269,7 @@
 
 <script setup>
 const props = defineProps({
+  slideNumber: String,
   language: {
     type: String,
     default: 'id'

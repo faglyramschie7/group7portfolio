@@ -81,6 +81,7 @@
         <p class="org-detail-source">{{ t("Case pp. 587–588, Exhibit 1 · Fred David Strategic Management Ch. 7") }}</p>
       </div>
     </dialog>
+    <div class="component-slide-number">{{ slideNumber }}</div>
   </div>
 </template>
 
@@ -89,6 +90,7 @@ import { ref, onMounted, onUnmounted, watch, computed, nextTick } from 'vue';
 import { OrgChart } from 'd3-org-chart';
 
 const props = defineProps({
+  slideNumber: String,
   language: {
     type: String,
     default: 'id'

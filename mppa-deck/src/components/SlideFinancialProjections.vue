@@ -396,6 +396,7 @@
         <span class="cite-pill">{{ t("Excel Part II: Projected Statements, EPS_EBIT, Financial Statements") }}</span>
       </div>
     </div>
+    <div class="component-slide-number">{{ slideNumber }}</div>
   </div>
 </template>
 
@@ -403,6 +404,7 @@
 import { ref } from 'vue';
 
 const props = defineProps({
+  slideNumber: String,
   language: {
     type: String,
     default: 'id'

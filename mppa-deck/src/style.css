@@ -4102,3 +4102,5 @@
   line-height: 1.35;
   color: #4a3e46;
 }
+
+.component-slide-number { text-align: right; color: #b6002d; font-size: .84cqw; font-weight: 700; margin-top: .3cqw; }

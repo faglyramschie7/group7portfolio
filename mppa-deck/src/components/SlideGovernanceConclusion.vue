@@ -144,7 +144,7 @@
         <span>{{ t("100% self-funded, covenant-compliant, and operationally rigorous turnaround strategy for PT Matahari Putra Prima Tbk (MPPA).") }}</span>
       </div>
       <div class="footer-right">
-        <span class="cite-pill">{{ t("Fred David Ch. 7, 8 & 9 · Case 23 pp. 587–596 · Slide 36 / 36") }}</span>
+        <span class="cite-pill">{{ t("Fred David Ch. 7, 8 & 9 · Case 23 pp. 587–596") }} · {{ slideNumber }}</span>
       </div>
     </div>
   </div>
@@ -152,6 +152,7 @@
 
 <script setup>
 const props = defineProps({
+  slideNumber: String,
   language: {
     type: String,
     default: 'id'

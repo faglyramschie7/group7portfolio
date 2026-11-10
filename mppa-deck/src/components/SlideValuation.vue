@@ -151,7 +151,7 @@
         <span>{{ t("Fred David 4-method average is severely distorted by restructuring losses. Real enterprise value is unlocked via normalized post-turnaround cash flow (+Rp 870B PAT by 2023).") }}</span>
       </div>
       <div class="footer-right">
-        <span class="cite-pill">{{ t("Matahari.xlsx Sheet 'Company Valuation' · Fred David Ch. 8 · 34 / 36") }}</span>
+        <span class="cite-pill">{{ t("Matahari.xlsx Sheet 'Company Valuation' · Fred David Ch. 8") }} · {{ slideNumber }}</span>
       </div>
     </div>
   </div>
@@ -159,6 +159,7 @@
 
 <script setup>
 const props = defineProps({
+  slideNumber: String,
   language: {
     type: String,
     default: 'id'
