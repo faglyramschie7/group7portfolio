@@ -1,5 +1,9 @@
 /* Indonesian translations for the MPPA study. Original source titles and proper names are retained. */
 window.MPPA_TRANSLATIONS_ID = {
+  "TOWS to QSPM: How we built the two options": "Dari TOWS ke QSPM: Cara kami menyusun dua opsi",
+  "TOWS generated 16 ideas. We bundled related ideas into two options for comparison. QSPM scores those two options.": "TOWS menghasilkan 16 ide. Kami menggabungkan ide yang berkaitan menjadi dua opsi untuk dibandingkan. QSPM memberi skor pada kedua opsi itu.",
+  "SO3 (open compact Hyfresh stores) + SO4 (unify brands under Hy-) → Strategy 1": "SO3 (buka gerai Hyfresh kompak) + SO4 (satukan merek di bawah Hy-) → Strategi 1",
+  "WO1 (reduce excess Hypermart space) + SO1 (use delivery partners) → Strategy 2": "WO1 (kurangi ruang berlebih Hypermart) + SO1 (gunakan mitra pengiriman) → Strategi 2",
   "Fresh food is central to Hyfresh. Resized Hypermarts still sell it, but their main goal is store efficiency.": "Produk segar menjadi inti Hyfresh. Hypermart yang diperkecil tetap menjualnya, tetapi tujuan utamanya efisiensi gerai.",
   "Hyfresh depends on reliable chilled supply at each new store. Hypermart resizing uses the same network mainly to support existing stores.": "Hyfresh bergantung pada pasokan dingin yang andal di tiap gerai baru. Perampingan Hypermart memanfaatkan jaringan itu terutama untuk gerai yang sudah ada.",
   "Hyfresh can learn from the network, but resizing directly reuses the existing Hypermart sites.": "Hyfresh bisa belajar dari jaringan itu, tetapi perampingan langsung memanfaatkan lokasi Hypermart yang sudah ada.",

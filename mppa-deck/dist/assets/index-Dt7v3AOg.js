@@ -3102,6 +3102,7 @@ FY2020 baseline · Planning horizon 2021–2025
       <span class="qspm-card-tas"><strong>5.460</strong><span>Total score</span></span>
     </button>
   </div>
+  <div class="qspm-bridge"><strong>TOWS to QSPM: How we built the two options</strong><p>TOWS generated 16 ideas. We bundled related ideas into two options for comparison. QSPM scores those two options.</p><div><p>SO3 (open compact Hyfresh stores) + SO4 (unify brands under Hy-) → Strategy 1</p><p>WO1 (reduce excess Hypermart space) + SO1 (use delivery partners) → Strategy 2</p></div></div>
 </div>
 
 <div class="qspm-layout">
