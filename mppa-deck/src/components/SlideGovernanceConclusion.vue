@@ -1,7 +1,21 @@
 <template>
   <article class="roadmap-slide">
     <header class="roadmap-header">
-      <div class="deck-kicker">{{ copy.kicker }}</div>
+      <div class="deck-kicker fw-kicker-row">
+        <div class="fw-kicker-lead">
+          <span class="fw-badge fw-badge-when">{{ language === 'id' ? '5W1H · KAPAN' : '5W1H · WHEN' }}</span>
+          <span class="fw-kicker-text">{{ copy.kicker }}</span>
+        </div>
+        <div class="fw-stepper" role="navigation" aria-label="5W1H Framework">
+          <span class="fw-stepper-label">5W1H:</span>
+          <button type="button" class="fw-stepper-pill" data-fw="what"><span class="fw-pill-code">WHAT</span><span class="fw-pill-title">{{ language === 'id' ? 'Rencana' : 'Action Plan' }}</span></button>
+          <button type="button" class="fw-stepper-pill" data-fw="how"><span class="fw-pill-code">HOW</span><span class="fw-pill-title">{{ language === 'id' ? 'Anggaran' : 'Budget' }}</span></button>
+          <button type="button" class="fw-stepper-pill" data-fw="where"><span class="fw-pill-code">WHERE</span><span class="fw-pill-title">{{ language === 'id' ? 'Peta' : 'Store Map' }}</span></button>
+          <button type="button" class="fw-stepper-pill" data-fw="who"><span class="fw-pill-code">{{ language === 'id' ? 'SIAPA' : 'WHO' }}</span><span class="fw-pill-title">{{ language === 'id' ? 'Struktur' : 'Org' }}</span></button>
+          <button type="button" class="fw-stepper-pill" data-fw="why"><span class="fw-pill-code">WHY</span><span class="fw-pill-title">{{ language === 'id' ? 'Visi' : 'Vision' }}</span></button>
+          <button type="button" class="fw-stepper-pill is-active" data-fw="when"><span class="fw-pill-code">{{ language === 'id' ? 'KAPAN' : 'WHEN' }}</span><span class="fw-pill-title">{{ language === 'id' ? 'Peta Jalan' : 'Roadmap' }}</span></button>
+        </div>
+      </div>
       <h2>{{ copy.title }}</h2>
       <p>{{ copy.subtitle }}</p>
     </header>

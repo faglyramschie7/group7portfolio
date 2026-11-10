@@ -1,7 +1,21 @@
 <template>
   <div class="financial-slide-wrapper">
     <!-- Header -->
-    <div class="deck-kicker">{{ t("Financial feasibility · Stage 4 · Fred David Ch. 8 framework") }}</div>
+    <div class="deck-kicker fw-kicker-row">
+      <div class="fw-kicker-lead">
+        <span class="fw-badge fw-badge-how" style="background:#047857;">{{ language === 'id' ? '5W1H · KEUANGAN' : '5W1H · HOW MUCH' }}</span>
+        <span class="fw-kicker-text">{{ t("Financial feasibility · Stage 4 · Fred David Ch. 8 framework") }}</span>
+      </div>
+      <div class="fw-stepper" role="navigation" aria-label="5W1H Framework">
+        <span class="fw-stepper-label">5W1H:</span>
+        <button type="button" class="fw-stepper-pill" data-fw="what"><span class="fw-pill-code">WHAT</span><span class="fw-pill-title">{{ language === 'id' ? 'Rencana' : 'Action Plan' }}</span></button>
+        <button type="button" class="fw-stepper-pill" data-fw="how"><span class="fw-pill-code">HOW</span><span class="fw-pill-title">{{ language === 'id' ? 'Anggaran' : 'Budget' }}</span></button>
+        <button type="button" class="fw-stepper-pill" data-fw="where"><span class="fw-pill-code">WHERE</span><span class="fw-pill-title">{{ language === 'id' ? 'Peta' : 'Store Map' }}</span></button>
+        <button type="button" class="fw-stepper-pill" data-fw="who"><span class="fw-pill-code">{{ language === 'id' ? 'SIAPA' : 'WHO' }}</span><span class="fw-pill-title">{{ language === 'id' ? 'Struktur' : 'Org' }}</span></button>
+        <button type="button" class="fw-stepper-pill" data-fw="why"><span class="fw-pill-code">WHY</span><span class="fw-pill-title">{{ language === 'id' ? 'Visi' : 'Vision' }}</span></button>
+        <button type="button" class="fw-stepper-pill" data-fw="when"><span class="fw-pill-code">WHEN</span><span class="fw-pill-title">{{ language === 'id' ? 'Peta Jalan' : 'Roadmap' }}</span></button>
+      </div>
+    </div>
     <div class="slide-header-row">
       <div class="title-block">
         <h2 class="slide-title">{{ t("3-Year Pro Forma Financial Statements & Strategic Financing") }}</h2>

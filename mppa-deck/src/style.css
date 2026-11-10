@@ -4325,3 +4325,137 @@
 }
 
 .component-slide-number { text-align: right; color: #b6002d; font-size: .84cqw; font-weight: 700; margin-top: .3cqw; }
+
+
+/* =========================================================
+   5W1H IMPLEMENTATION FRAMEWORK HEADER LABELS & STEPPER
+   Unifies scattered Stage 4 execution slides under What, Why, How, Where, Who, When
+   ========================================================= */
+.fw-kicker-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: .8cqw !important;
+  margin-bottom: .2cqw !important;
+  width: 100% !important;
+  padding-right: 9.5cqw !important; /* Preserves clear margin for MPPA brand mark */
+  box-sizing: border-box !important;
+}
+
+.fw-kicker-lead {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .55cqw !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.fw-kicker-text {
+  font-size: 0.82cqw !important;
+  letter-spacing: 0.08em !important;
+  color: #736a71 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.fw-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: .2cqw .55cqw !important;
+  border-radius: 4px !important;
+  font-size: .68cqw !important;
+  font-weight: 900 !important;
+  letter-spacing: .08em !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) !important;
+}
+
+.fw-badge-what { background: #df0036 !important; }
+.fw-badge-how { background: #059669 !important; }
+.fw-badge-where { background: #2563eb !important; }
+.fw-badge-who { background: #7c3aed !important; }
+.fw-badge-why { background: #d97706 !important; }
+.fw-badge-when { background: #0891b2 !important; }
+
+.fw-stepper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .25cqw !important;
+  background: #f7f3f5 !important;
+  border: 1px solid #ebdbe2 !important;
+  border-radius: 6px !important;
+  padding: .15cqw .3cqw !important;
+  flex-shrink: 0 !important;
+}
+
+.fw-stepper-label {
+  font-size: .62cqw !important;
+  font-weight: 900 !important;
+  color: #8c7f88 !important;
+  letter-spacing: .06em !important;
+  padding: 0 .25cqw 0 .15cqw !important;
+}
+
+.fw-stepper-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .22cqw !important;
+  padding: .18cqw .4cqw !important;
+  border-radius: 4px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: #5a4c55 !important;
+  font-family: inherit !important;
+  font-size: .62cqw !important;
+  cursor: pointer !important;
+  line-height: 1 !important;
+  transition: all .15s ease !important;
+}
+
+.fw-stepper-pill:hover {
+  background: #ede2e8 !important;
+  color: #1e181c !important;
+}
+
+.fw-stepper-pill.is-active {
+  background: #1e181c !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16) !important;
+}
+
+.fw-stepper-pill.is-active .fw-pill-code {
+  color: #ff5277 !important;
+}
+
+.fw-pill-code {
+  font-weight: 900 !important;
+  letter-spacing: .04em !important;
+}
+
+.fw-pill-title {
+  opacity: .88 !important;
+  font-weight: 500 !important;
+}
+
+.fw-inline-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1px 6px !important;
+  border-radius: 3px !important;
+  font-size: .62cqw !important;
+  font-weight: 900 !important;
+  letter-spacing: .06em !important;
+  color: #ffffff !important;
+  line-height: 1.1 !important;
+  margin-right: .35cqw !important;
+  vertical-align: middle !important;
+}
