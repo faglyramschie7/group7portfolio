@@ -5971,3 +5971,42 @@ Object.assign(window.MPPA_TRANSLATIONS_ID, {
   "Pemerintah Provinsi DKI Jakarta & Tangerang Selatan — Pergub No. 33/2020 tentang Pelaksanaan PSBB & Ketentuan Sektor Esensial Pangan": "Pemerintah Provinsi DKI Jakarta & Tangerang Selatan — Pergub No. 33/2020 tentang Pelaksanaan PSBB & Ketentuan Sektor Esensial Pangan",
   "DKI Jakarta & South Tangerang Municipal Governments — Regulation No. 33/2020 on PSBB Implementation & Essential Food Retail Exemptions": "Pemerintah Provinsi DKI Jakarta & Tangerang Selatan — Pergub No. 33/2020 tentang Pelaksanaan PSBB & Ketentuan Sektor Esensial Pangan"
 });
+
+Object.assign(window.MPPA_TRANSLATIONS_ID, {
+  "Historical Record · Jakarta 2020": "Rekam Historis · Jakarta 2020",
+  "Essential Grocery Retail under PSBB": "Protokol Belanja Ritel Pangan saat PSBB",
+  "Masked shoppers in Jakarta modern grocery aisles.": "Konsumen bermasker berbelanja di supermarket Jakarta.",
+  "Official Notice · South Tangerang": "Ketentuan Resmi · Tangsel",
+  "PSBB Rules & Food Sector Exemptions": "Sosialisasi PSBB & Pengecualian Sektor Esensial",
+  "Legal basis for movement curbs in MPPA HQ area.": "Dasar hukum pembatasan mobilitas di wilayah HQ MPPA.",
+  "Shopping Mall Anchor Footprint": "Pusat Perbelanjaan · Jakarta",
+  "Mall Footfall Drop & Retail Cash Flow (2020)": "Tekanan Trafik Mal & Kasir Ritel (2020)",
+  "Contraction in national consumption (-2.63%) and empty malls pressured department and hypermarket sales.": "Penurunan konsumsi rumah tangga nasional (-2,63%) dan sepinya mal menekan penjualan peritel fisik.",
+  "Consumer Behavior Shift": "Perubahan Perilaku Konsumen",
+  "Acceleration of Remote Grocery Shopping": "Akselerasi Belanja Kebutuhan Pokok Jarak Jauh",
+  "The pandemic prompted millions of households to try digital services for the first time, driving MPPA's omni-channel pivot.": "Pandemi memaksa jutaan rumah tangga pertama kali mencoba layanan digital. MPPA merespons dengan Chat & Shop dan kemitraan on-demand GrabMart / Shopee.",
+  "Digital Lifestyle Shift": "Tren Gaya Hidup Digital",
+  "Online Grocery & Rapid Delivery Shift": "Lonjakan Pesanan Daring & Pemenuhan Cepat",
+  "Structural migration from in-store footfall to contactless on-demand grocery delivery.": "Peralihan dari kunjungan fisik ke pemesanan digital tanpa kontak (e-groceries & on-demand delivery).",
+  "Govt Regulation No. 80/2019 on E-Commerce": "PP No. 80/2019 tentang PMSE",
+  "Consumer Protection Standards for Digital Channels": "Standar Perlindungan Konsumen Belanja Daring",
+  "E-commerce retailers are legally mandated to maintain operational consumer dispute resolution channels and clear resolution timeframes.": "Setiap pelaku usaha perdagangan elektronik wajib menyediakan kanal pengaduan aktif, jangka waktu resolusi sengketa, dan staf berkompeten.",
+  "Legal Compliance Standard": "Kepastian Hukum PMSE",
+  "Consumer Protection in Digital Retail": "Perlindungan Hak Konsumen Ritel Daring",
+  "Mandatory compliance framework for MPPA's digital sales channels and dispute handling.": "Kewajiban kepatuhan hukum bagi Hypermart Online dan ekosistem penjualan digital MPPA.",
+  "Fresh Product Spoilage Mitigation": "Manajemen Kerusakan Produk Segar",
+  "Urgency of Cold Chain Infrastructure": "Urgensi Rantai Pasok Suhu Dingin",
+  "Perishables face acute waste risks when stock velocity slows, making temperature-controlled distribution essential.": "Produk segar (sayur, buah, daging, susu) rentan rusak jika perputaran lambat atau rantai pendingin terputus. MPPA mengandalkan pusat distribusi Balaraja & Surabaya.",
+  "Fresh Produce Displays": "Produk Segar · Hypermart",
+  "Perishable Produce Shelf-Life Risk": "Pajangan Produk Segar & Risiko Susut",
+  "Fresh assortment requires fast daily inventory turns.": "Manajemen inventaris segar membutuhkan perputaran harian yang ketat.",
+  "Central Distribution Cold Chain": "Logistik Distribusi DC",
+  "Modern Temperature-Controlled Hubs": "Fasilitas Rantai Pendingin Modern",
+  "MPPA's distribution centers safeguard freshness before store arrival.": "Pusat distribusi MPPA menjaga kesegaran pasokan sebelum ke gerai."
+});
+
+Object.assign(window.MPPA_TRANSLATIONS_ID, {
+  "The pandemic prompted millions of households to try digital services for the first time, driving MPPA’s omni-channel pivot.": "Pandemi memaksa jutaan rumah tangga pertama kali mencoba layanan digital. MPPA merespons dengan Chat & Shop dan kemitraan on-demand GrabMart / Shopee.",
+  "Mandatory compliance framework for MPPA’s digital sales channels and dispute handling.": "Kewajiban kepatuhan hukum bagi Hypermart Online dan ekosistem penjualan digital MPPA.",
+  "MPPA’s distribution centers safeguard freshness before store arrival.": "Pusat distribusi MPPA menjaga kesegaran pasokan sebelum ke gerai."
+});

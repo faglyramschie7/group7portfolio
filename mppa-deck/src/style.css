@@ -3939,3 +3939,166 @@
   padding: 0;
   border: 0;
 }
+
+/* =========================================================
+   TACTILE TILTED POLAROID EVIDENCE GALLERY FOR PESTLE
+   ========================================================= */
+.pestle-factor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr);
+  gap: 1.8cqw;
+  align-items: start;
+  margin-top: .4cqw;
+}
+.pestle-factor-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .75cqw;
+}
+.pestle-factor-visual {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: .4cqw;
+}
+.pestle-polaroid-stack {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+.pestle-stack-single {
+  max-width: 27cqw;
+}
+.pestle-stack-dual {
+  display: flex;
+  gap: .9cqw;
+  max-width: 38cqw;
+}
+.pestle-polaroid {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #ebdbe2;
+  border-radius: 4px;
+  padding: .45cqw .45cqw .6cqw;
+  box-shadow: 0 8px 24px rgba(45, 18, 30, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease, z-index 0.28s ease;
+  cursor: pointer;
+  z-index: 2;
+  margin: 0;
+}
+.pestle-stack-dual .pestle-polaroid {
+  flex: 1;
+  min-width: 0;
+  max-width: 18.5cqw;
+}
+.pestle-polaroid.polaroid-tilt-left {
+  transform: rotate(-2.8deg);
+}
+.pestle-polaroid.polaroid-tilt-right {
+  transform: rotate(2.4deg);
+}
+.pestle-polaroid:hover {
+  transform: rotate(0deg) scale(1.06) !important;
+  z-index: 15 !important;
+  box-shadow: 0 16px 36px rgba(45, 18, 30, 0.24), 0 4px 12px rgba(0,0,0,0.12);
+}
+.polaroid-pin {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 11px;
+  background: radial-gradient(circle at 35% 35%, #ff4d6d, #b30026);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.35);
+  z-index: 5;
+}
+.polaroid-photo {
+  position: relative;
+  width: 100%;
+  height: 14cqw;
+  background: #1a1217;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.pestle-stack-dual .polaroid-photo {
+  height: 10.5cqw;
+}
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.polaroid-photo img.is-contain {
+  object-fit: contain;
+  background: #251c23;
+}
+.pestle-polaroid figcaption {
+  padding: .35cqw .2cqw 0;
+  display: flex;
+  flex-direction: column;
+  gap: .18cqw;
+}
+.polaroid-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: .62cqw;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #a8002b;
+  background: #fbebee;
+  padding: .1cqw .35cqw;
+  border-radius: 2px;
+}
+.pestle-polaroid figcaption strong {
+  font-size: .82cqw;
+  font-weight: 700;
+  color: #1e1319;
+  line-height: 1.25;
+}
+.pestle-polaroid figcaption small {
+  font-size: .68cqw;
+  line-height: 1.32;
+  color: #5a4b54;
+}
+
+/* Strategic Takeaway card on left side */
+.pestle-takeaway-card {
+  background: #faf6f8;
+  border: 1px solid #ebdbe2;
+  border-left: 3px solid #df0036;
+  border-radius: 4px;
+  padding: .55cqw .75cqw;
+}
+.takeaway-badge {
+  display: inline-block;
+  font-size: .66cqw;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #a8002b;
+  background: #fbebee;
+  padding: .12cqw .4cqw;
+  border-radius: 3px;
+  margin-bottom: .25cqw;
+}
+.pestle-takeaway-card h4 {
+  margin: 0 0 .2cqw;
+  font-size: .88cqw;
+  font-weight: 700;
+  color: #24161f;
+}
+.pestle-takeaway-card p {
+  margin: 0;
+  font-size: .76cqw;
+  line-height: 1.35;
+  color: #4a3e46;
+}

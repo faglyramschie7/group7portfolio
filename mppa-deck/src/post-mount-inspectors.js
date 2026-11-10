@@ -1,5 +1,9 @@
 // Post-mount matrix inspectors and DOM event listeners
-export function initPostMountInspectors() {
+export function initPostMountInspectors({
+  inspectSpaceFactorRow, inspectSpaceDimensionCard, selectSpaceCompany,
+  selectBcgDivision, bcgDivisionsData, spaceCompaniesData, spaceFactorsData,
+  getActiveSpaceCompany, matrixIeRender, matrixIePreview,
+}) {
 // Live External Factor Evaluation (EFE Matrix) Inspector
   function updateEfeInspector(target) {
     if (!target) return;
@@ -360,6 +364,12 @@ function matrixPreviewContent({kind, target}) {
   const data = target.dataset;
   const id = document.documentElement.lang === 'id';
   const tr = value => (value && window.t ? window.t(value) : value) || '';
+  const activeSpaceCompany = getActiveSpaceCompany();
+  if (kind === 'cpm') {
+    const title = [tr(data.factor), tr(data.company)].filter(Boolean).join(' · ');
+    const score = data.rating === '—' ? '' : tr('Rating') + ' ' + data.rating + ' · ' + tr('Score') + ' ' + data.score + '. ';
+    return [title, score + tr(data.evidence)];
+  }
   const company = spaceCompaniesData[data.company || activeSpaceCompany] || spaceCompaniesData.mppa;
   if (kind === 'space' && data.factor) {
     const factor = (spaceFactorsData[activeSpaceCompany] || spaceFactorsData.mppa)[data.factor];

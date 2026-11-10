@@ -1094,91 +1094,190 @@
 <transition v-else name="chart-detail" mode="out-in"><div class="pestle-detail-layout" :key="activePestle.id">
 <div class="pestle-evidence-panel"><h3>{{ t(activePestle.chartTitle) }}</h3>
 <p class="pestle-chart-unit" v-if="activePestle.unit && activePestle.kind !== 'range'">{{ t(activePestle.unit) }}</p>
-<div v-if="activePestle.kind === 'bars'" class="pestle-bars" role="group" :aria-label="activePestle.chartTitle + ': ' + activePestle.bars.map(bar=>bar.label+' '+bar.display).join(', ')"><div class="pestle-bar-row" v-for="(bar,index) in activePestle.bars" :key="bar.label"><span>{{ t(bar.label) }}</span><div class="pestle-bar-track"><div class="pestle-bar-fill" :class="{'pestle-bar-prior':index%2===0}" :style="{width:bar.value/Math.max(...activePestle.bars.map(item=>item.value))*100+'%'}"></div></div><strong>{{ t(bar.display) }}</strong></div></div>
-<div v-else-if="activePestle.kind === 'signed'" class="pestle-signed" role="group" :aria-label="t(&quot;Real household-consumption growth: plus 5.04 percent in 2019 versus minus 2.63 percent in 2020&quot;)"><div class="signed-row" v-for="bar in activePestle.bars" :key="bar.label"><span>{{ t(bar.label) }}</span><div class="signed-track"><i class="signed-zero"></i><div class="signed-bar" :class="{'negative':bar.value<0}" :style="{left:(bar.value<0?50-Math.abs(bar.value)/6*45:50)+'%',width:Math.abs(bar.value)/6*45+'%'}"></div></div><strong>{{ t(bar.display) }}</strong></div><p class="zero-caption">{{ t("Left: contraction · Zero at center · Right: growth") }}</p></div>
-<div v-else-if="activePestle.kind === 'timeline'" class="pestle-political-container">
-  <div class="pestle-political-left">
-    <div class="pestle-timeline">
+
+<div class="pestle-factor-grid" :class="'pestle-grid-' + activePestle.id">
+  <div class="pestle-factor-main">
+    <!-- Bars (Social) -->
+    <div v-if="activePestle.kind === 'bars'" class="pestle-bars" role="group" :aria-label="activePestle.chartTitle + ': ' + activePestle.bars.map(bar=>bar.label+' '+bar.display).join(', ')">
+      <div class="pestle-bar-row" v-for="(bar,index) in activePestle.bars" :key="bar.label">
+        <span>{{ t(bar.label) }}</span>
+        <div class="pestle-bar-track"><div class="pestle-bar-fill" :class="{'pestle-bar-prior':index%2===0}" :style="{width:bar.value/Math.max(...activePestle.bars.map(item=>item.value))*100+'%'}"></div></div>
+        <strong>{{ t(bar.display) }}</strong>
+      </div>
+    </div>
+
+    <!-- Signed (Economic) -->
+    <div v-else-if="activePestle.kind === 'signed'" class="pestle-signed" role="group" :aria-label="t(&quot;Real household-consumption growth: plus 5.04 percent in 2019 versus minus 2.63 percent in 2020&quot;)">
+      <div class="signed-row" v-for="bar in activePestle.bars" :key="bar.label">
+        <span>{{ t(bar.label) }}</span>
+        <div class="signed-track"><i class="signed-zero"></i><div class="signed-bar" :class="{'negative':bar.value<0}" :style="{left:(bar.value<0?50-Math.abs(bar.value)/6*45:50)+'%',width:Math.abs(bar.value)/6*45+'%'}"></div></div>
+        <strong>{{ t(bar.display) }}</strong>
+      </div>
+      <p class="zero-caption">{{ t("Left: contraction · Zero at center · Right: growth") }}</p>
+    </div>
+
+    <!-- Timeline (Political & Legal) -->
+    <div v-else-if="activePestle.kind === 'timeline'" class="pestle-timeline">
       <div v-for="step in activePestle.steps" :key="step.label">
         <strong>{{ t(step.label) }}</strong>
         <span>{{ t(step.text) }}</span>
       </div>
     </div>
-    <p class="pestle-evidence-text">{{ t(activePestle.sourceNote) }}</p>
-    
-    <div class="pestle-political-card">
-      <div class="political-card-badge">{{ t('Key Regulation · DKI Pergub 33/2020') }}</div>
+
+    <!-- Comparison (Tech) -->
+    <div v-else-if="activePestle.kind === 'comparison'" class="tech-comparison">
+      <div v-for="row in activePestle.comparison" :key="row.company" class="tech-comparison-row">
+        <strong>{{ row.company }}</strong>
+        <span>{{ t(row.brief) }}</span>
+      </div>
+      <p>{{ t("Comparable active-user counts not verified. Full dated comparison and usage limits in Notes.") }}</p>
+    </div>
+
+    <!-- Range counter (Environmental) -->
+    <div v-else class="pestle-range-counter">
+      <div class="pestle-counter-digits" role="img" :aria-label="activePestle.range + ' ' + t(activePestle.unit)">
+        <span v-for="(digit,index) in activePestle.range" :key="index" :class="digit === '–' ? 'pestle-counter-dash' : 'pestle-counter-digit'" aria-hidden="true">{{ digit }}</span>
+      </div>
+      <span class="pestle-counter-unit">{{ t(activePestle.unit) }}</span>
+      <p>{{ t(activePestle.rangeNote) }}</p>
+    </div>
+
+    <p v-if="activePestle.sourceNote" class="pestle-evidence-text">{{ t(activePestle.sourceNote) }}</p>
+
+    <!-- Strategic Takeaway / Context Cards -->
+    <div v-if="activePestle.id === 'political'" class="pestle-takeaway-card">
+      <div class="takeaway-badge">{{ t('Key Regulation · DKI Pergub 33/2020') }}</div>
       <h4>{{ t('Essential Food Retail Status & Exemption') }}</h4>
       <p>{{ t('Article 13 explicitly exempted supermarkets, hypermarkets, and essential food retailers from mandatory shutdowns. Grocery stores remained operational to maintain public food supply, though physical distancing, mandatory face coverings, and general mall movement curbs severely suppressed in-store foot traffic.') }}</p>
     </div>
+
+    <section v-else-if="activePestle.id === 'economic'" class="pestle-retail-sector">
+      <h4>{{ language === 'id' ? 'Penjualan eceran riil makanan, minuman, dan tembakau' : 'Real retail sales of food, beverages, and tobacco' }}</h4>
+      <div class="pestle-retail-growth">
+        <div>
+          <h5>{{ language === 'id' ? 'Triwulan IV · perubahan tahunan' : 'Q4 · year-over-year change' }}</h5>
+          <div class="retail-growth-row"><span>2019</span><span class="retail-growth-track" aria-hidden="true"><i class="gain" style="--bar: 17.083%"></i></span><strong>{{ language === 'id' ? '+4,1%' : '+4.1%' }}</strong></div>
+          <div class="retail-growth-row"><span>2020</span><span class="retail-growth-track" aria-hidden="true"><i class="loss" style="--bar: 31.250%"></i></span><strong>{{ language === 'id' ? '−7,5%' : '−7.5%' }}</strong></div>
+        </div>
+      </div>
+      <p>{{ language === 'id' ? 'Setiap tahun dibandingkan dengan periode yang sama setahun sebelumnya.' : 'Each year is compared with the same period one year earlier.' }} <a :href="pestleSources.find(source => source.id === 'E2').url" target="_blank" rel="noopener">E2</a></p>
+    </section>
+
+    <div v-else-if="activePestle.id === 'social'" class="pestle-takeaway-card">
+      <div class="takeaway-badge">{{ t('Consumer Behavior Shift') }}</div>
+      <h4>{{ t('Acceleration of Remote Grocery Shopping') }}</h4>
+      <p>{{ t("The pandemic prompted millions of households to try digital services for the first time, driving MPPA’s omni-channel pivot.") }}</p>
+    </div>
+
+    <div v-else-if="activePestle.id === 'legal'" class="pestle-takeaway-card">
+      <div class="takeaway-badge">{{ t('Govt Regulation No. 80/2019 on E-Commerce') }}</div>
+      <h4>{{ t('Consumer Protection Standards for Digital Channels') }}</h4>
+      <p>{{ t('E-commerce retailers are legally mandated to maintain operational consumer dispute resolution channels and clear resolution timeframes.') }}</p>
+    </div>
+
+    <div v-else-if="activePestle.id === 'environmental'" class="pestle-takeaway-card">
+      <div class="takeaway-badge">{{ t('Fresh Product Spoilage Mitigation') }}</div>
+      <h4>{{ t('Urgency of Cold Chain Infrastructure') }}</h4>
+      <p>{{ t('Perishables face acute waste risks when stock velocity slows, making temperature-controlled distribution essential.') }}</p>
+    </div>
   </div>
 
-  <div class="pestle-political-right">
-    <div class="political-photo-card">
-      <div class="political-photo-toolbar">
-        <button type="button" :class="{'active': politicalPhotoTab === 'supermarket'}" @click="politicalPhotoTab = 'supermarket'">
-          {{ t('🛒 Store Environment 2020') }}
-        </button>
-        <button type="button" :class="{'active': politicalPhotoTab === 'notice'}" @click="politicalPhotoTab = 'notice'">
-          {{ t('📜 Official PSBB Notice') }}
-        </button>
-      </div>
-      
-      <div class="political-photo-media">
-        <img v-if="politicalPhotoTab === 'supermarket'" 
-             src="/assets/psbb-jakarta-supermarket.jpg" 
-             :alt="t('Essential Grocery Retail Shopping during PSBB')"
-             class="political-photo-img" />
-        <img v-else 
-             src="/assets/psbb-tangerang-rules.jpg" 
-             :alt="t('Official South Tangerang PSBB Guidance (Apr 2020)')"
-             class="political-photo-img is-contain" />
-      </div>
+  <!-- TILTED DOCUMENTARY VISUALS -->
+  <div class="pestle-factor-visual">
+    <!-- Political: Dual Tilted Polaroids -->
+    <div v-if="activePestle.id === 'political'" class="pestle-polaroid-stack pestle-stack-dual">
+      <figure class="pestle-polaroid polaroid-tilt-left">
+        <div class="polaroid-pin" aria-hidden="true"></div>
+        <div class="polaroid-photo"><img src="/assets/psbb-jakarta-supermarket.jpg" :alt="t('Essential Grocery Retail under PSBB')" /></div>
+        <figcaption>
+          <span class="polaroid-badge">{{ t('Historical Record · Jakarta 2020') }}</span>
+          <strong>{{ t('Essential Grocery Retail under PSBB') }}</strong>
+          <small>{{ t('Masked shoppers in Jakarta modern grocery aisles.') }}</small>
+        </figcaption>
+      </figure>
+      <figure class="pestle-polaroid polaroid-tilt-right">
+        <div class="polaroid-pin" aria-hidden="true"></div>
+        <div class="polaroid-photo"><img src="/assets/psbb-tangerang-rules.jpg" :alt="t('PSBB Rules & Food Sector Exemptions')" class="is-contain" /></div>
+        <figcaption>
+          <span class="polaroid-badge">{{ t('Official Notice · South Tangerang') }}</span>
+          <strong>{{ t('PSBB Rules & Food Sector Exemptions') }}</strong>
+          <small>{{ t('Legal basis for movement curbs in MPPA HQ area.') }}</small>
+        </figcaption>
+      </figure>
+    </div>
 
-      <div class="political-photo-meta">
-        <div class="political-photo-title">
-          <strong>{{ politicalPhotoTab === 'supermarket' ? t('Essential Grocery Retail Shopping during PSBB') : t('Official South Tangerang PSBB Guidance (Apr 2020)') }}</strong>
-          <span class="political-photo-tag">{{ politicalPhotoTab === 'supermarket' ? t('Jakarta Photo') : t('MPPA Headquarter Region') }}</span>
-        </div>
-        <p class="political-photo-text">
-          {{ politicalPhotoTab === 'supermarket' 
-             ? t('Indonesian consumers purchasing food and household essentials in a Jakarta supermarket aisle with face coverings (2020). MPPA maintained store continuity across Hypermart locations while accelerating contactless channels (Chat & Shop and on-demand delivery partnerships).')
-             : t('Official municipal PSBB notice in South Tangerang, home to MPPA’s headquarters and key stores. Outlines social restriction rules and non-essential mall limitations alongside full exemptions for food logistics and grocery distribution.')
-          }}
-        </p>
-        <div class="political-photo-attribution">
-          <span>{{ politicalPhotoTab === 'supermarket' ? 'Wikimedia Commons / SquidHomme · CC BY-SA 4.0' : 'KPU Tangerang Selatan / Wikimedia Commons · Public Domain' }}</span>
-        </div>
-      </div>
+    <!-- Economic: Single Tilted Polaroid -->
+    <div v-else-if="activePestle.id === 'economic'" class="pestle-polaroid-stack pestle-stack-single">
+      <figure class="pestle-polaroid polaroid-tilt-right">
+        <div class="polaroid-pin" aria-hidden="true"></div>
+        <div class="polaroid-photo"><img src="/assets/mall-anchor.jpg" :alt="t('Mall Footfall Drop & Retail Cash Flow (2020)')" /></div>
+        <figcaption>
+          <span class="polaroid-badge">{{ t('Shopping Mall Anchor Footprint') }}</span>
+          <strong>{{ t('Mall Footfall Drop & Retail Cash Flow (2020)') }}</strong>
+          <small>{{ t('Contraction in national consumption (-2.63%) and empty malls pressured department and hypermarket sales.') }}</small>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Social: Single Tilted Polaroid -->
+    <div v-else-if="activePestle.id === 'social'" class="pestle-polaroid-stack pestle-stack-single">
+      <figure class="pestle-polaroid polaroid-tilt-left">
+        <div class="polaroid-pin" aria-hidden="true"></div>
+        <div class="polaroid-photo"><img src="/assets/dark-store.jpg" :alt="t('Online Grocery & Rapid Delivery Shift')" /></div>
+        <figcaption>
+          <span class="polaroid-badge">{{ t('Digital Lifestyle Shift') }}</span>
+          <strong>{{ t('Online Grocery & Rapid Delivery Shift') }}</strong>
+          <small>{{ t('Structural migration from in-store footfall to contactless on-demand grocery delivery.') }}</small>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Legal: Single Tilted Polaroid -->
+    <div v-else-if="activePestle.id === 'legal'" class="pestle-polaroid-stack pestle-stack-single">
+      <figure class="pestle-polaroid polaroid-tilt-right">
+        <div class="polaroid-pin" aria-hidden="true"></div>
+        <div class="polaroid-photo"><img src="/assets/supermarket-checkout.jpg" :alt="t('Consumer Protection in Digital Retail')" /></div>
+        <figcaption>
+          <span class="polaroid-badge">{{ t('Legal Compliance Standard') }}</span>
+          <strong>{{ t('Consumer Protection in Digital Retail') }}</strong>
+          <small>{{ t("Mandatory compliance framework for MPPA’s digital sales channels and dispute handling.") }}</small>
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Environmental: Dual Tilted Polaroids -->
+    <div v-else-if="activePestle.id === 'environmental'" class="pestle-polaroid-stack pestle-stack-dual">
+      <figure class="pestle-polaroid polaroid-tilt-left">
+        <div class="polaroid-pin" aria-hidden="true"></div>
+        <div class="polaroid-photo"><img src="/assets/history-grocery-produce.jpg" :alt="t('Perishable Produce Shelf-Life Risk')" /></div>
+        <figcaption>
+          <span class="polaroid-badge">{{ t('Fresh Produce Displays') }}</span>
+          <strong>{{ t('Perishable Produce Shelf-Life Risk') }}</strong>
+          <small>{{ t('Fresh assortment requires fast daily inventory turns.') }}</small>
+        </figcaption>
+      </figure>
+      <figure class="pestle-polaroid polaroid-tilt-right">
+        <div class="polaroid-pin" aria-hidden="true"></div>
+        <div class="polaroid-photo"><img src="/assets/cold-storage.jpg" :alt="t('Modern Temperature-Controlled Hubs')" /></div>
+        <figcaption>
+          <span class="polaroid-badge">{{ t('Central Distribution Cold Chain') }}</span>
+          <strong>{{ t('Modern Temperature-Controlled Hubs') }}</strong>
+          <small>{{ t("MPPA’s distribution centers safeguard freshness before store arrival.") }}</small>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </div>
-<div v-else-if="activePestle.kind === 'comparison'" class="tech-comparison"><div v-for="row in activePestle.comparison" :key="row.company" class="tech-comparison-row"><strong>{{ row.company }}</strong><span>{{ t(row.brief) }}</span></div><p>{{ t("Comparable active-user counts not verified. Full dated comparison and usage limits in Notes.") }}</p></div>
-<div v-else class="pestle-range-counter">
-  <div class="pestle-counter-digits" role="img" :aria-label="activePestle.range + ' ' + t(activePestle.unit)">
-    <span v-for="(digit,index) in activePestle.range" :key="index" :class="digit === '–' ? 'pestle-counter-dash' : 'pestle-counter-digit'" aria-hidden="true">{{ digit }}</span>
-  </div>
-  <span class="pestle-counter-unit">{{ t(activePestle.unit) }}</span>
-  <p>{{ t(activePestle.rangeNote) }}</p>
-</div>
-<p v-if="activePestle.kind !== 'timeline'" class="pestle-evidence-text">{{ t(activePestle.sourceNote) }}</p>
-<section v-if="activePestle.id === 'economic'" class="pestle-retail-sector">
-  <h4>{{ language === 'id' ? 'Penjualan eceran riil makanan, minuman, dan tembakau' : 'Real retail sales of food, beverages, and tobacco' }}</h4>
-  <div class="pestle-retail-growth">
-<div><h5>{{ language === 'id' ? 'Triwulan IV · perubahan tahunan' : 'Q4 · year-over-year change' }}</h5>
-<div class="retail-growth-row"><span>2019</span><span class="retail-growth-track" aria-hidden="true"><i class="gain" style="--bar: 17.083%"></i></span><strong>{{ language === 'id' ? '+4,1%' : '+4.1%' }}</strong></div>
-<div class="retail-growth-row"><span>2020</span><span class="retail-growth-track" aria-hidden="true"><i class="loss" style="--bar: 31.250%"></i></span><strong>{{ language === 'id' ? '−7,5%' : '−7.5%' }}</strong></div>
-</div>
-</div>
-<p>{{ language === 'id' ? 'Setiap tahun dibandingkan dengan periode yang sama setahun sebelumnya.' : 'Each year is compared with the same period one year earlier.' }} <a :href="pestleSources.find(source => source.id === 'E2').url" target="_blank" rel="noopener">E2</a></p>
-</section>
+
 </div>
 </div></transition>
 </div>
 <div class="deck-footer"><span>{{ t("References available below the slide") }}</span><span>{{ String(slidePosition + 1).padStart(2, "0") }} / {{ slideOrder.length }}</span></div></article>
 
 <article v-else-if="currentSlide === 15" class="deck-slide forces-overview" key="forces-overview" :aria-label="t(&quot;Slide 16: Porter’s Five Forces&quot;)"><div class="deck-kicker">{{ t("Competitive assessment · 2020 baseline") }}</div><h2>{{ t("Porter’s Five Forces") }}</h2><p class="forces-boundary">{{ t("Indonesian consumer grocery retail · 2020") }}</p><div class="force-summary-head"><span>{{ t("Competitive force") }}</span><span>{{ t("Pressure facing MPPA") }}</span><span>{{ t("Connection to the sales question") }}</span></div><button v-for="(force,index) in fiveForces" :key="force.id" type="button" class="force-summary-row" @click="selectedForce=index;showSlide(16)"><strong>{{ t(force.name) }}</strong><span :class="{'force-supported':index===0}">{{ t(force.rating) }}</span><span>{{ t(force.short) }}</span></button><p class="forces-thread">{{ t("Price competition and shoppers’ ability to switch retailers put MPPA’s grocery sales under pressure.") }}</p><div class="deck-footer"><span>{{ t("Force judgments and source references in Notes") }} · 2020 annual reports · Nielsen · David / Porter</span><span>{{ String(slidePosition + 1).padStart(2, "0") }} / {{ slideOrder.length }}</span></div></article>
-<article v-else class="deck-slide forces-detail" key="forces-detail" :aria-label="t(&quot;Slide 17: Five Forces evidence&quot;)"><div class="deck-kicker">{{ t("Competitive assessment · 2020 baseline") }}</div><h2>{{ t(activeForce.name) }}</h2><nav class="force-selector" :aria-label="t('Choose a competitive force')"><button v-for="(force,index) in fiveForces" :key="force.id" type="button" :aria-pressed="selectedForce===index" @click="selectedForce=index">{{ t(force.name) }}</button></nav><div class="forces-detail-layout"><div class="force-evidence"><section class="force-industry-evidence"><h3>{{ t("Industry climate") }}</h3><p class="force-theory">{{ t(activeForce.industryContext) }}</p><div v-if="activeForce.visual" class="force-visual" :class="{'rivalry-sales':activeForce.id==='rivalry'}"><div class="force-visual-title">{{ t(activeForce.visual.title) }}</div><div v-if="activeForce.visual.kind==='donuts'" class="force-donuts"><figure v-for="(stat,index) in activeForce.visual.stats" :key="stat.label"><div class="force-donut" role="img" :aria-label="t(stat.label)+': '+stat.value+'%'"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="#eee7ec" stroke-width="10"/><circle cx="50" cy="50" r="40" fill="none" :stroke="index===0?'#df0036':'#786681'" stroke-width="10" pathLength="100" :stroke-dasharray="stat.value+' '+(100-stat.value)" transform="rotate(-90 50 50)"/></svg><strong>{{ stat.value }}%</strong></div><figcaption>{{ t(stat.label) }}</figcaption></figure></div><div v-else class="force-mini-bars" role="group" :aria-label="t(activeForce.visual.title)"><div v-for="bar in activeForce.visual.bars" :key="bar.label"><span>{{ bar.label }}</span><div class="force-mini-track"><i :style="{width:(bar.value/activeForce.visual.max*100)+'%'}" :class="{'force-bar-highlight':bar.highlight,'force-bar-financial':bar.financialReport}"></i></div><b>{{ bar.value.toLocaleString(language==='id'?'id-ID':'en-US',{minimumFractionDigits:activeForce.id==='rivalry'?2:0,maximumFractionDigits:activeForce.id==='rivalry'?2:0}) }}</b></div></div><p class="force-chart-unit">{{ t(activeForce.visual.unit) }}</p><div v-if="activeForce.visual.unavailable" class="rivalry-unavailable"><div v-for="rival in activeForce.visual.unavailable" :key="rival.label"><strong>{{ rival.label }}</strong><span>{{ t(rival.status) }}</span></div><p>{{ t(activeForce.visual.comparisonNote || "App rivals included; comparable annual sales unverified.") }}</p></div></div></section><section v-if="activeForce.id !== 'substitutes'" class="force-company-evidence"><h3>{{ t("MPPA in 2020") }}</h3><p v-for="fact in activeForce.evidence" :key="fact" class="force-fact">{{ t(fact) }}</p></section></div><aside class="force-interpretation"><div class="thread-kicker">{{ t("Pressure facing MPPA") }}</div><strong class="force-rating">{{ t(activeForce.rating) }}</strong><p>{{ t(activeForce.reading) }}</p><p v-if="activeForce.id==='entrants'" class="force-context-stat"><strong>54%</strong><span>{{ t("of MPPA store sales came from merchandise flowing through its distribution centers") }}</span></p><div class="thread-next"><strong>{{ t("Sales implications") }}</strong><p>{{ t(activeForce.salesLink) }}</p></div></aside></div><div class="deck-footer"><span>{{ t("2020 company reports · Nielsen’s March 2020 study · Full references in Notes") }}</span><span>{{ String(slidePosition + 1).padStart(2, "0") }} / {{ slideOrder.length }}</span></div></article>
+<article v-else class="deck-slide forces-detail" key="forces-detail" :aria-label="t(&quot;Slide 17: Five Forces evidence&quot;)"><div class="deck-kicker">{{ t("Competitive assessment · 2020 baseline") }}</div><h2>{{ t(activeForce.name) }}</h2><nav class="force-selector" :aria-label="t('Choose a competitive force')"><button v-for="(force,index) in fiveForces" :key="force.id" type="button" :aria-pressed="selectedForce===index" @click="selectedForce=index">{{ t(force.name) }}</button></nav><div class="forces-detail-layout"><div class="force-evidence"><section class="force-industry-evidence"><h3>{{ t("Industry climate") }}</h3><p class="force-theory">{{ t(activeForce.industryContext) }}</p><div v-if="activeForce.visual && activeForce.id !== 'entrants'" class="force-visual" :class="{'rivalry-sales':activeForce.id==='rivalry'}"><div class="force-visual-title">{{ t(activeForce.visual.title) }}</div><div v-if="activeForce.visual.kind==='donuts'" class="force-donuts"><figure v-for="(stat,index) in activeForce.visual.stats" :key="stat.label"><div class="force-donut" role="img" :aria-label="t(stat.label)+': '+stat.value+'%'"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="#eee7ec" stroke-width="10"/><circle cx="50" cy="50" r="40" fill="none" :stroke="index===0?'#df0036':'#786681'" stroke-width="10" pathLength="100" :stroke-dasharray="stat.value+' '+(100-stat.value)" transform="rotate(-90 50 50)"/></svg><strong>{{ stat.value }}%</strong></div><figcaption>{{ t(stat.label) }}</figcaption></figure></div><div v-else class="force-mini-bars" role="group" :aria-label="t(activeForce.visual.title)"><div v-for="bar in activeForce.visual.bars" :key="bar.label"><span>{{ bar.label }}</span><div class="force-mini-track"><i :style="{width:(bar.value/activeForce.visual.max*100)+'%'}" :class="{'force-bar-highlight':bar.highlight,'force-bar-financial':bar.financialReport}"></i></div><b>{{ bar.value.toLocaleString(language==='id'?'id-ID':'en-US',{minimumFractionDigits:activeForce.id==='rivalry'?2:0,maximumFractionDigits:activeForce.id==='rivalry'?2:0}) }}</b></div></div><p class="force-chart-unit">{{ t(activeForce.visual.unit) }}</p><div v-if="activeForce.visual.unavailable" class="rivalry-unavailable"><div v-for="rival in activeForce.visual.unavailable" :key="rival.label"><strong>{{ rival.label }}</strong><span>{{ t(rival.status) }}</span></div><p>{{ t(activeForce.visual.comparisonNote || "App rivals included; comparable annual sales unverified.") }}</p></div></div></section><section v-if="activeForce.id !== 'substitutes'" class="force-company-evidence"><h3>{{ t("MPPA in 2020") }}</h3><p v-for="fact in activeForce.evidence" :key="fact" class="force-fact">{{ t(fact) }}</p><div v-if="activeForce.id === 'entrants'" class="force-visual">
+<div class="force-visual-title">{{ language === 'id' ? 'Kapasitas penyimpanan tiga pusat distribusi MPPA' : 'Storage capacity at MPPA’s three distribution centers' }}</div>
+<div class="force-mini-bars" role="group" :aria-label="t(activeForce.visual.title)"><div v-for="bar in activeForce.visual.bars" :key="bar.label"><span>{{ bar.label }}</span><div class="force-mini-track"><i :style="{width:(bar.value/activeForce.visual.max*100)+'%'}" :class="{'force-bar-highlight':bar.highlight,'force-bar-financial':bar.financialReport}"></i></div><b>{{ bar.value.toLocaleString(language==='id'?'id-ID':'en-US',{minimumFractionDigits:activeForce.id==='rivalry'?2:0,maximumFractionDigits:activeForce.id==='rivalry'?2:0}) }}</b></div></div><p class="force-chart-unit">{{ language === 'id' ? 'Posisi palet pada akhir 2020. Satu posisi adalah ruang untuk satu palet.' : 'Pallet positions at year-end 2020. Each position holds one pallet.' }}</p></div></section></div><aside class="force-interpretation"><div class="thread-kicker">{{ t("Pressure facing MPPA") }}</div><strong class="force-rating">{{ t(activeForce.rating) }}</strong><p v-if="activeForce.id === 'entrants'">{{ language === 'id' ? 'Pesaing yang ingin menandingi jaringan nasional MPPA perlu membangun kapasitas penyimpanan dan distribusi. Pesaing lokal tetap bisa masuk dengan membuka satu gerai tanpa membangun jaringan nasional.' : 'A chain trying to match MPPA nationwide would need storage and distribution capacity. A local competitor can still enter by opening a single store without building a national network.' }}</p><p v-else>{{ t(activeForce.reading) }}</p><div v-if="activeForce.id !== 'entrants'" class="thread-next"><strong>{{ t("Sales implications") }}</strong><p>{{ t(activeForce.salesLink) }}</p></div></aside></div><div class="deck-footer"><span>{{ t("2020 company reports · Nielsen’s March 2020 study · Full references in Notes") }}</span><span>{{ String(slidePosition + 1).padStart(2, "0") }} / {{ slideOrder.length }}</span></div></article>
 
 
 </div>
@@ -1195,6 +1294,7 @@
 </template>
 
 <script>
+import { initPostMountInspectors } from "./post-mount-inspectors.js";
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import SlideOrgStructure from './components/SlideOrgStructure.vue';
 import SlideCompanyHistory from './components/SlideCompanyHistory.vue';
@@ -2674,6 +2774,13 @@ const slides=[
   }
   function onHash(){view.value=viewFromHash();}
   onMounted(()=>{
+    initPostMountInspectors({
+      inspectSpaceFactorRow, inspectSpaceDimensionCard, selectSpaceCompany,
+      selectBcgDivision, bcgDivisionsData, spaceCompaniesData, spaceFactorsData,
+      getActiveSpaceCompany: () => activeSpaceCompany,
+      matrixIeRender: key => matrixIeRender?.(key),
+      matrixIePreview: key => matrixIePreview?.(key),
+    });
     document.addEventListener('keydown',onKey);
     document.addEventListener('click',onIeSelect);
     window.addEventListener('hashchange',onHash);
