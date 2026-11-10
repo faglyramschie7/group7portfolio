@@ -3595,3 +3595,12 @@
   height: 3.3rem;
   overflow: hidden;
 }
+
+.exhibit6-visual-summary .ex6-donut-row {
+  flex: 1;
+  min-height: 0;
+  gap: 1.45cqw;
+}
+.exhibit6-visual-summary .ex6-donut { width: 11cqw; }
+.exhibit6-visual-summary .ex6-donut span { font-size: 1.65cqw; }
+.exhibit6-visual-summary .ex6-donut small { font-size: .78cqw; }
