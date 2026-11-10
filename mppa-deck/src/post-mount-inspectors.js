@@ -364,6 +364,30 @@ function findMatrixItem(element) {
   return null;
 }
 function matrixPreviewContent({kind, target}) {
+  if (kind === 'financial-cell') {
+    const id = document.documentElement.lang === 'id';
+    const row = target.parentElement;
+    const table = target.closest('table');
+    const column = target.cellIndex;
+    const compact = cell => cell?.innerText.trim().replace(/\s*\n\s*/g, ' · ') || '';
+    const item = compact(row.cells[0]);
+    const note = row.querySelector('.td-desc');
+    const driver = compact(note);
+    const margin = note?.dataset.marginWhy;
+    const marginBasis = note?.dataset.marginBasis;
+    const header = table.tHead.rows[0].cells[column];
+    if (target.classList.contains('td-desc')) return [item, '', margin || driver, marginBasis];
+
+    const period = compact(header);
+    const title = `${item} · ${period}`;
+    const value = compact(target);
+    const basis = header.classList.contains('th-hist')
+      ? (id ? 'Angka historis dari laporan keuangan auditan MPPA.' : 'Historical figure from MPPA’s audited financial statements.')
+      : driver;
+    if (margin && !header.classList.contains('th-hist')) return [title, value, margin, marginBasis];
+    return [title, value, basis];
+  }
+
   if (kind === 'qspm-strategy') {
     const id = document.documentElement.lang === 'id';
     const expansion = target.dataset.qspmStrategy === '1';
@@ -429,7 +453,10 @@ function clearMatrixSelection() {
 let previewTarget;
 listen(document, 'pointermove', event => {
   const strategy = event.target.closest?.('.qspm-strat-card');
-  const match = strategy ? {kind: 'qspm-strategy', target: strategy} : findMatrixItem(event.target);
+  const financialCell = event.target.closest?.('.financial-slide-wrapper .fin-table tbody td:is(.td-num,.td-desc)');
+  const match = strategy ? {kind: 'qspm-strategy', target: strategy}
+    : financialCell?.parentElement.querySelector('.td-desc') ? {kind: 'financial-cell', target: financialCell}
+    : findMatrixItem(event.target);
   if (!match || matrixDrawer.open || event.pointerType === 'touch') {
     matrixPreview.hidden = true;
     previewTarget = null;
@@ -452,7 +479,10 @@ listen(document, 'pointermove', event => {
     const labels = match.kind === 'tows'
       ? (id ? ['Faktor yang kami pasangkan', 'Mengapa kami memilih strategi ini'] : ['Factors we matched', 'Why we chose this strategy'])
       : (id ? ['Mengapa kami memberi nilai ini', 'Mengapa faktor ini diberi bobot ini'] : ['Why we gave this rating', 'Why we chose this weight']);
-    const entries = match.kind === 'qspm-strategy' ? [
+    const entries = match.kind === 'financial-cell' ? [
+      [weightReason ? (id ? 'Mengapa margin bisa naik' : 'Why margin could rise') : (id ? 'Perhitungan dan sumber' : 'Calculation and basis'), rationale],
+      [id ? 'Dasar asumsi 50%' : 'Basis for the 50% assumption', weightReason],
+    ] : match.kind === 'qspm-strategy' ? [
       [id ? 'Mengapa opsi ini masuk daftar' : 'Why this option made the shortlist', rationale],
       [id ? 'Cara kami membentuk dua opsi' : 'How we narrowed it to two', weightReason],
     ] : match.kind === 'qspm' ? [
@@ -473,7 +503,7 @@ listen(document, 'pointermove', event => {
       }
       return section;
     });
-    matrixPreview.replaceChildren(heading, ...(detail ? [summary] : []), ...sections, hint);
+    matrixPreview.replaceChildren(heading, ...(detail ? [summary] : []), ...sections, ...(match.kind === 'financial-cell' ? [] : [hint]));
     previewTarget = match.target;
   }
   matrixPreview.hidden = false;

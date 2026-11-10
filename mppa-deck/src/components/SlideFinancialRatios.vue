@@ -1,7 +1,7 @@
 <template>
   <div class="ratios-slide-wrapper">
     <!-- Header -->
-    <div class="deck-kicker">{{ t("Financial feasibility · Stage 4 · Fred David Ch. 8 framework") }}</div>
+    <div class="deck-kicker">{{ t("Original upside case · Ratios depend on the forecast assumptions") }}</div>
     <div class="slide-header-row">
       <div class="title-block">
         <h2 class="slide-title">{{ t("Financial Ratios Dashboard: 5-Year Turnaround Trajectory (2019A–2023P)") }}</h2>

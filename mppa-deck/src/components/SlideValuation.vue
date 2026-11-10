@@ -1,7 +1,7 @@
 <template>
   <div class="valuation-slide-wrapper">
     <!-- Header -->
-    <div class="deck-kicker">{{ t("Strategic finance · Stage 4 · Fred David Ch. 8 framework") }}</div>
+    <div class="deck-kicker">{{ t("Original upside case · Valuation depends on the projected earnings") }}</div>
     <div class="slide-header-row">
       <div class="title-block">
         <h2 class="slide-title">{{ t("Corporate Valuation Analysis: MPPA vs. Alfamart Benchmark") }}</h2>

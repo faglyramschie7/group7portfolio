@@ -1,7 +1,7 @@
 <template>
   <div class="governance-slide-wrapper">
     <!-- Header -->
-    <div class="deck-kicker">{{ t("Strategic execution · Stage 4 · Fred David Ch. 7 & Ch. 9 framework") }}</div>
+    <div class="deck-kicker">{{ t("Implementation targets · See the funding test before committing") }}</div>
     <div class="slide-header-row">
       <div class="title-block">
         <h2 class="slide-title">{{ t("Turnaround Execution Roadmap & Executive Conclusion (2021–2025)") }}</h2>
