@@ -3175,23 +3175,9 @@
 }
 .organization-slide .org-commissioners + .org-stem { height: .65cqw; min-height: .65cqw; }
 .organization-slide .org-ceo { padding: .6cqw 1.5cqw; }
+.organization-slide .org-peers { grid-auto-rows: 1fr; margin-bottom: .7cqw; }
 .organization-slide .org-peers button { padding: .55cqw .75cqw; }
 .organization-slide .org-peers button span { min-height: 1.5em; }
-.organization-slide .org-detail {
-  display: flex;
-  align-items: baseline;
-  gap: .75cqw 1cqw;
-  flex-wrap: wrap;
-  min-height: 2.9cqw;
-  margin: 0 0 .7cqw;
-  padding: .55cqw .75cqw;
-  background: #faf7f9;
-  color: #30252b;
-  border: 1px solid #e9dfe5;
-}
-.organization-slide .org-detail strong {
-  color: inherit;
-}
 .organization-slide .org-findings h3 {
   font-size: 1cqw;
   margin: 0 0 .5cqw;
@@ -4141,8 +4127,7 @@
 <div class="org-stem" aria-hidden="true"></div>
 <div class="org-ceo"><span>{{ language === 'id' ? 'Direksi' : 'Board of Directors' }} · {{ t("Chief Executive Officer") }}</span><strong>{{ t("Elliot Dickson") }}</strong></div>
 <div class="org-stem"></div>
-<div class="org-peers" :aria-label="t(&quot;Eight roles shown below the CEO in Exhibit 1&quot;)"><button v-for="(person,index) in management" :key="person.name" type="button" :aria-pressed="selectedRole === index" @click="selectedRole=index"><span>{{ t(person.role) }}</span><strong>{{ t(person.name) }}</strong></button></div>
-<div class="org-detail" aria-live="polite"><strong>{{ t(management[selectedRole].name) }}</strong><span>{{ t(management[selectedRole].detail) }}</span></div>
+<div class="org-peers" :aria-label="t(&quot;Eight roles shown below the CEO in Exhibit 1&quot;)"><button v-for="(person,index) in management" :key="person.name" type="button" :aria-pressed="selectedRole === index" @click="selectedRole=index" :title="t(person.detail)"><span>{{ t(person.role) }}</span><strong>{{ t(person.name) }}</strong></button></div>
 
 <section class="org-findings">
 <h3>{{ language === 'id' ? 'Kesenjangan struktur' : 'Structural gaps' }}</h3>
