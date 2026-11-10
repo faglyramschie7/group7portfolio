@@ -3305,10 +3305,7 @@
 }
 </style>
 <style>
-.presentation-view .deck-dock-handle,
-.deck-slide-dock {
-  display: contents;
-}
+.presentation-view .deck-dock-handle { display: none; }
 
 /* =========================================================
    PRESENTATION FULLSCREEN & NAVIGATION OVERHAUL
@@ -3329,9 +3326,6 @@
 
 .presentation-view:fullscreen .deck-toolbar,
 .presentation-view:fullscreen .speaker-panel,
-.presentation-view:fullscreen .deck-thumbs,
-.presentation-view:fullscreen .deck-slide-dock,
-.presentation-view:fullscreen .deck-dock-handle,
 .presentation-view:fullscreen .slide-source-control {
   display: none !important;
 }
@@ -3417,19 +3411,7 @@
   color: #ffffff !important;
 }
 
-/* Polished Horizontal Slide Thumbnail Strip (Windowed Mode) */
-.deck-thumbs {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  gap: 8px !important;
-  overflow-x: auto !important;
-  overscroll-behavior-x: contain !important;
-  padding: 10px 4px 14px !important;
-  margin: 12px 0 0 !important;
-  scrollbar-width: thin !important;
-  scrollbar-color: #df0036 #f1eaef !important;
-}
+
 
 .deck-thumbs::-webkit-scrollbar {
   height: 6px;
@@ -3447,7 +3429,7 @@
 
 .deck-thumb {
   flex: 0 0 auto !important;
-  white-space: nowrap !important;
+  white-space: normal;
   padding: 8px 14px !important;
   background: #ffffff !important;
   color: #4b3e47 !important;
@@ -3495,6 +3477,106 @@
 }
 .metric-figure .metric-change.is-good { background: #e6f4ec; color: #17613b; }
 .metric-figure .metric-change.is-bad { background: #fcebf0; color: #a8002b; }
+</style>
+<style>
+.exhibit6-visual-summary {
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: .7cqw;
+}
+.exhibit6-visual-summary .ex6-visual-card {
+  justify-content: flex-start;
+  padding: .75cqw 1cqw;
+  gap: .42cqw;
+}
+.exhibit6-visual-summary .ex6-movement { gap: .35cqw; margin: .15cqw 0; }
+.exhibit6-visual-summary .ex6-net { margin: 0; }
+.exhibit6-visual-summary .ex6-donut { width: 7cqw; flex-shrink: 0; }
+.exhibit6-visual-summary .ex6-legend p { margin: .35cqw 0; }
+.exhibit6-visual-summary .ex6-caveat { margin-bottom: 0; }
+</style>
+<style>
+.presentation-view:not(:fullscreen) .deck-slide-dock .deck-thumbs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .45rem;
+  max-height: 17rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: .35rem .5rem .5rem;
+  align-content: start;
+  scrollbar-width: thin;
+}
+.presentation-view .deck-slide-dock .deck-thumb {
+  display: flex;
+  align-items: baseline;
+  gap: .65rem;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.presentation-view .deck-slide-dock .deck-thumb > span {
+  flex: 0 0 1.6rem;
+  font-variant-numeric: tabular-nums;
+}
+.presentation-view:fullscreen .deck-slide-dock .deck-thumbs {
+  scrollbar-width: thin;
+  padding: 1rem 1.15rem .75rem .65rem;
+}
+</style>
+<style>
+.presentation-view:fullscreen .deck-slide-dock {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 60;
+  width: min(19rem, 85vw);
+  pointer-events: none;
+}
+.presentation-view:fullscreen .deck-dock-handle {
+  display: block;
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: auto;
+}
+.presentation-view:fullscreen .deck-slide-dock .deck-thumbs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: white;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: transform .18s ease;
+}
+.presentation-view:fullscreen .deck-slide-dock:hover .deck-thumbs,
+.presentation-view:fullscreen .deck-slide-dock:focus-within .deck-thumbs {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+</style>
+<style>
+.presentation-view:not(:fullscreen) .deck-slide-dock {
+  width: min(100%, 36rem);
+  margin: 1rem auto;
+}
+.presentation-view:not(:fullscreen) .deck-slide-dock .deck-thumbs {
+  gap: .65rem;
+  max-height: 21rem;
+  padding: .4rem .7rem .85rem;
+}
+.presentation-view:not(:fullscreen) .deck-slide-dock .deck-thumb {
+  width: 100%;
+  min-height: 2.8rem;
+  box-shadow: 0 3px 0 #e9e0e6;
+}
 </style>
 </head>
 <body>
@@ -4529,7 +4611,10 @@
 <div class="slide-source-control" v-if="currentSlide === 14 || currentSlide === 16"><button type="button" class="slide-source-trigger" @click="$refs.sourcesDialog.showModal()">{{ language === 'id' ? 'Lihat sumber' : 'View sources' }} ({{ currentSlide === 14 ? activePestleSources.length : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)).length }})</button></div>
 <dialog ref="sourcesDialog" class="slide-sources-dialog" @click.self="$refs.sourcesDialog.close()"><div class="source-dialog-header"><div><h2>{{ language === 'id' ? 'Sumber' : 'Sources' }}</h2><p>{{ currentSlide === 14 ? t(activePestle.title) : t(activeForce.name) }}</p></div><button type="button" class="source-close" @click="$refs.sourcesDialog.close()" aria-label="Close sources">×</button></div><ol><li v-for="source in (currentSlide === 14 ? activePestleSources : fiveForceSources.filter(item => activeForce.sourceIds.includes(item.id)))" :key="source.id"><a :href="source.local || source.url" target="_blank" rel="noopener">{{ source.id }} · {{ t(source.title) }}</a><span v-if="source.date || source.locator">{{ [source.date, source.locator].filter(Boolean).join(' · ') }}</span></li></ol></dialog>
 <div class="deck-nav"><button id="previous-slide" class="quiet-button" type="button" :disabled="currentSlide === 0" @click="advancePresentation(-1)">{{ t("← Previous") }}</button><span id="slide-position" class="slide-position" role="status" aria-live="polite">{{ t(presentationStatus || `Slide ${currentSlide + 1} of ${slides.length}`) }}</span><div class="deck-lang-switch deck-nav-lang" role="group" :aria-label="t('Language')"><button type="button" :class="{'is-active': language === 'id'}" @click="setLanguage('id')">🇮🇩 ID</button><button type="button" :class="{'is-active': language === 'en'}" @click="setLanguage('en')">🇬🇧 EN</button></div><button id="next-slide" type="button" :disabled="currentSlide === slides.length - 1" @click="advancePresentation(1)">{{ t("Next →") }}</button></div>
+<div class="deck-slide-dock">
+<button class="deck-dock-handle" type="button" :aria-label="language === 'id' ? 'Tampilkan daftar slide' : 'Show slide list'"></button>
 <nav class="deck-thumbs" :aria-label="t(&quot;Choose slide&quot;)"><button v-for="(slide,index) in slides" :key="slide.label" class="deck-thumb" :data-slide="index" :aria-current="currentSlide === index" @click="showSlide(index)"><span>{{ t(String(index+1).padStart(2,'0')) }}</span> {{ t(slide.short) }}</button></nav>
+</div>
 <details class="speaker-panel"><summary>{{ t("Speaker notes") }}</summary><p id="presenter-notes">{{ t(speakerNotes[currentSlide]) }}</p></details>
 </div></transition>
 </div></div>
