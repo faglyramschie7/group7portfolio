@@ -569,6 +569,10 @@ const activeTab = ref('income');
   flex-direction: column;
 }
 
+.fin-content-view > .table-card {
+  flex: 1;
+}
+
 .table-card {
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
@@ -601,8 +605,13 @@ const activeTab = ref('income');
 }
 
 .table-scroll {
+  flex: 1;
   min-height: 0;
   overflow: auto;
+}
+
+.fin-content-view > .table-card .fin-table {
+  min-height: 100%;
 }
 
 .fin-table {

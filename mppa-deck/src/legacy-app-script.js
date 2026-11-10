@@ -3018,8 +3018,7 @@ document.addEventListener('pointerout', event => {
   if (previewTarget && !previewTarget.contains(event.relatedTarget)) matrixPreview.hidden = true;
 });
 function openMatrixDrawer(match) {
-  if (!match) return;
-  if (matrixDrawer.open) matrixDrawer.close();
+  if (!match || document.querySelector('.matrix-detail[open]')) return;
   matrixPreview.hidden = true;
   if (match.render && match.target) match.render(match.target);
   const id = document.documentElement.lang === 'id';
@@ -3426,7 +3425,7 @@ try {
 document.addEventListener('dblclick', event => openMatrixDrawer(findMatrixItem(event.target)));
 document.addEventListener('click', event => {
   const card = event.target.closest?.('button[data-qspm-strategy]');
-  if (card && !matrixDrawer.open) {
+  if (card && !document.querySelector('.matrix-detail[open]')) {
     matrixPreview.hidden = true;
     const id = document.documentElement.lang === 'id';
     const expansion = card.dataset.qspmStrategy === '1';

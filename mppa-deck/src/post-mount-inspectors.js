@@ -4,6 +4,9 @@ export function initPostMountInspectors({
   selectBcgDivision, bcgDivisionsData, spaceCompaniesData, spaceFactorsData,
   getActiveSpaceCompany, matrixIeRender, matrixIePreview,
 }) {
+  const controller = new AbortController();
+  const listen = (target, type, handler) =>
+    target.addEventListener(type, handler, {signal: controller.signal});
 // Live External Factor Evaluation (EFE Matrix) Inspector
   function updateEfeInspector(target) {
     if (!target) return;
@@ -43,7 +46,7 @@ export function initPostMountInspectors({
   }
 
 
-  document.addEventListener('click', function(e) {
+  listen(document, 'click', function(e) {
     const row = e.target.closest('.efe-row');
     if (row) {
       updateEfeInspector(row);
@@ -52,7 +55,7 @@ export function initPostMountInspectors({
     }
   });
 
-  document.addEventListener('mouseleave', function(e) {
+  listen(document, 'mouseleave', function(e) {
     hideEfeInspector();
   });
 
@@ -97,7 +100,7 @@ export function initPostMountInspectors({
   }
 
 
-  document.addEventListener('click', function(e) {
+  listen(document, 'click', function(e) {
     const row = e.target.closest('.ife-row');
     if (row) {
       updateIfeInspector(row);
@@ -106,7 +109,7 @@ export function initPostMountInspectors({
     }
   });
 
-  document.addEventListener('mouseleave', function(e) {
+  listen(document, 'mouseleave', function(e) {
     hideIfeInspector();
   });
 
@@ -151,7 +154,7 @@ export function initPostMountInspectors({
   }
 
 
-  document.addEventListener('click', function(e) {
+  listen(document, 'click', function(e) {
     const item = e.target.closest('.swot-item');
     if (item) {
       updateSwotInspector(item);
@@ -160,7 +163,7 @@ export function initPostMountInspectors({
     }
   });
 
-  document.addEventListener('mouseleave', function(e) {
+  listen(document, 'mouseleave', function(e) {
     hideSwotInspector();
   });
 
@@ -231,7 +234,7 @@ export function initPostMountInspectors({
   }
 
 
-  document.addEventListener('click', function(e) {
+  listen(document, 'click', function(e) {
     const cell = e.target.closest('.cpm-hoverable');
     if (cell) {
       updateCpmInspector(cell);
@@ -240,7 +243,7 @@ export function initPostMountInspectors({
     }
   });
 
-  document.addEventListener('mouseleave', function(e) {
+  listen(document, 'mouseleave', function(e) {
     hideCpmInspector();
   });
 
@@ -312,7 +315,7 @@ export function initPostMountInspectors({
   }
 
 
-  document.addEventListener('click', function(e) {
+  listen(document, 'click', function(e) {
     const item = e.target.closest('.tows-item');
     if (item) {
       updateTowsInspector(item);
@@ -321,7 +324,7 @@ export function initPostMountInspectors({
     }
   });
 
-  document.addEventListener('mouseleave', function(e) {
+  listen(document, 'mouseleave', function(e) {
     hideTowsInspector();
   });
 
@@ -390,7 +393,7 @@ function clearMatrixSelection() {
     .forEach(item => item.classList.remove('is-active', 'is-inspected', 'is-active-vector', 'is-dimmed-vector'));
 }
 let previewTarget;
-document.addEventListener('pointermove', event => {
+listen(document, 'pointermove', event => {
   const match = findMatrixItem(event.target);
   if (!match || matrixDrawer.open || event.pointerType === 'touch') {
     matrixPreview.hidden = true;
@@ -418,12 +421,11 @@ document.addEventListener('pointermove', event => {
   matrixPreview.style.left = Math.max(8, Math.min(event.clientX + 12, window.innerWidth - width - 8)) + 'px';
   matrixPreview.style.top = Math.max(8, top) + 'px';
 });
-document.addEventListener('pointerout', event => {
+listen(document, 'pointerout', event => {
   if (previewTarget && !previewTarget.contains(event.relatedTarget)) matrixPreview.hidden = true;
 });
 function openMatrixDrawer(match) {
-  if (!match) return;
-  if (matrixDrawer.open) matrixDrawer.close();
+  if (!match || document.querySelector('.matrix-detail[open]')) return;
   matrixPreview.hidden = true;
   if (match.render && match.target) match.render(match.target);
   const id = document.documentElement.lang === 'id';
@@ -827,10 +829,10 @@ try {
     openMatrixDrawer({ kind: 'ie', division: drawerDiv });
   }
 } catch(e) {}
-document.addEventListener('dblclick', event => openMatrixDrawer(findMatrixItem(event.target)));
-document.addEventListener('click', event => {
+listen(document, 'dblclick', event => openMatrixDrawer(findMatrixItem(event.target)));
+listen(document, 'click', event => {
   const card = event.target.closest?.('button[data-qspm-strategy]');
-  if (card && !matrixDrawer.open) {
+  if (card && !document.querySelector('.matrix-detail[open]')) {
     matrixPreview.hidden = true;
     const id = document.documentElement.lang === 'id';
     const expansion = card.dataset.qspmStrategy === '1';
@@ -874,7 +876,7 @@ document.addEventListener('click', event => {
   if (event.target.closest?.('.qspm-factor-detail') && !matrixDrawer.open) openMatrixDrawer(findMatrixItem(event.target));
 });
 
-document.addEventListener('keydown', event => {
+listen(document, 'keydown', event => {
   if (event.key !== 'Enter') return;
   const match = findMatrixItem(event.target);
   if (match) {
@@ -882,7 +884,7 @@ document.addEventListener('keydown', event => {
     openMatrixDrawer(match);
   }
 });
-document.addEventListener('click', event => {
+listen(document, 'click', event => {
   if (matrixDrawer.open) {
     const bounds = matrixDrawer.getBoundingClientRect();
     const outside = event.target === matrixDrawer && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom);
@@ -892,10 +894,11 @@ document.addEventListener('click', event => {
   }
 });
 matrixDrawer.addEventListener('close', clearMatrixSelection);
-document.addEventListener('fullscreenchange', () => { matrixPreview.hidden = true; });
+listen(document, 'fullscreenchange', () => { matrixPreview.hidden = true; });
 
-window.addEventListener('load', function() {
+listen(window, 'load', function() {
   setTimeout(function() {
+    if (controller.signal.aborted) return;
     try {
       const searchVal = new URLSearchParams(window.location.search).get('drawer');
       const hashVal = window.location.hash.includes('drawer=') ? window.location.hash.split('drawer=')[1].split('&')[0].split('#')[0] : null;
@@ -913,4 +916,12 @@ window.addEventListener('load', function() {
     } catch(e) {}
   }, 120);
 });
+return () => {
+  controller.abort();
+  matrixPreview.remove();
+  if (matrixDrawer.open) matrixDrawer.close();
+  matrixDrawer.remove();
+  if (window.openMatrixDrawer === openMatrixDrawer) delete window.openMatrixDrawer;
+};
+
 }

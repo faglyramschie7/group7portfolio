@@ -467,6 +467,7 @@ const props = defineProps({
 }
 
 .ratio-table {
+  min-height: 100%;
   width: 100%;
   border-collapse: collapse;
   font-size: 0.56cqw;
