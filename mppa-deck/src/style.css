@@ -3210,3 +3210,267 @@
   margin: .55cqw 0 0;
   padding-top: .45cqw;
 }
+
+.problem-slide .problem-layout { grid-template-columns: 61% 1fr; gap: 3%; }
+.income-bridge { width: 100%; border-collapse: collapse; font-size: .98cqw; line-height: 1.18; }
+.income-bridge th, .income-bridge td { padding: .24cqw .55cqw; border-bottom: 1px solid #eee7ec; }
+.income-bridge th { text-align: left; }
+.income-bridge td, .income-bridge thead th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.income-bridge thead { background: #f3eff1; }
+.income-bridge .income-highlight { background: #fff0f4; color: #9b0027; }
+.income-bridge .income-bottom-line { background: #30252b; color: white; font-weight: 700; }
+
+.problem-slide .income-bridge { table-layout: fixed; }
+.problem-slide .income-bridge th, .problem-slide .income-bridge td {
+  padding: .23cqw .6cqw;
+  line-height: 1.2;
+  background: transparent;
+  color: inherit;
+}
+.problem-slide .income-bridge th:first-child { width: 58%; }
+.problem-slide .income-bridge thead { background: #f1eef0; }
+.problem-slide .income-bridge tbody th { font-weight: 500; }
+.problem-slide .income-bridge .income-highlight { background: #fff2f5; color: #a8002b; }
+.problem-slide .income-bridge .income-highlight th { box-shadow: inset 2px 0 #df0036; font-weight: 700; }
+.problem-slide .income-bridge .income-bottom-line th { font-weight: 700; }
+.problem-slide .problem-question {
+  align-self: start;
+  padding: 1.2cqw;
+  background: #faf8f9;
+  border: 1px solid #ebe3e8;
+}
+.problem-slide .problem-question .metric-reading,
+.problem-slide .problem-question .problem-context {
+  margin: .65cqw 0 1cqw;
+  font-size: 1.12cqw;
+  line-height: 1.45;
+}
+.deck-slide.problem-slide .problem-question blockquote {
+  border-top: 1px solid #ebe3e8;
+  margin: 0;
+  padding: .85cqw 0 0;
+  font-size: 1.36cqw;
+  line-height: 1.35;
+}
+
+.problem-slide .financial-evidence .metric-reading {
+  margin: .65cqw 0 0;
+  font-size: .92cqw;
+  line-height: 1.35;
+}
+.metric-figure { margin: 0 0 1.2cqw; }
+.metric-figure figcaption { display: flex; flex-direction: column; gap: .25cqw; margin-bottom: .7cqw; }
+.metric-figure figcaption strong { font-size: 1.45cqw; }
+.metric-figure figcaption span { font-size: .9cqw; color: #73616c; }
+.metric-figure-row {
+  display: grid;
+  grid-template-columns: 3cqw minmax(0, 1fr) 5.4cqw;
+  align-items: center;
+  gap: .45cqw;
+  margin: .5cqw 0;
+  font-size: 1cqw;
+}
+.metric-figure-row strong { text-align: right; font-variant-numeric: tabular-nums; }
+.metric-figure-track { height: 1.15cqw; background: #ede7eb; }
+.metric-figure-bar { height: 100%; background: #a69ca5; transition: width .4s ease; }
+.metric-figure-bar.current-year { background: #df0036; }
+@media (prefers-reduced-motion: reduce) { .metric-figure-bar { transition: none; } }
+
+.problem-slide .problem-sidebar { display: grid; align-content: start; gap: 1cqw; }
+.problem-slide .problem-sidebar .metric-figure {
+  margin: 0;
+  padding: 1cqw 1.2cqw;
+  border: 1px solid #ebe3e8;
+  background: #fff;
+}
+
+.presentation-view .deck-dock-handle,
+.deck-slide-dock {
+  display: contents;
+}
+
+/* =========================================================
+   PRESENTATION FULLSCREEN & NAVIGATION OVERHAUL
+   Eliminates broken drawer overlaps, handle artifacts, and wrapping chaos
+   ========================================================= */
+.presentation-view:fullscreen {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #140f13 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.presentation-view:fullscreen .deck-toolbar,
+.presentation-view:fullscreen .speaker-panel,
+.presentation-view:fullscreen .deck-thumbs,
+.presentation-view:fullscreen .deck-slide-dock,
+.presentation-view:fullscreen .deck-dock-handle,
+.presentation-view:fullscreen .slide-source-control {
+  display: none !important;
+}
+
+.presentation-view:fullscreen .deck-frame {
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  width: min(96vw, calc((100vh - 84px) * 16 / 9)) !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: auto !important;
+}
+
+.presentation-view:fullscreen .deck-slide {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+}
+
+.presentation-view:fullscreen .deck-nav {
+  position: fixed !important;
+  bottom: 14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 50 !important;
+  margin: 0 !important;
+  background: rgba(28, 22, 26, 0.88) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  padding: 6px 14px !important;
+  border-radius: 9999px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45) !important;
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+}
+
+.presentation-view:fullscreen .deck-nav:hover {
+  opacity: 1 !important;
+}
+
+.presentation-view:fullscreen .deck-nav button {
+  background: #df0036 !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  padding: 6px 14px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border: 0 !important;
+}
+
+.presentation-view:fullscreen .deck-nav button.quiet-button {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.presentation-view:fullscreen .deck-nav button.quiet-button:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.presentation-view:fullscreen .slide-position {
+  color: #f5edf2 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 0 8px !important;
+}
+
+.presentation-view:fullscreen .deck-nav-lang button {
+  background: transparent !important;
+  color: #e0d5dc !important;
+  padding: 4px 10px !important;
+  font-size: 12px !important;
+}
+
+.presentation-view:fullscreen .deck-nav-lang button.is-active {
+  background: #df0036 !important;
+  color: #ffffff !important;
+}
+
+/* Polished Horizontal Slide Thumbnail Strip (Windowed Mode) */
+.deck-thumbs {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+  overflow-x: auto !important;
+  overscroll-behavior-x: contain !important;
+  padding: 10px 4px 14px !important;
+  margin: 12px 0 0 !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: #df0036 #f1eaef !important;
+}
+
+.deck-thumbs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.deck-thumbs::-webkit-scrollbar-track {
+  background: #f1eaef;
+  border-radius: 999px;
+}
+
+.deck-thumbs::-webkit-scrollbar-thumb {
+  background: #df0036;
+  border-radius: 999px;
+}
+
+.deck-thumb {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  padding: 8px 14px !important;
+  background: #ffffff !important;
+  color: #4b3e47 !important;
+  border: 1px solid #e2d7de !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  cursor: pointer !important;
+}
+
+.deck-thumb:hover {
+  background: #fff4f7 !important;
+  color: #b6002d !important;
+  border-color: #df0036 !important;
+}
+
+.deck-thumb[aria-current="true"] {
+  background: #fff0f4 !important;
+  color: #b6002d !important;
+  border-color: #df0036 !important;
+  box-shadow: 0 2px 8px rgba(223, 0, 54, 0.15) !important;
+  font-weight: 700 !important;
+}
+
+.deck-thumb span {
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.metric-figure figcaption { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: .6cqw; }
+.metric-figure-heading { display: flex; flex-direction: column; gap: .25cqw; }
+.metric-figure .metric-change {
+  flex: 0 0 auto;
+  padding: .28cqw .5cqw;
+  border-radius: .24cqw;
+  background: #f1eef0;
+  color: #574a52;
+  font-size: 1.05cqw;
+  font-variant-numeric: tabular-nums;
+}
+.metric-figure .metric-change.is-good { background: #e6f4ec; color: #17613b; }
+.metric-figure .metric-change.is-bad { background: #fcebf0; color: #a8002b; }
