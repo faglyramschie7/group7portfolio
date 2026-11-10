@@ -1,0 +1,8 @@
+{
+  "name": "group7portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd mppa-deck && npm install && npm run build"
+  }
+}
