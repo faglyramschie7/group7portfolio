@@ -1713,72 +1713,72 @@ const stratAlternativesData = {
   'strat-1': {
     role: 'PRIMARY STRATEGIC VECTOR · QSPM WINNER (TAS 6.620)',
     title: '1. Market Penetration: Compact Neighborhood Supermarkets (Hyfresh)',
-    type: 'Fred David Strategy Classification: Intensive Growth · Sample PPT Slide 24',
+    type: 'Fred David Strategy Classification: Intensive Growth (Market Penetration) · Sample PPT Slide 24',
     ctx: 'Fred David defines Market Penetration as seeking increased market share for present products in present markets through greater operational density. In the sample deck (Slide 24), this represents the primary aggressive growth tool to defend core grocery share against aggressive competitor rollouts.',
     roots: '• SWOT Matrix (Slide 22): Formulated under SO-3 (S1+S7+O4+O5+O6) & ST-2 (S1+S7+T1+T6).<br>• SPACE Matrix (Slide 23): Matches the Competitive posture (+0.60, -2.80) prescribing high market penetration.<br>• BCG Matrix (Slide 24): Hyfresh operates as a high-growth Question Mark needing capital injection to become a Star.<br>• GSM Matrix (Slide 26): Quadrant II mandates intensive turnaround strategies (penetration & development).',
     bridge: 'Consolidated into Strategy 1 in QSPM, achieving the winning Total Attractiveness Score of 6.620. Forms Strategy 1 of the final Strategic Recommendations on Slide 29.'
   },
   'strat-2': {
-    role: 'GEOGRAPHIC & NODE EXPANSION · HIGH AGILITY PILOT',
+    role: 'SUPPORTING ENABLER · COMMUTER TRANSIT PILOT',
     title: '2. Market Development: Commuter Transit Grab & Go (Hy-Express)',
-    type: 'Fred David Strategy Classification: Intensive Growth · Sample PPT Slide 23',
-    ctx: 'Market Development introduces existing product assortments into new geographic zones or micro-transit clusters. In Sample Slide 23, it unlocks non-mall foot traffic in dense commuter hubs where full hypermarkets cannot fit.',
+    type: 'Fred David Strategy Classification: Intensive Growth (Market Development) · Sample PPT Slide 23',
+    ctx: 'Market Development introduces existing product assortments into new geographic zones or micro-transit clusters. In the sample deck (Slide 23), this unlocks non-mall foot traffic in dense commuter hubs where full hypermarkets cannot fit.',
     roots: '• SWOT Matrix (Slide 22): Matched under WT-1 & ST-4 to escape mall curfews.<br>• IE Matrix (Slide 25): Expands footprint without building expensive anchor boxes.<br>• GSM Matrix (Slide 26): Leverages rapid urban mobility demand (+10% IGR).',
     bridge: 'Provides complementary footprint density to Hyfresh, feeding into Strategy 1 master brand rollout.'
   },
   'strat-3': {
-    role: 'MARGIN PROTECTION & PRIVATE LABEL MOAT',
+    role: 'SUPPORTING ENABLER · MARGIN MOAT (+300–500 BPS)',
     title: '3. Product Development: Proprietary Essentials (Value Plus)',
-    type: 'Fred David Strategy Classification: Intensive Growth · Sample PPT Slide 25',
-    ctx: 'Product Development improves present products or creates proprietary offerings. Sample Slide 25 emphasizes building proprietary margin moats to counter supplier price increases.',
+    type: 'Fred David Strategy Classification: Intensive Growth (Product Development) · Sample PPT Slide 25',
+    ctx: 'Product Development improves present products or creates proprietary offerings. In the sample deck (Slide 25), this emphasizes building proprietary margin moats to counter supplier price increases.',
     roots: '• IFE Strength S8: 1,200+ staple SKUs at 15–20% discount with 300–500 bps higher margins.<br>• CPM Matrix (Slide 19): Bolsters assortment breadth and price competitiveness vs Alfamart.',
     bridge: 'Anchors private-label margin enhancement across all compact fresh stores in Slide 29.'
   },
   'strat-4': {
-    role: 'SELF-FUNDING BALANCE SHEET RELIEF · QSPM STRATEGY 2',
-    title: '4. Cost And Store Cutbacks: Hypermarket Floor Reducing Store Size & Subleasing',
-    type: 'Fred David Strategy Classification: Defensive Restructuring · Sample PPT Slide 28',
-    ctx: 'Cost And Store Cutbacks involves asset reduction and cost-cutting to reverse declining profitability. Sample Slide 28 specifies downsizing large physical assets to liberate frozen capital.',
-    roots: '• SWOT Matrix (Slide 22): Formulated under WO-1 (subleasing excess space) and WT-2.<br>• QSPM (Slide 27): Achieves TAS of 5.460, functioning as an essential self-funding defensive operation.<br>• PSAK 73 Impact: Directly reduces Rp2.25T lease liabilities by ~Rp450B.',
-    bridge: 'Adopted as Strategy 2 in Slide 29: Reducing Store Size hypermarkets to self-fund neighborhood expansion.'
+    role: 'SELECTIVE DEFENSIVE · QSPM STRATEGY 2 (TAS 5.460) · CAPITAL SELF-FUNDING',
+    title: '4. Retrenchment: Hypermarket Resizing, Downsizing & Subleasing',
+    type: 'Fred David Strategy Classification: Defensive Restructuring (Retrenchment) · Sample PPT Slide 28',
+    ctx: 'Retrenchment involves asset reduction and cost-cutting to reverse declining profitability. In the sample deck (Slide 28), this specifies downsizing oversized physical assets to eliminate frozen capital liabilities and free backrooms for dark stores.',
+    roots: '• SWOT Matrix (Slide 22): Formulated under WO-1 (subleasing excess space) and WT-2.<br>• SPACE Matrix (Slide 23): Aligns with Competitive quadrant turnaround.<br>• GSM Matrix (Slide 26): Quadrant III retrenchment.<br>• QSPM (Slide 27): Achieves TAS of 5.460, functioning as an essential self-funding defensive operation.<br>• PSAK 73 Impact: Directly reduces Rp2.25T lease liabilities by ~Rp450B.',
+    bridge: 'Adopted as Strategy 2 in Slide 29: Rightsizing hypermarkets and converting backrooms to dark stores to self-fund neighborhood expansion.'
   },
   'strat-5': {
-    role: 'NON-CORE ASSET PRUNING · WORKING CAPITAL RECOVERY',
-    title: '5. Sale Of A Business Or Assets: Liquidating SmartClub & Pruning FMX',
-    type: 'Fred David Strategy Classification: Defensive Restructuring · Sample PPT Slide 29',
-    ctx: 'Sale Of A Business Or Assets sells off or closes unprofitable divisions to reallocate resources to high-growth banners. Sample Slide 29 prescribes divesting dead-weight divisions that dilute management focus.',
+    role: 'SELECTIVE ASSET PRUNING · WORKING CAPITAL RECOVERY (RP 120B)',
+    title: '5. Divestiture: Liquidating SmartClub & Exiting FMX Kiosks',
+    type: 'Fred David Strategy Classification: Defensive Restructuring (Divestiture & Liquidation) · Sample PPT Slide 29',
+    ctx: 'Divestiture sells off or closes unprofitable divisions to reallocate resources to high-growth banners. In the sample deck (Slide 29), this prescribes divesting dead-weight divisions that dilute management focus.',
     roots: '• BCG Matrix (Slide 24): SmartClub (0.017 RMSP) and FMX (0.001 RMSP) languish in the Dog quadrant.<br>• IE Matrix (Slide 25): Cell IX mandates immediate Harvest and Divest.<br>• GSM Matrix (Slide 26): Quadrant III mandates liquidation of chronic loss centers.',
-    bridge: 'Frees Rp120B in trapped inventory working capital to fund the 2021–2023 Hyfresh rollout.'
+    bridge: 'Frees Rp120B in trapped inventory working capital to fund the 2021–2023 Hyfresh rollout without new debt.'
   },
   'strat-6': {
-    role: 'FIXED COST DE-RISKING · LEASE RENEGOTIATION',
-    title: '6. Cost And Store Cutbacks: Variable Revenue-Share Lease Conversion',
-    type: 'Fred David Strategy Classification: Defensive Restructuring · Sample PPT Slide 28',
-    ctx: 'Converts inflexible fixed lease obligations into variable cost structures based on actual monthly store revenues, protecting operating margins against unpredictable mall curfews.',
-    roots: '• IFE Weakness W5: Rp166.2B in net finance costs on lease liabilities.<br>• SWOT Matrix (Slide 22): WT-2 recommends negotiating 3%–5% turnover rent with landlords.',
-    bridge: 'Included under Strategy 3 operational lease restructuring in Slide 29 recommendations.'
+    role: 'SELECTIVE FIXED-COST DE-RISKING · LEASE RESTRUCTURING (RP 180B)',
+    title: '6. Retrenchment: Variable Revenue-Share Lease Conversion (PSAK 73)',
+    type: 'Fred David Strategy Classification: Defensive Restructuring (Retrenchment) · Sample PPT Slide 28',
+    ctx: 'Converts inflexible fixed lease obligations into variable cost structures based on actual monthly store revenues (3%–5%), protecting operating margins against unpredictable mall curfews.',
+    roots: '• IFE Weakness W5: Rp166.2B in net finance costs on lease liabilities under PSAK 73.<br>• SWOT Matrix (Slide 22): WT-2 recommends negotiating 3%–5% turnover rent with mall landlords.',
+    bridge: 'Forms the Funding Enabler on Slide 29 recommendations, saving Rp180B in cumulative lease cash drain.'
   },
   'strat-7': {
-    role: 'DIGITAL CHANNEL ACCESS · FLEET CAPEX AVOIDANCE',
-    title: '7. Forward Integration: Multi-Platform O2O & Online Order Centers',
-    type: 'Fred David Strategy Classification: Integration · Sample PPT Slide 22',
-    ctx: 'Forward Integration gains control over distribution channels. Sample Slide 22 highlights integrating online delivery aggregators to control direct-to-consumer grocery fulfillment.',
+    role: 'SUPPORTING ENABLER · DIGITAL DELIVERY WITHOUT FLEET CAPEX',
+    title: '7. Forward Integration: Multi-Platform O2O & Dark Stores',
+    type: 'Fred David Strategy Classification: Integration (Forward Integration) · Sample PPT Slide 22',
+    ctx: 'Forward Integration gains control over distribution channels. In the sample deck (Slide 22), this highlights integrating online delivery aggregators (GrabMart, Shopee) and dark store fulfillment hubs to control direct-to-consumer grocery fulfillment with zero fleet capex.',
     roots: '• IFE Strength S4: Hypermart Online deployed in 103 stores, GrabMart in 97 stores.<br>• EFE Opportunity O1 & O8: $32B e-commerce boom without retailer delivery fleet CapEx.',
     bridge: 'Forms Strategy 2 in Slide 29: Converting hypermarket backrooms into on-demand dark stores.'
   },
   'strat-8': {
-    role: 'PERISHABLE QUALITY MOAT · MIDDLEMAN DISINTERMEDIATION',
+    role: 'SUPPORTING ENABLER · 66,755 M² HALAL COLD-CHAIN MOAT',
     title: '8. Backward Integration: Direct Farm-to-Store Logistics',
-    type: 'Fred David Strategy Classification: Integration · Sample PPT Slide 21',
-    ctx: 'Backward Integration increases control over suppliers. Sample Slide 21 emphasizes disintermediating wholesale middlemen to secure high-margin supply continuity.',
+    type: 'Fred David Strategy Classification: Integration (Backward Integration) · Sample PPT Slide 21',
+    ctx: 'Backward Integration increases control over suppliers. In the sample deck (Slide 21), this emphasizes disintermediating wholesale middlemen to secure high-margin supply continuity and reduce food waste.',
     roots: '• IFE Strength S2: 3 centralized DCs totaling 66,755 m² with cold-chain storage.<br>• EFE Opportunity O7 & O9: Insulates perishables from ambient platforms and cuts food waste.',
     bridge: 'Supports Strategy 1 and 2 fresh fulfillment supply chains in Slide 29 recommendations.'
   },
   'strat-9': {
-    role: 'BASKET VALUE EXPANSION · HEALTH & WELLNESS SYNERGY',
+    role: 'SUPPORTING ENABLER · 28–32% GROSS MARGIN BASKET LIFT',
     title: '9. Related Diversification: Boston HBC Pod Integration',
-    type: 'Fred David Strategy Classification: Diversification · Sample PPT Slide 25',
-    ctx: 'Related Diversification adds complementary, high-margin product categories that leverage existing retail foot traffic. Sample Slide 25 highlights synergies between grocery and wellness.',
+    type: 'Fred David Strategy Classification: Diversification (Related Diversification) · Sample PPT Slide 25',
+    ctx: 'Related Diversification adds complementary, high-margin product categories that leverage existing retail foot traffic. In the sample deck (Slide 25), this highlights synergies between grocery and wellness.',
     roots: '• BCG Matrix (Slide 24): Boston HBC operates in a high-growth wellness market (+14% IGR).<br>• Gross Margin Moat: Delivers 28%–32% margins to lift corporate grocery profitability.',
     bridge: 'Co-locates Boston HBC pods inside all new Hyfresh stores in Slide 29.'
   }
@@ -1849,9 +1849,9 @@ const recommendationsData = {
     kpi_id: 'Target densitas penjualan: Rp 25,0 juta / m²; frekuensi belanja: 2–3 kali per minggu; margin EBITDA: 6,5–7,5%.'
   },
   r2: {
-    badge: 'STRATEGY 2 · OPERATIONAL EFFICIENCY & ONLINE AND IN-STORE LOGISTICS',
+    badge: 'STRATEGY 2 · OPERATIONAL EFFICIENCY & OMNICHANNEL LOGISTICS',
     badge_id: 'STRATEGI 2 · EFISIENSI OPERASIONAL & LOGISTIK ONLINE AND IN-STORE',
-    title: 'Hypermarket Reducing Store Size & Hybrid O2O Micro-Fulfillment Online Order Centers',
+    title: 'Hypermarket Resizing & Hybrid O2O Dark Store Fulfillment Hubs',
     title_id: 'Penyesuaian Skala Hypermarket & Pusat Pesanan Daring Mikro-Fulfillment O2O Hibrida',
     initiatives: [
       'Make smaller 30+ large hypermarkets (5,000–8,000 m²) to modern 2,500–3,500 m² core retail sales area, focusing on non-discretionary groceries.',
@@ -1873,7 +1873,7 @@ const recommendationsData = {
   r3: {
     badge: 'STRATEGY 3 · BALANCE SHEET MOAT & WORKING CAPITAL RELIEF',
     badge_id: 'STRATEGI 3 · BENTENG NERACA & PELEPASAN MODAL KERJA',
-    title: 'PSAK 73 Lease Restructuring & Non-Core Subscale Sale Of A Business Or Assets',
+    title: 'PSAK 73 Lease Restructuring & Non-Core Format Divestitures (SmartClub & FMX)',
     title_id: 'Restrukturisasi Sewa PSAK 73 & Divestasi Unit Non-Inti Subskala',
     initiatives: [
       'Renegotiate hypermarket anchor mall master leases with major landlords (including Lippo Malls) from fixed minimum base rent to turnover-linked rent (12–15%).',
