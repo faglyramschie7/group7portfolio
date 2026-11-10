@@ -44,20 +44,53 @@
 
     <!-- 3-Metric Executive Top Bar -->
     <div class="fin-kpi-bar">
-      <div class="fin-kpi-card">
-        <span class="fin-kpi-tag">{{ t("REVENUE TRAJECTORY") }}</span>
-        <div class="fin-kpi-val">Rp 6.75T → Rp 7.51T</div>
-        <div class="fin-kpi-sub">{{ t("+11.4% Net Growth via 50 Compact Hyfresh Supermarkets & Omnichannel Dark Hubs") }}</div>
+      <!-- Card 1: Revenue Trajectory -->
+      <div class="fin-kpi-card kpi-card-rev">
+        <div class="kpi-card-top">
+          <span class="fin-kpi-tag">{{ t("REVENUE TRAJECTORY") }}</span>
+          <span class="kpi-badge badge-blue">{{ t("+11.4% Net Growth") }}</span>
+        </div>
+        <div class="fin-kpi-val">
+          <span class="kpi-from">Rp 6.75T</span>
+          <span class="kpi-arrow">→</span>
+          <span class="kpi-to">Rp 7.51T</span>
+        </div>
+        <div class="kpi-driver-tags">
+          <span class="driver-tag">{{ t("50 Hyfresh Stores") }}</span>
+          <span class="driver-tag">{{ t("45 Dark Hubs") }}</span>
+        </div>
       </div>
-      <div class="fin-kpi-card">
-        <span class="fin-kpi-tag">{{ t("EBIT TURNAROUND") }}</span>
-        <div class="fin-kpi-val">-Rp 140B → +Rp 1,428B</div>
-        <div class="fin-kpi-sub">{{ t("Driven by fresh grocery mix, farm direct-sourcing, and hypermarket lease rightsizing") }}</div>
+
+      <!-- Card 2: EBIT Turnaround -->
+      <div class="fin-kpi-card kpi-card-ebit">
+        <div class="kpi-card-top">
+          <span class="fin-kpi-tag">{{ t("EBIT TURNAROUND") }}</span>
+          <span class="kpi-badge badge-green">{{ t("+Rp 1.57T Swing") }}</span>
+        </div>
+        <div class="fin-kpi-val">
+          <span class="kpi-loss">-Rp 140B</span>
+          <span class="kpi-arrow">→</span>
+          <span class="kpi-profit">+Rp 1,428B</span>
+        </div>
+        <div class="kpi-driver-tags">
+          <span class="driver-tag">{{ t("Fresh Grocery Margin") }}</span>
+          <span class="driver-tag">{{ t("Lease Rightsizing") }}</span>
+        </div>
       </div>
-      <div class="fin-kpi-card">
-        <span class="fin-kpi-tag">{{ t("STRATEGIC FINANCING") }}</span>
-        <div class="fin-kpi-val">{{ t("Zero New Debt Target") }}</div>
-        <div class="fin-kpi-sub">{{ t("100% internally self-funded via asset divestments (+Rp120B) and lease cash savings (+Rp180B)") }}</div>
+
+      <!-- Card 3: Strategic Financing -->
+      <div class="fin-kpi-card kpi-card-fin">
+        <div class="kpi-card-top">
+          <span class="fin-kpi-tag">{{ t("STRATEGIC FINANCING") }}</span>
+          <span class="kpi-badge badge-purple">{{ t("100% Self-Funded") }}</span>
+        </div>
+        <div class="fin-kpi-val">
+          <span class="kpi-bold">{{ t("Zero New Bank Debt") }}</span>
+        </div>
+        <div class="kpi-driver-tags">
+          <span class="driver-tag">{{ t("Asset Sales (+Rp120B)") }}</span>
+          <span class="driver-tag">{{ t("Lease Savings (+Rp180B)") }}</span>
+        </div>
       </div>
     </div>
 
@@ -527,38 +560,136 @@ const activeTab = ref('income');
 .fin-kpi-bar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-bottom: 0.9cqw;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
+  gap: 0.75cqw;
+  margin-bottom: 0.85cqw;
 }
+
 .fin-kpi-card {
-  min-width: 0;
-  padding: 0.65cqw 0.85cqw;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.6cqw 0.9cqw 0.55cqw;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+  transition: all 0.15s ease;
+  min-width: 0;
 }
-.fin-kpi-card + .fin-kpi-card {
-  border-inline-start: 1px solid #e2e8f0;
+
+.fin-kpi-card:hover {
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+  border-color: #cbd5e1;
 }
+
+.kpi-card-rev {
+  border-top: 3px solid #0284c7;
+}
+
+.kpi-card-ebit {
+  border-top: 3px solid #16a34a;
+}
+
+.kpi-card-fin {
+  border-top: 3px solid #7c3aed;
+}
+
+.kpi-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.18cqw;
+}
+
 .fin-kpi-tag {
-  color: #475569;
-  font-size: 0.69cqw;
+  color: #64748b;
+  font-size: 0.67cqw;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 0.1cqw;
 }
+
+.kpi-badge {
+  font-size: 0.62cqw;
+  font-weight: 800;
+  padding: 0.1cqw 0.4cqw;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.badge-blue {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.badge-green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge-purple {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
 .fin-kpi-val {
-  font-size: 1.45cqw;
+  font-size: 1.32cqw;
   font-weight: 900;
   color: #0f172a;
   line-height: 1.15;
+  display: flex;
+  align-items: baseline;
+  gap: 0.35cqw;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.35cqw;
 }
-.fin-kpi-sub {
-  font-size: 0.77cqw;
-  color: #64748b;
-  line-height: 1.2;
+
+.kpi-from {
+  color: #475569;
+}
+
+.kpi-arrow {
+  color: #94a3b8;
+  font-size: 1.1cqw;
+}
+
+.kpi-to {
+  color: #0f172a;
+  font-weight: 900;
+}
+
+.kpi-loss {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.kpi-profit {
+  color: #15803d;
+  font-weight: 900;
+}
+
+.kpi-bold {
+  color: #0f172a;
+  font-weight: 900;
+}
+
+.kpi-driver-tags {
+  display: flex;
+  gap: 0.35cqw;
+  flex-wrap: wrap;
+}
+
+.driver-tag {
+  font-size: 0.65cqw;
+  font-weight: 600;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 0.12cqw 0.45cqw;
+  border-radius: 3px;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
 /* Content View */
