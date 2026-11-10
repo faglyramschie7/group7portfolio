@@ -9,17 +9,17 @@
     <!-- 3-Metric Executive Ratio Bar -->
     <div class="ratio-kpi-bar">
       <div class="ratio-kpi-card">
-        <span class="ratio-kpi-tag tag-blue">{{ language === 'id' ? 'Rasio lancar' : 'Current ratio' }}</span>
+        <span class="ratio-kpi-tag">{{ language === 'id' ? 'Rasio lancar' : 'Current ratio' }}</span>
         <div class="ratio-kpi-val">0.56x → 1.97x</div>
         <div class="ratio-kpi-sub">{{ t("Current Ratio recovers +252%; Quick Ratio surges from 0.21x to 1.79x.") }}</div>
       </div>
       <div class="ratio-kpi-card">
-        <span class="ratio-kpi-tag tag-green">{{ language === 'id' ? 'Cakupan bunga' : 'Interest coverage' }}</span>
+        <span class="ratio-kpi-tag">{{ language === 'id' ? 'Cakupan bunga' : 'Interest coverage' }}</span>
         <div class="ratio-kpi-val">−0.52x → 5.34x</div>
         <div class="ratio-kpi-sub">{{ t("Projected interest cover is based on the upside forecast. MPPA did not publish the bank’s required minimum.") }}</div>
       </div>
       <div class="ratio-kpi-card">
-        <span class="ratio-kpi-tag tag-purple">{{ language === 'id' ? 'Margin laba usaha' : 'Operating profit margin' }}</span>
+        <span class="ratio-kpi-tag">{{ language === 'id' ? 'Margin laba usaha' : 'Operating profit margin' }}</span>
         <div class="ratio-kpi-val">−2.1% → +19.0%</div>
         <div class="ratio-kpi-sub">{{ t("Gross margin reaches 50.0%; ROE rebounds from -219.4% to +32.3%.") }}</div>
       </div>
@@ -155,7 +155,7 @@
                 <td class="td-num td-bold td-profit">50.0%</td>
                 <td class="td-num td-bold td-profit">50.0%</td>
                 <td class="td-num td-bold td-profit">50.0%</td>
-                <td class="td-desc td-profit">{{ t("Direct farm procurement + elimination of distributor markups.") }}</td>
+                <td class="td-desc td-profit">{{ t("Direct farm fresh procurement + optimizing vendor terms within contracts.") }}</td>
               </tr>
               <tr data-ratio="operating_profit_margin">
                 <td class="td-bold">{{ t("Operating Profit Margin (%)") }}</td>
@@ -281,31 +281,32 @@ const props = defineProps({
 /* 3-Metric Top Bar */
 .ratio-kpi-bar {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75cqw;
-  margin-bottom: 0.4cqw;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: .5cqw;
+  border: 1px solid #e8dfe3;
+  border-top: 2px solid #df0036;
+  border-radius: 6px;
+  background: #faf8f9;
 }
 
 .ratio-kpi-card {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 0.35cqw 0.75cqw;
   display: flex;
   flex-direction: column;
+  padding: .45cqw .75cqw;
+}
+
+.ratio-kpi-card + .ratio-kpi-card {
+  border-left: 1px solid #e8dfe3;
 }
 
 .ratio-kpi-tag {
-  font-size: 0.67cqw;
+  margin-bottom: .12cqw;
+  color: #5e4e56;
+  font-size: .67cqw;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
   text-transform: uppercase;
-  margin-bottom: 0.1cqw;
 }
-
-.tag-blue { color: #0284c7; }
-.tag-green { color: #15803d; }
-.tag-purple { color: #7c3aed; }
 
 .ratio-kpi-val {
   font-size: 1.45cqw;
@@ -316,7 +317,7 @@ const props = defineProps({
 
 .ratio-kpi-sub {
   font-size: 0.77cqw;
-  color: #64748b;
+  color: #5e4e56;
   line-height: 1.2;
 }
 

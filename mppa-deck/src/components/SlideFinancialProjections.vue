@@ -158,7 +158,7 @@
                 <td class="td-num td-proj">3,440,763</td>
                 <td class="td-num td-proj">3,543,986</td>
                 <td class="td-num td-proj">3,756,625</td>
-                <td class="td-desc">{{ t("COGS reduced to 50% of sales through direct farm procurement, bypassing distributor markups and leveraging 66,755 m² central cold-chain storage to slash perishable waste.") }}</td>
+                <td class="td-desc">{{ t("COGS reduced through direct farm fresh procurement, bypassing produce middleman markups and leveraging 66,755 m² cold chain while maintaining formal supplier contracts.") }}</td>
               </tr>
               <tr class="row-subtotal clickable-row" @click="openDetail('gross_profit')" title="Click for Gross Margin expansion drivers">
                 <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Gross Profit") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>

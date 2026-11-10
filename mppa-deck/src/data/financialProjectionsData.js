@@ -88,7 +88,7 @@ export const financialDetailData = {
         { step: "4. Total Turnaround Swing", formula: "+1,427,517 M - (-140,268 M) = +Rp 1,567,785 M (+Rp 1.57 T structural profit swing)" }
       ],
       operationalBridge: [
-        { item: "Direct Farm Procurement & Bypassing Middlemen", impact: "+Rp 420.0 B", desc: "Contract farming across West/East Java cuts Tier-1 distributor markups (12–15%)." },
+        { item: "Direct Farm Sourcing & Streamlined Tiers", impact: "+Rp 420.0 B", desc: "Contract farming across West/East Java cuts informal produce middleman markups (12–15%) while maintaining formal FMCG supplier contracts." },
         { item: "Central Cold-Chain Spoilage Reduction", impact: "+Rp 280.0 B", desc: "Balaraja & Surabaya DCs reduce perishable spoilage and shrinkage from 9.2% down to 2.8%." },
         { item: "PSAK 73 Hypermarket Lease Downsizing", impact: "+Rp 180.0 B", desc: "Reducing Store Size 45 hypermarket anchors slashes annual fixed rental and facility maintenance costs." },
         { item: "Exit Loss-Making SmartClub Wholesale", impact: "+Rp 145.0 B", desc: "Eliminating subscale bulk warehousing halts recurring operating cash drain." }
@@ -182,12 +182,12 @@ export const financialDetailData = {
         { step: "3. 2023P COGS", formula: "Rp 7,513,250 M × 50.00% = Rp 3,756,625 M" }
       ],
       operationalBridge: [
-        { item: "Eliminating Distributor Margins", impact: "12%–15% Cost Savings", desc: "Contracting directly with vegetable and poultry farming clusters in West Java (Lembang/Ciwidey) and East Java (Malang)." },
+        { item: "Direct Farm Fresh Sourcing (Bypassing Middlemen)", impact: "12%–15% Cost Savings", desc: "Contracting directly with vegetable and poultry farming clusters in West Java (Lembang/Ciwidey) and East Java (Malang), while honoring formal FMCG distribution agreements." },
         { item: "Centralized Cold-Chain Storage", impact: "6.4% Shrinkage Cut", desc: "Balaraja (35,000 m²) and Surabaya (22,000 m²) DCs eliminate temperature breaks, slashing waste." },
         { item: "Eliminating Wholesale Dilution", impact: "8% Margin Recovery", desc: "Closing low-margin SmartClub bulk wholesale business." }
       ]
     },
-    strategicRationale: "Historical 2020 COGS of 80.6% reflected heavy reliance on third-party distribution intermediaries and severe perishable spoilage in non-refrigerated transit. Under the turnaround plan, direct farm sourcing and 66,755 m² of central cold storage eliminate middleman markups and reduce fresh food loss from 9.2% to under 3.0%.",
+    strategicRationale: "Historical 2020 COGS of 80.6% reflected heavy reliance on informal multi-tier fresh brokers and severe perishable spoilage in non-refrigerated transit. Under the turnaround plan, direct farm sourcing and 66,755 m² of central cold storage eliminate produce middleman markups while honoring formal distributor contracts, reducing fresh food loss from 9.2% to under 3.0%.",
     sensitivity: "Sensitivity: Each 5.0% improvement in COGS translates into ~Rp 375 B in additional annual operating profit."
   },
 
@@ -225,11 +225,11 @@ export const financialDetailData = {
       ],
       operationalBridge: [
         { item: "Perishable Category Shift", impact: "28%–38% Gross Margin", desc: "Fresh produce, bakery, and certified meats carry twice the margin of packaged ambient FMCG." },
-        { item: "Direct Farm Procurement", impact: "+12% Net Margin", desc: "Direct farmer relationships bypass distributor trading houses." },
+        { item: "Direct Farm Procurement", impact: "+12% Net Margin", desc: "Direct farmer relationships for fresh produce bypass informal brokers while optimizing vendor trading terms." },
         { item: "Cold-Chain Waste Cut", impact: "+6.4% Shrink Savings", desc: "Temperature control from farm gate to store shelf slashes write-offs." }
       ]
     },
-    strategicRationale: "Expanding gross margin to 50% is achieved via 3 strategic drivers: (1) Portfolio shift to high-margin perishables and fresh bakery (28–38% margin) vs bulk FMCG; (2) Direct farm cold-chain sourcing cutting middleman margins and spoilage; (3) Elimination of low-margin SmartClub wholesale dilution.",
+    strategicRationale: "Expanding gross margin to 50% is achieved via 3 strategic drivers: (1) Portfolio shift to high-margin perishables and fresh bakery (28–38% margin) vs bulk FMCG; (2) Direct farm cold-chain sourcing cutting informal produce middleman markups and spoilage while honoring distributor contracts; (3) Elimination of low-margin SmartClub wholesale dilution.",
     sensitivity: "Baseline Validation: Even at a standard supermarket industry gross margin of 24%–28%, MPPA's made smaller compact cost base generates positive operating income."
   },
 

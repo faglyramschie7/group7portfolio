@@ -494,8 +494,8 @@ const financialRatiosData = {
     formula_id: "Laba Kotor ÷ Penjualan Neto × 100% (Matahari.xlsx Bagian II Baris 156)",
     benchmark: "Grocery benchmark 18%–24%; fresh food specialty 28%–35%. Model's upside case reaches 50.0% (illustrative scenario).",
     benchmark_id: "Patokan ritel sembako 18%–24%; gerai segar khusus 28%–35%. Skenario optimis model mencapai 50,0% (skenario ilustratif).",
-    rationale: "Turnaround driver: (1) Direct farmgate procurement bypassing middlemen via Balaraja central cold chain; (2) Shifting sales mix to 60%+ fresh produce (28–35% gross margins); (3) Exiting low-margin SmartClub wholesale.",
-    rationale_id: "Pendorong pemulihan: (1) Pasokan langsung dari sentra tani via rantai dingin Balaraja; (2) Porsi pangan segar ditingkatkan hingga 60%+ (margin 28–35%); (3) Penghentian grosir SmartClub bermargin tipis."
+    rationale: "Turnaround driver: (1) Direct farmgate procurement for fresh produce via Balaraja cold chain (bypassing informal produce brokers while honoring formal FMCG distributor contracts); (2) Optimizing supplier trading terms & promotional rebates within existing contracts; (3) Shifting sales mix to 60%+ fresh produce (28–35% gross margins); (4) Exiting low-margin SmartClub wholesale.",
+    rationale_id: "Pendorong pemulihan: (1) Pengadaan langsung produk segar dari petani via rantai dingin Balaraja (memangkas tengkulak hasil tani tanpa memutus kontrak distributor resmi FMCG); (2) Optimalisasi syarat dagang (trading terms) & rabat promosi dalam kontrak pemasok; (3) Peningkatan bauran produk segar hingga 60%+ (margin 28–35%); (4) Penghentian grosir SmartClub bermargin tipis."
   },
   operating_profit_margin: {
     title: "Operating Profit Margin · Core Business Earnings (-2.1% → +19.0%)",
@@ -831,7 +831,6 @@ function clearMatrixSelection() {
   matrixPreview.hidden = true;
   if (document.getElementById('gsm-ins-box')) window.selectGsmDivision('all');
   if (document.getElementById('bcg-ins-box')) selectBcgDivision('all');
-  if (document.getElementById('ie-ins-box')) matrixIeRender?.('all');
   document.querySelectorAll('.cpm-hoverable.is-active,.swot-item.is-active,.efe-row.is-active,.ife-row.is-active,.tows-item.is-active,.dim-table-row.is-inspected,.space-dim-card.is-active,.space-comp-btn.is-active,.space-vector-group.is-active-vector,.space-vector-group.is-dimmed-vector')
     .forEach(item => item.classList.remove('is-active', 'is-inspected', 'is-active-vector', 'is-dimmed-vector'));
 }
@@ -846,7 +845,7 @@ listen(document, 'pointermove', event => {
     : financialRatioRow ? {kind: 'financial-ratio', target: financialRatioRow}
     : ieRatioCell ? {kind: 'ie-ratio-cell', target: ieRatioCell}
     : findMatrixItem(event.target);
-  if (!match || matrixDrawer.open || event.pointerType === 'touch') {
+  if (!match || match.kind === 'ie' || match.kind === 'ie-ratio-cell' || matrixDrawer.open || event.pointerType === 'touch') {
     matrixPreview.hidden = true;
     previewTarget = null;
     return;
@@ -1399,7 +1398,10 @@ try {
     openMatrixDrawer({ kind: 'ie', division: drawerDiv });
   }
 } catch(e) {}
-listen(document, 'dblclick', event => openMatrixDrawer(findMatrixItem(event.target)));
+listen(document, 'dblclick', event => {
+  const match = findMatrixItem(event.target);
+  if (match?.kind !== 'ie') openMatrixDrawer(match);
+});
 listen(document, 'click', event => {
   const card = event.target.closest?.('button[data-qspm-strategy]');
   if (card && !document.querySelector('.matrix-detail[open]')) {
@@ -1473,7 +1475,7 @@ listen(document, 'click', event => {
 listen(document, 'keydown', event => {
   if (event.key !== 'Enter') return;
   const match = findMatrixItem(event.target);
-  if (match) {
+  if (match && match.kind !== 'ie') {
     event.preventDefault();
     openMatrixDrawer(match);
   }
