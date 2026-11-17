@@ -140,7 +140,7 @@
       <div class="table-card">
         <div class="table-header">
           <span class="table-title">{{ t("Pro Forma Income Statement (2019A–2023P) · In Millions of Rupiah") }}</span>
-          <span class="table-source">{{ t("Source: Matahari.xlsx Sheet 'Projected Statements' & Audited Financial Reports") }} · <em>{{ language === 'id' ? 'Klik baris untuk rincian formula & sumber' : 'Click any row for formula & sources' }}</em></span>
+          <span class="table-source">{{ t("Source: MPPA AR2020 Audited Statements & 2019–2020 Anchored Turnaround Model") }} · <em>{{ language === 'id' ? 'Klik baris mana saja untuk sumber & tabel' : 'Click any row for sources & math table' }}</em></span>
         </div>
         <div class="table-scroll">
           <table class="fin-table">
@@ -194,7 +194,7 @@
                   <div>{{ t("OpEx drops from 21.0% (2019–2020 avg) to 18.5% ('21), 17.5% ('22), and 16.5% ('23) as 15 mall lease renegotiations, shrinking 45 hypermarkets, and closing 16 losing stores cut rent and utilities.") }}</div>
                 </td>
               </tr>
-              <tr class="row-highlight clickable-row" @click="openDetail('ebit')" title="Click for EBIT turnaround formula & bridge">
+              <tr class="clickable-row" @click="openDetail('ebit')" title="Click for EBIT turnaround formula & year-by-year table">
                 <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("EBIT (Operating Income)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-196,105</td>
                 <td class="td-num td-loss">-140,268</td>
@@ -203,7 +203,7 @@
                 <td class="td-num td-bold td-profit">563,494</td>
                 <td class="td-desc td-profit">{{ t("Operating profit turns positive in Year 1 (+Rp 172B) and scales to +Rp 563B by 2023 through realistic margin gains paired with lower store rent and operating overhead.") }}</td>
               </tr>
-              <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and PSAK 73 lease interest details">
+              <tr class="clickable-row" @click="openDetail('net_finance')" title="Click for Net Finance Costs & PSAK 73 lease relief breakdown">
                 <td><span class="row-inspect-label"><span>{{ t("Net Finance Costs (Interest)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">118,496</td>
                 <td class="td-num">267,419</td>
@@ -212,8 +212,8 @@
                 <td class="td-num td-proj">231,419</td>
                 <td class="td-desc">{{ t("Decreases by Rp 18B ('21), Rp 28B ('22), and Rp 36B ('23) as PSAK 73 mall lease renegotiations reduce lease liabilities (Rp 166.2B lease interest base in 2020) with zero new bank debt.") }}</td>
               </tr>
-              <tr>
-                <td class="td-bold">{{ t("EBT (Pretax Income)") }}</td>
+              <tr class="clickable-row" @click="openDetail('ebt')" title="Click for EBT pretax calculation & year-by-year table">
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("EBT (Pretax Income)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-314,601</td>
                 <td class="td-num td-loss">-407,687</td>
                 <td class="td-num td-loss">-77,381</td>
@@ -221,8 +221,8 @@
                 <td class="td-num td-bold td-proj">332,075</td>
                 <td class="td-desc">{{ t("Pretax loss narrows from -Rp 408B to -Rp 77B in 2021 during rollout, then turns profitable at +Rp 115B (2022) and +Rp 332B (2023).") }}</td>
               </tr>
-              <tr>
-                <td>{{ t("Tax Expense") }}</td>
+              <tr class="clickable-row" @click="openDetail('tax')" title="Click for Indonesian 22% tax calculation & sources">
+                <td><span class="row-inspect-label"><span>{{ t("Tax Expense") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">238,073</td>
                 <td class="td-num">-2,380</td>
                 <td class="td-num td-proj">0</td>
@@ -230,7 +230,7 @@
                 <td class="td-num td-proj">73,057</td>
                 <td class="td-desc">{{ t("2021 reflects tax-loss shield (negative EBT); 2022–2023 apply Indonesia's statutory 22% corporate income tax rate.") }}</td>
               </tr>
-              <tr class="row-total clickable-row" @click="openDetail('net_income')" title="Click for Net Income & equity restoration details">
+              <tr class="row-total clickable-row" @click="openDetail('net_income')" title="Click for Net Income & equity roll-forward details">
                 <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("Net Income (PAT)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-552,674</td>
                 <td class="td-num td-loss">-405,307</td>
@@ -250,7 +250,7 @@
       <div class="table-card">
         <div class="table-header">
           <span class="table-title">{{ t("Pro Forma Balance Sheet (2019A–2023P) · In Millions of Rupiah") }}</span>
-          <span class="table-source">{{ t("Source: Matahari.xlsx Sheet 'Projected Statements' & Case 23 Exhibit 3") }} · <em>{{ language === 'id' ? 'Klik baris untuk rincian formula & sumber' : 'Click any row for formula & sources' }}</em></span>
+          <span class="table-source">{{ t("Source: MPPA AR2020 pp. 126–127 & Reconciled 3-Statement Roll-Forward") }} · <em>{{ language === 'id' ? 'Klik baris mana saja untuk sumber & rumus' : 'Click any row for sources & formula' }}</em></span>
         </div>
         <div class="table-scroll">
           <table class="fin-table">
@@ -267,105 +267,123 @@
             </thead>
             <tbody>
               <tr class="row-section"><td colspan="7">{{ t("ASSETS") }}</td></tr>
-              <tr class="clickable-row" @click="openDetail('debt')">
+              <tr class="clickable-row" @click="openDetail('bs_cash')" title="Click for Cash & Cash Equivalents breakdown">
                 <td><span class="row-inspect-label"><span>{{ t("Cash & Short-Term Investments") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">304,295</td>
                 <td class="td-num">299,805</td>
-                <td class="td-num td-proj">1,776,827</td>
-                <td class="td-num td-proj">2,657,042</td>
-                <td class="td-num td-proj">3,623,609</td>
-                <td class="td-desc">{{ t("Accumulated cash reserve generated by high-velocity compact store operations and positive working capital cycle.") }}</td>
+                <td class="td-num td-proj">452,424</td>
+                <td class="td-num td-proj">612,108</td>
+                <td class="td-num td-proj">941,126</td>
+                <td class="td-desc">{{ t("Cash reserve triples from Rp 300B to Rp 941B via positive operating cash flow, SmartClub/FMX sales, and leaner inventory.") }}</td>
               </tr>
-              <tr>
-                <td>{{ t("Accounts Receivable") }}</td>
+              <tr class="clickable-row" @click="openDetail('bs_ar')" title="Click for Accounts Receivable formula & collection days">
+                <td><span class="row-inspect-label"><span>{{ t("Accounts Receivable") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">220,079</td>
                 <td class="td-num">193,210</td>
-                <td class="td-num td-proj">481,707</td>
-                <td class="td-num td-proj">496,158</td>
-                <td class="td-num td-proj">525,928</td>
-                <td class="td-desc">{{ t("Maintained at 7% of revenue; predominantly instant consumer cash transactions and digital e-wallet settlements.") }}</td>
+                <td class="td-num td-proj">240,853</td>
+                <td class="td-num td-proj">248,079</td>
+                <td class="td-num td-proj">262,964</td>
+                <td class="td-desc">{{ t("Modeled at 3.5% of sales (~12.8 collection days) reflecting instant store cash/QRIS plus GrabMart & Shopee settlements.") }}</td>
               </tr>
-              <tr class="clickable-row" @click="openDetail('revenue')">
+              <tr class="clickable-row" @click="openDetail('bs_inventory')" title="Click for Inventories reduction & turnover breakdown">
                 <td><span class="row-inspect-label"><span>{{ t("Inventories") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">1,191,567</td>
                 <td class="td-num">964,503</td>
-                <td class="td-num td-proj">481,707</td>
-                <td class="td-num td-proj">496,158</td>
-                <td class="td-num td-proj">525,928</td>
-                <td class="td-desc">{{ t("Lean inventory model: turnover accelerates from 5.6x to 7.1x via compact fresh format, freeing up Rp150B in working capital.") }}</td>
+                <td class="td-num td-proj">688,153</td>
+                <td class="td-num td-proj">708,797</td>
+                <td class="td-num td-proj">751,325</td>
+                <td class="td-desc">{{ t("Lean inventory model (10.0% of sales; 7.6x–7.9x turnover): SmartClub/FMX stock exit and fresh focus release trapped cash.") }}</td>
               </tr>
-              <tr>
-                <td>{{ t("Other Current Assets") }}</td>
+              <tr class="clickable-row" @click="openDetail('bs_other_ca')" title="Click for Other Current Assets breakdown">
+                <td><span class="row-inspect-label"><span>{{ t("Other Current Assets") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">188,106</td>
                 <td class="td-num">77,748</td>
-                <td class="td-num td-proj">1,238,675</td>
-                <td class="td-num td-proj">1,275,835</td>
-                <td class="td-num td-proj">1,352,385</td>
-                <td class="td-desc">{{ t("Working capital buffers for prepaid inventory procurement and store operational guarantees.") }}</td>
+                <td class="td-num td-proj">103,223</td>
+                <td class="td-num td-proj">106,320</td>
+                <td class="td-num td-proj">112,699</td>
+                <td class="td-desc">{{ t("Held at 1.5% of revenue (matching 2019–2020 avg 1.66%) for prepaid VAT, supplier advances, and store deposits.") }}</td>
               </tr>
-              <tr class="row-subtotal">
-                <td class="td-bold">{{ t("Total Current Assets") }}</td>
+              <tr class="row-subtotal clickable-row" @click="openDetail('bs_total_ca')" title="Click for Total Current Assets sum & liquidity ratios">
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Total Current Assets") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-bold">1,904,047</td>
                 <td class="td-num td-bold">1,535,266</td>
-                <td class="td-num td-bold td-proj">3,978,915</td>
-                <td class="td-num td-bold td-proj">4,925,193</td>
-                <td class="td-num td-bold td-proj">6,027,849</td>
-                <td class="td-desc td-bold">{{ t("Liquidity expands decisive: Current Ratio strengthens from 0.56x (2020) to 1.96x (2023), ending supplier freezes.") }}</td>
+                <td class="td-num td-bold td-proj">1,484,653</td>
+                <td class="td-num td-bold td-proj">1,675,304</td>
+                <td class="td-num td-bold td-proj">2,068,114</td>
+                <td class="td-desc td-bold">{{ t("Liquidity recovers steadily: Current Ratio strengthens from 0.56x (2020A) to 0.76x ('21), 0.89x ('22), and 1.11x ('23).") }}</td>
               </tr>
-              <tr>
-                <td>{{ t("Net Property, Plant & Equipment") }}</td>
+              <tr class="clickable-row" @click="openDetail('bs_ppe')" title="Click for Net PP&E CapEx vs depreciation schedule">
+                <td><span class="row-inspect-label"><span>{{ t("Net Property, Plant & Equipment") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">926,287</td>
                 <td class="td-num">789,871</td>
                 <td class="td-num td-proj">791,121</td>
                 <td class="td-num td-proj">792,371</td>
                 <td class="td-num td-proj">793,621</td>
-                <td class="td-desc">{{ t("Disciplined Net PP&E reflects 50 compact Hyfresh store fit-outs offset by hypermarket space downsizing.") }}</td>
+                <td class="td-desc">{{ t("Reflects Rp 90B/yr disciplined CapEx (50 Hyfresh stores, 45 resizes, 3 DCs) balanced by Rp 88.8B/yr depreciation.") }}</td>
               </tr>
-              <tr>
-                <td>{{ t("Other Long-Term Assets & Leases") }}</td>
+              <tr class="clickable-row" @click="openDetail('bs_other_lta')" title="Click for ROU lease assets & deposits breakdown">
+                <td><span class="row-inspect-label"><span>{{ t("Other Long-Term Assets & ROU Leases") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">990,475</td>
                 <td class="td-num">2,185,374</td>
-                <td class="td-num td-proj">550,522</td>
-                <td class="td-num td-proj">567,038</td>
-                <td class="td-num td-proj">601,060</td>
-                <td class="td-desc">{{ t("PSAK 73 right-of-use asset liabilities reduced substantially by reducing store size 45 anchor hypermarket leases.") }}</td>
+                <td class="td-num td-proj">1,147,374</td>
+                <td class="td-num td-proj">882,374</td>
+                <td class="td-num td-proj">617,374</td>
+                <td class="td-desc">{{ t("PSAK 73 Right-of-Use mall lease assets shrink as 45 hypermarkets resize and 15 fixed anchor leases switch to revenue-share.") }}</td>
               </tr>
-              <tr class="row-total">
-                <td class="td-bold">{{ t("Total Assets") }}</td>
+              <tr class="row-total clickable-row" @click="openDetail('bs_total_assets')" title="Click for Total Assets sum & verification">
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Total Assets") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-bold">3,820,809</td>
                 <td class="td-num td-bold">4,510,511</td>
-                <td class="td-num td-bold td-proj">5,322,873</td>
-                <td class="td-num td-bold td-proj">6,286,917</td>
-                <td class="td-num td-bold td-proj">7,424,845</td>
-                <td class="td-desc td-bold">{{ t("Total asset base grows soundly to Rp 7.42T, supported by operational cash generation and high-yield stores.") }}</td>
+                <td class="td-num td-bold td-proj">3,423,148</td>
+                <td class="td-num td-bold td-proj">3,350,049</td>
+                <td class="td-num td-bold td-proj">3,479,109</td>
+                <td class="td-desc td-bold">{{ t("Balances identically to Total Liabilities + Equity; Total Asset Turnover rises from 1.50x to 2.16x.") }}</td>
               </tr>
               <tr class="row-section"><td colspan="7">{{ t("LIABILITIES & STOCKHOLDERS' EQUITY") }}</td></tr>
-              <tr>
-                <td>{{ t("Total Current Liabilities (AP & Short-Term)") }}</td>
+              <tr class="clickable-row" @click="openDetail('bs_current_liab')" title="Click for Current Liabilities paydown breakdown">
+                <td><span class="row-inspect-label"><span>{{ t("Total Current Liabilities (AP & Short-Term)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">2,618,390</td>
                 <td class="td-num">2,763,099</td>
-                <td class="td-num td-proj">2,821,426</td>
-                <td class="td-num td-proj">2,906,069</td>
-                <td class="td-num td-proj">3,080,433</td>
-                <td class="td-desc">{{ t("Supplier trade payables managed smoothly with shortened payment cycles, restoring tier-1 supplier trust.") }}</td>
+                <td class="td-num td-proj">1,953,117</td>
+                <td class="td-num td-proj">1,890,334</td>
+                <td class="td-num td-proj">1,860,376</td>
+                <td class="td-desc">{{ t("Drops from Rp 2.76T as overdue supplier AP normalizes and short-term lease obligations decline.") }}</td>
               </tr>
-              <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and self-funding sources">
+              <tr class="clickable-row" @click="openDetail('bs_lt_debt')" title="Click for Long-Term Bank Debt & zero-borrowing policy">
                 <td><span class="row-inspect-label"><span>{{ t("Long-Term Bank Debt") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">250,000</td>
                 <td class="td-num">0</td>
-                <td class="td-num td-proj">2,000</td>
-                <td class="td-num td-proj">2,000</td>
-                <td class="td-num td-proj">2,000</td>
-                <td class="td-desc">{{ t("Zero new bank borrowing; preserves BNI credit line covenants (ceiling 250% debt-to-equity) without financial distress.") }}</td>
+                <td class="td-num td-proj">0</td>
+                <td class="td-num td-proj">0</td>
+                <td class="td-num td-proj">0</td>
+                <td class="td-desc">{{ t("Held at Rp 0 (0.0% LT Bank Debt / Equity); 100% self-funded rollout avoids adding new bank loans.") }}</td>
               </tr>
-              <tr class="row-highlight clickable-row" @click="openDetail('net_income')" title="Click for equity restoration details">
+              <tr class="clickable-row" @click="openDetail('bs_lt_lease')" title="Click for Long-Term PSAK 73 Lease Liabilities breakdown">
+                <td><span class="row-inspect-label"><span>{{ t("Long-Term Lease & Other Liabilities") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
+                <td class="td-num">421,738</td>
+                <td class="td-num">1,562,678</td>
+                <td class="td-num td-proj">1,362,678</td>
+                <td class="td-num td-proj">1,262,678</td>
+                <td class="td-num td-proj">1,162,678</td>
+                <td class="td-desc">{{ t("PSAK 73 non-current mall lease obligations (Note 19) decline -Rp 400B as anchor mall contracts are restructured.") }}</td>
+              </tr>
+              <tr class="row-highlight clickable-row" @click="openDetail('bs_equity')" title="Click for Stockholders' Equity exact roll-forward">
                 <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("Total Stockholders' Equity") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">530,681</td>
                 <td class="td-num td-loss">184,734</td>
-                <td class="td-num td-bold td-profit">985,512</td>
-                <td class="td-num td-bold td-profit">1,819,495</td>
-                <td class="td-num td-bold td-profit">2,689,498</td>
-                <td class="td-desc td-profit">{{ t("Equity base surges from distressed Rp185B back to Rp2.69T via accumulated retained earnings, restoring solvency.") }}</td>
+                <td class="td-num td-loss">107,353</td>
+                <td class="td-num td-bold td-profit">197,037</td>
+                <td class="td-num td-bold td-profit">456,055</td>
+                <td class="td-desc td-profit">{{ t("Exact roll-forward (Prior Equity + PAT): rebuilds 2.5x from distressed Rp 184.7B (2020) to Rp 456.1B (2023) without dilution.") }}</td>
+              </tr>
+              <tr class="row-total clickable-row" @click="openDetail('bs_total_liab_eq')" title="Click for Total Liabilities & Equity balance verification">
+                <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Total Liabilities & Stockholders' Equity") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
+                <td class="td-num td-bold">3,820,809</td>
+                <td class="td-num td-bold">4,510,511</td>
+                <td class="td-num td-bold td-proj">3,423,148</td>
+                <td class="td-num td-bold td-proj">3,350,049</td>
+                <td class="td-num td-bold td-proj">3,479,109</td>
+                <td class="td-desc td-bold">{{ t("Matches Total Assets exactly across all 5 years (zero discrepancy).") }}</td>
               </tr>
             </tbody>
           </table>
@@ -393,14 +411,14 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="clickable-row" @click="openDetail('epsebit')">
+              <tr class="clickable-row" @click="openDetail('epsebit_stock')" title="Click for 100% Stock dilution formula & EPS table">
                 <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Plan A: 100% Stock") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span><small>Issue 1.96M Shares</small></td>
                 <td class="td-num">Rp 7,700M<br><small>EPS: Rp 1.71</small></td>
                 <td class="td-num">Rp 11,550M<br><small>EPS: Rp 2.56</small></td>
                 <td class="td-num">Rp 13,860M<br><small>EPS: Rp 3.07</small></td>
                 <td class="td-desc">{{ t("Dilutes existing shareholders; depressed P/E makes share issuance unattractive") }}</td>
               </tr>
-              <tr class="clickable-row" @click="openDetail('epsebit')">
+              <tr class="clickable-row" @click="openDetail('epsebit_debt')" title="Click for 100% Debt interest cost & covenant risk breakdown">
                 <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Plan B: 100% Debt") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span><small>Rp 5,000M Debt @ 5%</small></td>
                 <td class="td-num">Rp 7,508M<br><small>EPS: Rp 2.94</small></td>
                 <td class="td-num">Rp 11,358M<br><small>EPS: Rp 4.45</small></td>
@@ -466,7 +484,7 @@
     <div class="fin-footer-bar">
       <div>
         <strong>{{ t("Turnaround Integration:") }}</strong>
-        <span>{{ t("Capital reallocation from large-format leases into 50 compact fresh stores achieves EBIT turnaround (+Rp1.43T) with zero new external debt.") }}</span>
+        <span>{{ t("Capital reallocation from large-format leases into 50 compact fresh stores achieves EBIT turnaround (+Rp563.5B) with zero new external debt.") }}</span>
       </div>
       <div>
         <span class="cite-pill">{{ t("Excel Part II: Projected Statements, EPS_EBIT, Financial Statements") }}</span>
@@ -530,6 +548,36 @@
               </div>
               <span class="matrix-kpi-sub">{{ kpi.sub }}</span>
             </div>
+          </div>
+        </section>
+
+        <!-- 1b. Year-by-Year Exact Numbers & Sources Table -->
+        <section v-if="selectedDetail.yearTable && selectedDetail.yearTable.length" class="matrix-detail-section">
+          <div class="matrix-section-header">
+            <span class="matrix-sec-icon" style="color:#0369a1;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="4" x2="9" y2="20"/></svg>
+            </span>
+            <h4>{{ language === 'id' ? 'Rincian Angka Per Tahun & Sumber Asli' : 'Year-by-Year Breakdown & Where Each Number Comes From' }}</h4>
+          </div>
+          <div class="matrix-calc-card fin-year-table-card">
+            <table class="fin-year-table">
+              <thead>
+                <tr>
+                  <th>{{ language === 'id' ? 'Periode' : 'Period' }}</th>
+                  <th class="num">{{ language === 'id' ? 'Nilai (Rp Juta)' : 'Value (Rp M)' }}</th>
+                  <th>{{ language === 'id' ? 'Cara Hitung / Rumus' : 'Exact Calculation / Formula' }}</th>
+                  <th>{{ language === 'id' ? 'Sumber / Pendorong' : 'Where We Got It (Source / Driver)' }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(row, yIdx) in selectedDetail.yearTable" :key="yIdx">
+                  <td class="yr-col">{{ row.year }}</td>
+                  <td class="num val-col">{{ row.val }}</td>
+                  <td class="formula-col">{{ row.formula }}</td>
+                  <td class="src-col">{{ row.source }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
@@ -1302,5 +1350,57 @@ function closeDetail() {
   font-weight: 700;
   color: #137333;
   white-space: nowrap;
+}
+.fin-year-table-card {
+  padding: 0;
+  overflow: hidden;
+}
+.fin-year-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11.5px;
+}
+.fin-year-table th {
+  text-align: left;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 800;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 8px;
+  border-bottom: 1.5px solid #cbd5e1;
+}
+.fin-year-table th.num,
+.fin-year-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.fin-year-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  vertical-align: top;
+  line-height: 1.35;
+}
+.fin-year-table tr:last-child td {
+  border-bottom: none;
+}
+.fin-year-table td.yr-col {
+  font-weight: 800;
+  color: #0f172a;
+  white-space: nowrap;
+}
+.fin-year-table td.val-col {
+  font-weight: 800;
+  color: #0f172a;
+}
+.fin-year-table td.formula-col {
+  font-weight: 600;
+  color: #1e293b;
+}
+.fin-year-table td.src-col {
+  color: #475569;
 }
 </style>
