@@ -3609,7 +3609,7 @@ FY2020 baseline · Planning horizon 2021–2025
       <div class="alt-card-head"><span class="alt-card-index" aria-hidden="true">02</span>
         <div class="alt-card-title-group">
           <span class="alt-card-title">Market Development: Hy-Express Commuter Grab &amp; Go</span>
-          <span class="alt-card-subtitle">SUPPORTING ENABLER · COMMUTER TRANSIT PILOT</span>
+          <span class="alt-card-subtitle">REPURPOSING 5–6 EXISTING FMX TRANSIT KIOSKS (NO NEW BUILDS)</span>
         </div>
         <span class="alt-badge badge-intensive">Intensive</span>
       </div>
@@ -3661,8 +3661,8 @@ FY2020 baseline · Planning horizon 2021–2025
     <div class="alt-card" data-strat-id="strat-5" data-cluster="defensive" data-priority="selective" onclick="selectStratAlternative('strat-5')" data-photo="/assets/alt-photo-5668772.jpg" data-photo-source="https://www.pexels.com/photo/supermarket-interior-empty-aisle-5668772/">
       <div class="alt-card-head"><span class="alt-card-index" aria-hidden="true">05</span>
         <div class="alt-card-title-group">
-          <span class="alt-card-title">Divestiture: Liquidate SmartClub &amp; Exit FMX</span>
-          <span class="alt-card-subtitle">SELECTIVE DIVESTITURE · CAPITAL SELF-FUNDING (RP 120B)</span>
+          <span class="alt-card-title">Divestiture: Liquidate SmartClub &amp; Exit ~8–9 Losing FMX Kiosks</span>
+          <span class="alt-card-subtitle">SELECTIVE DIVESTITURE · KEEP 5–6 TRANSIT SPOTS FOR HY-EXPRESS · RP 120B</span>
         </div>
         <span class="alt-badge badge-defensive">Defensive</span>
       </div>
