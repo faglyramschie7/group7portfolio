@@ -4469,7 +4469,7 @@ FY2020 baseline · Planning horizon 2021–2025
     </div>
     <div class="blueprint-title">3 Strategic Pillars</div>
     <ul class="blueprint-list">
-      <li><strong>Hyfresh Expansion:</strong> Open 50 small stores in 2022–23 (~20–23 converted from Foodmart + ~27–30 new leases), scaling to 75–100 by 2025.</li>
+      <li><strong>Hyfresh Expansion:</strong> Roll out 50 small stores (~20–23 Foodmart conversions + ~27–30 asset-light neighborhood fit-outs at Rp4.5B/store, avoiding heavy mall leases).</li>
       <li><strong>Hypermart Resizing:</strong> Downsize 100 large boxes from 6,000 to 2,500 m² & convert backrooms to dark fulfillment hubs.</li>
       <li><strong>Lease &amp; Asset Pruning:</strong> Cut PSAK 73 mall leases; close SmartClub &amp; ~8–9 losing FMX kiosks (repurpose 5–6 best transit spots to Hy-Express).</li>
     </ul>
@@ -4526,7 +4526,7 @@ FY2020 baseline · Planning horizon 2021–2025
     <div class="blueprint-title">2021–2025 Milestones</div>
     <ul class="blueprint-list">
       <li><strong>Phase 1 (2021):</strong> De-risk cash flow via Rp120B divestments and 15 anchor mall lease renegotiations.</li>
-      <li><strong>Phase 2 (2022–23):</strong> Open 50 Hyfresh stores (rebranding Foodmart + new leases) &amp; convert 45 Hypermart backrooms to dark hubs.</li>
+      <li><strong>Phase 2 (2022–23):</strong> Launch 50 Hyfresh stores (Foodmart conversions + low-cost neighborhood fit-outs) &amp; convert 45 Hypermart backrooms to dark hubs.</li>
       <li><strong>Phase 3 (2024–25):</strong> Scale digital delivery to &gt;10% GMV; restore net margins and operational cash flow.</li>
     </ul>
   </div>
