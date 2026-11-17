@@ -94,18 +94,18 @@
         <div class="kpi-card-top">
           <span class="fin-kpi-tag">{{ t("EBIT TURNAROUND") }}</span>
           <div class="kpi-top-badges">
-            <span class="kpi-badge badge-profit">{{ t("+Rp 1.57T Swing") }}</span>
+            <span class="kpi-badge badge-profit">{{ t("+Rp 704B Swing") }}</span>
             <span class="kpi-hint-pill">🔍 {{ language === 'id' ? 'Rincian' : 'Details' }} ↗</span>
           </div>
         </div>
         <div class="fin-kpi-val">
           <span class="kpi-loss">-Rp 140B</span>
           <span class="kpi-arrow">→</span>
-          <span class="kpi-profit">+Rp 1,428B</span>
+          <span class="kpi-profit">+Rp 563B</span>
         </div>
         <div class="kpi-driver-tags">
-          <span class="driver-tag">{{ t("Fresh Grocery Margin") }}</span>
-          <span class="driver-tag">{{ t("Lease Reducing Store Size") }}</span>
+          <span class="driver-tag">{{ t("Cold-Chain & Private Label") }}</span>
+          <span class="driver-tag">{{ t("Rent & Store Size Cuts") }}</span>
         </div>
       </div>
 
@@ -165,43 +165,43 @@
                 <td class="td-num td-proj td-highlight">7,513,250</td>
                 <td class="td-desc">{{ t("+2% ('21), +3% ('22), +6% ('23): Net growth reflects opening 50 compact Hyfresh stores (+Rp750B) while reducing store size 45 hypermarkets and closing SmartClub (-Rp500B low-margin bulk sales).") }}</td>
               </tr>
-              <tr class="clickable-row" @click="openDetail('cogs')" title="Click for COGS breakdown and direct farm sourcing model">
+              <tr class="clickable-row" @click="openDetail('cogs')" title="Click for COGS breakdown and 2019–2020 baseline">
                 <td><span class="row-inspect-label"><span>{{ t("Cost of Goods Sold (COGS)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">7,074,249</td>
                 <td class="td-num">5,439,936</td>
-                <td class="td-num td-proj">3,440,763</td>
-                <td class="td-num td-proj">3,543,986</td>
-                <td class="td-num td-proj">3,756,625</td>
-                <td class="td-desc">{{ t("COGS reduced through direct farm fresh procurement, bypassing produce middleman markups and leveraging 66,755 m² cold chain while maintaining formal supplier contracts.") }}</td>
+                <td class="td-num td-proj">5,436,406</td>
+                <td class="td-num td-proj">5,493,178</td>
+                <td class="td-num td-proj">5,710,070</td>
+                <td class="td-desc">{{ t("Anchored to 2019–2020 avg (81.2%), improving gradually to 79.0% ('21), 77.5% ('22), and 76.0% ('23) via cold-chain waste cuts, Value Plus private label, and SmartClub exit.") }}</td>
               </tr>
               <tr class="row-subtotal clickable-row" @click="openDetail('gross_profit')" title="Click for Gross Margin expansion drivers">
                 <td class="td-bold"><span class="row-inspect-label"><span>{{ t("Gross Profit") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-bold">1,580,397</td>
                 <td class="td-num td-bold">1,306,658</td>
-                <td class="td-num td-bold td-proj">3,440,763</td>
-                <td class="td-num td-bold td-proj">3,543,986</td>
-                <td class="td-num td-bold td-proj">3,756,625</td>
-                <td class="td-desc td-bold">{{ t("Gross margin expands to 50% via 3 strategic drivers: (1) Portfolio shift to high-margin perishables & fresh bakery (28–35% margin) vs bulk FMCG; (2) Direct farm cold-chain sourcing cutting middleman margins & spoilage; (3) Elimination of low-margin SmartClub wholesale dilution.") }}</td>
+                <td class="td-num td-bold td-proj">1,445,120</td>
+                <td class="td-num td-bold td-proj">1,594,794</td>
+                <td class="td-num td-bold td-proj">1,803,180</td>
+                <td class="td-desc td-bold">{{ t("Gross margin expands realistically from 18.8% (2019–2020 avg) to 21.0% ('21), 22.5% ('22), and 24.0% ('23) via fresh grocery mix shift and private label.") }}</td>
               </tr>
-              <tr class="clickable-row" @click="openDetail('opex')" title="Click for OpEx buffer analysis">
+              <tr class="clickable-row" @click="openDetail('opex')" title="Click for OpEx reduction analysis">
                 <td><span class="row-inspect-label"><span>{{ t("Operating Expenses (OpEx)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">1,776,502</td>
                 <td class="td-num">1,446,926</td>
-                <td class="td-num td-proj">2,133,273</td>
-                <td class="td-num td-proj">2,197,271</td>
-                <td class="td-num td-proj">2,329,108</td>
+                <td class="td-num td-proj">1,273,082</td>
+                <td class="td-num td-proj">1,240,395</td>
+                <td class="td-num td-proj">1,239,686</td>
                 <td class="td-desc">
-                  <div>{{ t("OpEx budgeted conservatively at 31% of revenue (vs 21.5% in 2020), providing an ample cost buffer for 50-store fit-outs, cold-logistics handling, and GrabMart/Shopee digital O2O fulfillment commissions.") }}</div>
+                  <div>{{ t("OpEx drops from 21.0% (2019–2020 avg) to 18.5% ('21), 17.5% ('22), and 16.5% ('23) as 15 mall lease renegotiations, shrinking 45 hypermarkets, and closing 16 losing stores cut rent and utilities.") }}</div>
                 </td>
               </tr>
               <tr class="row-highlight clickable-row" @click="openDetail('ebit')" title="Click for EBIT turnaround formula & bridge">
                 <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("EBIT (Operating Income)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-196,105</td>
                 <td class="td-num td-loss">-140,268</td>
-                <td class="td-num td-bold td-profit">1,307,490</td>
-                <td class="td-num td-bold td-profit">1,346,715</td>
-                <td class="td-num td-bold td-profit">1,427,517</td>
-                <td class="td-desc td-profit">{{ t("Turnaround driven by operational scissors effect: high-yield compact fresh store gross profit combined with PSAK 73 lease expense reduction from reducing store size 45 large hypermarket anchor spaces.") }}</td>
+                <td class="td-num td-bold td-profit">172,038</td>
+                <td class="td-num td-bold td-profit">354,399</td>
+                <td class="td-num td-bold td-profit">563,494</td>
+                <td class="td-desc td-profit">{{ t("Operating profit turns positive in Year 1 (+Rp 172B) and scales to +Rp 563B by 2023 through realistic margin gains paired with lower store rent and operating overhead.") }}</td>
               </tr>
               <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and covenant details">
                 <td><span class="row-inspect-label"><span>{{ t("Net Finance Costs (Interest)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
@@ -216,28 +216,28 @@
                 <td class="td-bold">{{ t("EBT (Pretax Income)") }}</td>
                 <td class="td-num td-loss">-314,601</td>
                 <td class="td-num td-loss">-407,687</td>
-                <td class="td-num td-bold td-proj">1,039,971</td>
-                <td class="td-num td-bold td-proj">1,079,199</td>
-                <td class="td-num td-bold td-proj">1,160,004</td>
-                <td class="td-desc">{{ t("Pretax profit swings to +Rp 1.04T in 2021 and reaches +Rp 1.16T by 2023, decisively reversing historical structural deficits.") }}</td>
+                <td class="td-num td-loss">-95,481</td>
+                <td class="td-num td-bold td-proj">86,883</td>
+                <td class="td-num td-bold td-proj">295,981</td>
+                <td class="td-desc">{{ t("Pretax loss narrows from -Rp 408B to -Rp 95B in 2021 during rollout, then turns profitable at +Rp 87B (2022) and +Rp 296B (2023).") }}</td>
               </tr>
               <tr>
                 <td>{{ t("Tax Expense") }}</td>
                 <td class="td-num">238,073</td>
                 <td class="td-num">-2,380</td>
-                <td class="td-num td-proj">239,193</td>
-                <td class="td-num td-proj">248,216</td>
-                <td class="td-num td-proj">290,001</td>
-                <td class="td-desc">{{ t("Corporate tax rate applied: statutory 23% in 2021–2022, 25% in 2023, reflecting full compliance with Indonesian fiscal regulations.") }}</td>
+                <td class="td-num td-proj">0</td>
+                <td class="td-num td-proj">19,114</td>
+                <td class="td-num td-proj">65,116</td>
+                <td class="td-desc">{{ t("2021 reflects tax-loss shield (negative EBT); 2022–2023 apply Indonesia's statutory 22% corporate income tax rate.") }}</td>
               </tr>
               <tr class="row-total clickable-row" @click="openDetail('net_income')" title="Click for Net Income & equity restoration details">
                 <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("Net Income (PAT)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-552,674</td>
                 <td class="td-num td-loss">-405,307</td>
-                <td class="td-num td-bold td-profit">800,778</td>
-                <td class="td-num td-bold td-profit">830,983</td>
-                <td class="td-num td-bold td-profit">870,003</td>
-                <td class="td-desc td-profit">{{ t("Cumulative net profit of Rp 2.50T over 3 years completely restores stockholders' equity base to +Rp 2.69T without shareholder dilution.") }}</td>
+                <td class="td-num td-loss">-95,481</td>
+                <td class="td-num td-bold td-profit">67,769</td>
+                <td class="td-num td-bold td-profit">230,865</td>
+                <td class="td-desc td-profit">{{ t("Loss narrows by 76% in 2021 and swings to +Rp 67.8B (2022) and +Rp 230.9B (2023), adding +Rp 203.2B cumulative net profit without new debt or dilution.") }}</td>
               </tr>
             </tbody>
           </table>

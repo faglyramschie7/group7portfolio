@@ -54,27 +54,27 @@ export const financialDetailData = {
     key: 'ebit',
     tag: 'OPERATING INCOME TURNAROUND',
     tagId: 'PEMULIHAN LABA OPERASIONAL',
-    statusPill: '+Rp 1,567.8B Swing · Reverses 4 Loss Years',
-    statusPillId: 'Pembalikan +Rp 1.567,8 M · Membalik 4 Tahun Rugi',
+    statusPill: '+Rp 703.8B Swing · Reverses 4 Loss Years',
+    statusPillId: 'Pembalikan +Rp 703,8 M · Membalik 4 Tahun Rugi',
     statusClass: 'badge-profit',
-    title: 'EBIT Turnaround: -Rp 140B → +Rp 1,428B',
-    titleId: 'Pembalikan EBIT: -Rp 140 M → +Rp 1.428 M',
-    sub: 'The Operating Scissors Effect: Gross Margin 50% vs OpEx 31%',
-    subId: 'Efek Gunting Operasional: Margin Kotor 50% vs Beban Usaha 31%',
+    title: 'EBIT Turnaround: -Rp 140B → +Rp 563B',
+    titleId: 'Pembalikan EBIT: -Rp 140 M → +Rp 563 M',
+    sub: 'Gross Margin 18.8% → 24.0% Paired with OpEx 21.0% → 16.5%',
+    subId: 'Margin Kotor 18,8% → 24,0% Dipadukan Beban Usaha 21,0% → 16,5%',
     borderColor: '#137333',
     kpis: [
       { label: '2020A Actual', labelId: 'Realisasi 2020A', val: '-Rp 140.3 B', sub: '-2.08% Operating Loss', isLoss: true },
-      { label: '2021P EBIT', labelId: 'EBIT 2021P', val: '+Rp 1,307.5 B', sub: '19.00% Operating Margin', isProfit: true },
-      { label: '2022P EBIT', labelId: 'EBIT 2022P', val: '+Rp 1,346.7 B', sub: '19.00% Operating Margin', isProfit: true },
-      { label: '2023P EBIT', labelId: 'EBIT 2023P', val: '+Rp 1,427.5 B', sub: '19.00% Operating Margin', isHighlight: true, isProfit: true },
-      { label: 'Operating Swing', labelId: 'Pembalikan Bersih', val: '+Rp 1,567.8 B', sub: 'Decisive Structural Turnaround', isProfit: true }
+      { label: '2021P EBIT', labelId: 'EBIT 2021P', val: '+Rp 172.0 B', sub: '2.50% Operating Margin', isProfit: true },
+      { label: '2022P EBIT', labelId: 'EBIT 2022P', val: '+Rp 354.4 B', sub: '5.00% Operating Margin', isProfit: true },
+      { label: '2023P EBIT', labelId: 'EBIT 2023P', val: '+Rp 563.5 B', sub: '7.50% Operating Margin', isHighlight: true, isProfit: true },
+      { label: 'Operating Swing', labelId: 'Pembalikan Bersih', val: '+Rp 703.8 B', sub: 'Realistic Turnaround', isProfit: true }
     ],
     whereWeGotIt: {
-      workbook: "Matahari.xlsx",
+      workbook: "2019A–2020A Audited Baseline + Turnaround Model",
       sheets: [
-        { name: "PART II", coords: "Row 156 (COGS: 0.50) & Row 158 (OpEx: 0.31)", desc: "Preset model ratios: Cost of Goods Sold = 50.0% of Sales; Operating Expenses = 31.0% of Sales." },
+        { name: "2019–2020 Historical Baseline", coords: "Avg COGS: 81.2% · Avg OpEx: 21.0%", desc: "Anchored to MPPA's audited 2019A–2020A ratios instead of generic template defaults." },
         { name: "Financial Statements", coords: "Row 14 (EBIT historical track record: 2017: -1,244B; 2018: -898B; 2019: -196B; 2020: -140B)", desc: "Confirms 4 consecutive years of structural operating deficits totalling -Rp 2.48 T." },
-        { name: "Projected Statements", coords: "Row 9 (Cells D9 = D7-D8, E9 = E7-E8, F9 = F7-F8)", desc: "Gross Profit (50%) - OpEx (31%) = 19.0% EBIT Margin." }
+        { name: "Projected Operating Income", coords: "2021P: 2.5% · 2022P: 5.0% · 2023P: 7.5% EBIT Margin", desc: "Gross Profit (21.0% → 24.0%) minus OpEx (18.5% → 16.5%)." }
       ],
       annualReport: "MPPA 2020 Annual Report, Consolidated Statement of Profit or Loss, p. 128 (Loss from Operations: -Rp 140,268 million).",
       caseRef: "Harvard/PPM Case 23 Exhibit 2 (Operating Results & Profitability Turnaround).",
@@ -82,20 +82,20 @@ export const financialDetailData = {
     },
     howWeGetIt: {
       mathSteps: [
-        { step: "1. 2021P Operating Equation", formula: "Gross Profit (Rp 3,440,763 M) - OpEx (Rp 2,133,273 M) = +Rp 1,307,490 M (19.0% Margin)" },
-        { step: "2. 2022P Operating Equation", formula: "Gross Profit (Rp 3,543,986 M) - OpEx (Rp 2,197,271 M) = +Rp 1,346,715 M (19.0% Margin)" },
-        { step: "3. 2023P Operating Equation", formula: "Gross Profit (Rp 3,756,625 M) - OpEx (Rp 2,329,108 M) = +Rp 1,427,517 M (19.0% Margin)" },
-        { step: "4. Total Turnaround Swing", formula: "+1,427,517 M - (-140,268 M) = +Rp 1,567,785 M (+Rp 1.57 T structural profit swing)" }
+        { step: "1. 2021P Operating Equation", formula: "Gross Profit (Rp 1,445,120 M) - OpEx (Rp 1,273,082 M) = +Rp 172,038 M (2.5% Margin)" },
+        { step: "2. 2022P Operating Equation", formula: "Gross Profit (Rp 1,594,794 M) - OpEx (Rp 1,240,395 M) = +Rp 354,399 M (5.0% Margin)" },
+        { step: "3. 2023P Operating Equation", formula: "Gross Profit (Rp 1,803,180 M) - OpEx (Rp 1,239,686 M) = +Rp 563,494 M (7.5% Margin)" },
+        { step: "4. Total Turnaround Swing", formula: "+563,494 M - (-140,268 M) = +Rp 703,762 M (+Rp 703.8 B structural profit swing)" }
       ],
       operationalBridge: [
-        { item: "Direct Farm Sourcing & Streamlined Tiers", impact: "+Rp 420.0 B", desc: "Contract farming across West/East Java cuts informal produce middleman markups (12–15%) while maintaining formal FMCG supplier contracts." },
-        { item: "Central Cold-Chain Spoilage Reduction", impact: "+Rp 280.0 B", desc: "Balaraja & Surabaya DCs reduce perishable spoilage and shrinkage from 9.2% down to 2.8%." },
-        { item: "PSAK 73 Hypermarket Lease Downsizing", impact: "+Rp 180.0 B", desc: "Reducing Store Size 45 hypermarket anchors slashes annual fixed rental and facility maintenance costs." },
-        { item: "Exit Loss-Making SmartClub Wholesale", impact: "+Rp 145.0 B", desc: "Eliminating subscale bulk warehousing halts recurring operating cash drain." }
+        { item: "Fresh Cold-Chain & Private Label Lift", impact: "+Rp 210.0 B", desc: "Value Plus private label (300–500 bps higher margin) and central DC cold storage cut spoilage and lift gross margin from 18.8% to 24.0%." },
+        { item: "PSAK 73 Mall Lease & Store Size Cuts", impact: "+Rp 180.0 B", desc: "Renegotiating 15 mall leases and shrinking 45 oversized hypermarkets cuts fixed rent, staffing, and electricity." },
+        { item: "Exit Loss-Making SmartClub & FMX", impact: "+Rp 145.0 B", desc: "Closing 2 SmartClub centers and 14 unprofitable FMX kiosks halts recurring operating cash drain." },
+        { item: "Hyfresh Neighborhood Store Scale", impact: "+Rp 168.8 B", desc: "50 compact fresh supermarkets generate 2.5x higher sales per m² than legacy hypermarkets." }
       ]
     },
-    strategicRationale: "The turnaround is driven by the 'Operating Scissors Effect': simultaneously expanding gross margins (top blade) while reducing store size lease drag (bottom blade). High-margin perishables, bakery, and fresh produce (28–38% gross margin) replace low-margin electronics, while budgeting OpEx conservatively at 31% (up from 21.5% in 2020) provides an ample Rp 882 B expense buffer for new store fit-outs and digital delivery commissions.",
-    sensitivity: "Stress Test: If Gross Margin only achieves 30.0% (instead of 50.0%) and OpEx normalizes at 22.0%, 2023 EBIT remains solidly profitable at +Rp 601.1 B (8.0% margin). The 50% case represents the upside benchmark of complete cold-chain direct farm conversion."
+    strategicRationale: "Instead of using unrealistic 50% COGS / 31% OpEx template presets, this projection anchors directly to MPPA's 2019–2020 audited average (81.2% COGS, 21.0% OpEx). Gradual gross margin gains (+5.2 pts over 3 years) combined with real store-size and rent cuts (-4.5 pts OpEx over 3 years) flip EBIT positive in Year 1 (+Rp 172B) and scale to +Rp 563.5B by 2023.",
+    sensitivity: "Stress Test: Even if Gross Margin only reaches 22.0% and OpEx stays at 18.0%, 2023 EBIT remains solidly positive at +Rp 300.5B (4.0% margin)."
   },
 
   debt: {
@@ -151,171 +151,171 @@ export const financialDetailData = {
     key: 'cogs',
     tag: 'SUPPLY CHAIN OPTIMIZATION',
     tagId: 'OPTIMASI RANTAI PASOK',
-    statusPill: '50.00% COGS Ratio (Down from 80.6% in 2020)',
-    statusPillId: 'Rasio HPP 50,00% (Turun dari 80,6% di 2020)',
+    statusPill: '81.2% Avg → 76.0% COGS Target (Realistic)',
+    statusPillId: 'Rata-rata 81,2% → Target HPP 76,0% (Realistis)',
     statusClass: 'badge-profit',
-    title: 'Cost of Goods Sold (COGS): 50% Direct-Sourcing Target',
-    titleId: 'Beban Pokok Pendapatan (HPP): Target 50% Sourcing Langsung',
-    sub: 'Direct Farm-Gate Procurement & Multi-Temperature Cold Storage',
-    subId: 'Pengadaan Langsung Petani & Pergudangan Pendingin Multi-Suhu',
+    title: 'Cost of Goods Sold (COGS): Anchored to 2019–2020 Baseline',
+    titleId: 'Beban Pokok Pendapatan (HPP): Mengacu Baseline 2019–2020',
+    sub: 'Gradual 5.2% Improvement via Cold Storage, Private Label & SmartClub Exit',
+    subId: 'Perbaikan Bertahap 5,2% via Gudang Pendingin, Merek Privat & Tutup SmartClub',
     borderColor: '#137333',
     kpis: [
-      { label: '2020A Actual', labelId: 'Realisasi 2020A', val: 'Rp 5,439.9 B', sub: '80.63% of Net Sales', isLoss: true },
-      { label: '2021P Target', labelId: 'Target 2021P', val: 'Rp 3,440.8 B', sub: '50.00% of Net Sales' },
-      { label: '2022P Target', labelId: 'Target 2022P', val: 'Rp 3,544.0 B', sub: '50.00% of Net Sales' },
-      { label: '2023P Target', labelId: 'Target 2023P', val: 'Rp 3,756.6 B', sub: '50.00% of Net Sales', isHighlight: true },
-      { label: 'Margin Expansion', labelId: 'Ekspansi Margin', val: '+30.63%', sub: 'Gross Profit Lift', isProfit: true }
+      { label: '2019–2020 Avg', labelId: 'Rata-rata 2019–2020', val: '81.19%', sub: '81.74% (2019) · 80.63% (2020)', isLoss: true },
+      { label: '2021P Target', labelId: 'Target 2021P', val: 'Rp 5,436.4 B', sub: '79.00% of Net Sales' },
+      { label: '2022P Target', labelId: 'Target 2022P', val: 'Rp 5,493.2 B', sub: '77.50% of Net Sales' },
+      { label: '2023P Target', labelId: 'Target 2023P', val: 'Rp 5,710.1 B', sub: '76.00% of Net Sales', isHighlight: true },
+      { label: 'Margin Gain', labelId: 'Kenaikan Margin', val: '+5.19%', sub: 'Gradual Gross Margin Lift', isProfit: true }
     ],
     whereWeGotIt: {
-      workbook: "Matahari.xlsx",
+      workbook: "MPPA Audited 2019–2020 Baseline + Turnaround Model",
       sheets: [
-        { name: "PART II", coords: "Row 156 (Cells G156 = 0.50, J156 = 0.50, M156 = 0.50)", desc: "Cost of Goods Sold assumption set to 50% of revenue in the pro forma model." },
-        { name: "Projected Statements", coords: "Row 6 (Cells D6 = D5*G156, E6 = E5*J156, F6 = F5*M156)", desc: "Direct product cost calculation for 2021P, 2022P, and 2023P." }
+        { name: "2019A–2020A Actuals", coords: "2019: 81.74% · 2020: 80.63% → Avg: 81.19%", desc: "Anchored to audited MPPA grocery COGS ratios rather than generic 50% template defaults." },
+        { name: "Projected COGS", coords: "2021P: 79.0% · 2022P: 77.5% · 2023P: 76.0% of Revenue", desc: "Realistic 1.5–2.2% annual reduction as cold-chain and private label scale." }
       ],
-      annualReport: "MPPA 2020 Annual Report, Audited Statement of Profit or Loss, p. 128 (COGS: Rp 5,439,936 million) and Note 26.",
-      caseRef: "Harvard/PPM Case 23 Exhibit 2 (Pro Forma COGS assumptions)."
+      annualReport: "MPPA 2020 Annual Report, Audited Statement of Profit or Loss, p. 128 (2019 COGS: Rp 7,074,249 M; 2020 COGS: Rp 5,439,936 M).",
+      caseRef: "Harvard/PPM Case 23 Exhibit 2 & Exhibit 6."
     },
     howWeGetIt: {
       mathSteps: [
-        { step: "1. 2021P COGS", formula: "Rp 6,881,526 M × 50.00% = Rp 3,440,763 M" },
-        { step: "2. 2022P COGS", formula: "Rp 7,087,972 M × 50.00% = Rp 3,543,986 M" },
-        { step: "3. 2023P COGS", formula: "Rp 7,513,250 M × 50.00% = Rp 3,756,625 M" }
+        { step: "1. 2019–2020 Avg Baseline", formula: "(81.74% + 80.63%) ÷ 2 = 81.19% of Revenue" },
+        { step: "2. 2021P COGS (79.0%)", formula: "Rp 6,881,526 M × 79.00% = Rp 5,436,406 M" },
+        { step: "3. 2022P COGS (77.5%)", formula: "Rp 7,087,972 M × 77.50% = Rp 5,493,178 M" },
+        { step: "4. 2023P COGS (76.0%)", formula: "Rp 7,513,250 M × 76.00% = Rp 5,710,070 M" }
       ],
       operationalBridge: [
-        { item: "Direct Farm Fresh Sourcing (Bypassing Middlemen)", impact: "12%–15% Cost Savings", desc: "Contracting directly with vegetable and poultry farming clusters in West Java (Lembang/Ciwidey) and East Java (Malang), while honoring formal FMCG distribution agreements." },
-        { item: "Centralized Cold-Chain Storage", impact: "6.4% Shrinkage Cut", desc: "Balaraja (35,000 m²) and Surabaya (22,000 m²) DCs eliminate temperature breaks, slashing waste." },
-        { item: "Eliminating Wholesale Dilution", impact: "8% Margin Recovery", desc: "Closing low-margin SmartClub bulk wholesale business." }
+        { item: "Centralized Cold-Chain Spoilage Cut", impact: "2.0%–2.5% Cost Savings", desc: "Balaraja (35,000 m²) and Surabaya (22,000 m²) cold DCs cut fresh produce spoilage without breaking distributor contracts." },
+        { item: "Value Plus Private Label Mix", impact: "1.5%–2.0% Blended Lift", desc: "Expanding 2,000 Value Plus staple SKUs at 300–500 bps higher margin than national FMCG brands." },
+        { item: "Exiting SmartClub Wholesale", impact: "1.0%–1.5% Margin Recovery", desc: "Closing low-margin bulk B2B wholesale lifts blended store gross margin." }
       ]
     },
-    strategicRationale: "Historical 2020 COGS of 80.6% reflected heavy reliance on informal multi-tier fresh brokers and severe perishable spoilage in non-refrigerated transit. Under the turnaround plan, direct farm sourcing and 66,755 m² of central cold storage eliminate produce middleman markups while honoring formal distributor contracts, reducing fresh food loss from 9.2% to under 3.0%.",
-    sensitivity: "Sensitivity: Each 5.0% improvement in COGS translates into ~Rp 375 B in additional annual operating profit."
+    strategicRationale: "MPPA already operates formal FMCG distributor contracts, so cutting COGS to 50% overnight is unrealistic. Anchoring to the 2019–2020 average of 81.2% and improving by ~5.2 percentage points over 3 years (to 76.0%) reflects achievable gains from fresh cold-chain shrinkage reduction, Value Plus private label, and closing low-margin SmartClub wholesale.",
+    sensitivity: "Sensitivity: Each 1.0% improvement in COGS adds ~Rp 75B in annual operating profit."
   },
 
   gross_profit: {
     key: 'gross_profit',
     tag: 'GROSS MARGIN EXPANSION',
     tagId: 'EKSPANSI MARGIN KOTOR',
-    statusPill: '50.00% Gross Margin Target',
-    statusPillId: 'Target Margin Kotor 50,00%',
+    statusPill: '18.8% Avg → 24.0% Gross Margin Target',
+    statusPillId: 'Rata-rata 18,8% → Target Margin Kotor 24,0%',
     statusClass: 'badge-profit',
-    title: 'Gross Profit: Expanding from 19.4% to 50.0%',
-    titleId: 'Laba Kotor: Ekspansi dari 19,4% ke 50,0%',
-    sub: 'Fresh Grocery Mix Shift, Cold-Chain Logistics & Value-Added Private Label',
-    subId: 'Pergeseran Bauran Produk Segar, Logistik Rantai Dingin & Merek Privat',
+    title: 'Gross Profit: Gradual Expansion from 18.8% to 24.0%',
+    titleId: 'Laba Kotor: Ekspansi Bertahap dari 18,8% ke 24,0%',
+    sub: 'Fresh Grocery Mix Shift, Cold-Chain Spoilage Cuts & Private Label',
+    subId: 'Bauran Produk Segar, Efisiensi Rantai Dingin & Merek Privat',
     borderColor: '#137333',
     kpis: [
-      { label: '2020A Actual', labelId: 'Realisasi 2020A', val: 'Rp 1,306.7 B', sub: '19.37% Gross Margin' },
-      { label: '2021P Gross Profit', labelId: 'Laba Kotor 2021P', val: 'Rp 3,440.8 B', sub: '50.00% Gross Margin', isProfit: true },
-      { label: '2022P Gross Profit', labelId: 'Laba Kotor 2022P', val: 'Rp 3,544.0 B', sub: '50.00% Gross Margin', isProfit: true },
-      { label: '2023P Gross Profit', labelId: 'Laba Kotor 2023P', val: 'Rp 3,756.6 B', sub: '50.00% Gross Margin', isHighlight: true, isProfit: true }
+      { label: '2019–2020 Avg', labelId: 'Rata-rata 2019–2020', val: '18.81%', sub: '18.26% (2019) · 19.37% (2020)' },
+      { label: '2021P Gross Profit', labelId: 'Laba Kotor 2021P', val: 'Rp 1,445.1 B', sub: '21.00% Gross Margin', isProfit: true },
+      { label: '2022P Gross Profit', labelId: 'Laba Kotor 2022P', val: 'Rp 1,594.8 B', sub: '22.50% Gross Margin', isProfit: true },
+      { label: '2023P Gross Profit', labelId: 'Laba Kotor 2023P', val: 'Rp 1,803.2 B', sub: '24.00% Gross Margin', isHighlight: true, isProfit: true }
     ],
     whereWeGotIt: {
-      workbook: "Matahari.xlsx",
+      workbook: "MPPA Audited 2019–2020 Baseline + Turnaround Model",
       sheets: [
-        { name: "Projected Statements", coords: "Row 7 (Cells D7 = D5-D6, E7 = E5-E6, F7 = F5-F6)", desc: "Calculated Gross Profit across all projected periods." }
+        { name: "Projected Gross Profit", coords: "Revenue minus COGS (2021P: 21.0% · 2022P: 22.5% · 2023P: 24.0%)", desc: "Calculated Gross Profit across all projected periods." }
       ],
-      annualReport: "MPPA 2020 Annual Report, p. 128 (Gross Profit: Rp 1,306,658 million; 19.37% gross margin).",
+      annualReport: "MPPA 2020 Annual Report, p. 128 (2019 Gross Profit: Rp 1,580,397 M / 18.26%; 2020 Gross Profit: Rp 1,306,658 M / 19.37%).",
       caseRef: "Harvard/PPM Case 23 Exhibit 2 (Gross Profit Projections)."
     },
     howWeGetIt: {
       mathSteps: [
-        { step: "1. 2021P Gross Profit", formula: "Rp 6,881,526 M - Rp 3,440,763 M = Rp 3,440,763 M (50.00%)" },
-        { step: "2. 2022P Gross Profit", formula: "Rp 7,087,972 M - Rp 3,543,986 M = Rp 3,543,986 M (50.00%)" },
-        { step: "3. 2023P Gross Profit", formula: "Rp 7,513,250 M - Rp 3,756,625 M = Rp 3,756,625 M (50.00%)" }
+        { step: "1. 2021P Gross Profit (21.0%)", formula: "Rp 6,881,526 M - Rp 5,436,406 M = Rp 1,445,120 M" },
+        { step: "2. 2022P Gross Profit (22.5%)", formula: "Rp 7,087,972 M - Rp 5,493,178 M = Rp 1,594,794 M" },
+        { step: "3. 2023P Gross Profit (24.0%)", formula: "Rp 7,513,250 M - Rp 5,710,070 M = Rp 1,803,180 M" }
       ],
       operationalBridge: [
-        { item: "Perishable Category Shift", impact: "28%–38% Gross Margin", desc: "Fresh produce, bakery, and certified meats carry twice the margin of packaged ambient FMCG." },
-        { item: "Direct Farm Procurement", impact: "+12% Net Margin", desc: "Direct farmer relationships for fresh produce bypass informal brokers while optimizing vendor trading terms." },
-        { item: "Cold-Chain Waste Cut", impact: "+6.4% Shrink Savings", desc: "Temperature control from farm gate to store shelf slashes write-offs." }
+        { item: "Fresh & Perishable Mix Shift", impact: "+2.2% Margin", desc: "Neighborhood Hyfresh stores sell a higher share of fresh produce, meat, and bakery." },
+        { item: "Value Plus Private Label", impact: "+1.5% Margin", desc: "300–500 bps higher margin on staple household goods vs national FMCG brands." },
+        { item: "Cold-Chain Shrinkage Cut", impact: "+1.5% Margin", desc: "Lower spoilage in transit and backroom cold storage protects store gross margin." }
       ]
     },
-    strategicRationale: "Expanding gross margin to 50% is achieved via 3 strategic drivers: (1) Portfolio shift to high-margin perishables and fresh bakery (28–38% margin) vs bulk FMCG; (2) Direct farm cold-chain sourcing cutting informal produce middleman markups and spoilage while honoring distributor contracts; (3) Elimination of low-margin SmartClub wholesale dilution.",
-    sensitivity: "Baseline Validation: Even at a standard supermarket industry gross margin of 24%–28%, MPPA's made smaller compact cost base generates positive operating income."
+    strategicRationale: "Expanding gross margin from the 18.8% historical average to 24.0% by 2023 matches real-world Asian supermarket benchmarks while keeping formal supplier relationships intact.",
+    sensitivity: "Baseline Validation: 24.0% gross margin is in line with Indonesian neighborhood grocery peers (vs 19.4% legacy hypermarket margin)."
   },
 
   opex: {
     key: 'opex',
     tag: 'EXPENSE BUDGETING & DISCIPLINE',
     tagId: 'PENGANGGARAN BIAYA & DISIPLIN',
-    statusPill: '31.00% OpEx Ratio · Conservative Expense Buffer',
-    statusPillId: 'Rasio Beban Usaha 31,00% · Penyangga Biaya Konservatif',
+    statusPill: '21.0% Avg → 16.5% OpEx Target (Realistic)',
+    statusPillId: 'Rata-rata 21,0% → Target Beban Usaha 16,5% (Realistis)',
     statusClass: 'badge-brand',
-    title: 'Operating Expenses (OpEx): Conservative 31% Buffer',
-    titleId: 'Beban Usaha: Penyangga Konservatif 31% Penjualan',
-    sub: 'Ample Buffer for 50-Store Openings, Cold Logistics & Digital Commissions',
-    subId: 'Cadangan Cukup untuk Pembukaan 50 Gerai, Logistik Dingin & Komisi Digital',
+    title: 'Operating Expenses (OpEx): Rent & Store Size Savings',
+    titleId: 'Beban Usaha: Penghematan Sewa & Ukuran Gerai',
+    sub: 'Falling from 21.0% Avg to 16.5% via Lease Cuts, Smaller Stores & Exiting Losers',
+    subId: 'Turun dari Rata-rata 21,0% ke 16,5% via Negosiasi Sewa & Penutupan Gerai Rugi',
     borderColor: '#df0036',
     kpis: [
-      { label: '2020A Actual', labelId: 'Realisasi 2020A', val: 'Rp 1,446.9 B', sub: '21.45% of Net Sales' },
-      { label: '2021P Budget', labelId: 'Anggaran 2021P', val: 'Rp 2,133.3 B', sub: '31.00% of Net Sales (+Rp 686.3 B)' },
-      { label: '2022P Budget', labelId: 'Anggaran 2022P', val: 'Rp 2,197.3 B', sub: '31.00% of Net Sales' },
-      { label: '2023P Budget', labelId: 'Anggaran 2023P', val: 'Rp 2,329.1 B', sub: '31.00% of Net Sales (+Rp 882.2 B vs 2020)', isHighlight: true }
+      { label: '2019–2020 Avg', labelId: 'Rata-rata 2019–2020', val: '20.99%', sub: '20.53% (2019) · 21.45% (2020)' },
+      { label: '2021P OpEx', labelId: 'Beban Usaha 2021P', val: 'Rp 1,273.1 B', sub: '18.50% of Net Sales (-Rp 173.8 B)' },
+      { label: '2022P OpEx', labelId: 'Beban Usaha 2022P', val: 'Rp 1,240.4 B', sub: '17.50% of Net Sales' },
+      { label: '2023P OpEx', labelId: 'Beban Usaha 2023P', val: 'Rp 1,239.7 B', sub: '16.50% of Net Sales (-Rp 207.2 B vs 2020)', isHighlight: true }
     ],
     whereWeGotIt: {
-      workbook: "Matahari.xlsx",
+      workbook: "MPPA Audited 2019–2020 Baseline + Turnaround Cost Cuts",
       sheets: [
-        { name: "PART II", coords: "Row 158 (Cells G158 = 0.31, J158 = 0.31, M158 = 0.31)", desc: "OpEx set at 31.0% of revenue across all 3 projected years." },
-        { name: "Projected Statements", coords: "Row 8 (Cells D8 = D5*G158, E8 = E5*J158, F8 = F5*M158)", desc: "Projected Operating Expense calculation." }
+        { name: "2019A–2020A Actuals", coords: "2019: 20.53% · 2020: 21.45% → Avg: 20.99%", desc: "Anchored to audited Selling + G&A expenses instead of inflated 31% template default." },
+        { name: "Projected OpEx", coords: "2021P: 18.5% · 2022P: 17.5% · 2023P: 16.5% of Revenue", desc: "Reflects real savings from mall lease cuts, store downsizing, and closing losing formats." }
       ],
       annualReport: "MPPA 2020 Annual Report, Note 28 (Selling Expenses: Rp 1,225.8 B; General & Admin: Rp 221.1 B; Total OpEx: Rp 1,446.9 B = 21.45% of sales).",
-      caseRef: "Harvard/PPM Case 23 Exhibit 2 (Pro Forma Operating Expenses)."
+      caseRef: "Harvard/PPM Case 23 Exhibit 2 & Exhibit 6."
     },
     howWeGetIt: {
       mathSteps: [
-        { step: "1. 2021P OpEx", formula: "Rp 6,881,526 M × 31.00% = Rp 2,133,273 M (+Rp 686.3 B above 2020)" },
-        { step: "2. 2022P OpEx", formula: "Rp 7,087,972 M × 31.00% = Rp 2,197,271 M" },
-        { step: "3. 2023P OpEx", formula: "Rp 7,513,250 M × 31.00% = Rp 2,329,108 M (+Rp 882.2 B above 2020)" }
+        { step: "1. 2019–2020 Avg Baseline", formula: "(20.53% + 21.45%) ÷ 2 = 20.99% of Revenue" },
+        { step: "2. 2021P OpEx (18.5%)", formula: "Rp 6,881,526 M × 18.50% = Rp 1,273,082 M" },
+        { step: "3. 2022P OpEx (17.5%)", formula: "Rp 7,087,972 M × 17.50% = Rp 1,240,395 M" },
+        { step: "4. 2023P OpEx (16.5%)", formula: "Rp 7,513,250 M × 16.50% = Rp 1,239,686 M" }
       ],
       operationalBridge: [
-        { item: "Store Launch & Marketing Buffer", impact: "+Rp 250.0 B", desc: "Local advertising, grand opening campaigns, and fresh customer acquisition." },
-        { item: "Digital Marketplace Platform Fees", impact: "+Rp 220.0 B", desc: "GrabMart/Shopee 8%–10% fulfillment commission charges." },
-        { item: "Cold-Chain Electricity & Handling", impact: "+Rp 180.0 B", desc: "Energy for multi-temp distribution facilities and refrigerated delivery van fleets." },
-        { item: "Unallocated Operational Contingency", impact: "+Rp 232.2 B", desc: "Safety cushion absorbing unexpected inflation or supply shocks." }
+        { item: "PSAK 73 Mall Lease Renegotiation", impact: "-Rp 36.0 B / yr", desc: "Renegotiating 15 anchor mall leases to variable revenue-share rent." },
+        { item: "Downsizing 45 Hypermarkets", impact: "-Rp 95.0 B / yr", desc: "Shrinking floor area from 6,000–8,000 m² to 2,500–3,500 m² cuts AC electricity, security, and store staffing." },
+        { item: "Exiting 2 SmartClub & 14 FMX Stores", impact: "-Rp 76.2 B / yr", desc: "Removes chronic loss-making store rent, payroll, and kiosk overhead." }
       ]
     },
-    strategicRationale: "Budgeting OpEx at 31% is intentionally conservative. Historical 2020 OpEx was only 21.45% of sales. Expanding the OpEx ratio to 31.0% builds in a huge +Rp 882.2 B spending cushion. This guarantees that all store fit-outs, digital commissions, and cold-chain logistics costs are fully funded without threatening operating profitability.",
-    sensitivity: "Safety Margin: Even if operational inflation causes OpEx to rise to 35% of revenue, the company remains strongly EBIT positive (+Rp 1.13 T)."
+    strategicRationale: "A turnaround plan built on shrinking oversized stores and renegotiating mall leases should lower OpEx, not raise it to 31%. Starting from MPPA's 2019–2020 average of 21.0%, OpEx drops realistically to 16.5% by 2023 as rent, electricity, and losing-store payroll are cut.",
+    sensitivity: "Safety Margin: Even if OpEx stays flat at 19.0% of sales instead of 16.5%, 2023 EBIT still reaches +Rp 375.7 B."
   },
 
   net_income: {
     key: 'net_income',
     tag: 'BOTTOM-LINE EARNINGS & SOLVENCY',
     tagId: 'LABA BERSIH & SOLVABILITAS',
-    statusPill: 'Cumulative Rp 2.50T PAT (2021P–2023P)',
-    statusPillId: 'Laba Bersih Kumulatif Rp 2,50T (2021P–2023P)',
+    statusPill: '+Rp 203.2B Cumulative PAT (2021P–2023P)',
+    statusPillId: 'Laba Bersih Kumulatif +Rp 203,2 M (2021P–2023P)',
     statusClass: 'badge-profit',
-    title: 'Net Income (PAT): Restoring Stockholders’ Equity',
-    titleId: 'Laba Bersih: Pemulihan Total Ekuitas Pemegang Saham',
-    sub: 'Full Reversal of Historical Losses & Equity Restored to Rp 2.69T',
-    subId: 'Pembalikan Total Rugi Historis & Ekuitas Pulih Menjadi Rp 2,69T',
+    title: 'Net Income (PAT): Realistic Return to Profitability',
+    titleId: 'Laba Bersih: Pemulihan Profitabilitas Secara Realistis',
+    sub: 'Loss Narrows 76% in 2021, Turns Profitable in 2022 (+Rp 67.8B) & Scales in 2023 (+Rp 230.9B)',
+    subId: 'Rugi Menyusut 76% di 2021, Untung di 2022 (+Rp 67,8 M) & Menguat di 2023 (+Rp 230,9 M)',
     borderColor: '#137333',
     kpis: [
       { label: '2020A Loss', labelId: 'Rugi 2020A', val: '-Rp 405.3 B', sub: 'Distressed Equity Drag', isLoss: true },
-      { label: '2021P PAT', labelId: 'Laba Bersih 2021P', val: '+Rp 800.8 B', sub: 'Turnaround Year 1', isProfit: true },
-      { label: '2022P PAT', labelId: 'Laba Bersih 2022P', val: '+Rp 831.0 B', sub: 'Turnaround Year 2', isProfit: true },
-      { label: '2023P PAT', labelId: 'Laba Bersih 2023P', val: '+Rp 870.0 B', sub: 'Turnaround Year 3', isHighlight: true, isProfit: true },
-      { label: '3-Yr Cum. PAT', labelId: 'Kumulatif 3 Thn', val: '+Rp 2,501.8 B', sub: '+Rp 2.50 T Restored Equity', isProfit: true }
+      { label: '2021P PAT', labelId: 'Laba Bersih 2021P', val: '-Rp 95.5 B', sub: '76% Loss Reduction', isLoss: true },
+      { label: '2022P PAT', labelId: 'Laba Bersih 2022P', val: '+Rp 67.8 B', sub: 'Net Profit Break-Through', isProfit: true },
+      { label: '2023P PAT', labelId: 'Laba Bersih 2023P', val: '+Rp 230.9 B', sub: 'Sustained Profitability', isHighlight: true, isProfit: true },
+      { label: '3-Yr Cum. PAT', labelId: 'Kumulatif 3 Thn', val: '+Rp 203.2 B', sub: 'Zero Debt / Zero Dilution', isProfit: true }
     ],
     whereWeGotIt: {
-      workbook: "Matahari.xlsx",
+      workbook: "MPPA Audited 2019–2020 Baseline + Turnaround Model",
       sheets: [
-        { name: "Projected Statements", coords: "Row 14 (Cells D14 = D12-D13, E14 = E12-E13, F14 = F12-F13)", desc: "Net Income after statutory taxes (23% in 2021–2022, 25% in 2023)." },
-        { name: "Retained Earnings Table", coords: "Sheet 'Retained Earnings Table' & 'Projected Statements' Row 40", desc: "100% of Net Income is retained into stockholders' equity (Rp 0 dividends paid)." }
+        { name: "Projected Net Income", coords: "EBT minus 22% statutory corporate tax (0 tax when EBT < 0)", desc: "2021P reflects store-opening ramp; 2022P–2023P deliver positive net earnings." },
+        { name: "Retained Earnings", coords: "100% of net profits retained (Rp 0 dividends)", desc: "Rebuilds equity base from Rp 184.7 B to +Rp 387.9 B by 2023 without issuing shares." }
       ],
       annualReport: "MPPA 2020 Annual Report, Statement of Profit or Loss, p. 128 (Loss for the year: -Rp 405,307 million) and Statement of Changes in Equity, p. 131.",
       caseRef: "Harvard/PPM Case 23 Exhibit 2 (Pro Forma PAT)."
     },
     howWeGetIt: {
       mathSteps: [
-        { step: "1. 2021P Net Income", formula: "EBT Rp 1,039,971 M - Tax 23% (Rp 239,193 M) = +Rp 800,778 M" },
-        { step: "2. 2022P Net Income", formula: "EBT Rp 1,079,199 M - Tax 23% (Rp 248,216 M) = +Rp 830,983 M" },
-        { step: "3. 2023P Net Income", formula: "EBT Rp 1,160,004 M - Tax 25% (Rp 290,001 M) = +Rp 870,003 M" },
-        { step: "4. Cumulative 3-Yr Total", formula: "800,778 + 830,983 + 870,003 = +Rp 2,501,764 M (+Rp 2.50 T)" },
-        { step: "5. Equity Restoration", formula: "2020 Equity (Rp 184,734 M) + Retained Earnings (Rp 2,501,764 M) + Capital (Rp 3,000 M) = Rp 2,689,498 M (+Rp 2.69 T)" }
+        { step: "1. 2021P Net Income", formula: "EBT (-Rp 95,481 M) - Tax (Rp 0) = -Rp 95,481 M (76% smaller loss vs 2020)" },
+        { step: "2. 2022P Net Income", formula: "EBT (+Rp 86,883 M) - Tax 22% (Rp 19,114 M) = +Rp 67,769 M" },
+        { step: "3. 2023P Net Income", formula: "EBT (+Rp 295,981 M) - Tax 22% (Rp 65,116 M) = +Rp 230,865 M" },
+        { step: "4. Cumulative 3-Yr Total", formula: "-95,481 + 67,769 + 230,865 = +Rp 203,153 M (+Rp 203.2 B cumulative)" }
       ]
     },
-    strategicRationale: "Rebuilding Stockholders' Equity: Four consecutive years of pandemic losses (-Rp 3.53 T cumulative from 2017 to 2020) reduced MPPA's stockholders' equity to a distressed Rp 184.7 B. Retaining 100% of projected earnings completely restores the equity base to Rp 2.69 T without issuing a single dilutive share or taking on expensive bank debt.",
-    sensitivity: "Solvency Protection: A restored equity cushion of Rp 2.69 T creates a formidable defense against economic downturns and ensures tier-1 supplier credit terms remain secure."
+    strategicRationale: "Four consecutive years of losses (-Rp 3.53 T cumulative from 2017 to 2020) pushed MPPA's equity down to Rp 184.7 B. This realistic turnaround cuts net loss by 76% in Year 1 while Hyfresh stores open, flips net positive in Year 2 (+Rp 67.8 B), and compounds to +Rp 230.9 B in Year 3 without new bank debt or share dilution.",
+    sensitivity: "Solvency Protection: Turning net cash-generative without new debt preserves MPPA's supplier credit terms and BNI loan covenants."
   },
 
   epsebit: {
