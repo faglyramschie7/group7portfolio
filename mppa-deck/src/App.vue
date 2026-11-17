@@ -4211,67 +4211,72 @@ const fundingBreakdowns = {
     title: 'How We Get +Rp 180.0B (PSAK 73 Lease Relief)',
     cols: ['Component', 'Scope / Qty', 'Per Unit / Yr', '5-Yr Total'],
     rows: [
-      ['Base AR2020 lease liabilities (Note 19) & 2020A cash lease payments', 'All MPPA stores', 'Rp 2,253.3B liab. · Rp 463.1B/yr cash', 'Baseline'],
-      ['Average annual rent per Hypermart (Rp 463.1B ÷ 100 Hypermarts)', '100 Hypermarts', '~Rp 4.63B / store / yr (~Rp 386M/mo)', 'Per-store avg'],
-      ['Cut rent ~50% via revenue-share or 3,000 m² space hand-back (~7.8% of 2020A lease cash)', '15 anchor mall leases', 'Rp 2.40B / store / yr (~Rp 200M/mo)', '15 × 2.40B = Rp 36.0B / yr'],
-      ['5-year cumulative lease cash savings (2021–2025)', '15 leases × 5 yrs', 'Rp 36.0B / yr × 5 yrs', '+Rp 180.0B']
+      ['Base AR2020 lease liabilities (Note 19) & 2020A cash lease payments', 'All MPPA stores', 'Rp 2,253.3B liab. · Rp 463.1B/yr cash', 'Baseline', 'Source: MPPA AR2020 Note 19 (Rp 2,253.3B lease liabilities) & 2020 Cash Flow Statement (Rp 463.1B/yr lease + finance cash payments).'],
+      ['Average annual rent per Hypermart (Rp 463.1B ÷ 100 Hypermarts)', '100 Hypermarts', '~Rp 4.63B / store / yr (~Rp 386M/mo)', 'Per-store avg', 'Math: Rp 463.1B total 2020A lease cash ÷ 100 Hypermart stores (Case Exhibit 6, p. 592) ≈ Rp 4.63B/store/yr (~Rp 386M/month).'],
+      ['Cut rent ~50% via revenue-share or 3,000 m² space hand-back (~7.8% of 2020A lease cash)', '15 anchor mall leases', 'Rp 2.40B / store / yr (~Rp 200M/mo)', '15 × 2.40B = Rp 36.0B / yr', 'Plan assumption: cutting ~50% rent on 15 anchor mall stores (~Rp 200M/mo × 12 = Rp 2.40B/yr) × 15 stores = Rp 36.0B/yr (36.0 ÷ 463.1 ≈ 7.8%).'],
+      ['5-year cumulative lease cash savings (2021–2025)', '15 leases × 5 yrs', 'Rp 36.0B / yr × 5 yrs', '+Rp 180.0B', '5-yr math: Rp 36.0B/yr × 5 years (2021–2025) = +Rp 180.0B (40% of Rp 450B budget); also lowers PSAK 73 interest on Slide 35.']
     ]
   },
   'src-cashflow': {
     title: 'How We Get +Rp 150.0B (Operating Cash Retained)',
     cols: ['Component', 'Source / Scope', 'Annual Rate', '5-Yr Total'],
     rows: [
-      ['2020A operating cash flow (before lease/interest)', 'AR2020 Cash Flow', 'Rp 475.6B', 'Baseline'],
-      ['Less 2020A lease & net finance cash payments', 'AR2020 Cash Flow', '-Rp 463.1B', 'Rp 12.5B left over'],
-      ['Years 1–2: cut fresh waste (4.8% → <2%) & clear slow stock', '2021–2022 plan', '~Rp 20.0B / yr', '+Rp 40.0B'],
-      ['Years 3–5: 50 Hyfresh + resized Hypermarts + GrabMart × OVO', '2023–2025 plan', '~Rp 36.7B / yr', '+Rp 110.0B'],
-      ['5-year operating cash retained (Rp 30.0B/yr avg × 5 yrs)', '2021–2025 total', 'Rp 30.0B / yr avg', '+Rp 150.0B']
+      ['2020A operating cash flow (before lease/interest)', 'AR2020 Cash Flow', 'Rp 475.6B', 'Baseline', 'Source: MPPA AR2020 Consolidated Statement of Cash Flows — net cash from operating activities before lease/interest payments = Rp 475.6B.'],
+      ['Less 2020A lease & net finance cash payments', 'AR2020 Cash Flow', '-Rp 463.1B', 'Rp 12.5B left over', 'Source: MPPA AR2020 Cash Flow — Rp 463.1B paid for leases & finance costs; 475.6B − 463.1B = Rp 12.5B left over in 2020.'],
+      ['Years 1–2: cut fresh waste (4.8% → <2%) & clear slow stock', '2021–2022 plan', '~Rp 20.0B / yr', '+Rp 40.0B', 'Source: Turnaround working-capital plan (Slide 35 Inventory drops 14.3% → 10.0% of sales & cold-chain cuts fresh spoilage 4.8% → <2.0%).'],
+      ['Years 3–5: 50 Hyfresh + resized Hypermarts + GrabMart × OVO', '2023–2025 plan', '~Rp 36.7B / yr', '+Rp 110.0B', 'Source: Slide 35 Pro Forma Model — EBIT swings to +Rp 563.5B by 2023P and Cash builds from Rp 299.8B to Rp 941.1B.'],
+      ['5-year operating cash retained (Rp 30.0B/yr avg × 5 yrs)', '2021–2025 total', 'Rp 30.0B / yr avg', '+Rp 150.0B', '5-yr math: +Rp 40.0B (Yrs 1–2) + Rp 110.0B (Yrs 3–5) = +Rp 150.0B (Rp 30.0B/yr avg, 33.3% of Rp 450B plan).']
     ]
   },
   'src-divest': {
     title: 'How We Get +Rp 120.0B (SmartClub & FMX Asset Sales)',
     cols: ['Asset / Item Sold', 'Qty / Basis', 'Recovery Basis', 'Net Cash'],
     rows: [
-      ['SmartClub B2B wholesale inventory clearance', '2 centers (Rp 134B sales)', '~70% net recovery (PSAK 14)', '+Rp 60.0B'],
-      ['FMX convenience kiosk stock clearance', '14 kiosks (Rp 46B sales)', 'Liquidation value (PSAK 14)', '+Rp 25.0B'],
-      ['Surplus warehouse racks, fridges & mall deposit refunds', 'Note 11 (Rp 174.7B pool)', 'Auction + deposit return', '+Rp 35.0B'],
-      ['Total Asset Sale Proceeds (2021–2022)', '2 exited formats', 'PSAK 58 & 14', '+Rp 120.0B']
+      ['SmartClub B2B wholesale inventory clearance', '2 centers (Rp 134B sales)', '~70% net recovery (PSAK 14)', '+Rp 60.0B', 'Source: Case Exhibit 6 (2 SmartClub centers, Rp 134B 2020 sales); ~70% inventory clearance recovery under PSAK 14 = +Rp 60.0B.'],
+      ['FMX convenience kiosk stock clearance', '14 kiosks (Rp 46B sales)', 'Liquidation value (PSAK 14)', '+Rp 25.0B', 'Source: Case Exhibit 6 (14 FMX kiosks, Rp 46B 2020 sales); inventory liquidation under PSAK 14 = +Rp 25.0B.'],
+      ['Surplus warehouse racks, fridges & mall deposit refunds', 'Note 11 (Rp 174.7B pool)', 'Auction + deposit return', '+Rp 35.0B', 'Source: MPPA AR2020 Note 11 (Rp 174.7B refundable mall security deposits) + surplus racking/fridge auctions = +Rp 35.0B.'],
+      ['Total Asset Sale Proceeds (2021–2022)', '2 exited formats', 'PSAK 58 & 14', '+Rp 120.0B', 'Sum: Rp 60.0B + Rp 25.0B + Rp 35.0B = +Rp 120.0B (26.7% of Rp 450B plan), front-loaded in 2021–2022.']
     ]
   },
   'use-hyfresh': {
     title: 'How We Spend Rp 225.0B (50 Hyfresh Stores @ Rp 4.50B)',
     cols: ['Equipment / Setup Item', 'Qty / Store', 'Per Store', '50 Stores'],
     rows: [
-      ['Open-front display chillers (dairy/drinks)', '6 units @ Rp 120M', 'Rp 0.72B', 'Rp 36.0B'],
-      ['Glass-door frozen freezers', '4 units @ Rp 95M', 'Rp 0.38B', 'Rp 19.0B'],
-      ['Fresh meat & fish service counters', '2 units @ Rp 150M', 'Rp 0.30B', 'Rp 15.0B'],
-      ['Backroom walk-in cold rooms (1 chiller + 1 freezer)', '2 rooms @ Rp 400M', 'Rp 0.80B', 'Rp 40.0B'],
-      ['Double-sided aisle shelves + wall racks', '18 aisle units', 'Rp 0.65B', 'Rp 32.5B'],
-      ['Checkout cashier POS lanes (scanners + EDC)', '5 lanes @ Rp 90M', 'Rp 0.45B', 'Rp 22.5B'],
-      ['LED lighting, wiring & backup power', '1 store system', 'Rp 0.45B', 'Rp 22.5B'],
-      ['Commercial AC units', '4–5 units', 'Rp 0.35B', 'Rp 17.5B'],
-      ['Flooring, walls, ceiling & Hyfresh signage', '500–1,000 m²', 'Rp 0.40B', 'Rp 20.0B'],
-      ['Total Hyfresh Expansion CapEx', '50 stores', 'Rp 4.50B', 'Rp 225.0B']
+      ['Open-front display chillers (dairy/drinks)', '6 units @ Rp 120M', 'Rp 0.72B', 'Rp 36.0B', 'Equipment budget: 6 units × Rp 120M = Rp 0.72B/store × 50 stores = Rp 36.0B (PSAK 16, 6-yr depreciation).'],
+      ['Glass-door frozen freezers', '4 units @ Rp 95M', 'Rp 0.38B', 'Rp 19.0B', 'Equipment budget: 4 units × Rp 95M = Rp 0.38B/store × 50 stores = Rp 19.0B.'],
+      ['Fresh meat & fish service counters', '2 units @ Rp 150M', 'Rp 0.30B', 'Rp 15.0B', 'Equipment budget: 2 counters × Rp 150M = Rp 0.30B/store × 50 stores = Rp 15.0B.'],
+      ['Backroom walk-in cold rooms (1 chiller + 1 freezer)', '2 rooms @ Rp 400M', 'Rp 0.80B', 'Rp 40.0B', 'Equipment budget: 2 walk-in cold rooms × Rp 400M = Rp 0.80B/store × 50 stores = Rp 40.0B.'],
+      ['Double-sided aisle shelves + wall racks', '18 aisle units', 'Rp 0.65B', 'Rp 32.5B', 'Fitout budget: 18 aisle units + wall racks = Rp 0.65B/store × 50 stores = Rp 32.5B.'],
+      ['Checkout cashier POS lanes (scanners + EDC)', '5 lanes @ Rp 90M', 'Rp 0.45B', 'Rp 22.5B', 'IT/POS budget: 5 POS lanes × Rp 90M = Rp 0.45B/store × 50 stores = Rp 22.5B.'],
+      ['LED lighting, wiring & backup power', '1 store system', 'Rp 0.45B', 'Rp 22.5B', 'MEP budget: LED, wiring & backup power = Rp 0.45B/store × 50 stores = Rp 22.5B.'],
+      ['Commercial AC units', '4–5 units', 'Rp 0.35B', 'Rp 17.5B', 'HVAC budget: 4–5 commercial AC units = Rp 0.35B/store × 50 stores = Rp 17.5B.'],
+      ['Flooring, walls, ceiling & Hyfresh signage', '500–1,000 m²', 'Rp 0.40B', 'Rp 20.0B', 'Civil fitout budget: 500–1,000 m² compact format (Case p. 592) = Rp 0.40B/store × 50 stores = Rp 20.0B.'],
+      ['Total Hyfresh Expansion CapEx', '50 stores', 'Rp 4.50B', 'Rp 225.0B', 'Total: Rp 4.50B/store × 50 stores = Rp 225.0B (Rp 45.0B/yr over 5 yrs, 50% of Rp 450B CapEx).']
     ]
   },
   'use-darkstore': {
     title: 'How We Spend Rp 135.0B (45 Hypermarkets @ Rp 3.00B)',
     cols: ['Retrofit Item', 'Scope / Qty', 'Per Store', '45 Stores'],
     rows: [
-      ['Sublease partition walls (40% space) & cold packing staging', '45 stores', 'Rp 1.80B', 'Rp 81.0B'],
-      ['Order routing terminals, RF barcode scanners & staging racks', '45 stores', 'Rp 1.20B', 'Rp 54.0B'],
-      ['Total Hypermarket Retrofit CapEx (9 stores/yr)', '45 hypermarkets', 'Rp 3.00B', 'Rp 135.0B']
+      ['Sublease partition walls (40% space) & cold packing staging', '45 stores', 'Rp 1.80B', 'Rp 81.0B', 'Retrofit budget: partition walls + cold dark-hub staging = Rp 1.80B/store × 45 hypermarkets = Rp 81.0B.'],
+      ['Order routing terminals, RF barcode scanners & staging racks', '45 stores', 'Rp 1.20B', 'Rp 54.0B', 'Fulfillment tech: RF scanners + routing terminals for GrabMart/Shopee = Rp 1.20B/store × 45 stores = Rp 54.0B.'],
+      ['Total Hypermarket Retrofit CapEx (9 stores/yr)', '45 hypermarkets', 'Rp 3.00B', 'Rp 135.0B', 'Total: Rp 3.00B/store × 45 stores = Rp 135.0B (Rp 27.0B/yr over 5 yrs, 30% of Rp 450B CapEx).']
     ]
   },
   'use-coldchain': {
     title: 'How We Spend Rp 90.0B (3 Central DCs & IT Systems)',
     cols: ['Upgrade Item', 'Scope', 'Unit Cost', '5-Yr Total'],
     rows: [
-      ['Halal multi-temp cold storage, docks & IoT telematics', '3 DCs (66,755 m²)', 'Rp 18.33B / DC', 'Rp 55.0B'],
-      ['Order routing, replenishment & GrabMart/Shopee APIs', 'Enterprise IT', 'Rp 7.0B / yr', 'Rp 35.0B'],
-      ['Total Supply Chain & IT CapEx (Rp 18.0B/yr)', '3 DCs + IT', '—', 'Rp 90.0B']
+      ['Halal multi-temp cold storage, docks & IoT telematics', '3 DCs (66,755 m²)', 'Rp 18.33B / DC', 'Rp 55.0B', 'Source: AR2020 3 central DCs (Balaraja, Porong, Medan = 66,755 m²); Rp 55.0B ÷ 3 = Rp 18.33B/DC.'],
+      ['Order routing, replenishment & GrabMart/Shopee APIs', 'Enterprise IT', 'Rp 7.0B / yr', 'Rp 35.0B', 'IT budget: Rp 7.0B/yr × 5 yrs = Rp 35.0B for auto-replenishment & GrabMart/OVO/Shopee API sync.'],
+      ['Total Supply Chain & IT CapEx (Rp 18.0B/yr)', '3 DCs + IT', '—', 'Rp 90.0B', 'Total: Rp 55.0B + Rp 35.0B = Rp 90.0B (Rp 18.0B/yr over 5 yrs, 20% of Rp 450B CapEx).']
     ]
   }
+};
+
+window.setFundingRowSource = function(note) {
+  const el = document.getElementById('ins-breakdown-source');
+  if (el && note) el.innerHTML = '<strong>ⓘ Source &amp; Math:</strong> ' + note;
 };
 
 let isBreakdownOpen = false;
@@ -4287,7 +4292,8 @@ function renderFundingBreakdownTable(itemId) {
   }
   const rowsHtml = spec.rows.map((r, idx) => {
     const isTotal = idx === spec.rows.length - 1;
-    return `<tr class="${isTotal ? 'is-total-row' : ''}"><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td></tr>`;
+    const note = (r[4] || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    return `<tr class="${isTotal ? 'is-total-row' : ''}" title="${note}" style="cursor:help;" onmouseenter="setFundingRowSource('${note}')" tabindex="0" onfocus="setFundingRowSource('${note}')"><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td></tr>`;
   }).join('');
   wrap.innerHTML = `
     <div class="ins-breakdown-hdr">
@@ -4297,7 +4303,8 @@ function renderFundingBreakdownTable(itemId) {
     <table class="ins-breakdown-table">
       <thead><tr><th>${spec.cols[0]}</th><th>${spec.cols[1]}</th><th class="num">${spec.cols[2]}</th><th class="num">${spec.cols[3]}</th></tr></thead>
       <tbody>${rowsHtml}</tbody>
-    </table>`;
+    </table>
+    <div id="ins-breakdown-source" style="margin-top:6px;padding:6px 10px;border-radius:6px;background:#fdf2f5;border:1px solid #f5d0da;color:#7f1d1d;font-size:11.5px;line-height:1.4;"><strong>ⓘ Source &amp; Math:</strong> Hover any row above to see where each number comes from.</div>`;
   wrap.hidden = !isBreakdownOpen;
   if (tile) tile.classList.toggle('is-open', isBreakdownOpen);
   if (hint) hint.textContent = isBreakdownOpen ? '▲ Hide exact table' : '🔍 Click for exact table ▾';
