@@ -3959,8 +3959,8 @@ const fundingItemsData = {
     m3_lbl_id: 'Laju Penghematan Tahunan',
     c1_title: 'Accounting Rationale & Mathematical Derivation',
     c1_title_id: 'Dasar Akuntansi & Penurunan Matematis',
-    rationale: 'Under PSAK 73, MPPA recognized Rp 2,253.3B in lease liabilities (AR2020 Note 19) and Rp 166.2B in annual lease finance interest (Note 28). Renegotiating 15 anchor mall hypermarket leases during 2021–2023 renewals from fixed high-rent to hybrid revenue-share or downsized 3,000 m² footprints cuts cash occupancy rent by ~Rp 2.40B/store/yr across 15 stores (15 × Rp 2.40B = Rp 36.0B/year). Cumulative 5-year cash relief equals exactly +Rp 180.0B, directly reducing ROU asset depreciation and cash financing outflows without incurring bank debt.',
-    rationale_id: 'Berdasarkan PSAK 73, MPPA mencatat liabilitas sewa Rp 2.253,3M (Catatan 19 AR2020) dan beban keuangan sewa Rp 166,2M per tahun (Catatan 28). Renegosiasi 15 sewa hipermarket mal jangkar pada pembaruan 2021–2023 dari sewa tetap tinggi ke bagi hasil omzet atau perampingan 3.000 m² memangkas kas sewa ~Rp 2,40M/gerai/thn pada 15 gerai (15 × Rp 2,40M = Rp 36,0M/tahun). Penghematan kumulatif 5 tahun mencapai +Rp 180,0M, langsung menurunkan amortisasi aset hak guna dan arus keluar kas pembiayaan tanpa utang bank.',
+    rationale: 'In 2020A, MPPA carried Rp 2,253.3B in lease liabilities (AR2020 Note 19) and paid Rp 463.1B/year in total lease cash—roughly Rp 4.6B/year per store across its 100 Hypermart stores (Rp 463.1B ÷ 100 ≈ Rp 4.63B). During 2021–2023 renewals, MPPA renegotiates 15 anchor mall hypermarkets from rigid fixed rent to sales-based revenue-share or cuts ~3,000 m² of unused space. Cutting rent roughly in half at those 15 stores saves ~Rp 2.40B/store/year (~Rp 200M/month). Across 15 stores, 15 × Rp 2.40B = Rp 36.0B/year (~7.8% of total 2020A lease cash), totaling +Rp 180.0B over 5 years without bank debt.',
+    rationale_id: 'Pada 2020A, MPPA mencatat liabilitas sewa Rp 2.253,3M (Catatan 19 AR2020) dan membayar kas sewa Rp 463,1M/tahun—sekitar Rp 4,6M/tahun per gerai di 100 gerai Hypermart (Rp 463,1M ÷ 100 ≈ Rp 4,63M). Pada pembaruan 2021–2023, MPPA menegosiasikan ulang 15 sewa mal jangkar dari sewa tetap menjadi bagi hasil omzet atau memangkas ~3.000 m² ruang kosong. Memangkas sewa sekitar separuhnya di 15 gerai ini menghemat ~Rp 2,40M/gerai/tahun (~Rp 200jt/bulan). Totalnya 15 × Rp 2,40M = Rp 36,0M/tahun (~7,8% dari total kas sewa 2020A), atau +Rp 180,0M selama 5 tahun tanpa utang bank.',
     c2_title: '5-Year Phased Cash Deployment & Audit Schedule',
     c2_title_id: 'Jadwal Penyaluran Kas & Audit 5 Tahun',
     milestones: [
@@ -4212,7 +4212,8 @@ const fundingBreakdowns = {
     cols: ['Component', 'Scope / Qty', 'Per Unit / Yr', '5-Yr Total'],
     rows: [
       ['Base AR2020 lease liabilities (Note 19) & 2020A cash lease payments', 'All MPPA stores', 'Rp 2,253.3B liab. · Rp 463.1B/yr cash', 'Baseline'],
-      ['Fixed-rent → revenue-share / 3,000 m² footprint cuts (~7.8% of 2020A lease cash)', '15 anchor mall leases', 'Rp 2.40B / store / yr (~Rp 200M/mo)', '15 × 2.40B = Rp 36.0B / yr'],
+      ['Average annual rent per Hypermart (Rp 463.1B ÷ 100 Hypermarts)', '100 Hypermarts', '~Rp 4.63B / store / yr (~Rp 386M/mo)', 'Per-store avg'],
+      ['Cut rent ~50% via revenue-share or 3,000 m² space hand-back (~7.8% of 2020A lease cash)', '15 anchor mall leases', 'Rp 2.40B / store / yr (~Rp 200M/mo)', '15 × 2.40B = Rp 36.0B / yr'],
       ['5-year cumulative lease cash savings (2021–2025)', '15 leases × 5 yrs', 'Rp 36.0B / yr × 5 yrs', '+Rp 180.0B']
     ]
   },
