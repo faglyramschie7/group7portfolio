@@ -4004,8 +4004,8 @@ const fundingItemsData = {
     m3_lbl_id: 'Siklus Kas Negatif (CCC)',
     c1_title: 'Accounting Rationale & Mathematical Derivation',
     c1_title_id: 'Dasar Akuntansi & Penurunan Matematis',
-    rationale: 'MPPA reported Rp475.6B of operating cash flow in 2020 (AR2020 audited cash flow statement). After lease payments and net finance cash costs, Rp12.5B remained before investing and bank borrowing. The Rp150B in this allocation is a planning target. The revised Financial Projections slide tests whether annual cash flow can support the rollout.',
-    rationale_id: 'MPPA mencatat arus kas operasi Rp475,6 miliar pada 2020 (laporan arus kas auditan AR2020). Setelah pembayaran sewa dan biaya keuangan bersih, tersisa Rp12,5 miliar sebelum investasi dan pinjaman bank. Rp150 miliar pada alokasi ini adalah target rencana. Slide Proyeksi Keuangan menguji apakah arus kas tahunan cukup untuk ekspansi.',
+    rationale: 'In 2020A, MPPA’s stores generated Rp 475.6B in operating cash, but Rp 463.1B went straight out to pay mall rent and interest—leaving only Rp 12.5B left over. To fund Rp 150.0B over 5 years (2021–2025), stores only need to retain Rp 30.0B/year on average (Rp 30.0B × 5 = Rp 150.0B, just +Rp 17.5B/year above 2020). That comes from +Rp 40.0B in Years 1–2 (cutting fresh spoilage from 4.8% to <2.0% and clearing slow stock) plus +Rp 110.0B in Years 3–5 as the 50 Hyfresh stores, 45 resized Hypermarts, and GrabMart × OVO hubs reach full sales—verified on Slide 35 where Cash grows from Rp 299.8B to Rp 941.1B.',
+    rationale_id: 'Pada 2020A, gerai MPPA menghasilkan kas operasi Rp 475,6M, tetapi Rp 463,1M langsung keluar untuk membayar sewa mal dan bunga—sehingga hanya tersisa Rp 12,5M. Untuk mendanai Rp 150,0M selama 5 tahun (2021–2025), gerai hanya perlu menahan rata-rata Rp 30,0M/tahun (Rp 30,0M × 5 = Rp 150,0M, hanya +Rp 17,5M/tahun di atas 2020). Tambahan ini berasal dari +Rp 40,0M di Tahun 1–2 (menekan susut pangan segar dari 4,8% ke <2,0% dan membersihkan stok lambat) ditambah +Rp 110,0M di Tahun 3–5 saat 50 gerai Hyfresh, 45 Hypermart ramping, dan hub GrabMart × OVO beroperasi penuh—teruji di Slide 35 saat Kas naik dari Rp 299,8M ke Rp 941,1M.',
     c2_title: '5-Year Phased Cash Deployment & Audit Schedule',
     c2_title_id: 'Jadwal Penyaluran Kas & Audit 5 Tahun',
     milestones: [
@@ -4222,8 +4222,10 @@ const fundingBreakdowns = {
     cols: ['Component', 'Source / Scope', 'Annual Rate', '5-Yr Total'],
     rows: [
       ['2020A operating cash flow (before lease/interest)', 'AR2020 Cash Flow', 'Rp 475.6B', 'Baseline'],
-      ['Less 2020A lease & net finance cash payments', 'AR2020 Cash Flow', '-Rp 463.1B', 'Rp 12.5B left'],
-      ['Turnaround retail cash retained (Hyfresh + downsized stores)', '2021–2025 plan', 'Rp 30.0B / yr avg', '+Rp 150.0B']
+      ['Less 2020A lease & net finance cash payments', 'AR2020 Cash Flow', '-Rp 463.1B', 'Rp 12.5B left over'],
+      ['Years 1–2: cut fresh waste (4.8% → <2%) & clear slow stock', '2021–2022 plan', '~Rp 20.0B / yr', '+Rp 40.0B'],
+      ['Years 3–5: 50 Hyfresh + resized Hypermarts + GrabMart × OVO', '2023–2025 plan', '~Rp 36.7B / yr', '+Rp 110.0B'],
+      ['5-year operating cash retained (Rp 30.0B/yr avg × 5 yrs)', '2021–2025 total', 'Rp 30.0B / yr avg', '+Rp 150.0B']
     ]
   },
   'src-divest': {
