@@ -2487,6 +2487,85 @@
   color: #64748b;
   margin-top: 1px;
 }
+.ins-metric-tile.is-clickable-metric {
+  cursor: pointer;
+  border-color: #df0036;
+  background: #fff5f8;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+.ins-metric-tile.is-clickable-metric:hover,
+.ins-metric-tile.is-clickable-metric.is-open {
+  background: #ffe8ef;
+  box-shadow: 0 2px 8px rgba(223, 0, 54, 0.14);
+}
+.ins-metric-hint {
+  font-size: 0.56cqw;
+  font-weight: 800;
+  color: #df0036;
+  margin-top: 2px;
+  letter-spacing: 0.01em;
+}
+.ins-breakdown-wrap {
+  margin-top: 0.35cqw;
+  background: #ffffff;
+  border: 1.5px solid #f4c6d3;
+  border-radius: 8px;
+  padding: 0.45cqw 0.55cqw;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+.ins-breakdown-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3cqw;
+  font-size: 0.68cqw;
+  font-weight: 900;
+  color: #9f1239;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.ins-breakdown-close {
+  border: none;
+  background: #fff1f5;
+  color: #be123c;
+  border-radius: 4px;
+  font-size: 0.60cqw;
+  font-weight: 800;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+.ins-breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.66cqw;
+}
+.ins-breakdown-table th {
+  text-align: left;
+  background: #fdf2f6;
+  color: #881337;
+  font-weight: 800;
+  padding: 4px 6px;
+  border-bottom: 1.5px solid #f4c6d3;
+}
+.ins-breakdown-table th.num,
+.ins-breakdown-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ins-breakdown-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+  vertical-align: top;
+}
+.ins-breakdown-table tr.is-total-row td {
+  font-weight: 900;
+  background: #fdf8fa;
+  border-top: 1.5px solid #cbd5e1;
+  border-bottom: none;
+  color: #0f172a;
+}
 
 /* Structured Inspector Cards */
 .funding-ins-cards {
