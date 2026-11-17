@@ -282,39 +282,39 @@ export const financialDetailData = {
     key: 'net_income',
     tag: 'BOTTOM-LINE EARNINGS & SOLVENCY',
     tagId: 'LABA BERSIH & SOLVABILITAS',
-    statusPill: '+Rp 203.2B Cumulative PAT (2021P–2023P)',
-    statusPillId: 'Laba Bersih Kumulatif +Rp 203,2 M (2021P–2023P)',
+    statusPill: '+Rp 271.3B Cumulative PAT (2021P–2023P)',
+    statusPillId: 'Laba Bersih Kumulatif +Rp 271,3 M (2021P–2023P)',
     statusClass: 'badge-profit',
     title: 'Net Income (PAT): Realistic Return to Profitability',
     titleId: 'Laba Bersih: Pemulihan Profitabilitas Secara Realistis',
-    sub: 'Loss Narrows 76% in 2021, Turns Profitable in 2022 (+Rp 67.8B) & Scales in 2023 (+Rp 230.9B)',
-    subId: 'Rugi Menyusut 76% di 2021, Untung di 2022 (+Rp 67,8 M) & Menguat di 2023 (+Rp 230,9 M)',
+    sub: 'Loss Narrows 81% in 2021, Turns Profitable in 2022 (+Rp 89.7B) & Scales in 2023 (+Rp 259.0B)',
+    subId: 'Rugi Menyusut 81% di 2021, Untung di 2022 (+Rp 89,7 M) & Menguat di 2023 (+Rp 259,0 M)',
     borderColor: '#137333',
     kpis: [
       { label: '2020A Loss', labelId: 'Rugi 2020A', val: '-Rp 405.3 B', sub: 'Distressed Equity Drag', isLoss: true },
-      { label: '2021P PAT', labelId: 'Laba Bersih 2021P', val: '-Rp 95.5 B', sub: '76% Loss Reduction', isLoss: true },
-      { label: '2022P PAT', labelId: 'Laba Bersih 2022P', val: '+Rp 67.8 B', sub: 'Net Profit Break-Through', isProfit: true },
-      { label: '2023P PAT', labelId: 'Laba Bersih 2023P', val: '+Rp 230.9 B', sub: 'Sustained Profitability', isHighlight: true, isProfit: true },
-      { label: '3-Yr Cum. PAT', labelId: 'Kumulatif 3 Thn', val: '+Rp 203.2 B', sub: 'Zero Debt / Zero Dilution', isProfit: true }
+      { label: '2021P PAT', labelId: 'Laba Bersih 2021P', val: '-Rp 77.4 B', sub: '81% Loss Reduction', isLoss: true },
+      { label: '2022P PAT', labelId: 'Laba Bersih 2022P', val: '+Rp 89.7 B', sub: 'Net Profit Break-Through', isProfit: true },
+      { label: '2023P PAT', labelId: 'Laba Bersih 2023P', val: '+Rp 259.0 B', sub: 'Sustained Profitability', isHighlight: true, isProfit: true },
+      { label: '3-Yr Cum. PAT', labelId: 'Kumulatif 3 Thn', val: '+Rp 271.3 B', sub: 'Zero Debt / Zero Dilution', isProfit: true }
     ],
     whereWeGotIt: {
       workbook: "MPPA Audited 2019–2020 Baseline + Turnaround Model",
       sheets: [
-        { name: "Projected Net Income", coords: "EBT minus 22% statutory corporate tax (0 tax when EBT < 0)", desc: "2021P reflects store-opening ramp; 2022P–2023P deliver positive net earnings." },
-        { name: "Retained Earnings", coords: "100% of net profits retained (Rp 0 dividends)", desc: "Rebuilds equity base from Rp 184.7 B to +Rp 387.9 B by 2023 without issuing shares." }
+        { name: "Projected Net Income", coords: "EBT (after lower PSAK 73 lease interest) minus 22% corporate tax", desc: "2021P reflects store-opening ramp; 2022P–2023P deliver positive net earnings." },
+        { name: "Retained Earnings", coords: "100% of net profits retained (Rp 0 dividends)", desc: "Rebuilds equity base from Rp 184.7 B to +Rp 456.1 B by 2023 without issuing shares." }
       ],
       annualReport: "MPPA 2020 Annual Report, Statement of Profit or Loss, p. 128 (Loss for the year: -Rp 405,307 million) and Statement of Changes in Equity, p. 131.",
       caseRef: "Harvard/PPM Case 23 Exhibit 2 (Pro Forma PAT)."
     },
     howWeGetIt: {
       mathSteps: [
-        { step: "1. 2021P Net Income", formula: "EBT (-Rp 95,481 M) - Tax (Rp 0) = -Rp 95,481 M (76% smaller loss vs 2020)" },
-        { step: "2. 2022P Net Income", formula: "EBT (+Rp 86,883 M) - Tax 22% (Rp 19,114 M) = +Rp 67,769 M" },
-        { step: "3. 2023P Net Income", formula: "EBT (+Rp 295,981 M) - Tax 22% (Rp 65,116 M) = +Rp 230,865 M" },
-        { step: "4. Cumulative 3-Yr Total", formula: "-95,481 + 67,769 + 230,865 = +Rp 203,153 M (+Rp 203.2 B cumulative)" }
+        { step: "1. 2021P Net Income", formula: "EBT (-Rp 77,381 M) - Tax (Rp 0) = -Rp 77,381 M (81% smaller loss vs 2020)" },
+        { step: "2. 2022P Net Income", formula: "EBT (+Rp 114,980 M) - Tax 22% (Rp 25,296 M) = +Rp 89,684 M" },
+        { step: "3. 2023P Net Income", formula: "EBT (+Rp 332,075 M) - Tax 22% (Rp 73,057 M) = +Rp 259,018 M" },
+        { step: "4. Cumulative 3-Yr Total", formula: "-77,381 + 89,684 + 259,018 = +Rp 271,321 M (+Rp 271.3 B cumulative)" }
       ]
     },
-    strategicRationale: "Four consecutive years of losses (-Rp 3.53 T cumulative from 2017 to 2020) pushed MPPA's equity down to Rp 184.7 B. This realistic turnaround cuts net loss by 76% in Year 1 while Hyfresh stores open, flips net positive in Year 2 (+Rp 67.8 B), and compounds to +Rp 230.9 B in Year 3 without new bank debt or share dilution.",
+    strategicRationale: "Four consecutive years of losses (-Rp 3.53 T cumulative from 2017 to 2020) pushed MPPA's equity down to Rp 184.7 B. Pairing realistic store margin gains with lower PSAK 73 lease finance interest cuts net loss by 81% in Year 1, flips net positive in Year 2 (+Rp 89.7 B), and compounds to +Rp 259.0 B in Year 3 without new bank debt or share dilution.",
     sensitivity: "Solvency Protection: Turning net cash-generative without new debt preserves MPPA's supplier credit terms and BNI loan covenants."
   },
 

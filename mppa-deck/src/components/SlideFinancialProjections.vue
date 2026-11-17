@@ -203,41 +203,41 @@
                 <td class="td-num td-bold td-profit">563,494</td>
                 <td class="td-desc td-profit">{{ t("Operating profit turns positive in Year 1 (+Rp 172B) and scales to +Rp 563B by 2023 through realistic margin gains paired with lower store rent and operating overhead.") }}</td>
               </tr>
-              <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and covenant details">
+              <tr class="clickable-row" @click="openDetail('debt')" title="Click for debt and PSAK 73 lease interest details">
                 <td><span class="row-inspect-label"><span>{{ t("Net Finance Costs (Interest)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num">118,496</td>
                 <td class="td-num">267,419</td>
-                <td class="td-num td-proj">267,519</td>
-                <td class="td-num td-proj">267,516</td>
-                <td class="td-num td-proj">267,513</td>
-                <td class="td-desc">{{ t("Interest expense maintained without surge; transformation is 100% self-funded without new bank debt, strictly protecting BNI credit covenants.") }}</td>
+                <td class="td-num td-proj">249,419</td>
+                <td class="td-num td-proj">239,419</td>
+                <td class="td-num td-proj">231,419</td>
+                <td class="td-desc">{{ t("Decreases by Rp 18B ('21), Rp 28B ('22), and Rp 36B ('23) as PSAK 73 mall lease renegotiations reduce lease liabilities (Rp 166.2B lease interest base in 2020) with zero new bank debt.") }}</td>
               </tr>
               <tr>
                 <td class="td-bold">{{ t("EBT (Pretax Income)") }}</td>
                 <td class="td-num td-loss">-314,601</td>
                 <td class="td-num td-loss">-407,687</td>
-                <td class="td-num td-loss">-95,481</td>
-                <td class="td-num td-bold td-proj">86,883</td>
-                <td class="td-num td-bold td-proj">295,981</td>
-                <td class="td-desc">{{ t("Pretax loss narrows from -Rp 408B to -Rp 95B in 2021 during rollout, then turns profitable at +Rp 87B (2022) and +Rp 296B (2023).") }}</td>
+                <td class="td-num td-loss">-77,381</td>
+                <td class="td-num td-bold td-proj">114,980</td>
+                <td class="td-num td-bold td-proj">332,075</td>
+                <td class="td-desc">{{ t("Pretax loss narrows from -Rp 408B to -Rp 77B in 2021 during rollout, then turns profitable at +Rp 115B (2022) and +Rp 332B (2023).") }}</td>
               </tr>
               <tr>
                 <td>{{ t("Tax Expense") }}</td>
                 <td class="td-num">238,073</td>
                 <td class="td-num">-2,380</td>
                 <td class="td-num td-proj">0</td>
-                <td class="td-num td-proj">19,114</td>
-                <td class="td-num td-proj">65,116</td>
+                <td class="td-num td-proj">25,296</td>
+                <td class="td-num td-proj">73,057</td>
                 <td class="td-desc">{{ t("2021 reflects tax-loss shield (negative EBT); 2022–2023 apply Indonesia's statutory 22% corporate income tax rate.") }}</td>
               </tr>
               <tr class="row-total clickable-row" @click="openDetail('net_income')" title="Click for Net Income & equity restoration details">
                 <td class="td-bold td-profit"><span class="row-inspect-label"><span>{{ t("Net Income (PAT)") }}</span><span class="row-inspect-icon" aria-hidden="true">↗</span></span></td>
                 <td class="td-num td-loss">-552,674</td>
                 <td class="td-num td-loss">-405,307</td>
-                <td class="td-num td-loss">-95,481</td>
-                <td class="td-num td-bold td-profit">67,769</td>
-                <td class="td-num td-bold td-profit">230,865</td>
-                <td class="td-desc td-profit">{{ t("Loss narrows by 76% in 2021 and swings to +Rp 67.8B (2022) and +Rp 230.9B (2023), adding +Rp 203.2B cumulative net profit without new debt or dilution.") }}</td>
+                <td class="td-num td-loss">-77,381</td>
+                <td class="td-num td-bold td-profit">89,684</td>
+                <td class="td-num td-bold td-profit">259,018</td>
+                <td class="td-desc td-profit">{{ t("Loss narrows by 81% in 2021 and swings to +Rp 89.7B (2022) and +Rp 259.0B (2023), adding +Rp 271.3B cumulative net profit without new debt or dilution.") }}</td>
               </tr>
             </tbody>
           </table>
