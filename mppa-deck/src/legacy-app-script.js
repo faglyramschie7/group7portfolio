@@ -2911,8 +2911,12 @@ watch(currentSlide, (val)=>{
   function renderBrandPills(logoKeys) {
     if (!logoKeys) return '';
     const map = {
+      'mppa': '<div class="brand-logo-badge" title="MPPA"><img src="/assets/mppa-logo.png" alt="MPPA" class="brand-logo-img"/></div>',
       'hypermart': '<div class="brand-logo-badge" title="Hypermart"><img src="/assets/hypermart-logo.png" alt="Hypermart" class="brand-logo-img"/></div>',
       'hyfresh': '<div class="brand-logo-badge" title="Hyfresh"><img src="/assets/hyfresh-logo.png" alt="Hyfresh" class="brand-logo-img"/></div>',
+      'foodmart': '<div class="brand-logo-badge" title="Foodmart"><img src="/assets/foodmart-logo.png" alt="Foodmart" class="brand-logo-img"/></div>',
+      'primo': '<div class="brand-logo-badge" title="Primo"><img src="/assets/primo-logo.png" alt="Primo" class="brand-logo-img"/></div>',
+      'boston': '<div class="brand-logo-badge" title="Boston"><img src="/assets/boston-logo.png" alt="Boston" class="brand-logo-img"/></div>',
       'grab': '<div class="brand-logo-badge" title="GrabMart"><img src="/assets/grab-logo.svg" alt="Grab" class="brand-logo-img"/></div>',
       'ovo': '<div class="brand-logo-badge" title="OVO"><img src="/assets/ovo-logo.svg" alt="OVO" class="brand-logo-img"/></div>',
       'shopee': '<div class="brand-logo-badge" title="Shopee"><img src="/assets/shopee-logo.svg" alt="Shopee" class="brand-logo-img"/></div>',

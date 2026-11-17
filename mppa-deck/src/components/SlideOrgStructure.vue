@@ -57,9 +57,17 @@
       @click.self="detailDrawer.close()">
       <header class="matrix-detail-head">
         <div class="matrix-detail-head-main">
-          <span class="matrix-kind-badge">{{ selectedNode.tag }}</span>
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:2px;">
+            <span class="matrix-kind-badge">{{ selectedNode.tag }}</span>
+            <span v-if="selectedNode.statusBadge" class="drawer-status-badge" :class="'status-' + selectedNode.status">
+              {{ selectedNode.statusBadge }}
+            </span>
+          </div>
           <h3 id="org-detail-title">{{ selectedNode.role }}</h3>
           <strong>{{ selectedNode.name }}</strong>
+          <div v-if="selectedNode.repositionedFrom" class="drawer-repositioned-from">
+            {{ language === 'id' ? 'Posisi sebelumnya (Eksibit 1):' : 'Repositioned from (Exhibit 1):' }} {{ selectedNode.repositionedFrom }}
+          </div>
         </div>
         <button type="button" class="matrix-detail-close" :aria-label="language === 'id' ? 'Tutup' : 'Close'"
           @click="detailDrawer.close()" autofocus>×</button>
@@ -81,6 +89,12 @@
         <section>
           <h4>{{ language === 'id' ? 'Alasan peran ini dibentuk' : 'Why this role is in the proposed structure' }}</h4>
           <p>{{ selectedNode.rationale }}</p>
+        </section>
+        <section v-if="selectedNode.repositionThesis">
+          <h4>{{ selectedNode.status === 'repositioned'
+            ? (language === 'id' ? 'Tesis penempatan ulang' : 'Repositioning thesis')
+            : (language === 'id' ? 'Tesis peran baru' : 'New-role thesis') }}</h4>
+          <p>{{ selectedNode.repositionThesis }}</p>
         </section>
         <section v-if="reportingRole">
           <h4>{{ language === 'id' ? 'Melapor kepada' : 'Reports to' }}</h4>
@@ -132,7 +146,8 @@ const rolePhotos = {
   enablers: ['dark-store.jpg', 'Online order centers illustrate a shared capability used by the retail formats.', 'Dark hub menggambarkan fasilitas bersama yang digunakan berbagai format ritel.'],
   logistics: ['cold-storage.jpg', 'Temperature-controlled storage illustrates the team’s cold-chain responsibilities.', 'Penyimpanan bersuhu terkendali menggambarkan tanggung jawab tim atas rantai dingin.'],
   omni: ['dark-store.jpg', 'Online order centers prepare online orders for delivery.', 'Dark hub menyiapkan pesanan daring untuk dikirim.'],
-  procurement: ['hyfresh-store.jpg', 'Hyfresh is a retail outlet for the fresh assortment this team sources.', 'Hyfresh menjual produk segar yang dipasok oleh tim pengadaan.']
+  procurement: ['hyfresh-store.jpg', 'Hyfresh is a retail outlet for the fresh assortment this team sources.', 'Hyfresh menjual produk segar yang dipasok oleh tim pengadaan.'],
+  merchandising: ['primo-store.jpg', 'Store assortments and promotions reflect merchandising and marketing execution across formats.', 'Pilihan produk dan promosi gerai mencerminkan eksekusi merchandising dan pemasaran lintas format.']
 };
 let chartInstance = null;
 const selectedNodeId = ref('coo');
@@ -186,20 +201,26 @@ const treeData = computed(() => {
     {
       id: 'coo',
       parentId: 'ceo',
+      status: 'new',
+      statusBadge: isId ? 'BARU' : 'NEW',
       role: isId ? 'Direktur Operasional (COO)' : 'Chief Operating Officer (COO)',
       name: isId ? 'Operasional Ritel & Pasokan' : 'Retail Formats & Supply Chain',
-      tag: isId ? '★ PENUNJUKAN BARU · KASUS HLM. 588 ★' : '★ NEW APPOINTMENT · CASE P. 588 ★',
+      tag: isId ? 'KASUS HLM. 588' : 'CASE P. 588',
       theme: '#0052cc',
       bg: '#f0f7ff',
       isLead: true,
       desc: isId ? 'Atasi Hambatan Rentang Kendali CEO (Eksibit 1); Pimpin 4 SBU & DC Dingin' : 'Resolves CEO Span Bottleneck (Exhibit 1); Commands 4 SBUs & Cold DC',
       responsibilities: isId ? "Meninjau kinerja empat unit usaha, mengoordinasikan pembukaan gerai, dan menangani masalah lintas format." : "Reviews performance across the four business units, coordinates store rollouts, and resolves operating issues that span formats.",
       rationale: isId ? "Mengurangi beban operasional langsung CEO dan memberi pimpinan format satu jalur eskalasi." : "Reduces the CEO’s direct operating workload and gives format leaders one point of escalation.",
+      repositionThesis: isId ? "Eksibit 1 tidak memiliki COO; delapan eksekutif melapor langsung ke CEO. Membentuk COO baru memisahkan kendali operasi harian dari strategi korporat dan negosiasi utang." : "Case Exhibit 1 has no COO—all 8 executives report directly to CEO Elliot Dickson. Creating a dedicated COO resolves the span-of-control bottleneck and isolates store execution from corporate solvency.",
       kpi: isId ? 'Bebaskan CEO dari Pemadaman Masalah Operasional Harian' : 'Unburdens CEO & CFO from Retail Firefighting'
     },
     {
       id: 'cio',
       parentId: 'ceo',
+      status: 'repositioned',
+      statusBadge: isId ? 'DIPINDAHTUGASKAN' : 'REPOSITIONED',
+      repositionedFrom: isId ? 'Direktur Teknologi Informasi (Eksibit 1)' : 'Information Technology (Exhibit 1)',
       role: isId ? 'Direktur TI (CIO)' : 'Chief Information Officer (CIO)',
       name: 'Iwan Goenadi',
       tag: isId ? 'TEKNOLOGI & ERP' : 'TECHNOLOGY & APIS',
@@ -208,11 +229,15 @@ const treeData = computed(() => {
       desc: isId ? 'Integrasi ERP SAP, API Grab/Shopee & Prakiraan Permintaan' : 'SAP Retail ERP, Grab/Shopee APIs & Demand Forecasting',
       responsibilities: isId ? "Mengelola ERP ritel, data persediaan, peramalan permintaan, dan integrasi platform pengiriman." : "Owns the retail ERP, inventory data, demand forecasting, and integrations with delivery platforms.",
       rationale: isId ? "Satu penanggung jawab TI menjaga konsistensi data persediaan gerai, gudang, dan kanal daring." : "One technology owner keeps stores, warehouses, and online channels working from consistent inventory data.",
+      repositionThesis: isId ? "Iwan Goenadi diangkat dari peran TI umum (Eksibit 1) menjadi CIO setingkat C-Suite di bawah CEO agar integrasi SAP ERP, API Grab/Shopee, dan stok real-time dark hub menjadi mandat lintas-SBU." : "Iwan Goenadi is elevated from general IT leadership (Exhibit 1) to C-suite CIO under the CEO so SAP ERP, Grab/Shopee APIs, and real-time dark-hub inventory routing are governed as a company-wide backbone rather than back-office support.",
       kpi: isId ? 'Target: Waktu Integrasi API <30 Detik' : 'Target: Real-Time Dark Hub Inventory Routing'
     },
     {
       id: 'chro',
       parentId: 'ceo',
+      status: 'repositioned',
+      statusBadge: isId ? 'DIPINDAHTUGASKAN' : 'REPOSITIONED',
+      repositionedFrom: isId ? 'VP Human Capital (Eksibit 1)' : 'VP Human Capital (Exhibit 1)',
       role: isId ? 'Direktur SDM (CHRO)' : 'Chief HR Officer (CHRO)',
       name: 'Lydiawati Kurniawan',
       tag: isId ? 'SUMBER DAYA MANUSIA' : 'HUMAN CAPITAL',
@@ -221,14 +246,18 @@ const treeData = computed(() => {
       desc: isId ? 'Pelatihan Ulang Produk Segar & Petugas Pengambil Pesanan Dark Hub' : 'Fresh Produce Retraining & Dark-Store Digital Pickers',
       responsibilities: isId ? "Merencanakan kebutuhan tenaga kerja dan melatih ulang karyawan untuk produk segar, gerai kompak, serta penyiapan pesanan digital." : "Plans staffing and retrains employees for fresh-food handling, smaller stores, and digital order picking.",
       rationale: isId ? "Memastikan kesiapan tenaga kerja saat konversi dan pembukaan gerai mengubah peran serta keterampilan." : "Makes workforce readiness part of each conversion and rollout, where roles and skills change.",
+      repositionThesis: isId ? "Lydiawati Kurniawan dinaikkan dari VP Human Capital (Eksibit 1) menjadi CHRO di bawah CEO untuk memimpin pelatihan ulang tenaga kerja dari gerai hipermarket ke penanganan produk segar Hyfresh dan picker pesanan daring." : "Lydiawati Kurniawan is elevated from VP Human Capital (Exhibit 1) to CHRO under the CEO to orchestrate workforce redeployment—retraining hypermarket staff into fresh-produce advisors and dark-hub digital pickers during store downsizing.",
       kpi: isId ? 'Target: 1.200 Staf Tersertifikasi Penanganan Segar' : 'Target: 1,200 Certified Fresh Advisors'
     },
     // Tier 4: Divisional SBUs (reporting to COO)
     {
       id: 'sbu1',
       parentId: 'coo',
+      status: 'repositioned',
+      statusBadge: isId ? 'DIPINDAHTUGASKAN' : 'REPOSITIONED',
+      repositionedFrom: isId ? 'Direktur Format Gerai Kecil (Eksibit 1)' : 'Small Stores Format (Exhibit 1)',
       role: isId ? 'Presiden · Supermarket Hyfresh' : 'President · Hyfresh Supermarkets',
-      name: isId ? 'Supermarket Segar Permukiman' : 'Compact Neighborhood Fresh',
+      name: 'Wirawan Winarto',
       tag: isId ? 'SBU 1 · PERTUMBUHAN UTAMA (QSPM #1)' : 'SBU 1 · CORE GROWTH (QSPM #1)',
       theme: '#15803d',
       bg: '#f0fdf4',
@@ -236,13 +265,17 @@ const treeData = computed(() => {
       desc: isId ? '50 Gerai Kompak Baru (500–1.000 m²) · Porsi Produk Segar >35%' : '50 Compact Stores (500–1,000 m²) · >35% Farm-Fresh Mix',
       responsibilities: isId ? "Memilih lokasi, membuka gerai kompak, serta mengelola produk segar, tenaga kerja, dan laba gerai Hyfresh." : "Selects sites, opens compact stores, and manages Hyfresh’s fresh assortment, labor, and store profitability.",
       rationale: isId ? "Memberi format ekspansi penanggung jawab tersendiri karena struktur biaya supermarket kompak berbeda dari hipermarket." : "Gives the expansion format its own owner because compact supermarkets have different economics from hypermarkets.",
+      repositionThesis: isId ? "Wirawan Winarto sudah memimpin format gerai kecil di Eksibit 1. Memindahkannya dari garis lapor langsung CEO ke bawah COO sebagai Presiden SBU 1 memberi ekspansi 50 gerai Hyfresh pemimpin berpengalaman dengan akuntabilitas P&L penuh." : "Wirawan Winarto already leads Small Stores Format in Case Exhibit 1. Repositioning him from reporting directly to the CEO into SBU 1 President under the COO puts an experienced small-format operator in charge of scaling 50 compact Hyfresh stores with standalone P&L accountability.",
       kpi: isId ? '🎯 Target: Penjualan Rp 1.500M 2025 · EBITDA Positif' : '🎯 Target: Rp 1,500B Sales by 2025 · Positive EBITDA'
     },
     {
       id: 'sbu2',
       parentId: 'coo',
+      status: 'repositioned',
+      statusBadge: isId ? 'DIPINDAHTUGASKAN' : 'REPOSITIONED',
+      repositionedFrom: isId ? 'Direktur Format Gerai Besar (Eksibit 1)' : 'Large Stores Format (Exhibit 1)',
       role: isId ? 'Presiden · Hypermart & Reducing Store Size' : 'President · Hypermart & Reducing Store Size',
-      name: isId ? 'Restrukturisasi Format Besar' : 'Footprint Downsizing & Online Order Centers',
+      name: 'Anto Suwartono',
       tag: isId ? 'SBU 2 · RESTRUKTURISASI (QSPM #2)' : 'SBU 2 · RESTRUCTURING (QSPM #2)',
       theme: '#1d4ed8',
       bg: '#eff6ff',
@@ -250,11 +283,14 @@ const treeData = computed(() => {
       desc: isId ? 'Perkecil 45 Gerai (30–40%) · Ubah Area Belakang Menjadi Dark Hub' : 'Downsize 45 Stores by 30–40% · Convert Backrooms to Online Order Centers',
       responsibilities: isId ? "Memilih gerai yang akan diperkecil, menata ulang area penjualan, dan mengoordinasikan konversi ruang belakang untuk pesanan daring." : "Selects stores to resize, redesigns selling space, and coordinates backroom conversions for online fulfillment.",
       rationale: isId ? "Menetapkan satu penanggung jawab untuk menjaga kinerja gerai sambil menekan biaya ruang dan menambah kapasitas penyiapan pesanan." : "Assigns one owner to protect store performance while reducing space costs and adding fulfillment capacity.",
+      repositionThesis: isId ? "Anto Suwartono sudah memimpin format gerai besar di Eksibit 1. Memindahkannya ke bawah COO sebagai Presiden SBU 2 memanfaatkan pengetahuan operasional Hypermart-nya untuk memperkecil 45 gerai (30–40%) dan mengubah area belakang menjadi pusat pesanan daring." : "Anto Suwartono already leads Large Stores Format in Case Exhibit 1. Repositioning him under the COO as SBU 2 President leverages his existing Hypermart operational knowledge to execute the 30–40% downsizing of 45 anchor stores and convert excess backrooms into online order centers.",
       kpi: isId ? '🎯 Target: Pangkas Liabilitas Sewa Rp 180M' : '🎯 Target: Cut Rp 180B Lease Debt · Negative Cash Cycle'
     },
     {
       id: 'sbu3',
       parentId: 'coo',
+      status: 'new',
+      statusBadge: isId ? 'BARU' : 'NEW',
       role: isId ? 'Presiden · Primo Gourmet & Boston' : 'President · Primo Gourmet & Boston',
       name: isId ? 'Ritel Spesialis Margin Tinggi' : 'High-Margin Specialty Halo',
       tag: isId ? 'SBU 3 · SPESIALIS PREMIUM' : 'SBU 3 · PREMIUM SPECIALTY',
@@ -269,6 +305,8 @@ const treeData = computed(() => {
     {
       id: 'sbu4',
       parentId: 'coo',
+      status: 'new',
+      statusBadge: isId ? 'BARU' : 'NEW',
       role: isId ? 'Kepala · Kantor Likuidasi Non-Inti' : 'Head · Non-Core Liquidation Office',
       name: isId ? 'Satgas Divestasi SmartClub & FMX' : 'SmartClub & FMX Liquidation Taskforce',
       tag: isId ? 'SBU 4 · DIVESTASI 2021–2022' : 'SBU 4 · SALE OF A BUSINESS OR ASSETS TASKFORCE',
@@ -284,6 +322,8 @@ const treeData = computed(() => {
     {
       id: 'enablers',
       parentId: 'coo',
+      status: 'new',
+      statusBadge: isId ? 'BARU' : 'NEW',
       role: isId ? 'Pusat Keunggulan Rantai Pasok & O2O' : 'Supply Chain & Digital Enablers Hub',
       name: isId ? 'Infrastruktur Pendukung Lintas Format' : 'Cross-Format Operational Moat',
       tag: isId ? 'KEMAMPUAN BERSAMA (ENABLERS)' : 'SHARED ENABLERS (REPORTING TO COO)',
@@ -299,6 +339,8 @@ const treeData = computed(() => {
     {
       id: 'logistics',
       parentId: 'enablers',
+      status: 'new',
+      statusBadge: isId ? 'BARU' : 'NEW',
       role: isId ? 'VP · Rantai Pasok & Logistik Dingin' : 'VP · Supply Chain & Cold Logistics',
       name: isId ? 'Keunggulan Rantai Dingin Nasional' : 'National Halal Cold-Chain Moat',
       tag: isId ? 'RANTAI DINGIN HALAL (66.755 M²)' : 'HALAL COLD-CHAIN MOAT',
@@ -312,6 +354,8 @@ const treeData = computed(() => {
     {
       id: 'omni',
       parentId: 'enablers',
+      status: 'new',
+      statusBadge: isId ? 'BARU' : 'NEW',
       role: isId ? 'VP · Perdagangan Digital & Online And In-Store' : 'VP · Online And In-Store & Digital Commerce',
       name: isId ? 'Pengiriman Kilat 30 Menit' : '30-Minute Rapid Delivery',
       tag: isId ? 'EKSEKUSI ONLINE AND IN-STORE O2O' : '30-MIN RAPID FULFILLMENT',
@@ -325,15 +369,35 @@ const treeData = computed(() => {
     {
       id: 'procurement',
       parentId: 'enablers',
-      role: isId ? 'VP · Pengadaan & Pasokan Petani' : 'VP · Merchandising & Farm Sourcing',
-      name: 'Kyutae Park',
+      status: 'new',
+      statusBadge: isId ? 'BARU' : 'NEW',
+      role: isId ? 'VP · Pengadaan Petani Lokal' : 'VP · Local Farm Sourcing',
+      name: isId ? 'Pimpinan Baru Pengadaan Lokal' : 'New Local Sourcing Lead',
       tag: isId ? '750+ KEMITRAAN PETANI LOKAL' : '750+ DIRECT FARM CONTRACTS',
       theme: '#15803d',
       bg: '#f8fafc',
       desc: isId ? 'Kemitraan Petani Langsung · Algoritma Diskon Dinamis Kadaluarsa' : 'Direct Farmer Sourcing · Dynamic Expiry Markdown Algorithms',
       responsibilities: isId ? "Bernegosiasi langsung dengan petani dan mengoordinasikan pembelian produk segar serta diskon untuk stok mendekati kedaluwarsa." : "Negotiates directly with farmers and coordinates fresh-product purchasing and markdowns for stock nearing expiry.",
-      rationale: isId ? "Menghubungkan keputusan pengadaan dengan margin produk segar dan pengurangan limbah di seluruh gerai." : "Connects sourcing decisions with fresh margins and waste reduction across stores.",
+      rationale: isId ? "Menghubungkan keputusan pengadaan dengan margin produk segar dan pengurangan limbah di seluruh gerai." : "Connects local agricultural sourcing decisions with fresh margins and waste reduction across stores.",
+      repositionThesis: isId ? "Peran baru ini dipisahkan dari Merchandising & Marketing agar pimpinan pengadaan lokal dapat fokus membangun 750+ kontrak langsung dengan petani Indonesia di Jawa tanpa mencampuradukkannya dengan pemasaran korporat." : "Separated from Merchandising & Marketing as a dedicated new local role so an Indonesian agricultural specialist can focus directly on 750+ domestic farm contracts across Java.",
       kpi: isId ? 'Target: Margin Produk Segar 24% & Nir-Limbah Makanan' : 'Target: 24% Fresh Margin & Zero Food Waste'
+    },
+    {
+      id: 'merchandising',
+      parentId: 'enablers',
+      status: 'repositioned',
+      statusBadge: isId ? 'DIPINDAHTUGASKAN' : 'REPOSITIONED',
+      repositionedFrom: isId ? 'Merchandising & Marketing (Eksibit 1)' : 'Merchandising & Marketing (Exhibit 1)',
+      role: isId ? 'VP · Merchandising & Pemasaran' : 'VP · Merchandising & Marketing',
+      name: 'Kyutae Park',
+      tag: isId ? 'ASORTIMEN & MEREK' : 'ASSORTMENT & BRAND',
+      theme: '#0f766e',
+      bg: '#f8fafc',
+      desc: isId ? 'Perencanaan Kategori, Negosiasi Pemasok FMCG & Promosi Lintas Format' : 'Category Planning, FMCG Supplier Terms & Cross-Format Promotions',
+      responsibilities: isId ? "Mengelola bauran kategori, penetapan harga, promosi, dan kemitraan pemasok FMCG di seluruh format ritel MPPA." : "Manages category assortment, pricing architecture, promotions, and FMCG vendor terms across all MPPA retail formats.",
+      rationale: isId ? "Menjaga konsistensi strategi merek, promosi, dan margin kategori FMCG di seluruh SBU." : "Keeps brand positioning, promotional calendars, and FMCG category margins consistent across all format SBUs.",
+      repositionThesis: isId ? "Kyutae Park tetap memegang keahliannya di Merchandising & Marketing (Eksibit 1), namun dipindahkan dari lapor langsung CEO ke bawah COO dalam Shared Enablers—terpisah dari negosiasi petani lokal—untuk memangkas rentang kendali CEO." : "Kyutae Park remains in his core Merchandising & Marketing expertise from Exhibit 1, repositioned from reporting directly to the CEO into the COO's Shared Enablers—separated from local farm negotiations—to relieve the CEO's span of control.",
+      kpi: isId ? 'Target: Margin Kategori FMCG & Efektivitas Promosi' : 'Target: Unified FMCG Margin & Promo Lift'
     }
   ];
 });
@@ -361,8 +425,14 @@ function renderChart() {
   // Clear previous chart if any
   chartContainer.value.innerHTML = '';
 
+  const width = chartContainer.value.clientWidth || 800;
+  const height = chartContainer.value.clientHeight || 450;
+
   const chart = new OrgChart()
     .container(chartContainer.value)
+    .svgWidth(width)
+    .svgHeight(height)
+    .compact(false)
     .data(treeData.value)
     .duration(0)
     .nodeWidth((d) => {
@@ -372,7 +442,9 @@ function renderChart() {
       return 210;
     })
     .nodeHeight((d) => {
+      if (d.data.id.startsWith('sbu') && d.data.repositionedFrom) return 155;
       if (d.data.id.startsWith('sbu')) return 145;
+      if (d.data.repositionedFrom) return 140;
       if (d.data.id === 'coo' || d.data.id === 'ceo') return 120;
       if (d.data.id === 'board' || d.data.id === 'enablers') return 120;
       return 130;
@@ -397,6 +469,16 @@ function renderChart() {
       const theme = d.data.theme || '#475569';
       const bg = d.data.bg || '#ffffff';
       const isLead = d.data.isLead;
+      const statusBadge = d.data.statusBadge
+        ? `<span style="font-size:7px;font-weight:800;padding:1.5px 5px;border-radius:3px;flex-shrink:0;letter-spacing:0.05em;${
+            d.data.status === 'repositioned'
+              ? 'background:#fef3c7;color:#b45309;border:1px solid #fcd34d;'
+              : 'background:#dbeafe;color:#1d4ed8;border:1px solid #93c5fd;'
+          }">${d.data.statusBadge}</span>`
+        : '';
+      const fromLine = d.data.repositionedFrom
+        ? `<div style="font-size:7.5px;font-weight:700;color:#b45309;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">↳ ${props.language === 'id' ? 'Dari:' : 'From:'} ${d.data.repositionedFrom}</div>`
+        : '';
 
       return `
         <div class="org-chart-node ${isSelected ? 'node-selected' : ''}" data-org-id="${d.data.id}" style="
@@ -416,17 +498,19 @@ function renderChart() {
           font-family: Arial, Helvetica, sans-serif;
         ">
           <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:4px;margin-bottom:4px;">
               <span style="font-size:8px;font-weight:800;color:${theme};letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
                 ${d.data.tag}
               </span>
+              ${statusBadge}
             </div>
             <div style="font-size:11px;font-weight:800;color:#0f172a;line-height:1.2;margin-bottom:2px;">
               ${d.data.role}
             </div>
-            <div style="font-size:10px;font-weight:700;color:#334155;margin-bottom:4px;">
+            <div style="font-size:10px;font-weight:700;color:#334155;margin-bottom:3px;">
               ${d.data.name}
             </div>
+            ${fromLine}
             <div style="font-size:8.5px;color:#64748b;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">
               ${d.data.desc}
             </div>
@@ -482,8 +566,12 @@ onMounted(() => {
     if (window.ResizeObserver && chartContainer.value) {
       resizeObserver = new ResizeObserver((entries) => {
         for (let entry of entries) {
-          if (entry.contentRect.width > 50 && chartInstance) {
-            chartInstance.fit();
+          if (entry.contentRect.width > 50 && entry.contentRect.height > 50 && chartInstance) {
+            chartInstance
+              .svgWidth(entry.contentRect.width)
+              .svgHeight(entry.contentRect.height)
+              .render()
+              .fit();
           }
         }
       });
@@ -728,7 +816,32 @@ watch(() => props.language, () => {
   margin: 0;
 }
 .chart-container :deep(.node-selected) {
-  outline: 2px solid #df0036;
-  outline-offset: -2px;
+  box-shadow: inset 0 0 0 2px #df0036;
+  border-color: #df0036 !important;
+}
+.drawer-status-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.drawer-status-badge.status-new {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #93c5fd;
+}
+.drawer-status-badge.status-repositioned {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fcd34d;
+}
+.drawer-repositioned-from {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #b45309;
 }
 </style>

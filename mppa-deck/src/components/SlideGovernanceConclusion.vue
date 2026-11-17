@@ -70,54 +70,54 @@ const grabmart = {
 const english = {
   kicker: 'Implementation · Proposed plan',
   title: 'MPPA’s turnaround roadmap',
-  subtitle: 'Free up cash first, then expand Hyfresh and use Hypermart stores to fill online orders.',
+  subtitle: 'Run three parallel workstreams starting in 2021: free up cash, convert backrooms & roll out Hyfresh, and scale GrabMart × OVO across all MPPA (\'Hy-\') brands.',
   phases: [
     {
-      years: '01 · 2021', title: 'Free up cash',
+      years: 'Track 1 · 2021–2025 (Parallel)', title: 'Release cash & cut leases',
       mediaLabel: 'Estimated savings and proceeds', amount: 'Rp 300B',
       breakdown: 'Rp 180B lease savings over five years + Rp 120B from asset sales',
-      tasks: ['Renegotiate 15 mall leases.', 'Sell or close loss-making SmartClub and FMX operations.']
+      tasks: ['Renegotiate 15 mall leases starting in 2021 to fund execution.', 'Sell or close loss-making SmartClub and FMX operations.']
     },
     {
-      years: '02 · 2022–2023', title: 'Roll out the new formats',
+      years: 'Track 2 · 2021–2025 (Parallel)', title: 'Expand Hyfresh & dark hubs',
       image: { ...hyfresh, alt: 'Shoppers at a Hyfresh supermarket' },
-      tasks: ['Target 50 compact Hyfresh stores.', 'Adapt 45 Hypermart backrooms to pack online orders.']
+      tasks: ['Roll out 50 compact Hyfresh stores alongside lease resets.', 'Retrofit 45 hypermarket backrooms & activate hubs across all MPPA (\'Hy-\') banners.']
     },
     {
-      years: '03 · 2024–2025', title: 'Expand what works',
+      years: 'Track 3 · 2021–2025 (Parallel)', title: 'Scale GrabMart × OVO across Hy-',
       image: { ...grabmart, alt: 'MPPA and Grab representatives at an in-store GrabMart pickup point' },
-      tasks: ['Grow delivery through partners like GrabMart and Shopee.', 'Track cash flow and reduce fresh-food waste.']
+      tasks: ['Run GrabMart & OVO co-funded promos and 15–30 min SLAs across Hypermart, Hyfresh, Foodmart & Primo.', 'Pool Hicard + OVO volume for featured placement and lower fresh waste.']
     }
   ],
   decision: 'QSPM decision',
-  recommendation: 'Prioritize Hyfresh (6.620). Use smaller Hypermart stores and online order hubs (5.460) to support the rollout.',
+  recommendation: 'Prioritize Hyfresh (6.620) alongside smaller Hypermart stores & MPPA (\'Hy-\') online hubs (5.460) — run in parallel from Year 1 so asset-light GrabMart × OVO sales help fund the rollout.',
   sources: 'Sources · Case 23, pp. 587–596 · Fred David, ch. 7–9 · Matahari.xlsx'
 };
 
 const indonesian = {
   kicker: 'Implementasi · Usulan rencana',
   title: 'Peta jalan pemulihan MPPA',
-  subtitle: 'Longgarkan arus kas terlebih dahulu, lalu perluas Hyfresh dan gunakan gerai Hypermart untuk menyiapkan pesanan online.',
+  subtitle: 'Jalankan tiga jalur kerja paralel mulai 2021: longgarkan arus kas, sesuaikan ruang gerai & perluas Hyfresh, serta skalakan GrabMart × OVO di semua merek MPPA (\'Hy-\').',
   phases: [
     {
-      years: '01 · 2021', title: 'Longgarkan arus kas',
+      years: 'Jalur 1 · 2021–2025 (Paralel)', title: 'Longgarkan kas & tekan sewa',
       mediaLabel: 'Perkiraan penghematan dan hasil penjualan', amount: 'Rp 300 miliar',
       breakdown: 'Rp 180 miliar penghematan sewa selama lima tahun + Rp 120 miliar dari penjualan aset',
-      tasks: ['Negosiasikan ulang 15 kontrak sewa mal.', 'Jual atau tutup unit SmartClub dan FMX yang merugi.']
+      tasks: ['Negosiasi ulang 15 kontrak sewa mal mulai 2021 untuk membiayai eksekusi.', 'Jual atau tutup unit SmartClub dan FMX yang merugi.']
     },
     {
-      years: '02 · 2022–2023', title: 'Jalankan format baru',
+      years: 'Jalur 2 · 2021–2025 (Paralel)', title: 'Perluas Hyfresh & hub daring',
       image: { ...hyfresh, alt: 'Pelanggan berbelanja di supermarket Hyfresh' },
-      tasks: ['Targetkan 50 gerai Hyfresh berukuran kecil.', 'Siapkan ruang belakang di 45 gerai Hypermart untuk mengemas pesanan online.']
+      tasks: ['Buka 50 gerai Hyfresh kompak beriringan dengan penataan sewa.', 'Siapkan 45 ruang belakang hipermarket & aktifkan hub di semua merek MPPA (\'Hy-\').']
     },
     {
-      years: '03 · 2024–2025', title: 'Perluas yang berhasil',
+      years: 'Jalur 3 · 2021–2025 (Paralel)', title: 'Skalakan GrabMart × OVO semua Hy-',
       image: { ...grabmart, alt: 'Perwakilan MPPA dan Grab di titik pengambilan pesanan GrabMart' },
-      tasks: ['Perluas layanan antar melalui mitra seperti GrabMart dan Shopee.', 'Pantau arus kas dan kurangi produk segar yang terbuang.']
+      tasks: ['Jalankan promo bersama GrabMart & OVO serta SLA 15–30 menit di Hypermart, Hyfresh, Foodmart & Primo.', 'Gabungkan volume Hicard + OVO untuk penempatan unggulan dan tekan susut produk segar.']
     }
   ],
   decision: 'Keputusan QSPM',
-  recommendation: 'Prioritaskan Hyfresh (6,620). Perkecil gerai Hypermart dan gunakan ruangnya untuk menyiapkan pesanan online (5,460) guna mendukung ekspansi.',
+  recommendation: 'Prioritaskan Hyfresh (6,620) bersama perampingan Hypermart & hub pesanan daring semua merek MPPA (\'Hy-\') (5,460) — dijalankan paralel sejak Tahun 1 agar penjualan GrabMart × OVO ikut mempercepat ekspansi.',
   sources: 'Sumber · Kasus 23, hlm. 587–596 · Fred David, bab 7–9 · Matahari.xlsx'
 };
 
