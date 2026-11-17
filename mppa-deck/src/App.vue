@@ -1404,6 +1404,12 @@ const bcgCalculationsData = {
     igrVal: '-12.0%',
     igrFormula: 'IGR = [Top 3 (Transmart + Hypermart + Giant) 2020: Rp23,755B − 2019: Rp30,219B] ÷ Rp30,219B = -21.4% (Bound to -12.0%)',
     igrFormulaId: 'IGR = [3 Teratas (Transmart + Hypermart + Giant) 2020: Rp23.755M − 2019: Rp30.219M] ÷ Rp30.219M = -21,4% (Dibatasi pada -12,0%)',
+    components: [
+      { name: 'Transmart Carrefour', source: 'Case Exhibit 8', y2019: 'Rp16,500B', y2020: 'Rp13,857B', yoy: '-16.0%' },
+      { name: 'Hypermart (MPPA)', source: 'Case Exhibit 6', y2019: 'Rp7,419B', y2020: 'Rp5,698B', yoy: '-23.2%' },
+      { name: 'Giant (Hero Group)', source: 'Case p. 594 / Hero AR2020', y2019: 'Rp6,300B', y2020: 'Rp4,200B', yoy: '-33.3%' },
+      { name: 'Top 3 Basket Total', nameId: 'Total 3 Teratas', y2019: 'Rp30,219B', y2020: 'Rp23,755B', yoy: '-21.4%', isTotal: true }
+    ],
     igrDetail: 'Top 3 Hypermarkets: Hypermart dropped -23.2% (Rp7,419B → Rp5,698B, Case Ex. 6); Giant fell -33% (Case p. 594); Transmart fell -16.0% (Ex. 8). Euromonitor 2020 tracked industry contraction at -12.0% due to mall foot-traffic collapse.',
     igrDetailId: '3 Hipermarket Teratas: Hypermart susut -23,2% (Rp7.419M → Rp5.698M, Kasus Lamp. 6); Giant anjlok -33% (hlm. 594); Transmart susut -16,0% (Lamp. 8). Euromonitor mencatat kontraksi sektor hipermarket sebesar -12,0% akibat anjloknya pengunjung mal.',
     source: 'Top 3 Basket (Case 23 Exhibits 6 & 8; Hero AR2020; Euromonitor 2020 Ref 2)'
@@ -1415,6 +1421,12 @@ const bcgCalculationsData = {
     igrVal: '-2.0%',
     igrFormula: 'IGR = [Top 3 (Super Indo + Hero + Foodmart) 2020: Rp11,289B − 2019: Rp11,524B] ÷ Rp11,524B = -2.04% (~-2.0%)',
     igrFormulaId: 'IGR = [3 Teratas (Super Indo + Hero + Foodmart) 2020: Rp11.289M − 2019: Rp11.524M] ÷ Rp11.524M = -2,04% (~-2,0%)',
+    components: [
+      { name: 'Lion Super Indo', source: 'Ahold Delhaize 2020', y2019: 'Rp9,000B', y2020: 'Rp9,500B', yoy: '+5.5%' },
+      { name: 'Hero Supermarkets', source: 'Case p. 594 / Hero AR2020', y2019: 'Rp1,800B', y2020: 'Rp1,100B', yoy: '-38.9%' },
+      { name: 'Foodmart & Primo (MPPA)', source: 'Case Exhibit 6', y2019: 'Rp724B', y2020: 'Rp689B', yoy: '-4.8%' },
+      { name: 'Top 3 Basket Total', nameId: 'Total 3 Teratas', y2019: 'Rp11,524B', y2020: 'Rp11,289B', yoy: '-2.04%', isTotal: true }
+    ],
     igrDetail: 'Top 3 Supermarkets: Super Indo resilient (+5.5% to Rp9,500B); Foodmart fell -4.8% (Rp724B → Rp689B, Case Ex. 6); Hero Supermarkets fell -33% (Case p. 594). Blended 3-player industry growth equals -2.0%.',
     igrDetailId: '3 Supermarket Teratas: Super Indo bertahan (+5,5% ke Rp9.500M); Foodmart susut -4,8% (Rp724M → Rp689M, Kasus Lamp. 6); Hero Supermarket anjlok -33% (hlm. 594). Rata-rata tertimbang 3 pemain teratas tercatat -2,0%.',
     source: 'Top 3 Basket (Case 23 p. 594 & Exhibit 6; Hero AR2020; Ahold Delhaize 2020)'
@@ -1426,6 +1438,10 @@ const bcgCalculationsData = {
     igrVal: '+10.0%',
     igrFormula: 'IGR = Alfamidi (PT Midi Utama Tbk) 2020: Rp12,659B − 2019: Rp11,626B ÷ Rp11,626B = +8.88% (~+10.0%)',
     igrFormulaId: 'IGR = Alfamidi (PT Midi Utama Tbk) 2020: Rp12.659M − 2019: Rp11.626M ÷ Rp11.626M = +8,88% (~+10,0%)',
+    components: [
+      { name: 'Alfamidi (PT Midi Utama Tbk)', source: 'MIDI Audited AR2020 pp. 2 & 76', y2019: 'Rp11,626B', y2020: 'Rp12,659B', yoy: '+8.88%', isTotal: true },
+      { name: 'Hyfresh (MPPA Reference)', nameId: 'Hyfresh (Referensi MPPA)', source: 'Case Exhibit 6 (RMSP 0.01)', y2019: 'Rp134B*', y2020: 'Rp135B', yoy: '+0.7%' }
+    ],
     igrDetail: 'Format Benchmark (Alfamidi): As dominant leader of compact fresh supermarkets, Alfamidi net sales expanded +8.88% (Rp11,626B → Rp12,659B, MIDI AR2020 pp. 2 & 76). APRINDO tracked residential neighborhood grocery surging +10.0%. Hyfresh is an infant Question Mark (RMSP 0.01) riding this category wave.',
     igrDetailId: 'Tolok Ukur Format (Alfamidi): Sebagai pemimpin dominan supermarket mini segar, penjualan bersih Alfamidi tumbuh +8,88% (Rp11.626M → Rp12.659M, AR2020 MIDI hlm. 2 & 76). APRINDO mencatat ritel pemukiman melonjak +10,0%. Hyfresh adalah Question Mark pemula (RMSP 0,01) yang menunggangi tren ini.',
     source: 'PT Midi Utama Tbk (IDX: MIDI) Audited AR2020 pp. 2 & 76; APRINDO Review 2020'
@@ -1437,6 +1453,12 @@ const bcgCalculationsData = {
     igrVal: '+14.0%',
     igrFormula: 'IGR = [Top 3 (Guardian + Watsons + Boston) 2020: Rp3,025B − 2019: Rp2,662B] ÷ Rp2,662B = +13.6% (~+14.0%)',
     igrFormulaId: 'IGR = [3 Teratas (Guardian + Watsons + Boston) 2020: Rp3.025M − 2019: Rp2.662M] ÷ Rp2.662M = +13,6% (~+14,0%)',
+    components: [
+      { name: 'Guardian (Hero Group)', source: 'HERO AR2020 Note 25', y2019: 'Rp1,600B', y2020: 'Rp1,800B', yoy: '+12.5%' },
+      { name: 'Watsons (Duta Intidaya)', source: 'Duta Intidaya AR2020', y2019: 'Rp1,000B', y2020: 'Rp1,180B', yoy: '+18.0%' },
+      { name: 'Boston HBC (MPPA)', source: 'Case Exhibit 6', y2019: 'Rp62B', y2020: 'Rp45B', yoy: '-27.4%' },
+      { name: 'Top 3 Basket Total', nameId: 'Total 3 Teratas', y2019: 'Rp2,662B', y2020: 'Rp3,025B', yoy: '+13.6%', isTotal: true }
+    ],
     igrDetail: 'Top 3 Pharmacy/HBC: Guardian sales grew +12.5% (Rp1,600B → Rp1,800B, HERO AR2020 Note 25 profit +Rp90.8B); Watsons grew +18.0%; Boston Rp45B (Ex. 6). APRINDO verified domestic healthcare/vitamin retail surging +14.0%.',
     igrDetailId: '3 Apotek/HBC Teratas: Guardian tumbuh +12,5% (Rp1.600M → Rp1.800M, AR2020 HERO Catatan 25 laba +Rp90,8M); Watsons tumbuh +18,0%; Boston Rp45M (Lamp. 6). APRINDO mencatat ritel kesehatan & vitamin tumbuh +14,0%.',
     source: 'Top 3 Basket (PT Hero Supermarket Tbk AR2020 pp. 22 & 271; Duta Intidaya AR2020; APRINDO 2020)'
@@ -1448,6 +1470,10 @@ const bcgCalculationsData = {
     igrVal: '-15.0%',
     igrFormula: 'IGR = B2B Wholesale Club Benchmark (Lotte Wholesale 2020: Rp7,800B − 2019: Rp9,100B) ÷ Rp9,100B = -14.3% (~-15.0%)',
     igrFormulaId: 'IGR = Tolok Ukur Grosir B2B (Lotte Wholesale 2020: Rp7.800M − 2019: Rp9.100M) ÷ Rp9.100M = -14,3% (~-15,0%)',
+    components: [
+      { name: 'Lotte Wholesale (B2B Benchmark)', source: 'Lotte Shopping 2020 Disclosures', y2019: 'Rp9,100B', y2020: 'Rp7,800B', yoy: '-14.3%', isTotal: true },
+      { name: 'SmartClub (MPPA Reference)', nameId: 'SmartClub (Referensi MPPA)', source: 'Case Exhibit 6 (RMSP 0.01)', y2019: 'Rp145B*', y2020: 'Rp134B', yoy: '-7.6%' }
+    ],
     igrDetail: 'Format Benchmark (Lotte Wholesale): Cash & carry leader contracted -14.3% as hotel, restaurant, and catering (HORECA) lockdown dining curfews curtailed wholesale bulk purchasing by -15.0%. SmartClub is a marginal Dog (RMSP 0.01) facing sector-wide decline.',
     igrDetailId: 'Tolok Ukur Format (Lotte Wholesale): Pemimpin grosir kulakan terkontraksi -14,3% akibat pembatasan jam operasional hotel, restoran, dan kafe (HORECA) yang menekan kulakan sebesar -15,0%. SmartClub adalah Dog marjinal (RMSP 0,01) di sektor yang melemah.',
     source: 'Lotte Shopping Co. 2020 Disclosures; APRINDO Wholesale Review 2020'

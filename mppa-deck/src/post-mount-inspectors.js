@@ -1267,6 +1267,39 @@ function openMatrixDrawer(match) {
         ${note ? `<p class="matrix-calc-row">${id ? 'Penyesuaian pada grafik' : 'Adjustment shown on chart'} · ${note}</p>` : ''}
       </div>`;
     };
+    const renderComponents = (items) => {
+      if (!items || !items.length) return '';
+      return `
+        <div style="margin-top:8px;border:1px solid #e2e8f0;border-radius:6px;overflow:hidden;background:#f8fafc;">
+          <div style="padding:5px 10px;background:#f1f5f9;border-bottom:1px solid #e2e8f0;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#475569;">
+            ${id ? 'Rincian Angka Pembentuk (2019 → 2020)' : 'Component Breakdown (2019 → 2020)'}
+          </div>
+          <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
+            <thead>
+              <tr style="border-bottom:1px solid #e2e8f0;color:#64748b;text-align:left;font-size:10.5px;">
+                <th style="padding:5px 10px;">${id ? 'Perusahaan / Format' : 'Player / Format'}</th>
+                <th style="padding:5px 8px;text-align:right;">2019</th>
+                <th style="padding:5px 8px;text-align:right;">2020</th>
+                <th style="padding:5px 10px;text-align:right;">YoY</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${items.map(row => `
+                <tr style="border-bottom:1px solid #eef2f6;${row.isTotal ? 'background:#ffffff;font-weight:800;color:#0f172a;' : 'color:#334155;'}">
+                  <td style="padding:5px 10px;">
+                    <div>${id ? (row.nameId || row.name) : row.name}</div>
+                    ${row.source ? `<div style="font-size:10px;color:#64748b;font-weight:400;">${id ? (row.sourceId || row.source) : row.source}</div>` : ''}
+                  </td>
+                  <td style="padding:5px 8px;text-align:right;font-variant-numeric:tabular-nums;">${row.y2019}</td>
+                  <td style="padding:5px 8px;text-align:right;font-variant-numeric:tabular-nums;">${row.y2020}</td>
+                  <td style="padding:5px 10px;text-align:right;font-weight:700;color:${row.yoy.startsWith('+') ? '#059669' : '#dc2626'};">${row.yoy}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    };
     const calcSection = document.createElement('section');
     calcSection.className = 'matrix-detail-section';
     calcSection.innerHTML = `
@@ -1279,7 +1312,8 @@ function openMatrixDrawer(match) {
       <div class="matrix-calc-card">
         ${renderEquation(id ? calcData.rmspCalcId : calcData.rmspCalc, 'RMSP', id ? 'Pangsa pasar relatif' : 'Relative market share')}
         ${renderEquation(id ? calcData.igrFormulaId : calcData.igrFormula, 'IGR', id ? 'Laju pertumbuhan industri' : 'Industry growth rate')}
-        <p class="matrix-calc-row" style="color:#64748b;font-size:11.5px;margin-top:4px;">${id ? calcData.igrDetailId : calcData.igrDetail}</p>
+        ${renderComponents(calcData.components)}
+        <p class="matrix-calc-row" style="color:#64748b;font-size:11.5px;margin-top:6px;">${id ? calcData.igrDetailId : calcData.igrDetail}</p>
       </div>
     `;
     content.append(calcSection);
