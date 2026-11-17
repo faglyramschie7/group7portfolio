@@ -3248,7 +3248,8 @@ function openMatrixDrawer(match) {
       sources.append(citation);
     }
     const workbook = document.createElement('a');
-    workbook.href = 'Matahari.xlsx';
+    workbook.href = '/Matahari.xlsx';
+    workbook.download = 'Matahari.xlsx';
     const workbookRow = { S: 11, W: 25, O: 40, T: 55 }[category] + Number(factorIndex);
     workbook.textContent = workbookRow ? `Matahari.xlsx · QSPM!C${workbookRow}:G${workbookRow}` : 'Matahari.xlsx · QSPM';
     const scoring = document.createElement('p');
@@ -3596,7 +3597,7 @@ document.addEventListener('click', event => {
       <section class="matrix-detail-section matrix-sources-container">
         <div class="matrix-section-header"><h4>${id ? 'Sumber' : 'Sources'}</h4></div>
         <a href="AR2020.pdf#page=${expansion ? 47 : 27}" target="_blank" rel="noopener">MPPA 2020 Annual Report · ${expansion ? 'pp. 45–46' : 'pp. 25 and 46'}</a>
-        <a href="Matahari.xlsx">Matahari.xlsx · PART I!${input} · QSPM row 66</a>
+        <a href="/Matahari.xlsx" download="Matahari.xlsx">Matahari.xlsx · PART I!${input} · QSPM row 66</a>
         <p class="qspm-detail-key">${id ? 'David, Bab 6, Tabel 6-4 dan 6-5, menjelaskan metode QSPM.' : 'David’s Chapter 6, Tables 6-4 and 6-5, explains the QSPM method used to compare the case proposals.'}</p>
       </section>
     `;
