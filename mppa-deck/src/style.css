@@ -1079,7 +1079,8 @@
   border-radius: 5px;
   background: #fff;
 }
-.ie-detail-card.is-focused-metric { border-color: #a4bede; background: #f3f7fc; }
+.ie-detail-card.is-focused-metric { border-color: #df0036; background: #fff1f2; }
+.mppa-num { color: #b6002d; font-weight: 800; background: #fff1f2; padding: 0 3px; border-radius: 3px; border: 1px solid #fecdd3; }
 .ie-detail-card span { display: block; margin-top: 2px; font-weight: 700; }
 .ie-detail-card p { margin: 3px 0 0; }
 

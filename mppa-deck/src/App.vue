@@ -2584,9 +2584,10 @@ function updateIeCalculation(key, metric) {
   const row = Array.from(document.querySelectorAll('.ie-row')).find(element => element.dataset.division === key);
   const sales = row?.querySelector('.ie-rev-val')?.textContent.trim() || '';
   const share = row?.querySelector('.ie-share-pill')?.textContent.trim() || '';
+  const hiNums = (txt) => String(txt || '').replace(/(?<![A-Za-z])((?:Rp\s*[\d.,]+\s*[BMKT]?(?:\/[a-z]+)?|[+-]?\d+(?:[.,–-]\d+)*(?:%?\+|%)?))/g, '<span class="mppa-num">$1</span>');
   const scoreNotes = [
-    ['ife', isId ? 'IFE · Faktor internal' : 'IFE · Internal factors', ife, ifeBasis],
-    ['efe', isId ? 'EFE · Faktor eksternal' : 'EFE · External factors', efe, efeBasis]
+    ['ife', isId ? 'IFE · Faktor internal' : 'IFE · Internal factors', hiNums(ife), hiNums(ifeBasis)],
+    ['efe', isId ? 'EFE · Faktor eksternal' : 'EFE · External factors', hiNums(efe), hiNums(efeBasis)]
   ];
 
   box.innerHTML = `
@@ -2605,10 +2606,10 @@ function updateIeCalculation(key, metric) {
     </div>
     <div class="ie-detail-card${metric === 'share' ? ' is-focused-metric' : ''}">
       <strong>${isId ? 'Penjualan & kontribusi' : 'Sales & share'}</strong>
-      <p>${sales} · ${share}. ${isId ? 'Kontribusi = penjualan format ÷ total penjualan MPPA.' : 'Share = format sales ÷ total MPPA sales.'}</p>
+      <p>${hiNums(sales)} · ${hiNums(share)}. ${isId ? 'Kontribusi = penjualan format ÷ total penjualan MPPA.' : 'Share = format sales ÷ total MPPA sales.'}</p>
     </div>
     <div class="ie-detail-card${metric === 'presc' ? ' is-focused-metric' : ''}">
-      <strong>${region}</strong><p>${strategy}</p>
+      <strong>${region}</strong><p>${hiNums(strategy)}</p>
     </div>
     <p class="ie-detail-source"><strong>${isId ? 'Sumber' : 'Sources'}</strong> · ${workbook} · ${source}</p>
   `;

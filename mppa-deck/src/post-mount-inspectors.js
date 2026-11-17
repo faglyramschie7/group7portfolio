@@ -1267,6 +1267,7 @@ function openMatrixDrawer(match) {
         ${note ? `<p class="matrix-calc-row">${id ? 'Penyesuaian pada grafik' : 'Adjustment shown on chart'} · ${note}</p>` : ''}
       </div>`;
     };
+    const hiNums = (txt) => String(txt || '').replace(/(?<![A-Za-z])((?:Rp\s*[\d.,]+\s*[BMKT]?(?:\/[a-z]+)?|[+-]?\d+(?:[.,–-]\d+)*(?:%?\+|%)?))/g, '<span class="mppa-num">$1</span>');
     const renderComponents = (items) => {
       if (!items || !items.length) return '';
       return `
@@ -1284,17 +1285,25 @@ function openMatrixDrawer(match) {
               </tr>
             </thead>
             <tbody>
-              ${items.map(row => `
-                <tr style="border-bottom:1px solid #eef2f6;${row.isTotal ? 'background:#ffffff;font-weight:800;color:#0f172a;' : 'color:#334155;'}">
+              ${items.map(row => {
+                const isMppa = row.name && row.name.includes('MPPA');
+                const rowStyle = row.isTotal
+                  ? 'background:#ffffff;font-weight:800;color:#0f172a;'
+                  : isMppa
+                    ? 'background:#fff1f2;font-weight:700;color:#b6002d;border-left:3px solid #df0036;'
+                    : 'color:#334155;';
+                return `
+                <tr style="border-bottom:1px solid #eef2f6;${rowStyle}">
                   <td style="padding:5px 10px;">
                     <div>${id ? (row.nameId || row.name) : row.name}</div>
-                    ${row.source ? `<div style="font-size:10px;color:#64748b;font-weight:400;">${id ? (row.sourceId || row.source) : row.source}</div>` : ''}
+                    ${row.source ? `<div style="font-size:10px;color:${isMppa ? '#9f1239' : '#64748b'};font-weight:400;">${id ? (row.sourceId || row.source) : row.source}</div>` : ''}
                   </td>
                   <td style="padding:5px 8px;text-align:right;font-variant-numeric:tabular-nums;">${row.y2019}</td>
                   <td style="padding:5px 8px;text-align:right;font-variant-numeric:tabular-nums;">${row.y2020}</td>
                   <td style="padding:5px 10px;text-align:right;font-weight:700;color:${row.yoy.startsWith('+') ? '#059669' : '#dc2626'};">${row.yoy}</td>
                 </tr>
-              `).join('')}
+              `;
+              }).join('')}
             </tbody>
           </table>
         </div>
@@ -1313,7 +1322,7 @@ function openMatrixDrawer(match) {
         ${renderEquation(id ? calcData.rmspCalcId : calcData.rmspCalc, 'RMSP', id ? 'Pangsa pasar relatif' : 'Relative market share')}
         ${renderEquation(id ? calcData.igrFormulaId : calcData.igrFormula, 'IGR', id ? 'Laju pertumbuhan industri' : 'Industry growth rate')}
         ${renderComponents(calcData.components)}
-        <p class="matrix-calc-row" style="color:#64748b;font-size:11.5px;margin-top:6px;">${id ? calcData.igrDetailId : calcData.igrDetail}</p>
+        <p class="matrix-calc-row" style="color:#64748b;font-size:11.5px;margin-top:6px;">${hiNums(id ? calcData.igrDetailId : calcData.igrDetail)}</p>
       </div>
     `;
     content.append(calcSection);
