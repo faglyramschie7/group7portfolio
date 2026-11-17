@@ -1329,6 +1329,8 @@
 .qspm-slide button.qspm-strat-card:hover,.qspm-slide button.qspm-strat-card:focus-visible{outline:2px solid #73616c;outline-offset:2px}
 .qspm-slide .qspm-card-badge,.qspm-slide .qspm-card-title{grid-column:2}
 .qspm-slide .qspm-card-tas{grid-area:1/3/3/4}
+.qspm-slide .qspm-card-origin{grid-column:1/4;font-size:.62cqw;line-height:1.3;padding-top:.28cqw;margin-top:.18cqw;border-top:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.92);font-weight:500}
+.qspm-slide .qspm-card-origin strong{color:#ffffff;font-weight:800}
 .qspm-detail-total{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 .qspm-detail-figure{margin:0 0 16px}
 .qspm-detail-image{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:8px}

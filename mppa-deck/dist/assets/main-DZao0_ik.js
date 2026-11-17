@@ -3160,12 +3160,14 @@ FY2020 baseline · Planning horizon 2021–2025
       <span class="qspm-card-badge"><img class="qspm-brand-logo" src="/assets/hyfresh-logo.png" alt="">Strategy 1 · PRIMARY GROWTH STRATEGY</span>
       <span class="qspm-card-title">Expand compact Hyfresh stores and consolidate banners under Hy-</span>
       <span class="qspm-card-tas"><strong>6.620</strong><span>Total score</span></span>
+      <span class="qspm-card-origin"><strong>Matched From:</strong> Card 01 (Market Penetration) · SWOT SO-3, SO-4 &amp; ST-2 · BCG Question Mark · IE Cell II</span>
     </button>
     <button type="button" class="qspm-strat-card comp" data-qspm-strategy="2" aria-haspopup="dialog">
       <img class="qspm-strategy-image" src="/assets/qspm-hypermart-fulfillment.jpg" alt="" width="900" height="600">
       <span class="qspm-card-badge"><img class="qspm-brand-logo" src="/assets/hypermart-logo.png" alt="">Strategy 2 · COMPLEMENTARY INITIATIVE</span>
       <span class="qspm-card-title">Resize Hypermart stores and use them to fulfill online orders</span>
       <span class="qspm-card-tas"><strong>5.460</strong><span>Total score</span></span>
+      <span class="qspm-card-origin"><strong>Matched From:</strong> Card 04 (Retrenchment) + Card 07 (Forward Integration) · SWOT WO-1, WT-2 &amp; SO-1 · IE Cell V/VIII</span>
     </button>
   </div>
 </div>
